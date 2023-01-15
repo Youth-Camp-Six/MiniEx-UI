@@ -4,4 +4,6 @@ dist/
 .idea/
 .vscode/
 
-.DS_Store/s
+.DS_Stores/
+
+.eslintcache/
