@@ -1,0 +1,129 @@
+{
+  "root": true,
+  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "overrides": [
+    {
+      "files": ["src/**/*.{ts,tsx}"],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "ecmaVersion": 2017,
+        "sourceType": "module",
+        "ecmaFeatures": {
+          "jsx": true
+        },
+        "warnOnUnsupportedTypeScriptVersion": true
+      },
+      "plugins": ["@typescript-eslint"],
+      "extends": [
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:import/typescript",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended"
+      ],
+      "rules": {
+        "react/no-children-prop": "off",
+        "react/prop-types": "off",
+        "quotes": [1, "single"],
+        "react/jsx-uses-react": "error",
+        "react/react-in-jsx-scope": "error",
+        //引号类型
+        "@typescript-eslint/no-explicit-any": ["off"],
+        "@typescript-eslint/member-delimiter-style": ["off"],
+        "class-methods-use-this": "off",
+        "prefer-rest-params": "off",
+        "react/jsx-filename-extension": [
+          2,
+          {
+            "extensions": [".js", ".jsx", ".ts", ".tsx"]
+          }
+        ],
+        "@typescript-eslint/no-unused-vars": [
+          "error",
+          {
+            "varsIgnorePattern": "React"
+          }
+        ],
+        "no-console": [
+          "error",
+          {
+            "allow": ["warn", "error"]
+          }
+        ],
+        "camelcase": [
+          "error",
+          {
+            "allow": ["^UNSAFE_"]
+          }
+        ],
+        "import/no-unresolved": 0
+      },
+      "settings": {
+        "react": {
+          "version": "detect"
+        }
+      }
+    },
+    {
+      "files": ["src/**/*.{js,jsx}"],
+      "parser": "babel-eslint",
+      "parserOptions": {
+        "ecmaVersion": 2017,
+        "ecmaFeatures": {
+          "jsx": true
+        }
+      },
+      "extends": [
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended"
+      ],
+      "rules": {
+        "react/jsx-uses-react": "error",
+        "react/react-in-jsx-scope": "error",
+        "quotes": [1, "single"],
+        //引号类型
+        "class-methods-use-this": "off",
+        "prefer-rest-params": "off",
+        "react/jsx-filename-extension": [
+          2,
+          {
+            "extensions": [".js", ".jsx", ".ts", ".tsx"]
+          }
+        ],
+        "no-unused-vars": [
+          "error",
+          {
+            "varsIgnorePattern": "React"
+          }
+        ],
+        "no-console": [
+          "error",
+          {
+            "allow": ["warn", "error"]
+          }
+        ],
+        "camelcase": [
+          "error",
+          {
+            "allow": ["^UNSAFE_"]
+          }
+        ],
+        "import/no-unresolved": 0
+      },
+      "settings": {
+        "import/resolver": {
+          "node": {
+            "extensions": [".js", ".jsx"]
+          }
+        },
+        "react": {
+          "version": "detect"
+        }
+      }
+    }
+  ]
+}
