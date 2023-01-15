@@ -85,7 +85,6 @@
         "react/jsx-uses-react": "error",
         "react/react-in-jsx-scope": "error",
         "quotes": [1, "single"],
-        //引号类型
         "class-methods-use-this": "off",
         "prefer-rest-params": "off",
         "react/jsx-filename-extension": [
