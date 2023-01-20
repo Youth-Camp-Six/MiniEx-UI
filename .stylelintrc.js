@@ -13,6 +13,9 @@ module.exports = {
     '**/dist/**',
     '**/es/**',
     '**/lib/**',
+    '**/node_modules/**',
+    '**/coverage/**',
+    '**/packages/**',
   ],
   "overrides": [
     {
