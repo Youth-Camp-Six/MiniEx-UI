@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
   return (
-    <div className={cls.Header}>
+    <div className={cls.header}>
       <div className='left'>
         <div>MiniEx-UI</div>
       </div>

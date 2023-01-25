@@ -11,7 +11,9 @@ const ButtonDoc: React.FC<IProps> = () => {
     <div className='ButtonDoc'>
       <h2>ButtonDoc</h2>
       <div>--展示组件--</div>
-      <Button>按钮组件</Button>
+      <Button btnType='default'>default按钮</Button>
+      <Button btnType='primary'>primary按钮</Button>
+      <Button btnType='danger'>danger按钮</Button>
       <div>--展示代码--</div>
     </div>
   );

@@ -14,7 +14,7 @@
   @hover-color: lighten(@color, 7.5%),
   @active-bg: darken(@bg, 7.5%),
   @active-border: darken(@border, 10%),
-  @active-color: @color
+  @active-color: darken(@color, 7.5%),
 ) {
   color: @color;
   background: @bg;
@@ -26,12 +26,6 @@
     background: @hover-bg;
     border-color: @hover-border;
   }
-  // &:focus,
-  // &.focus {
-  //   color: @hover-color;
-  //   background: @hover-bg;
-  //   border-color: @hover-border;
-  // }
 
   &:active,
   &.active {

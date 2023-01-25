@@ -1,17 +1,24 @@
-import React, { memo } from 'react';
-import type { ReactNode } from 'react';
+import React from 'react';
+import classNames from 'classnames';
+import { ButtonProps } from './type';
 
-interface IProps {
-  children?: ReactNode;
-}
+export const Button: React.FC<ButtonProps> = (props) => {
+  const { className, disabled, size, btnType, children, ...restProps } = props;
 
-const Button: React.FC<IProps> = (props) => {
-  const { children } = props;
+  const classes = classNames('btn', className, {
+    [`btn-${btnType}`]: btnType,
+    [`btn-${size}`]: size,
+    disabled,
+  });
+
   return (
-    <div className='Button'>
-      <button>{children}</button>
-    </div>
+    <button className={classes} disabled={disabled} {...restProps}>
+      {children}
+    </button>
   );
 };
 
-export default memo(Button);
+Button.defaultProps = {
+  disabled: false,
+  btnType: 'default',
+};
