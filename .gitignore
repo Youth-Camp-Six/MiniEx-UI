@@ -9,5 +9,6 @@ packages/
 .DS_Store
 
 .eslintcache
+.stylelintcache
 
 coverage

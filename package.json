@@ -84,6 +84,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,less}": "eslint --quiet --cache --fix"
+    "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
+    "*.{css,less}": "stylelint --cache --fix"
   }
 }

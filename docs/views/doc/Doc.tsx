@@ -1,12 +1,13 @@
 import React, { memo } from 'react';
-import style from './Doc.module.less';
 import { Outlet, Link } from 'react-router-dom';
+
+import cls from './Doc.module.less';
 
 const Doc: React.FC = () => {
   return (
-    <div className={style.doc}>
+    <div className={cls.doc}>
       {/* 侧边栏 */}
-      <div className={style.siderbar}>
+      <div className={cls.siderbar}>
         <div>
           <Link to='/doc/button'>button</Link>
         </div>

@@ -1,11 +1,11 @@
 import React, { memo } from 'react';
-import style from './Header.module.less';
+import cls from './Header.module.less';
 import { Link } from 'react-router-dom';
 // import { Button } from '../../../packages';
 
 const Header: React.FC = () => {
   return (
-    <div className={style.Header}>
+    <div className={cls.Header}>
       <div className='left'>
         <div>MiniEx-UI</div>
       </div>
