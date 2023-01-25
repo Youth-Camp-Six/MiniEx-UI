@@ -1,0 +1,45 @@
+@mixin button-size(@padding-x, @padding-y, @font-size, @border-radius) {
+  padding: @padding-y @padding-x;
+  font-size: @font-size;
+  border-radius: @border-radius;
+}
+
+@mixin button-style(
+  @bg,
+  @border,
+  @color,
+  @hover-bg: lighten(@bg, 7.5%),
+  @hover-border: lighten(@border, 10%),
+  @hover-color: lighten(@color, 7.5%),
+  @active-bg: darken(@bg, 7.5%),
+  @active-border: darken(@border, 10%),
+  @active-color: @color,
+) {
+  color: @color;
+  background: @bg;
+  border-color: @border;
+  outline: null;
+  &:hover {
+    color: @hover-color;
+    background: @hover-bg;
+    border-color: @hover-border;
+  }
+  // &:focus,
+  // &.focus {
+  //   color: @hover-color;
+  //   background: @hover-bg;
+  //   border-color: @hover-border;
+  // }
+  &:active,
+  &.active {
+    color: @active-color;
+    background: @active-bg;
+    border-color: @active-border;
+  }
+  &:disabled,
+  &.disabled {
+    color: @color;
+    background: @bg;
+    border-color: @border;
+  }
+}

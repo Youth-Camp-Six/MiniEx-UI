@@ -9,7 +9,7 @@ module.exports = {
     path: path.resolve(__dirname, 'packages'),
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx', 'less'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.less'],
   },
   module: {
     rules: [

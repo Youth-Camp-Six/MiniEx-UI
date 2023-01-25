@@ -1,9 +1,13 @@
+import './assets/style/index.less';
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
+import { RouterProvider } from 'react-router-dom';
+import router from './router';
 
-ReactDOM.render(
+const root = createRoot(document.querySelector('#root') as HTMLElement);
+
+root.render(
   <React.StrictMode>
-    <h1>DOCS</h1>
-  </React.StrictMode>,
-  document.getElementById('root')
+    <RouterProvider router={router} />
+  </React.StrictMode>
 );
