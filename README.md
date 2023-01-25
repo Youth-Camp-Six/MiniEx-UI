@@ -1,5 +1,15 @@
 # MiniEx-UI
 
+![NPM](https://img.shields.io/npm/l/miniex-ui)
+![issues](https://img.shields.io/github/issues/Youth-Camp-Six/MiniEx-UI)
+[![GitHub forks](https://img.shields.io/github/forks/Youth-Camp-Six/MiniEx-UI)](https://github.com/Youth-Camp-Six/MiniEx-UI/network)
+[![GitHub stars](https://img.shields.io/github/stars/Youth-Camp-Six/MiniEx-UI)](https://github.com/Youth-Camp-Six/MiniEx-UI/stargazers)
+![Vsersion](https://img.shields.io/badge/npm-1.0.0-green)
+
+## 概述
+
+UI组件库，技术架构 TS + React + Less + Webpack + Lint + Jest
+
 ## 命名由来
 
 `MiniEx` 取自 `Minimal and Exquisite`，意义为极简精致。
@@ -30,3 +40,7 @@
 ├── package.json
 └── tsconfig.json     # typescript 配置文件
 ```
+
+## Licensed
+
+MIT.

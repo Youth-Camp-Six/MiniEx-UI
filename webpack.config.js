@@ -1,7 +1,7 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-module.exports = {
+module.export = {
   mode: 'production',
   entry: './src/index.ts',
   output: {

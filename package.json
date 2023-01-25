@@ -1,8 +1,15 @@
 {
   "name": "miniex-ui",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "a react ui libiary.",
-  "private": true,
+  "private": false,
+  "author": "MiniEx-UI",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Youth-Camp-Six/MiniEx-UI.git"
+  },
+  "files":["packages","docs/dist"],
+  "main":"packages/miniex-ui.js",
   "scripts": {
     "dev": "webpack-dev-server --config ./docs/webpack.config.js --mode development",
     "prepare": "husky install",
@@ -17,7 +24,6 @@
   "engines": {
     "node": ">= 16"
   },
-  "author": "Whiskeyi",
   "license": "MIT",
   "dependencies": {
     "@testing-library/react": "^13.4.0",
