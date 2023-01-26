@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import classNames from 'classnames';
 import { ButtonProps } from './type';
 
@@ -22,3 +22,5 @@ Button.defaultProps = {
   disabled: false,
   btnType: 'default',
 };
+
+export default memo(Button);
