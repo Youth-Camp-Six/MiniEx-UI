@@ -14,6 +14,10 @@ const ButtonDoc: React.FC<IProps> = () => {
       <Button btnType='default'>default按钮</Button>
       <Button btnType='primary'>primary按钮</Button>
       <Button btnType='danger'>danger按钮</Button>
+      <Button btnType='link'>link按钮</Button>
+      <Button size='lg'>lg按钮</Button>
+      <Button size='sm'>sm按钮</Button>
+      <Button disabled={true}>禁用按钮</Button>
       <div>--展示代码--</div>
     </div>
   );
