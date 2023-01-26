@@ -14,6 +14,9 @@ const Doc: React.FC = () => {
         <div>
           <Link to='/doc/text'>text</Link>
         </div>
+        <div>
+          <Link to='/doc/menu'>menu</Link>
+        </div>
       </div>
       {/* 组件展示 */}
       <div className='content'>

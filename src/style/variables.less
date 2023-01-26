@@ -1,5 +1,7 @@
 @white: #fff;
+@gray-50: #f9fafb;
 @gray-100: #f8f9fa;
+@gray-150: #f2f3f5;
 @gray-200: #e9ecef;
 @gray-300: #dee2e6;
 @gray-400: #ced4da;
@@ -215,12 +217,23 @@
   border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
 /**
- * siderbar
+ * menu
  */
-@siderbar-padding-x: 0.5rem;
-@siderbar-padding-y: 0.5rem;
+// menu
+@menu-border-width: @border-width;
+@menu-border-color: @border-color;
+@menu-box-shadow: inset 0 1px 0 rgba(@white, 0.15), 0 1px 1px rgba(@black, 0.075);
+@menu-transition: color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+  background-color 0.15s ease-in-out;
 
-@siderbar-item-font-weight: 600;
-@siderbar-item-padding-x: 1rem;
-@siderbar-item-padding-y: 0.6rem;
-@siderbar-item-hover-bg: #f0f0f0;
+// menu-item
+@menu-item-padding-y: 0.5rem;
+@menu-item-padding-x: 1rem;
+@menu-item-active-color: @primary;
+@menu-item-active-border-width: 2px;
+@menu-item-active-bg: lighten(@primary, 48%);
+@menu-item-click-bg: lighten(@primary, 47%);
+@menu-item-active-color: @primary;
+@menu-item-hover-bg: lighten(@primary, 49%);
+@menu-item-hover-border-width: 2px;
+@menu-item-disabled-color: @gray-500;

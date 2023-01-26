@@ -4,7 +4,7 @@ type ButtonSize = 'lg' | 'sm';
 
 type ButtonType = 'primary' | 'default' | 'danger' | 'link';
 
-interface BaseButtonProps {
+export interface BaseButtonProps {
   className?: string;
   disabled?: boolean;
   size?: ButtonSize;

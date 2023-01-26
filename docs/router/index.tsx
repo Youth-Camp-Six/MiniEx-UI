@@ -6,6 +6,7 @@ import Docs from '../views/doc/Doc';
 import Home from '../views/home/Home';
 import ButtonDoc from '../docs/button/ButtonDoc';
 import TextDoc from '../docs/text/TextDoc';
+import MenuDoc from '../docs/menu/MenuDoc';
 
 // todo 修改router类型
 export const router: any = createHashRouter([
@@ -29,6 +30,10 @@ export const router: any = createHashRouter([
           {
             path: '/doc/text',
             element: <TextDoc />,
+          },
+          {
+            path: '/doc/menu',
+            element: <MenuDoc />,
           },
         ],
       },
