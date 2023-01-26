@@ -7,7 +7,7 @@ export interface MenuProps {
   mode?: MenuMode;
   style?: React.CSSProperties;
   onSelect?: (selectedIndex: number) => void;
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 export interface MenuItemProps {
@@ -15,7 +15,7 @@ export interface MenuItemProps {
   disabled?: boolean;
   className?: string;
   style?: React.CSSProperties;
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 export interface IMenuContext {
