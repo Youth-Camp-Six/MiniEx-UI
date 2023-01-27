@@ -2,8 +2,8 @@ import React, { memo, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
 import { Menu, MenuItem } from '../../../src';
 import { useNavigate } from 'react-router-dom';
-import { IRouterConfig, ISiderbarConfig } from '../../views/doc/Doc.type';
-import { siderbarConfig } from '../../views/doc/Doc.config';
+import { IRouterConfig, ISiderbarConfig } from '../../views/doc/doc.type';
+import { siderbarConfig } from '../../views/doc/doc.config';
 
 interface IProps {
   children?: ReactNode;

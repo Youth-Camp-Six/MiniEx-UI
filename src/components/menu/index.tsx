@@ -1,5 +1,5 @@
-import Menu from './Menu';
-import MenuItem from './MenuItem';
+import Menu from './menu';
+import MenuItem from './menuItem';
 
 export type { MenuProps, MenuItemProps } from './type';
 export { Menu, MenuItem };

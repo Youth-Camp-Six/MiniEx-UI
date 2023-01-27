@@ -1,12 +1,11 @@
 import React from 'react';
 import { createHashRouter } from 'react-router-dom';
 
-import Main from '../layout/main/Main';
-import Docs from '../views/doc/Doc';
-import Home from '../views/home/Home';
-import ButtonDoc from '../docs/button/ButtonDoc';
-import TextDoc from '../docs/text/TextDoc';
-import MenuDoc from '../docs/menu/MenuDoc';
+import Main from '../layout/main/main';
+import Docs from '../views/doc/doc';
+import Home from '../views/home/home';
+import ButtonDoc from '../docs/button/button-doc';
+import MenuDoc from '../docs/menu/menu-doc';
 
 // todo 修改router类型
 export const router = createHashRouter([
@@ -26,10 +25,6 @@ export const router = createHashRouter([
           {
             path: '/doc/button',
             element: <ButtonDoc />,
-          },
-          {
-            path: '/doc/text',
-            element: <TextDoc />,
           },
           {
             path: '/doc/menu',

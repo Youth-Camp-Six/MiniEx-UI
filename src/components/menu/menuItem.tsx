@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { MenuItemProps } from './type';
 import classNames from 'classnames';
-import { MenuContext } from './Menu';
+import { MenuContext } from './menu';
 
 const MenuItem: React.FC<MenuItemProps> = (props) => {
   const { index, disabled, className, style, children } = props;

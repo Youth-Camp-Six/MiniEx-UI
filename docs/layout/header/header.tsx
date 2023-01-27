@@ -1,5 +1,5 @@
 import React, { memo, useState } from 'react';
-import cls from './Header.module.less';
+import cls from './header.module.less';
 import { Link } from 'react-router-dom';
 import { Button } from '../../../src';
 

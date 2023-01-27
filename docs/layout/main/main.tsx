@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
-import Header from '../header/Header';
+import Header from '../header/header';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
-import cls from './Main.module.less';
+import cls from './main.module.less';
 
 const Main: React.FC = () => {
   const location = useLocation();

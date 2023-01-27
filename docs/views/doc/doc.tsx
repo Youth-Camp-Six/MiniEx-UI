@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 import { Outlet } from 'react-router-dom';
-import Siderbar from '../../layout/siderbar/Siderbar';
-import { siderbarConfig } from './Doc.config';
-import cls from './Doc.module.less';
+import Siderbar from '../../layout/siderbar/siderbar';
+import { siderbarConfig } from './doc.config';
+import cls from './doc.module.less';
 
 const Doc: React.FC = () => {
   return (
