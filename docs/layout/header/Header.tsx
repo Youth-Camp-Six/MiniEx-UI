@@ -25,7 +25,7 @@ const Header: React.FC = () => {
         <Link to='/home'>
           <Button btnType='link'>首页</Button>
         </Link>
-        <Link to='/doc'>
+        <Link to='/doc/button'>
           <Button btnType='link'>文档</Button>
         </Link>
         <Button onClick={handleModule}>{themeMode}</Button>
