@@ -16,7 +16,9 @@ const Main: React.FC = () => {
   return (
     <div className={cls.main}>
       <Header />
-      <Outlet />
+      <div className={cls.content}>
+        <Outlet />
+      </div>
     </div>
   );
 };

@@ -9,7 +9,7 @@ import TextDoc from '../docs/text/TextDoc';
 import MenuDoc from '../docs/menu/MenuDoc';
 
 // todo 修改router类型
-export const router: any = createHashRouter([
+export const router = createHashRouter([
   {
     path: '/',
     element: <Main />,

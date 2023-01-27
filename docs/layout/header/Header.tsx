@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import cls from './Header.module.less';
 import { Link } from 'react-router-dom';
-// import { Button } from '../../../packages';
+import { Button } from '../../../src';
 
 const Header: React.FC = () => {
   return (
@@ -11,12 +11,10 @@ const Header: React.FC = () => {
       </div>
       <div className='right'>
         <Link to='/home'>
-          {/* <Button btnType='link'>首页</Button> */}
-          <button>首页</button>
+          <Button btnType='link'>首页</Button>
         </Link>
         <Link to='/doc'>
-          {/* <Button btnType='link'>文档</Button> */}
-          <button>文档</button>
+          <Button btnType='link'>文档</Button>
         </Link>
       </div>
     </div>

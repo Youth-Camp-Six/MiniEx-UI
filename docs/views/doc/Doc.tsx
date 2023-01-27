@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
-import { Outlet, Link } from 'react-router-dom';
-
+import { Outlet } from 'react-router-dom';
+import Siderbar from '../../layout/siderbar/Siderbar';
+import { siderbarConfig } from './Doc.config';
 import cls from './Doc.module.less';
 
 const Doc: React.FC = () => {
@@ -8,18 +9,10 @@ const Doc: React.FC = () => {
     <div className={cls.doc}>
       {/* 侧边栏 */}
       <div className={cls.siderbar}>
-        <div>
-          <Link to='/doc/button'>button</Link>
-        </div>
-        <div>
-          <Link to='/doc/text'>text</Link>
-        </div>
-        <div>
-          <Link to='/doc/menu'>menu</Link>
-        </div>
+        <Siderbar config={siderbarConfig} />
       </div>
       {/* 组件展示 */}
-      <div className='content'>
+      <div className={cls.content}>
         <Outlet />
       </div>
     </div>
