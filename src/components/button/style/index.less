@@ -1,0 +1,111 @@
+@import './mixin.less';
+
+.btn {
+  position: relative;
+  display: inline-block;
+  color: var(--mi-black-text-color);
+  font-weight: 500;
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: middle;
+  background-image: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  .mixin-button-size(
+    0.45rem,
+    0.75rem,
+    var(--mi-font-size-medium),
+    var(--mi-border-radius)
+  );
+  // 禁用时
+  &.disabled,
+  &[disabled] {
+    box-shadow: none;
+    cursor: not-allowed;
+    opacity: var(--mi-disabled-opacity);
+
+    > * {
+      // 阻止字元素鼠标事件
+      pointer-events: none;
+    }
+  }
+}
+
+.btn-lg {
+  .mixin-button-size(
+    0.6rem,
+    1rem,
+    var(--mi-font-size-large),
+    var(--mi-border-radius)
+  );
+}
+
+.btn-sm {
+  .mixin-button-size(
+    0.35rem,
+    0.5rem,
+    var(--mi-font-size-small),
+    var(--mi-border-radius)
+  );
+}
+
+.btn-primary {
+  .mixin-button-style(
+    var(--mi-primary-color),
+    var(--mi-primary-color),
+    var(--mi-white-text-color),
+    var(--mi-primary-color-hover),
+    var(--mi-primary-color-hover),
+    var(--mi-white-text-color),
+    var(--mi-primary-color-active),
+    var(--mi-primary-color-active),
+    var(--mi-white-text-color),
+  );
+}
+
+.btn-danger {
+  .mixin-button-style(
+    var(--mi-error-color),
+    var(--mi-error-color),
+    var(--mi-white-text-color),
+    var(--mi-error-color-hover),
+    var(--mi-error-color-hover),
+    var(--mi-white-text-color),
+    var(--mi-error-color-active),
+    var(--mi-error-color-active),
+    var(--mi-white-text-color),
+  );
+}
+
+.btn-default {
+  .mixin-button-style(
+    var(--mi-normal-color);
+    var(--mi-normal-color-dark);
+    var(---mi-normal-text-color);
+    var(--mi-normal-color-hover);
+    var(--mi-normal-color-dark);
+    var(---mi-normal-text-color);
+    var(--mi-normal-color-active);
+    var(--mi-normal-color-dark);
+    var(---mi-normal-text-color);
+  );
+}
+
+.btn-link {
+  .mixin-button-style(
+    transparent,
+    none,
+    var(--mi-primary-color),
+    var(--mi-bgcolor-2),
+    var(--mi-bgcolor-2),
+    var(--mi-primary-color-hover),
+    var(--mi-bgcolor-3),
+    var(--mi-bgcolor-3),
+    var(--mi-primary-color-active)
+  );
+
+  box-shadow: none;
+}
