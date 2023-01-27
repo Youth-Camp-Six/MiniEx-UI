@@ -12,6 +12,10 @@ export const siderbarConfig: ISiderbarConfig[] = [
         title: 'Menu 菜单',
         path: '/doc/menu',
       },
+      {
+        title: 'Title 标题',
+        path: '/doc/title',
+      },
     ],
   },
 ];
