@@ -13,6 +13,10 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', 'less', 'css'],
+    fallback: {
+      path: require.resolve('path-browserify'),
+      fs: false,
+    },
   },
   module: {
     rules: [
@@ -31,6 +35,22 @@ module.exports = {
       {
         test: /\.less$/,
         use: ['style-loader', 'css-loader', 'less-loader', 'postcss-loader'],
+      },
+      {
+        test: /\.mdx?$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
+            },
+          },
+          {
+            loader: '@mdx-js/loader',
+            /** @type {import('@mdx-js/loader').Options} */
+            options: {},
+          },
+        ],
       },
     ],
   },

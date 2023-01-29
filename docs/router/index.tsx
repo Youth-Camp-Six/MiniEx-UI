@@ -4,9 +4,10 @@ import { createHashRouter } from 'react-router-dom';
 import Main from '../layout/main/main';
 import Docs from '../views/doc/doc';
 import Home from '../views/home/home';
-import ButtonDoc from '../docs/button/button-doc';
-import MenuDoc from '../docs/menu/menu-doc';
-import TitleDoc from '../docs/title/title-doc';
+
+import Menu from '../components-docs/menu.mdx';
+import Button from '../components-docs/button.mdx';
+import Title from '../components-docs/title.mdx';
 
 // todo 修改router类型
 export const router = createHashRouter([
@@ -25,15 +26,15 @@ export const router = createHashRouter([
         children: [
           {
             path: '/doc/button',
-            element: <ButtonDoc />,
+            element: <Button />,
           },
           {
             path: '/doc/menu',
-            element: <MenuDoc />,
+            element: <Menu />,
           },
           {
             path: '/doc/title',
-            element: <TitleDoc />,
+            element: <Title />,
           },
         ],
       },
