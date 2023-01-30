@@ -2,6 +2,8 @@
 
 node_modules/
 dist/
+coverage/
+packages/
 
 .idea
 .vscode
@@ -9,5 +11,4 @@ dist/
 .DS_Store
 
 .eslintcache
-
-coverage
+.stylelintcache
