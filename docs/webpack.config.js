@@ -18,6 +18,9 @@ module.exports = {
       fs: false,
     },
   },
+  experiments: {
+    topLevelAwait: true,
+  },
   module: {
     rules: [
       {

@@ -20,6 +20,7 @@
   "author": "Whiskeyi",
   "license": "MIT",
   "dependencies": {
+    "@mdx-js/mdx": "^2.2.1",
     "@testing-library/react": "^13.4.0",
     "@types/react-dom": "^18.0.10",
     "autoprefixer": "^9.8.6",
@@ -33,6 +34,7 @@
     "postcss": "^8.1.6",
     "postcss-loader": "^4.0.4",
     "react-router-dom": "6",
+    "remark-mdx-images": "^2.0.0",
     "style-loader": "^1.2.1",
     "ts-loader": "~8.2.0",
     "webpack-dev-server": "^4.11.1"

@@ -72,6 +72,6 @@ declare module '*.less' {
 }
 
 declare module '*.mdx' {
-  let MDXComponent: (props: any) => any;
+  let MDXComponent: any;
   export default MDXComponent;
 }
