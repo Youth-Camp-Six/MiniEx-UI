@@ -65,5 +65,8 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --quiet --cache --fix"
+  },
+  "resolutions": {
+    "eslint": "8.28.0"
   }
 }
