@@ -9,6 +9,7 @@ const user = {
   home: '',
   dark: true,
   pay: '',
+  src: 'https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668',
 };
 
 const sexOtions = [

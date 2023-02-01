@@ -3,22 +3,25 @@ import type { ReactNode } from 'react';
 import confetti from 'canvas-confetti';
 import cls from './home.module.less';
 import { user, sexOtions, hobbyOptions, homeOptions, breadcrumbOptions, list } from './home.config';
-import { Flex } from '../../../src/components/flex/index';
-import { Title } from '../../../src/components/title/index';
-import { Badge } from '../../../src/components/badge/index';
-import { Avatar } from '../../../src/components/avatar/index';
-import { Tag } from '../../../src/components/tag/index';
-import { Button } from '../../../src/components/button/index';
-import { Breadcrumb } from '../../../src/components/breadcrumb/index';
-import { Tabs } from '../../../src/components/tabs/index';
-import { Popover } from '../../../src/components/popover/index';
-import { Input } from '../../../src/components/input/index';
-import { Form, FormItem } from '../../../src/components/form/index';
-import { RadioGroup } from '../../../src/components/radio/index';
-import { CheckboxGroup } from '../../../src/components/checkbox/index';
-import { InputTag } from '../../../src/components/input-tag/index';
-import { Switch } from '../../../src/components/switch/index';
-import { Alert } from '../../../src/components/alert/index';
+import {
+  Flex,
+  Title,
+  Badge,
+  Avatar,
+  Tag,
+  Button,
+  Breadcrumb,
+  Tabs,
+  Popover,
+  Input,
+  Form,
+  FormItem,
+  RadioGroup,
+  CheckboxGroup,
+  InputTag,
+  Switch,
+  Alert,
+} from '../../../src';
 
 const Home: React.FC = () => {
   useEffect(() => {
@@ -94,24 +97,16 @@ const Home: React.FC = () => {
             </Flex>
             <Flex x={'end'} gap={20}>
               <Badge round={'round'} value={'99+'}>
-                <Avatar src={'https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668'}></Avatar>
+                <Avatar src={user.src}></Avatar>
               </Badge>
               <Badge type={'info'} round={'round'} value={'99+'}>
-                <Avatar src={'https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668'} />
+                <Avatar src={user.src} />
               </Badge>
               <Badge round={'round'} value={'99+'}>
-                <Avatar
-                  src='https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668'
-                  status='online'
-                  statusPosition='bottom-left'
-                />
+                <Avatar src={user.src} status='online' statusPosition='bottom-left' />
               </Badge>
               <Badge round={'round'} value={'99+'}>
-                <Avatar
-                  src='https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668'
-                  status={'processing'}
-                  statusPosition={'bottom-right'}
-                />
+                <Avatar src={user.src} status={'processing'} statusPosition={'bottom-right'} />
               </Badge>
             </Flex>
             <Flex x={'end'} gap={20}>
