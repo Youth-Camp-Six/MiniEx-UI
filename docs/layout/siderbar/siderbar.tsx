@@ -1,7 +1,7 @@
 import React, { memo, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
 import { Menu, MenuItem } from '../../../src';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { IRouterConfig, ISiderbarConfig } from '../../views/doc/doc.type';
 import { siderbarConfig } from '../../views/doc/doc.config';
 
@@ -12,19 +12,33 @@ interface IProps {
 
 const Siderbar: React.FC<IProps> = () => {
   const [menuConfig, setMenuConfig] = useState<IRouterConfig[]>([]);
+  const location = useLocation();
 
   useEffect(() => {
     setMenuConfig([]);
-    siderbarConfig.forEach((item) => {
-      setMenuConfig((prev) => [...prev, { title: item.title, disabled: true }]);
-      setMenuConfig((prev) => [...prev, ...item.children]);
-    });
-  }, []);
+    if (location.pathname.indexOf('/zh/') >= 0) {
+      setMenuConfig([
+        { title: siderbarConfig[1].title, disabled: true },
+        ...siderbarConfig[1].children,
+      ]);
+    } else {
+      setMenuConfig([
+        { title: siderbarConfig[0].title, disabled: true },
+        ...siderbarConfig[0].children,
+      ]);
+    }
+  }, [location]);
 
   const navgate = useNavigate();
 
   const handleClick = (index: number) => {
-    navgate(menuConfig[index].path as string);
+    let lng: string;
+    if (location.pathname.indexOf('/zh/') >= 0) {
+      lng = '/zh';
+    } else {
+      lng = '/en';
+    }
+    navgate((lng + menuConfig[index].path) as string);
   };
 
   return (
