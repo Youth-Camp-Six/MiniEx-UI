@@ -1,0 +1,131 @@
+.popover-body {
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.HomeWrapper {
+    width: 100%;
+    perspective: 800;
+    overflow: hidden;
+    -webkit-perspective: 800;
+
+    .startbox {
+        position: fixed;
+        left: 50px;
+        top: 50px;
+        z-index: 99;
+        animation: start 3s ease;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+        opacity: 0;
+
+        .slogan {
+            display: flex;
+            font-size: 50px;
+            font-weight: 900;
+            cursor: pointer;
+
+            .dm {
+                width: 50px;
+                overflow: hidden;
+
+                .text {
+                    display: flex;
+                    transition: all 0.5s ease;
+                }
+            }
+        }
+
+        .slogan:hover {
+            .text {
+                transform: translateX(-100%);
+            }
+        }
+    }
+
+    .home {
+        min-height: 100vh;
+        box-sizing: border-box;
+        animation: demo 3s ease;
+        transform: scale(1) rotateX(0deg) rotateY(0deg);
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+        opacity: 0;
+        margin-top: -50px;
+
+        .item {
+            flex-shrink: 0;
+            width: 420px;
+            height: calc(100vh - 70px);
+        }
+    }
+
+    @keyframes demo {
+        from {
+            opacity: 0;
+            transform: scale(0.8) rotateX(0deg) rotateY(0deg);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1.2) rotateX(15deg) rotateY(-15deg);
+        }
+    }
+
+    @keyframes start {
+        from {
+            opacity: 0;
+            transform: translateY(15%);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0%);
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .HomeWrapper {
+        .startbox {
+            left: 50%;
+            top: 25px;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        @keyframes start {
+            from {
+                opacity: 0;
+                transform: translate(-50%, 100%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate(-50%, 50%);
+            }
+        }
+
+        @keyframes demo {
+            from {
+                opacity: 0;
+                transform: scale(0.3) translate(-320px, 200px) rotateX(0deg)
+                    rotateY(0deg);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(0.5) translate(-320px, 200px) rotateX(15deg)
+                    rotateY(-15deg);
+            }
+        }
+
+        .home {
+            .item {
+                flex-shrink: 0;
+                width: 300px;
+                height: calc(100vh - 70px);
+            }
+        }
+    }
+}

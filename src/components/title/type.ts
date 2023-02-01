@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-type TitleSize = 's' | 'm' | 'l' | 'xl' | 'xxl';
+type TitleSize = 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl';
 
 export interface BaseTitleProps {
   size?: TitleSize;

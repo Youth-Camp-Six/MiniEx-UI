@@ -1,0 +1,82 @@
+.mi-tabs {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: auto;
+    background: var(--mi-bgcolor-3);
+    border-radius: var(--mi-border-radius);
+    overflow: hidden;
+    user-select: none;
+    .mi-tabs-item {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9;
+        height: 28px;
+        padding: 0px 12px;
+        box-sizing: border-box;
+        border-radius: var(--mi-border-radius);
+        margin: 3px;
+        color: var(--mi-text-color-5);
+        white-space: nowrap;
+        cursor: pointer;
+        font-size: 14px;
+    }
+    .mi-tabs-item-active {
+        color: var(--mi-primary-color-dark);
+    }
+
+    .mi-tabs-item-animation-active {
+        position: absolute;
+        top: 3px;
+        left: 0px;
+        z-index: 9;
+        height: 28px;
+        border-radius: 3px;
+        transition: all 0.25s cubic-bezier(0.65, 0, 0.35, 1);
+        background: var(--mi-bgcolor-0);
+        transform: translateX(3px);
+        box-shadow: 0px 0px 30px var(--mi-border-3);
+    }
+}
+
+.mi-tabs-line {
+    background: none;
+    border-bottom: var(--mi-form-border-width) var(--mi-form-border-color)
+        solid;
+    padding-bottom: 5px;
+    .mi-tabs-item:hover {
+        background: var(--mi-bgcolor-2);
+    }
+    .mi-tabs-item-active {
+        background: none;
+    }
+    .mi-tabs-item-active:hover {
+        transition: all 0.25s cubic-bezier(0.65, 0, 0.35, 1);
+        background: none;
+    }
+    .mi-tabs-item-animation-active {
+        position: absolute;
+        top: auto;
+        bottom: 0px;
+        left: 0px;
+        z-index: 9;
+        height: 2px;
+        border-radius: 2px;
+        transition: all 0.25s cubic-bezier(0.65, 0, 0.35, 1);
+        background: var(--mi-primary-color);
+        transform: translateX(3px);
+        box-shadow: 0px 0px 5px var(--mi-border-3);
+    }
+}
+
+.mi-tabs-round {
+    border-radius: 35px;
+    .mi-tabs-item {
+        border-radius: 35px;
+    }
+    .mi-tabs-item-animation-active {
+        border-radius: 35px;
+    }
+}
