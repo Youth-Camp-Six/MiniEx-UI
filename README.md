@@ -2,7 +2,7 @@
 ![issues](https://img.shields.io/github/issues/Youth-Camp-Six/MiniEx-UI)
 [![GitHub forks](https://img.shields.io/github/forks/Youth-Camp-Six/MiniEx-UI)](https://github.com/Youth-Camp-Six/MiniEx-UI/network)
 [![GitHub stars](https://img.shields.io/github/stars/Youth-Camp-Six/MiniEx-UI)](https://github.com/Youth-Camp-Six/MiniEx-UI/stargazers)
-![Vsersion](https://img.shields.io/badge/npm-1.0.0-green)
+![Vsersion](https://img.shields.io/badge/npm-1.0.3-green)
 
 # MiniEx-UI
 
