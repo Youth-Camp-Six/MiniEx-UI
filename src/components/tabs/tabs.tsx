@@ -64,8 +64,7 @@ export const Tabs: React.FC<TabsProps> = (props) => {
     }
     init();
     window.addEventListener('resize', debounce, false);
-    //eslint-disable-next-line
-    }, [])
+  }, []);
   return (
     <div className={classes} style={{ width: `${width}` }} {...restProps}>
       <div
