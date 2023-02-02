@@ -1,14 +1,15 @@
 type Options = {
-    label: string;
-    value: string;
+  label: string;
+  value: string;
 };
 
 export interface TabsProps {
-    className?: string;
-    modelValue?: string;
-    options: Options[];
-    width?: String;
-    itemWidth?: String;
-    round?: String;
-    type?: string
+  className?: string;
+  modelValue?: string;
+  options: Options[];
+  width?: string;
+  itemWidth?: string;
+  round?: string;
+  change?: (e: any) => void;
+  type?: string;
 }

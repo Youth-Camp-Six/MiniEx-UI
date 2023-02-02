@@ -1,5 +1,5 @@
 import React, { memo, useEffect } from 'react';
-import type { ReactNode } from 'react';
+import { useNavigate } from 'react-router-dom';
 import confetti from 'canvas-confetti';
 import cls from './home.module.less';
 import { user, sexOtions, hobbyOptions, homeOptions, breadcrumbOptions, list } from './home.config';
@@ -64,6 +64,7 @@ const Home: React.FC = () => {
       });
     }, 300);
   }, []);
+  const navigate = useNavigate();
   return (
     <div className={cls.HomeWrapper}>
       <div className={cls.startbox}>
@@ -76,7 +77,14 @@ const Home: React.FC = () => {
           </div>
         </div>
         <p style={{ margin: '10px' }}>一个 React 组件库</p>
-        <Button btnType='primary'>开始使用</Button>
+        <Button
+          btnType='primary'
+          onClick={() => {
+            navigate('/doc/button');
+          }}
+        >
+          开始使用
+        </Button>
       </div>
       <div className={cls.home}>
         <Flex direction={'x'} gap={40}>
