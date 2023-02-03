@@ -7,7 +7,7 @@ import Main from '../layout/main/main';
 import Docs from '../views/doc/doc';
 import Home from '../views/home/home';
 
-import MenuUS from '../components-docs/MenuUS.mdx';
+import MenuUS from '../components-docs/menuUS.mdx';
 import MenuCN from '../components-docs/menuCN.mdx';
 import ButtonUS from '../components-docs/buttonUS.mdx';
 import ButtonCN from '../components-docs/buttonCN.mdx';
