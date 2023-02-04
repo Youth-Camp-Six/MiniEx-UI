@@ -2,7 +2,15 @@ import React, { memo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import confetti from 'canvas-confetti';
 import cls from './home.module.less';
-import { user, sexOtions, hobbyOptions, homeOptions, breadcrumbOptions, list } from './home.config';
+import {
+  user,
+  sexOtions,
+  hobbyOptions,
+  homeOptions,
+  breadcrumbOptions,
+  list,
+  dropdownOptions,
+} from './home.config';
 import {
   Flex,
   Title,
@@ -12,7 +20,7 @@ import {
   Button,
   Breadcrumb,
   Tabs,
-  Popover,
+  Dropdown,
   Input,
   Form,
   FormItem,
@@ -66,14 +74,12 @@ const Home: React.FC = () => {
   }, []);
   const navigate = useNavigate();
   return (
-    <div className={cls.HomeWrapper}>
+    <div className={cls.homewrapper}>
       <div className={cls.startbox}>
         <div className={cls.slogan}>
-          少就是
+          构建属于你的
           <div className={cls.dm}>
-            <div className={cls.text}>
-              <span>多</span> <span>美</span>
-            </div>
+            <div className={cls.text}>{/* <span>style</span> <span>美</span> */}</div>
           </div>
         </div>
         <p style={{ margin: '10px' }}>一个 React 组件库</p>
@@ -96,11 +102,11 @@ const Home: React.FC = () => {
               <Title size={'xl'} style={{ fontWeight: '400' }}>
                 MiniEX Design
               </Title>
-              <Title size={'xxl'} style={{ fontWeight: '600' }}>
+              <Title size={'xxl'} style={{ fontWeight: '400' }}>
                 MiniEX Design
               </Title>
               <Title size={'xxxl'} style={{ fontWeight: '800' }}>
-                MiniEX Design
+                MiniEX <span className={cls.design}>Design</span>
               </Title>
             </Flex>
             <Flex x={'end'} gap={20}>
@@ -138,12 +144,20 @@ const Home: React.FC = () => {
               <Tabs options={homeOptions}></Tabs>
             </Flex>
             <Flex x={'end'} gap={20}>
-              <Button>取消</Button>
-              <Button disabled>确定</Button>
-              <Button btnType='primary'>确定</Button>
-              <Popover trigger={'789'} arrow={true} placement={111}>
-                456456
-              </Popover>
+              <Dropdown trigger={'hover'} arrow={true} placement={'top'} options={dropdownOptions}>
+                {
+                  <Button className='mi-tag-normal' style={{ border: 0 }}>
+                    trigger hover
+                  </Button>
+                }
+              </Dropdown>
+              <Dropdown trigger={'click'} arrow={true} placement={'top'} options={dropdownOptions}>
+                {
+                  <Button className='mi-tag-normal' style={{ border: 0 }}>
+                    trigger click
+                  </Button>
+                }
+              </Dropdown>
             </Flex>
           </Flex>
           <Flex className={cls.item}>

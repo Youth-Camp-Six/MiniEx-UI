@@ -1,131 +1,137 @@
 .popover-body {
-    padding: 10px;
-    box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px;
 }
 
-.HomeWrapper {
-    width: 100%;
-    perspective: 800;
-    overflow: hidden;
-    -webkit-perspective: 800;
+.homewrapper {
+  width: 100%;
+  overflow: hidden;
+  perspective: 800;
+  perspective: 800;
 
-    .startbox {
-        position: fixed;
-        left: 50px;
-        top: 50px;
-        z-index: 99;
-        animation: start 3s ease;
-        animation-fill-mode: forwards;
-        animation-delay: 0.5s;
-        opacity: 0;
+  .startbox {
+    position: fixed;
+    top: 75px;
+    left: 50px;
+    z-index: 99;
+    opacity: 0;
+    animation: start 3s ease;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
 
-        .slogan {
-            display: flex;
-            font-size: 50px;
-            font-weight: 900;
-            cursor: pointer;
+    .slogan {
+      display: flex;
+      font-weight: 900;
+      font-size: 45px;
+      cursor: pointer;
 
-            .dm {
-                width: 50px;
-                overflow: hidden;
+      .dm {
+        width: 50px;
+        overflow: hidden;
 
-                .text {
-                    display: flex;
-                    transition: all 0.5s ease;
-                }
-            }
+        .text {
+          display: flex;
+          transition: all 0.5s ease;
         }
-
-        .slogan:hover {
-            .text {
-                transform: translateX(-100%);
-            }
-        }
+      }
     }
 
-    .home {
-        min-height: 100vh;
-        box-sizing: border-box;
-        animation: demo 3s ease;
-        transform: scale(1) rotateX(0deg) rotateY(0deg);
-        animation-fill-mode: forwards;
-        animation-delay: 0.5s;
-        opacity: 0;
-        margin-top: -50px;
+    .slogan:hover {
+      .text {
+        transform: translateX(-100%);
+      }
+    }
+  }
 
-        .item {
-            flex-shrink: 0;
-            width: 420px;
-            height: calc(100vh - 70px);
-        }
+  .home {
+    box-sizing: border-box;
+    min-height: 100vh;
+    margin-top: -50px;
+    transform: scale(1) rotateX(0deg) rotateY(0deg);
+    opacity: 0;
+    animation: demo 3s ease;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+
+    .item {
+      flex-shrink: 0;
+      width: 420px;
+      height: calc(100vh - 70px);
     }
 
-    @keyframes demo {
-        from {
-            opacity: 0;
-            transform: scale(0.8) rotateX(0deg) rotateY(0deg);
-        }
+    .design {
+      color: transparent;
+      background: linear-gradient(to left, transparent, #b48df9),
+        linear-gradient(to top, transparent, #86c3ef);
+      background-clip: text;
+      background-clip: text;
+    }
+  }
 
-        to {
-            opacity: 1;
-            transform: scale(1.2) rotateX(15deg) rotateY(-15deg);
-        }
+  @keyframes demo {
+    from {
+      transform: scale(0.8) rotateX(0deg) rotateY(0deg);
+      opacity: 0;
     }
 
-    @keyframes start {
-        from {
-            opacity: 0;
-            transform: translateY(15%);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0%);
-        }
+    to {
+      transform: scale(1.2) rotateX(15deg) rotateY(-15deg);
+      opacity: 1;
     }
+  }
+
+  @keyframes start {
+    from {
+      transform: translateY(15%);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
 }
 
 @media (max-width: 767px) {
-    .HomeWrapper {
-        .startbox {
-            left: 50%;
-            top: 25px;
-            text-align: center;
-            white-space: nowrap;
-        }
-
-        @keyframes start {
-            from {
-                opacity: 0;
-                transform: translate(-50%, 100%);
-            }
-
-            to {
-                opacity: 1;
-                transform: translate(-50%, 50%);
-            }
-        }
-
-        @keyframes demo {
-            from {
-                opacity: 0;
-                transform: scale(0.3) translate(-320px, 200px) rotateX(0deg)
-                    rotateY(0deg);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(0.5) translate(-320px, 200px) rotateX(15deg)
-                    rotateY(-15deg);
-            }
-        }
-
-        .home {
-            .item {
-                flex-shrink: 0;
-                width: 300px;
-                height: calc(100vh - 70px);
-            }
-        }
+  .homewrapper {
+    .startbox {
+      top: 25px;
+      left: 50%;
+      white-space: nowrap;
+      text-align: center;
     }
+
+    @keyframes start {
+      from {
+        transform: translate(-50%, 100%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translate(-50%, 50%);
+        opacity: 1;
+      }
+    }
+
+    @keyframes demo {
+      from {
+        transform: scale(0.3) translate(-320px, 200px) rotateX(0deg) rotateY(0deg);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(0.5) translate(-320px, 200px) rotateX(15deg) rotateY(-15deg);
+        opacity: 1;
+      }
+    }
+
+    .home {
+      .item {
+        flex-shrink: 0;
+        width: 300px;
+        height: calc(100vh - 70px);
+      }
+    }
+  }
 }

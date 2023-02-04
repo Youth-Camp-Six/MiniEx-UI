@@ -1,31 +1,57 @@
 import React, { memo } from 'react';
-import classNames from 'classnames';
-import { DropdownProps } from './type';
+import { DropdownProps, DropdownOptions } from './type';
+import { Popover } from '../popover';
 
 export const Dropdown: React.FC<DropdownProps> = (props) => {
-    const { className, children, options, trigger, arrow, width, maxHeight, align, ...restProps } = props;
+  const {
+    className,
+    children,
+    options,
+    trigger,
+    arrow,
+    width,
+    maxHeight,
+    align,
+    placement,
+    ...restProps
+  } = props;
 
-    const classes = classNames('mi-badge', className, {
-        // [`mi-badge-${type}`]: type,
-        // [`mi-badge-${round}`]: round,
-    });
-
+  const DropdownBody = (arr: DropdownOptions[]) => {
     return (
-        <div>
-            {children}
-            <div></div>
-        </div>
+      <div className='mi-dropdown-body' style={{ width: `${width}`, maxHeight: `${maxHeight}` }}>
+        {arr.map((item, index) => {
+          return (
+            <div key={index} className='mi-dropdown-option' style={{ textAlign: align }}>
+              {item.label}
+            </div>
+          );
+        })}
+      </div>
     );
+  };
+
+  return (
+    <Popover
+      className={className}
+      trigger={trigger}
+      arrow={arrow}
+      placement={placement}
+      {...restProps}
+      childrenData={DropdownBody(options)}
+    >
+      {children}
+    </Popover>
+  );
 };
 
 Dropdown.defaultProps = {
-    options: [],
-    trigger: 'hover',
-    arrow: true,
-    width: '',
-    maxHeight: '300px',
-    align: 'left',
-    placement: 'bottom'
+  options: [],
+  trigger: 'hover',
+  arrow: true,
+  width: '',
+  maxHeight: '300px',
+  align: 'left',
+  placement: 'bottom',
 };
 
 export default memo(Dropdown);
