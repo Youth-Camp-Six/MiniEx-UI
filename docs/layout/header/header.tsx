@@ -1,11 +1,32 @@
 import React, { memo, useState } from 'react';
 import cls from './header.module.less';
-import { Link } from 'react-router-dom';
+import { Link, To, useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '../../../src';
+
 import myImg from '../../assets/logo.png';
+import { useTranslation } from 'react-i18next';
 
 const Header: React.FC = () => {
   const [themeMode, setThemeMode] = useState('light');
+  const { t, i18n } = useTranslation(['home']);
+  const [languageMode, setLanguageMode] = useState('en');
+  const nav = useNavigate();
+  const location = useLocation();
+
+  const onClickLanguageChange = () => {
+    let temp: To;
+    if (languageMode === 'zh') {
+      setLanguageMode('en');
+      temp = location.pathname.replace('/zh', '/en');
+      i18n.changeLanguage('en');
+      nav(temp);
+    } else {
+      setLanguageMode('zh');
+      temp = location.pathname.replace('/en', '/zh');
+      i18n.changeLanguage('zh');
+      nav(temp);
+    }
+  };
 
   const handleModule = () => {
     if (themeMode === 'light') {
@@ -26,13 +47,14 @@ const Header: React.FC = () => {
         </div>
       </div>
       <div className='right'>
-        <Link to='/home'>
-          <Button btnType='link'>首页</Button>
+        <Link to={'/' + languageMode + '/home'}>
+          <Button btnType='link'>{t('headerHome', { ns: ['home'] })}</Button>
         </Link>
-        <Link to='/doc/button'>
-          <Button btnType='link'>文档</Button>
+        <Link to={'/' + languageMode + '/doc/button'}>
+          <Button btnType='link'>{t('headerDoc', { ns: ['home'] })}</Button>
         </Link>
         <Button onClick={handleModule}>{themeMode}</Button>
+        <Button onClick={onClickLanguageChange}>{languageMode}</Button>
       </div>
     </div>
   );

@@ -1,8 +1,16 @@
 {
   "name": "miniex-ui",
-  "version": "1.0.0",
+  "author": "MiniEx-UI",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Youth-Camp-Six/MiniEx-UI.git"
+  }, 
+  "version": "1.0.3",
   "description": "a react ui libiary.",
-  "private": true,
+  "private": false,
+  "files":["packages","docs/dist"],
+  "main":"packages/miniex-ui.js",
   "scripts": {
     "dev": "webpack-dev-server --config ./docs/webpack.config.js --mode development",
     "prepare": "husky install",
@@ -17,9 +25,8 @@
   "engines": {
     "node": ">= 16"
   },
-  "author": "Whiskeyi",
-  "license": "MIT",
   "dependencies": {
+    "@mdx-js/mdx": "^2.2.1",
     "@testing-library/react": "^13.4.0",
     "@types/react-dom": "^18.0.10",
     "autoprefixer": "^9.8.6",
@@ -28,12 +35,16 @@
     "classnames": "^2.3.2",
     "css-loader": "~5.2.7",
     "dayjs": "^1.11.7",
+    "i18next": "^22.4.9",
     "less-loader": "^6.2.0",
+    "path-browserify": "^1.0.1",
     "pnpm": "^7.9.5",
     "postcss": "^8.1.6",
     "postcss-loader": "^4.0.4",
     "react-feather": "^2.0.10",
+    "react-i18next": "^12.1.4",
     "react-router-dom": "6",
+    "remark-mdx-images": "^2.0.0",
     "style-loader": "^1.2.1",
     "tippy.js": "^6.3.7",
     "ts-loader": "~8.2.0",
@@ -48,6 +59,7 @@
     "@changesets/cli": "^2.26.0",
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
+    "@mdx-js/loader": "^2.2.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@types/canvas-confetti": "^1.6.0",
     "@types/jest": "^28.1.7",
