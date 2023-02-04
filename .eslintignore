@@ -1,2 +1,3 @@
-**/dist/
-**/build/
+**/packages/
+**/node_modules/
+**/docs/dist/

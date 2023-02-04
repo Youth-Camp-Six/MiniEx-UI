@@ -1,0 +1,60 @@
+/* stylelint-disable no-descending-specificity */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  color: var(--mi-black-text-color);
+  list-style: none;
+  border-bottom: var(--mi-border-2);
+
+  > .menu-item {
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    transition: color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+      background-color 0.15s ease-in-out;
+
+    &.is-disabled {
+      color: var(--mi-text-color-7);
+      cursor: default;
+      pointer-events: none;
+    }
+
+    &.is-active {
+      // color: var(--mi-primary-color-active);
+      color: var(--mi-primary-color-dark);
+      border-bottom: 2px solid var(--mi-primary-color);
+    }
+
+    &:hover {
+      background-color: var(--mi-primary-color-8);
+    }
+
+    &:active {
+      background-color: var(--mi-primary-color-7);
+    }
+  }
+}
+
+.menu-vertical {
+  flex-direction: column;
+  border-bottom: 0;
+
+  > .menu-item {
+    padding-left: calc(1rem + 2px);
+
+    &.is-active {
+      padding-left: 1rem;
+      background-color: var(--mi-primary-color-7);
+      border-bottom: 0;
+      border-left: 2px solid var(--mi-primary-color);
+    }
+
+    &:hover {
+      background-color: var(--mi-primary-color-8);
+    }
+
+    &:active {
+      background-color: var(--mi-primary-color-7);
+    }
+  }
+}
