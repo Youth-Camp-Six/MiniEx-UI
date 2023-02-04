@@ -2,8 +2,6 @@ import React, { memo, useState } from 'react';
 import cls from './header.module.less';
 import { Link, To, useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '../../../src';
-
-import myImg from '../../assets/logo.png';
 import { useTranslation } from 'react-i18next';
 
 const Header: React.FC = () => {
@@ -41,10 +39,7 @@ const Header: React.FC = () => {
   return (
     <div className={cls.header}>
       <div className='left'>
-        <div className={cls.logo}>
-          <img src={myImg} alt='' style={{ width: '30px', height: '30px' }} />
-          <span style={{ marginLeft: '10px' }}> MiniEx UI</span>
-        </div>
+        <div>MiniEx-UI</div>
       </div>
       <div className='right'>
         <Link to={'/' + languageMode + '/home'}>
