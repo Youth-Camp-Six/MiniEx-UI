@@ -1,0 +1,115 @@
+.mi-switch-view {
+    position: relative;
+    display: block;
+    width: 38px;
+    height: 24px;
+    background: var(--mi-form-bgcolor);
+    border-radius: var(--mi-border-radius);
+    transition: var(--mi-form-transition);
+    cursor: pointer;
+
+    .mi-switch-dot {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        left: 0px;
+        top: 0px;
+        border-radius: 2px;
+        background: var(--mi-white-color);
+        transition: var(--mi-form-transition);
+        transform: translate(4px, 4px);
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.08);
+    }
+
+    .mi-switch-dot::after {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        user-select: none;
+        transform: translate(-50%, -50%);
+        content: '';
+        animation: mi-loading-spinner-spin 0.65s linear infinite;
+        border-radius: 50%;
+    }
+
+    input:checked + .mi-switch-dot {
+        background: #fff;
+        transform: translate(18px, 4px);
+    }
+
+    input:checked + .mi-switch-dot:after {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes mi-loading-spinner-spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.mi-switch-loading {
+    cursor: progress;
+
+    .mi-switch-dot::after {
+        border: 2px solid rgba(0, 0, 0, 0);
+        border-left: 2px solid var(--mi-primary-color);
+        width: 10px;
+        height: 10px;
+    }
+}
+
+.mi-switch-round {
+    border-radius: 20px;
+
+    .mi-switch-dot {
+        border-radius: 50px;
+    }
+}
+
+.mi-switch-view:hover {
+    background: var(--mi-form-bgcolor-hover);
+}
+
+.mi-switch-view:active {
+    background: var(--mi-form-bgcolor-active);
+
+    .mi-switch-dot {
+        width: 20px;
+    }
+}
+
+.mi-switch-view.mi-switch-checked {
+    background: var(--mi-primary-color);
+}
+
+.mi-switch-view.mi-switch-checked:hover {
+    background: var(--mi-primary-color);
+}
+
+.mi-switch-view.mi-switch-checked:active {
+    background: var(--mi-primary-color);
+
+    .mi-switch-dot {
+        width: 20px;
+        transform: translate(14px, 4px);
+    }
+}
+
+.mi-switch-view.mi-switch-request {
+    .mi-switch-dot {
+        width: 16px;
+        transform: translate(4px, 4px);
+    }
+}
+
+.mi-switch-view.mi-switch-checked.mi-switch-request {
+    .mi-switch-dot {
+        width: 16px;
+        transform: translate(18px, 4px);
+    }
+}
