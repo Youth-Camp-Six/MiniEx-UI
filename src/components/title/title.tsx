@@ -4,11 +4,11 @@ import { TitleProps } from './type';
 
 const sizeMap = {
   s: '14px',
-  m: '16px',  
+  m: '16px',
   l: '18px',
-  xl: '24px',
-  xxl: '32px',
-  xxxl: '40px',
+  xl: '21px',
+  xxl: '24px',
+  xxxl: '27px',
 };
 
 export const Title: React.FC<TitleProps> = (props) => {
@@ -17,8 +17,8 @@ export const Title: React.FC<TitleProps> = (props) => {
   const classes = classNames('mi-title', className);
 
   const styles = {
-    fontSize: sizeMap[size],
     ...style,
+    fontSize: sizeMap[size],
   };
 
   return (
