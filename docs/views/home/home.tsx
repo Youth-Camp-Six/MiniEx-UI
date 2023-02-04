@@ -29,6 +29,7 @@ import {
   InputTag,
   Switch,
   Alert,
+  Select,
 } from '../../../src';
 
 const Home: React.FC = () => {
@@ -169,7 +170,7 @@ const Home: React.FC = () => {
                 <Input type='textarea'></Input>
               </FormItem>
               <FormItem label={'Select'}>
-                <Input placeholder='请选择'></Input>
+                <Select options={homeOptions} modelValue={[]}></Select>
               </FormItem>
               <FormItem label={'Radio'}>
                 <RadioGroup modelValue={'0'} options={sexOtions}></RadioGroup>
