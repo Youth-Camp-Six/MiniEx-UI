@@ -4,7 +4,15 @@ export interface IRouterConfig {
   disabled?: boolean;
 }
 
-export interface ISiderbarConfig {
+export interface ISiderbarItemConfig {
   title: string;
-  children: IRouterConfig[];
+  children: {
+    title: string;
+    path: string;
+  }[];
+}
+
+export interface ISiderbarConfig {
+  zh: ISiderbarItemConfig[];
+  us: ISiderbarItemConfig[];
 }

@@ -2,7 +2,7 @@ import React, { memo, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
 import { Menu, MenuItem } from '../../../src';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { IRouterConfig, ISiderbarConfig } from '../../views/doc/doc.type';
+import { IRouterConfig, ISiderbarConfig, ISiderbarItemConfig } from '../../views/doc/doc.type';
 import { siderbarConfig } from '../../views/doc/doc.config';
 
 interface IProps {
@@ -14,18 +14,21 @@ const Siderbar: React.FC<IProps> = () => {
   const [menuConfig, setMenuConfig] = useState<IRouterConfig[]>([]);
   const location = useLocation();
 
+  // 将有嵌套关系的siderbarConfig降维
+  const flatSiderbarConfig = (config: ISiderbarItemConfig[]) => {
+    const group = config.map((item) => {
+      return [{ title: item.title, disabled: true }, ...item.children];
+    });
+
+    return group.flat();
+  };
+
   useEffect(() => {
     setMenuConfig([]);
     if (location.pathname.indexOf('/zh/') >= 0) {
-      setMenuConfig([
-        { title: siderbarConfig[1].title, disabled: true },
-        ...siderbarConfig[1].children,
-      ]);
+      setMenuConfig(flatSiderbarConfig(siderbarConfig.zh));
     } else {
-      setMenuConfig([
-        { title: siderbarConfig[0].title, disabled: true },
-        ...siderbarConfig[0].children,
-      ]);
+      setMenuConfig(flatSiderbarConfig(siderbarConfig.us));
     }
   }, [location]);
 

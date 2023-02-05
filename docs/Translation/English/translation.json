@@ -1,5 +1,6 @@
 {
     "language": "English",
     "headerHome": "Home",
-    "headerDoc": "Document"
+    "headerDoc": "Document",
+    "headerdev": "Dev"
 }
