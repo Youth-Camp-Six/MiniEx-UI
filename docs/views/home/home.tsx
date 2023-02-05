@@ -97,16 +97,16 @@ const Home: React.FC = () => {
         <Flex direction={'x'} gap={40}>
           <Flex className={cls.item} gap={40} x={'end'} direction={'y'}>
             <Flex gap={0} x={'end'} direction={'y'}>
-              <Title size={'m'} style={{ fontWeight: '200' }}>
+              <Title size={'m'} style={{ fontWeight: '200', margin: '0' }}>
                 MiniEX Design
               </Title>
-              <Title size={'xl'} style={{ fontWeight: '400' }}>
+              <Title size={'xl'} style={{ fontWeight: '400', margin: '0' }}>
                 MiniEX Design
               </Title>
-              <Title size={'xxl'} style={{ fontWeight: '400' }}>
+              <Title size={'xxl'} style={{ fontWeight: '400', margin: '0' }}>
                 MiniEX Design
               </Title>
-              <Title size={'xxxl'} style={{ fontWeight: '800' }}>
+              <Title size={'xxxl'} style={{ fontWeight: '800', margin: '0' }}>
                 MiniEX <span className={cls.design}>Design</span>
               </Title>
             </Flex>
@@ -170,19 +170,19 @@ const Home: React.FC = () => {
                 <Input type='textarea'></Input>
               </FormItem>
               <FormItem label={'Select'}>
-                <Select options={homeOptions} modelValue={[]}></Select>
+                <Select options={homeOptions}></Select>
               </FormItem>
               <FormItem label={'Radio'}>
-                <RadioGroup modelValue={'0'} options={sexOtions}></RadioGroup>
+                <RadioGroup options={sexOtions}></RadioGroup>
               </FormItem>
               <FormItem label={'Checkbox'}>
-                <CheckboxGroup modelValue={[1, 2]} options={hobbyOptions}></CheckboxGroup>
+                <CheckboxGroup options={hobbyOptions}></CheckboxGroup>
               </FormItem>
               <FormItem label={'InputTag'}>
-                <InputTag modelValue={user.tags}></InputTag>
+                <InputTag></InputTag>
               </FormItem>
               <FormItem label={'Switch'}>
-                <Switch modelValue={true}></Switch>
+                <Switch></Switch>
               </FormItem>
             </Form>
           </Flex>

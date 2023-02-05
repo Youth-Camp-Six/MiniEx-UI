@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { TabsProps } from './type';
 
 export const Tabs: React.FC<TabsProps> = (props) => {
-  const { className, modelValue, options, width, itemWidth, round, change, type, ...restProps } =
+  const { className, modelvalue, options, width, itemWidth, round, change, type, ...restProps } =
     props;
 
   const classes = classNames('mi-tabs', className, {
@@ -13,7 +13,7 @@ export const Tabs: React.FC<TabsProps> = (props) => {
 
   const [activeWidth, setactiveWidth] = useState('');
   const [activetranslateX, setactivetranslateX] = useState('');
-  const [v, setactiveV] = useState(modelValue);
+  const [v, setactiveV] = useState(modelvalue);
 
   const itemRef = [] as any;
 
@@ -38,13 +38,13 @@ export const Tabs: React.FC<TabsProps> = (props) => {
       const activeRef = itemRef[index];
       setactiveWidth(activeRef.offsetWidth);
       setactivetranslateX(activeRef.offsetLeft);
-      if (change && v != modelValue) {
+      if (change && v != modelvalue) {
         change({
           label: _item.label,
           value: _item.value,
           activeIndex: index,
         });
-        // modelValue = v
+        // modelvalue = v
       }
       curIndex = index;
     }
@@ -59,11 +59,12 @@ export const Tabs: React.FC<TabsProps> = (props) => {
   };
 
   useEffect(() => {
-    if (modelValue == '') {
+    if (modelvalue == '') {
       setactiveV(options[0].value);
     }
     init();
     window.addEventListener('resize', debounce, false);
+    //eslint-disable-next-line
   }, []);
   return (
     <div className={classes} style={{ width: `${width}` }} {...restProps}>
@@ -93,7 +94,7 @@ export const Tabs: React.FC<TabsProps> = (props) => {
 };
 
 Tabs.defaultProps = {
-  modelValue: '',
+  modelvalue: '',
   options: [],
   width: '',
   itemWidth: '',

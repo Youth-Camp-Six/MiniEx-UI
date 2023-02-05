@@ -5,7 +5,7 @@ type Options = {
 
 export interface TabsProps {
   className?: string;
-  modelValue?: string;
+  modelvalue?: string;
   options: Options[];
   width?: string;
   itemWidth?: string;

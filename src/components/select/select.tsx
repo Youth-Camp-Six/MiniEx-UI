@@ -6,7 +6,7 @@ import { Popover, MiIcon, Tag, Flex, Checkbox } from '../../index';
 export const Select: React.FC<selectProps> = (props) => {
   const {
     className,
-    // modelValue,
+    // modelvalue,
     options,
     placement,
     trigger,
@@ -142,7 +142,7 @@ export const Select: React.FC<selectProps> = (props) => {
 };
 
 Select.defaultProps = {
-  modelValue: [],
+  modelvalue: [],
   options: [],
   placement: 'bottom-start',
   trigger: 'click',

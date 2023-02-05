@@ -7,7 +7,7 @@ export type SelectOptions = {
 type sizeRules = 'small' | 'medium' | 'large';
 export interface selectProps {
   className?: string;
-  modelValue: string[];
+  modelvalue?: string[];
   options: SelectOptions[];
   placement?: string;
   trigger?: string;
