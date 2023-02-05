@@ -26,11 +26,12 @@ await compile(TitleCN, { remarkPlugins: [remarkMdxImages] });
 
 // 判断是否存在/views/dev/dev组件, 若存在则引入
 const requireCustomFile = require.context('../views/dev/', false, /dev.tsx$/);
-let DevCmp = React.lazy(() => import('../views/not-found/not-found'));
-if (requireCustomFile?.keys()) {
-  const keys: string[] = requireCustomFile?.keys();
+let Dev = React.lazy(() => import('../views/not-found/not-found'));
+if (requireCustomFile.keys()?.length) {
+  const keys: string[] = requireCustomFile.keys();
   if (keys.includes('./dev.tsx')) {
-    DevCmp = React.lazy(() => import('../views/dev/dev'));
+    const str = '/dev';
+    Dev = React.lazy(() => import(`../views/dev${str}`));
   }
 }
 
@@ -53,7 +54,7 @@ export const router = createHashRouter([
         path: '/en/dev',
         element: (
           <React.Suspense fallback='loading..'>
-            <DevCmp />
+            <Dev />
           </React.Suspense>
         ),
         errorElement: <NotFound />,
@@ -91,7 +92,7 @@ export const router = createHashRouter([
         path: '/zh/dev',
         element: (
           <React.Suspense fallback='loading..'>
-            <DevCmp />
+            <Dev />
           </React.Suspense>
         ),
         errorElement: <NotFound />,
