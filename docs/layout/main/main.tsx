@@ -8,7 +8,7 @@ const Main: React.FC = () => {
   const nav = useNavigate();
 
   React.useEffect(() => {
-    if (location.pathname == '/') {
+    if (location.pathname === '/') {
       nav('/home');
     }
   }, [location]);
