@@ -50,6 +50,9 @@ const Header: React.FC = () => {
         <Link to={'/' + languageMode + '/home'}>
           <Button btnType='link'>{t('headerHome', { ns: ['home'] })}</Button>
         </Link>
+        <Link to={'/' + languageMode + '/dev'}>
+          <Button btnType='link'>{t('headerdev', { ns: ['home'] })}</Button>
+        </Link>
         <Link to={'/' + languageMode + '/doc/button'}>
           <Button btnType='link'>{t('headerDoc', { ns: ['home'] })}</Button>
         </Link>
