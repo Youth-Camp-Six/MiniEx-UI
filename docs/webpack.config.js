@@ -40,6 +40,14 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'less-loader', 'postcss-loader'],
       },
       {
+        test: /\.(png|jpg|jpeg|gif)$/i,
+        use: ['file-loader'],
+      },
+      {
+        test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+        use: ['file-loader?name=assets/[name].[ext]'],
+      },
+      {
         test: /\.mdx?$/,
         use: [
           {

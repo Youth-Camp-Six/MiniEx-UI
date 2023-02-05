@@ -2,6 +2,23 @@ import { ISiderbarConfig } from './doc.type';
 
 export const siderbarConfig: ISiderbarConfig[] = [
   {
+    title: 'Basic Components',
+    children: [
+      {
+        title: 'Button',
+        path: '/doc/button',
+      },
+      {
+        title: 'Menu',
+        path: '/doc/menu',
+      },
+      {
+        title: 'Title',
+        path: '/doc/title',
+      },
+    ],
+  },
+  {
     title: '基础组件',
     children: [
       {

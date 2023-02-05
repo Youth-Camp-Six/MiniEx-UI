@@ -1,0 +1,37 @@
+.mi-input-tag-view {
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 5px 0px;
+    box-sizing: border-box;
+
+    .mi-input-tag {
+        height: 26px;
+        flex-shrink: 1;
+
+        ::v-deep input {
+            height: 26px;
+        }
+    }
+}
+
+.mi-input-tag-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 26px;
+    width: 65px;
+    box-sizing: border-box;
+    border-radius: var(--mi-border-radius);
+    background-color: var(--mi-bgcolor-0);
+    color: var(--mi-text-color-8);
+    border: var(--mi-text-color-8) var(--mi-form-border-width) dashed;
+}
+
+.mi-input-tag-button:hover {
+    color: var(--mi-primary-color);
+    border: var(--mi-primary-color) var(--mi-form-border-width) dashed;
+}
