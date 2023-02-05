@@ -1,5 +1,8 @@
 lockfileVersion: 5.4
 
+overrides:
+  eslint: 8.28.0
+
 specifiers:
   '@babel/core': 7.16.7
   '@babel/eslint-parser': ^7.19.1
@@ -29,7 +32,7 @@ specifiers:
   commitlint: ^17.4.2
   css-loader: ~5.2.7
   dayjs: ^1.11.7
-  eslint: ^8.19.0
+  eslint: 8.28.0
   eslint-config-prettier: ^8.5.0
   eslint-plugin-import: ^2.26.0
   eslint-plugin-prettier: ^4.2.1

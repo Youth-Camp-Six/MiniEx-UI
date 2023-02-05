@@ -35,8 +35,6 @@
     "Android > 4.1",
     "Firefox > 20"
   ],
-  "author": "Whiskeyi",
-  "license": "MIT",
   "dependencies": {
     "@mdx-js/mdx": "^2.2.1",
     "@testing-library/react": "^13.4.0",
@@ -120,5 +118,8 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
     "*.{css,less}": "stylelint --cache --fix"
+  },
+  "resolutions": {
+    "eslint": "8.28.0"
   }
 }
