@@ -13,6 +13,13 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', 'less', 'css'],
+    fallback: {
+      path: require.resolve('path-browserify'),
+      fs: false,
+    },
+  },
+  experiments: {
+    topLevelAwait: true,
   },
   module: {
     rules: [
@@ -39,6 +46,22 @@ module.exports = {
       {
         test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
         use: ['file-loader?name=assets/[name].[ext]'],
+      },
+      {
+        test: /\.mdx?$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
+            },
+          },
+          {
+            loader: '@mdx-js/loader',
+            /** @type {import('@mdx-js/loader').Options} */
+            options: {},
+          },
+        ],
       },
     ],
   },
