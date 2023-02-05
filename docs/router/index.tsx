@@ -11,6 +11,8 @@ import MenuUS from '../components-docs/menuUS.mdx';
 import MenuCN from '../components-docs/menuCN.mdx';
 import ButtonUS from '../components-docs/buttonUS.mdx';
 import ButtonCN from '../components-docs/buttonCN.mdx';
+import SelectUS from '../components-docs/selectUS.mdx';
+import SelectCN from '../components-docs/selectCN.mdx';
 import TitleUS from '../components-docs/titleUS.mdx';
 import TitleCN from '../components-docs/titleCN.mdx';
 
@@ -20,6 +22,8 @@ await compile(MenuUS, { remarkPlugins: [remarkMdxImages] });
 await compile(MenuCN, { remarkPlugins: [remarkMdxImages] });
 await compile(ButtonUS, { remarkPlugins: [remarkMdxImages] });
 await compile(ButtonCN, { remarkPlugins: [remarkMdxImages] });
+await compile(SelectUS, { remarkPlugins: [remarkMdxImages] });
+await compile(SelectCN, { remarkPlugins: [remarkMdxImages] });
 await compile(TitleUS, { remarkPlugins: [remarkMdxImages] });
 await compile(TitleCN, { remarkPlugins: [remarkMdxImages] });
 // todo 修改router类型
@@ -54,6 +58,10 @@ export const router = createHashRouter([
             path: '/en/doc/title',
             element: <TitleUS />,
           },
+          {
+            path: '/en/doc/select',
+            element: <SelectUS />,
+          },
         ],
       },
     ],
@@ -82,6 +90,10 @@ export const router = createHashRouter([
           {
             path: '/zh/doc/title',
             element: <TitleCN />,
+          },
+          {
+            path: '/zh/doc/select',
+            element: <SelectCN />,
           },
         ],
       },

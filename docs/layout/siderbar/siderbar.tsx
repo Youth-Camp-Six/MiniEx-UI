@@ -16,16 +16,21 @@ const Siderbar: React.FC<IProps> = () => {
 
   useEffect(() => {
     setMenuConfig([]);
+    const menuZN: IRouterConfig[] = [],
+      menuUS: IRouterConfig[] = [];
+    for (let i = 0; i < siderbarConfig.length; i++) {
+      if (i % 2) {
+        menuZN.push({ title: siderbarConfig[i].title, disabled: true });
+        menuZN.push(...siderbarConfig[i].children);
+      } else {
+        menuUS.push({ title: siderbarConfig[i].title, disabled: true });
+        menuUS.push(...siderbarConfig[i].children);
+      }
+    }
     if (location.pathname.indexOf('/zh/') >= 0) {
-      setMenuConfig([
-        { title: siderbarConfig[1].title, disabled: true },
-        ...siderbarConfig[1].children,
-      ]);
+      setMenuConfig(menuZN);
     } else {
-      setMenuConfig([
-        { title: siderbarConfig[0].title, disabled: true },
-        ...siderbarConfig[0].children,
-      ]);
+      setMenuConfig(menuUS);
     }
   }, [location]);
 

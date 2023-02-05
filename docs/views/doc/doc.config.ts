@@ -35,4 +35,22 @@ export const siderbarConfig: ISiderbarConfig[] = [
       },
     ],
   },
+  {
+    title: 'Form',
+    children: [
+      {
+        title: 'Select',
+        path: '/doc/select',
+      },
+    ],
+  },
+  {
+    title: '表单',
+    children: [
+      {
+        title: 'Select 选择器',
+        path: '/doc/select',
+      },
+    ],
+  },
 ];
