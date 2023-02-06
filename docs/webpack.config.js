@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MkdirPlugin = require('../plugins/mkdir-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -78,6 +79,8 @@ module.exports = {
       template: './docs/index.html',
     }),
     new CleanWebpackPlugin(),
+    // 创建docs/views/dev文件夹, 用于开发组件时测试
+    new MkdirPlugin(),
   ],
   optimization: {
     moduleIds: 'deterministic',
