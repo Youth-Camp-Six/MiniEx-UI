@@ -16,6 +16,7 @@
   "main": "packages/miniex-ui.js",
   "scripts": {
     "dev": "webpack-dev-server --config ./docs/webpack.config.js --mode development",
+    "start": "webpack-dev-server --config ./docs/webpack.config.js --mode production",
     "prepare": "husky install",
     "build-pkg": "webpack --config webpack.config.js",
     "build-doc": "webpack --config ./docs/webpack.config.js"
