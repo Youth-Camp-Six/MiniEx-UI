@@ -6,14 +6,14 @@ type y = 'center' | 'start' | 'end';
 type FlexMode = '' | 'between ' | 'around';
 
 export interface FlexProps {
-    className?: string;
-    direction?: FlexDirection;
-    x?: x;
-    y?: y;
-    wrap?: Boolean;
-    mode?: FlexMode;
-    gap?: Number;
-    width?: String;
-    children: ReactNode;
+  className?: string;
+  direction?: FlexDirection;
+  x?: x;
+  y?: y;
+  wrap?: boolean;
+  mode?: FlexMode;
+  gap?: number;
+  width?: string;
+  style?: React.CSSProperties;
+  children: ReactNode;
 }
-
