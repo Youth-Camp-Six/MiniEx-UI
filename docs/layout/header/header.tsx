@@ -44,8 +44,10 @@ const Header: React.FC = () => {
     <div className={cls.header}>
       <div className='left'>
         <div className={cls.logo}>
-          <img src={myImg} alt='' style={{ width: '30px', height: '30px' }} />
-          <span style={{ marginLeft: '10px' }}> MiniEx UI</span>
+          <Link to='/'>
+            <img src={myImg} alt='' style={{ width: '30px', height: '30px' }} />
+            <span style={{ marginLeft: '10px' }}>MiniEx UI</span>
+          </Link>
         </div>
       </div>
       <div className='right'>

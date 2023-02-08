@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { Menu, MenuItem } from '../../../src';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { IRouterConfig, ISiderbarConfig, ISiderbarItemConfig } from '../../views/doc/doc.type';
-import { siderbarConfig } from '../../views/doc/doc.config';
+import { siderbarConfig } from './sidebar.config';
 
 interface IProps {
   children?: ReactNode;
