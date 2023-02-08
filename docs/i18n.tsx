@@ -1,9 +1,20 @@
 import i18next from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
-//Import all translation files
-import translationEnglish from './Translation/English/translation.json';
-import translationChinese from './Translation/Chinese/translation.json';
+const translationEnglish = {
+  language: 'English',
+  headerHome: 'Home',
+  headerDoc: 'Document',
+  headerdev: 'Dev',
+};
+
+const translationChinese = {
+  language: '中文',
+  headerHome: '首页',
+  headerDoc: '文档',
+  headerdev: '开发',
+};
+
 //---Using different namespaces
 const resources = {
   en: {
