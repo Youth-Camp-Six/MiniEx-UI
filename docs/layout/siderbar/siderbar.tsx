@@ -2,7 +2,7 @@ import React, { memo, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
 import { Menu, MenuItem } from '../../../src';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { IRouterConfig, ISiderbarConfig, ISiderbarItemConfig } from '../../views/doc/doc.type';
+import { IRouterConfig, ISiderbarConfig, ISiderbarItemConfig } from './sidebar.type';
 import { siderbarConfig } from './sidebar.config';
 
 interface IProps {
