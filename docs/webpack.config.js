@@ -3,6 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MkdirPlugin = require('../plugins/mkdir-webpack-plugin');
+// eslint-disable-next-line import/namespace, import/default, import/no-named-as-default, import/no-named-as-default-member
+import remarkMdxImages from 'remark-mdx-images';
 
 module.exports = {
   mode: 'production',
@@ -60,7 +62,9 @@ module.exports = {
           {
             loader: '@mdx-js/loader',
             /** @type {import('@mdx-js/loader').Options} */
-            options: {},
+            options: {
+              remarkPlugins: [remarkMdxImages],
+            },
           },
         ],
       },
