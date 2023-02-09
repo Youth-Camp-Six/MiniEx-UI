@@ -90,11 +90,11 @@ export const router = createHashRouter([
           },
           {
             path: '/en/doc/avatar',
-            element: <AvatarUS />,
+            element: <AvatarUS components={components} />,
           },
           {
             path: '/en/doc/dropdown',
-            element: <DropdownUS />,
+            element: <DropdownUS components={components} />,
           },
         ],
       },
@@ -136,11 +136,11 @@ export const router = createHashRouter([
           },
           {
             path: '/zh/doc/avatar',
-            element: <AvatarCN />,
+            element: <AvatarCN components={components} />,
           },
           {
             path: '/zh/doc/dropdown',
-            element: <DropdownCN />,
+            element: <DropdownCN components={components} />,
           },
         ],
       },
