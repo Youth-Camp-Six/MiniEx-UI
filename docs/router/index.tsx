@@ -12,10 +12,24 @@ import ButtonUS from '../components-docs/buttonUS.mdx';
 import ButtonCN from '../components-docs/buttonCN.mdx';
 import TitleUS from '../components-docs/titleUS.mdx';
 import TitleCN from '../components-docs/titleCN.mdx';
+import AvatarUS from '../components-docs/avatarUS.mdx';
+import AvatarCN from '../components-docs/avatarCN.mdx';
+import DropdownUS from '../components-docs/dropdownUS.mdx';
+import DropdownCN from '../components-docs/dropdownCN.mdx';
 
 import '../i18n';
 import { createHashRouter, Navigate } from 'react-router-dom';
 
+await compile(MenuUS, { remarkPlugins: [remarkMdxImages] });
+await compile(MenuCN, { remarkPlugins: [remarkMdxImages] });
+await compile(ButtonUS, { remarkPlugins: [remarkMdxImages] });
+await compile(ButtonCN, { remarkPlugins: [remarkMdxImages] });
+await compile(TitleUS, { remarkPlugins: [remarkMdxImages] });
+await compile(TitleCN, { remarkPlugins: [remarkMdxImages] });
+await compile(AvatarUS, { remarkPlugins: [remarkMdxImages] });
+await compile(AvatarCN, { remarkPlugins: [remarkMdxImages] });
+await compile(DropdownUS, { remarkPlugins: [remarkMdxImages] });
+await compile(DropdownCN, { remarkPlugins: [remarkMdxImages] });
 /**
  * 定义html标签替换组件
  */
@@ -74,6 +88,14 @@ export const router = createHashRouter([
             path: '/en/doc/title',
             element: <TitleUS components={components} />,
           },
+          {
+            path: '/en/doc/avatar',
+            element: <AvatarUS />,
+          },
+          {
+            path: '/en/doc/dropdown',
+            element: <DropdownUS />,
+          },
         ],
       },
     ],
@@ -111,6 +133,14 @@ export const router = createHashRouter([
           {
             path: '/zh/doc/title',
             element: <TitleCN components={components} />,
+          },
+          {
+            path: '/zh/doc/avatar',
+            element: <AvatarCN />,
+          },
+          {
+            path: '/zh/doc/dropdown',
+            element: <DropdownCN />,
           },
         ],
       },

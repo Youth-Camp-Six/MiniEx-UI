@@ -77,12 +77,7 @@ const Home: React.FC = () => {
   return (
     <div className={cls.homewrapper}>
       <div className={cls.startbox}>
-        <div className={cls.slogan}>
-          构建属于你的
-          <div className={cls.dm}>
-            <div className={cls.text}>{/* <span>style</span> <span>美</span> */}</div>
-          </div>
-        </div>
+        <div className={cls.slogan}>构建属于你的</div>
         <p style={{ margin: '10px' }}>一个 React 组件库</p>
         <Button
           btnType='primary'

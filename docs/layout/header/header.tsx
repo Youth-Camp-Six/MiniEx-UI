@@ -44,10 +44,23 @@ const Header: React.FC = () => {
     <div className={cls.header}>
       <div className='left'>
         <div className={cls.logo}>
-          <Link to='/'>
-            <img src={myImg} alt='' style={{ width: '30px', height: '30px' }} />
-            <span style={{ marginLeft: '10px' }}>MiniEx UI</span>
-          </Link>
+          <img
+            src={myImg}
+            alt=''
+            style={{ width: '30px', height: '30px' }}
+            onClick={() => {
+              nav('/' + languageMode + '/home');
+            }}
+          />
+          <span
+            style={{ marginLeft: '10px' }}
+            onClick={() => {
+              nav('/' + languageMode + '/home');
+            }}
+          >
+            {' '}
+            MiniEx UI
+          </span>
         </div>
       </div>
       <div className='right'>

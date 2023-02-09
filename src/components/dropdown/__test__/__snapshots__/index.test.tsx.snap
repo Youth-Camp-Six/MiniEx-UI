@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown test case1 for  1`] = `
+<div>
+  <div
+    aria-expanded="false"
+    class="mi-popover"
+    trigger="hover"
+  >
+    <label>
+      <div
+        class="trigger"
+      >
+        <button
+          class="btn btn-default"
+        >
+          hover
+        </button>
+      </div>
+    </label>
+  </div>
+  <div
+    aria-expanded="false"
+    class="mi-popover"
+    trigger="click"
+  >
+    <label>
+      <div
+        class="trigger"
+      >
+        <button
+          class="btn btn-default"
+        >
+          click
+        </button>
+      </div>
+    </label>
+  </div>
+</div>
+`;
