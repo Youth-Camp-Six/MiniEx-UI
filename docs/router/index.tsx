@@ -12,6 +12,10 @@ import ButtonUS from '../components-docs/buttonUS.mdx';
 import ButtonCN from '../components-docs/buttonCN.mdx';
 import TitleUS from '../components-docs/titleUS.mdx';
 import TitleCN from '../components-docs/titleCN.mdx';
+import AvatarUS from '../components-docs/avatarUS.mdx';
+import AvatarCN from '../components-docs/avatarCN.mdx';
+import DropdownUS from '../components-docs/dropdownUS.mdx';
+import DropdownCN from '../components-docs/dropdownCN.mdx';
 
 import '../i18n';
 import { createHashRouter, Navigate } from 'react-router-dom';
@@ -74,6 +78,14 @@ export const router = createHashRouter([
             path: '/en/doc/title',
             element: <TitleUS components={components} />,
           },
+          {
+            path: '/en/doc/avatar',
+            element: <AvatarUS components={components} />,
+          },
+          {
+            path: '/en/doc/dropdown',
+            element: <DropdownUS components={components} />,
+          },
         ],
       },
     ],
@@ -111,6 +123,14 @@ export const router = createHashRouter([
           {
             path: '/zh/doc/title',
             element: <TitleCN components={components} />,
+          },
+          {
+            path: '/zh/doc/avatar',
+            element: <AvatarCN components={components} />,
+          },
+          {
+            path: '/zh/doc/dropdown',
+            element: <DropdownCN components={components} />,
           },
         ],
       },

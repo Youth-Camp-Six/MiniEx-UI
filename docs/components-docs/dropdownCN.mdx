@@ -1,0 +1,253 @@
+import { Dropdown,Avatar,Button } from '../../src';
+// const arr = [
+//     {
+//         label: '西游记',
+//         value: '1',
+//     },
+//     {
+//         label: '水浒传',
+//         value: '2',
+//     },
+//     {
+//         label: '三国演义',
+//         value: '3',
+//     },
+//     {
+//         label: '红楼梦',
+//         value: '4',
+//     },
+// ]
+
+# 下拉菜单
+
+## 基本
+最简单的下拉菜单。
+
+<Dropdown options={[
+    {
+        label: '西游记',
+        value: '1',
+    },
+    {
+        label: '水浒传',
+        value: '2',
+    },
+    {
+        label: '三国演义',
+        value: '3',
+    },
+    {
+        label: '红楼梦',
+        value: '4',
+    },
+]} >
+  <div>纯文本</div>
+</Dropdown>
+<Dropdown options={[
+    {
+        label: '西游记',
+        value: '1',
+    },
+    {
+        label: '水浒传',
+        value: '2',
+    },
+    {
+        label: '三国演义',
+        value: '3',
+    },
+    {
+        label: '红楼梦',
+        value: '4',
+    },
+]} trigger='click'>
+  <Button>click</Button>
+</Dropdown>
+
+## 展示代码
+
+```js
+import { Dropdown, Button } from 'miniEx';
+import React from 'react';
+
+// const arr = [
+//     {
+//         label: '西游记',
+//         value: '1',
+//     },
+//     {
+//         label: '水浒传',
+//         value: '2',
+//     },
+//     {
+//         label: '三国演义',
+//         value: '3',
+//     },
+//     {
+//         label: '红楼梦',
+//         value: '4',
+//     },
+// ]
+
+const App: React.FC = () => (
+<Dropdown options={[
+    {
+        label: '西游记',
+        value: '1',
+    },
+    {
+        label: '水浒传',
+        value: '2',
+    },
+    {
+        label: '三国演义',
+        value: '3',
+    },
+    {
+        label: '红楼梦',
+        value: '4',
+    },
+]} >
+  <div>纯文本</div>
+</Dropdown>
+<Dropdown options={[
+    {
+        label: '西游记',
+        value: '1',
+    },
+    {
+        label: '水浒传',
+        value: '2',
+    },
+    {
+        label: '三国演义',
+        value: '3',
+    },
+    {
+        label: '红楼梦',
+        value: '4',
+    },
+]} trigger='click'>
+  <Button>click</Button>
+</Dropdown>
+);
+
+export default App;
+```
+
+## 配合头像使用
+
+<Dropdown options={[
+    {
+        label: '西游记',
+        value: '1',
+    },
+    {
+        label: '水浒传',
+        value: '2',
+    },
+    {
+        label: '三国演义',
+        value: '3',
+    },
+    {
+        label: '红楼梦',
+        value: '4',
+    },
+]}>
+  <Avatar status="busy" statusPosition="top-right">U</Avatar>
+</Dropdown>
+<Dropdown options={[
+    {
+        label: '西游记',
+        value: '1',
+    },
+    {
+        label: '水浒传',
+        value: '2',
+    },
+    {
+        label: '三国演义',
+        value: '3',
+    },
+    {
+        label: '红楼梦',
+        value: '4',
+    },
+]} trigger='click'>
+  <Avatar status="busy" statusPosition="top-right">U</Avatar>
+</Dropdown>
+
+## 展示代码
+
+```js
+import { Avatar, MiIcon } from 'miniEx';
+import React from 'react';
+
+// const arr = [
+//     {
+//         label: '修改头像',
+//         value: '1',
+//     },
+//     {
+//         label: '个人中心',
+//         value: '2',
+//     },
+//     {
+//         label: '开通会员',
+//         value: '3',
+//     },
+//     {
+//         label: '退出登陆',
+//         value: '4',
+//     },
+// ]
+
+const App: React.FC = () => (
+  <Dropdown options={[
+    {
+        label: '修改头像',
+        value: '1',
+    },
+    {
+        label: '个人中心',
+        value: '2',
+    },
+    {
+        label: '开通会员',
+        value: '3',
+    },
+    {
+        label: '退出登陆',
+        value: '4',
+    },
+]}>
+  <Avatar status="busy" statusPosition="top-right">U</Avatar>
+</Dropdown>
+<Dropdown options={[
+    {
+        label: '修改头像',
+        value: '1',
+    },
+    {
+        label: '个人中心',
+        value: '2',
+    },
+    {
+        label: '开通会员',
+        value: '3',
+    },
+    {
+        label: '退出登陆',
+        value: '4',
+    },
+]} trigger='click'>
+  <Avatar status="busy" statusPosition="top-right">U</Avatar>
+</Dropdown>
+);
+
+export default App;
+```
+
+
+## API

@@ -14,4 +14,5 @@ export interface DropdownProps {
   maxHeight?: string;
   align?: align | undefined;
   placement?: string;
+  handleClick?: (e: any) => void;
 }
