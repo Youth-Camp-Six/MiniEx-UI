@@ -20,16 +20,6 @@ import DropdownCN from '../components-docs/dropdownCN.mdx';
 import '../i18n';
 import { createHashRouter, Navigate } from 'react-router-dom';
 
-await compile(MenuUS, { remarkPlugins: [remarkMdxImages] });
-await compile(MenuCN, { remarkPlugins: [remarkMdxImages] });
-await compile(ButtonUS, { remarkPlugins: [remarkMdxImages] });
-await compile(ButtonCN, { remarkPlugins: [remarkMdxImages] });
-await compile(TitleUS, { remarkPlugins: [remarkMdxImages] });
-await compile(TitleCN, { remarkPlugins: [remarkMdxImages] });
-await compile(AvatarUS, { remarkPlugins: [remarkMdxImages] });
-await compile(AvatarCN, { remarkPlugins: [remarkMdxImages] });
-await compile(DropdownUS, { remarkPlugins: [remarkMdxImages] });
-await compile(DropdownCN, { remarkPlugins: [remarkMdxImages] });
 /**
  * 定义html标签替换组件
  */
