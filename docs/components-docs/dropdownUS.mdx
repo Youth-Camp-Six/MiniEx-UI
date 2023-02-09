@@ -1,0 +1,253 @@
+import { Dropdown,Avatar,Button } from '../../src';
+// const arr = [
+//     {
+//         label: 'Journey',
+//         value: '1',
+//     },
+//     {
+//         label: 'Outlaws',
+//         value: '2',
+//     },
+//     {
+//         label: 'Three kingdoms',
+//         value: '3',
+//     },
+//     {
+//         label: 'Dream',
+//         value: '4',
+//     },
+// ]
+
+# Dropdown
+
+## Basic
+The most basic dropdown menu.
+
+<Dropdown options={[
+    {
+        label: 'Journey',
+        value: '1',
+    },
+    {
+        label: 'Outlaws',
+        value: '2',
+    },
+    {
+        label: 'Three kingdoms',
+        value: '3',
+    },
+    {
+        label: 'Dream',
+        value: '4',
+    },
+]} >
+  <div>Plain text</div>
+</Dropdown>
+<Dropdown options={[
+    {
+        label: 'Journey',
+        value: '1',
+    },
+    {
+        label: 'Outlaws',
+        value: '2',
+    },
+    {
+        label: 'Three kingdoms',
+        value: '3',
+    },
+    {
+        label: 'Dream',
+        value: '4',
+    },
+]} trigger='click'>
+  <Button>click</Button>
+</Dropdown>
+
+## Show code
+
+```js
+import { Dropdown, Button } from 'miniEx';
+import React from 'react';
+
+// const arr = [
+//     {
+//         label: 'Journey',
+//         value: '1',
+//     },
+//     {
+//         label: 'Outlaws',
+//         value: '2',
+//     },
+//     {
+//         label: 'Three kingdoms',
+//         value: '3',
+//     },
+//     {
+//         label: 'Dream',
+//         value: '4',
+//     },
+// ]
+
+const App: React.FC = () => (
+<Dropdown options={[
+    {
+        label: 'Journey',
+        value: '1',
+    },
+    {
+        label: 'Outlaws',
+        value: '2',
+    },
+    {
+        label: 'Three kingdoms',
+        value: '3',
+    },
+    {
+        label: 'Dream',
+        value: '4',
+    },
+]} >
+  <div>Plain text</div>
+</Dropdown>
+<Dropdown options={[
+    {
+        label: 'Journey',
+        value: '1',
+    },
+    {
+        label: 'Outlaws',
+        value: '2',
+    },
+    {
+        label: 'Three kingdoms',
+        value: '3',
+    },
+    {
+        label: 'Dream',
+        value: '4',
+    },
+]} trigger='click'>
+  <Button>click</Button>
+</Dropdown>
+);
+
+export default App;
+```
+
+## Use with avatars
+
+<Dropdown options={[
+    {
+        label: 'Journey',
+        value: '1',
+    },
+    {
+        label: 'Outlaws',
+        value: '2',
+    },
+    {
+        label: 'Three kingdoms',
+        value: '3',
+    },
+    {
+        label: 'Dream',
+        value: '4',
+    },
+]}>
+  <Avatar status="busy" statusPosition="top-right">U</Avatar>
+</Dropdown>
+<Dropdown options={[
+    {
+        label: 'Journey',
+        value: '1',
+    },
+    {
+        label: 'Outlaws',
+        value: '2',
+    },
+    {
+        label: 'Three kingdoms',
+        value: '3',
+    },
+    {
+        label: 'Dream',
+        value: '4',
+    },
+]} trigger='click'>
+  <Avatar status="busy" statusPosition="top-right">U</Avatar>
+</Dropdown>
+
+## Show code
+
+```js
+import { Avatar, MiIcon } from 'miniEx';
+import React from 'react';
+
+// const arr = [
+//     {
+//         label: 'Modify your avatar',
+//         value: '1',
+//     },
+//     {
+//         label: 'Personal Center',
+//         value: '2',
+//     },
+//     {
+//         label: 'Open a membership',
+//         value: '3',
+//     },
+//     {
+//         label: 'Exit Login',
+//         value: '4',
+//     },
+// ]
+
+const App: React.FC = () => (
+  <Dropdown options={[
+    {
+        label: 'Modify your avatar',
+        value: '1',
+    },
+    {
+        label: 'Personal Center',
+        value: '2',
+    },
+    {
+        label: 'Open a membership',
+        value: '3',
+    },
+    {
+        label: 'Exit Login',
+        value: '4',
+    },
+]}>
+  <Avatar status="busy" statusPosition="top-right">U</Avatar>
+</Dropdown>
+<Dropdown options={[
+    {
+        label: 'Modify your avatar',
+        value: '1',
+    },
+    {
+        label: 'Personal Center',
+        value: '2',
+    },
+    {
+        label: 'Open a membership',
+        value: '3',
+    },
+    {
+        label: 'Exit Login',
+        value: '4',
+    },
+]} trigger='click'>
+  <Avatar status="busy" statusPosition="top-right">U</Avatar>
+</Dropdown>
+);
+
+export default App;
+```
+
+
+## API

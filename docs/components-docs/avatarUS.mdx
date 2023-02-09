@@ -1,23 +1,24 @@
 import { Avatar,AvatarGroup,MiIcon,Badge } from '../../src';
-import logo from '../../assets/logo.png'
-const arr = [
-    {
-      label: '',
-      value: '1',
-    },
-    {
-      src: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
-      value: '2',
-    },
-    {
-      label:'u' ,
-      value: '3',
-    },
-    {
-      label: 'k',
-      value: '4',
-    },
-  ]
+// import logo from '../../assets/logo.png'
+// const arr = [
+//     {
+//       label: '',
+//       value: '1',
+//     },
+//     {
+//       src: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
+//       value: '2',
+//     },
+//     {
+//       label:'u' ,
+//       value: '3',
+//     },
+//     {
+//       label: 'k',
+//       value: '4',
+//     },
+//   ]
+
 # Avatar
 
 ## Size
@@ -25,7 +26,7 @@ any sizes and two shapes are available.
 
 <Avatar>U</Avatar>
 <Avatar icon={<MiIcon.User></MiIcon.User>}></Avatar>
-<Avatar src={logo} round='round'></Avatar>
+<Avatar src={'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg'} round='round'></Avatar>
 
 ## Show code
 
@@ -33,12 +34,12 @@ any sizes and two shapes are available.
 import { Avatar, MiIcon } from 'miniEx';
 import React from 'react';
 
-const url = 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg';
+// const url = 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg';
 
 const App: React.FC = () => (
     <Avatar  icon={<MiIcon.User></MiIcon.User>}></Avatar>
     <Avatar >U</Avatar>
-    <Avatar  src={url} />
+    <Avatar  src={'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg'} />
 );
 
 export default App;
@@ -49,20 +50,20 @@ Image, Icon and letter are supported, and the latter two kinds of avatar can hav
 
 <Avatar width="30px" height="30px" icon={<MiIcon.User></MiIcon.User>}></Avatar>
 <Avatar width="40px" height="40px">U</Avatar>
-<Avatar width="50px" height="50px" src={url} />
+<Avatar width="50px" height="50px" src={'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg'} />
 
-## 展示代码
+## Show code
 
 ```js
 import { Avatar, MiIcon } from 'miniEx';
 import React from 'react';
 
-const url = 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg';
+// const url = 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg';
 
 const App: React.FC = () => (
   <Avatar width="30px" height="30px" icon={<MiIcon.User></MiIcon.User>}></Avatar>
     <Avatar width="40px" height="40px">U</Avatar>
-    <Avatar width="50px" height="50px" src={url} />
+    <Avatar width="50px" height="50px" src={'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg'} />
     <Avatar style={{ backgroundColor: '#fde3cf', color: '#f56a00' }}>U</Avatar>
 );
 
@@ -79,7 +80,7 @@ Usually used for reminders and notifications.
 </Badge>
 
 
-## 展示代码
+## Show code
 
 ```js
 import { Avatar, MiIcon } from 'miniEx';
@@ -100,16 +101,7 @@ export default App;
 ## Avatar.Group
 Avatar group display.
 
-<AvatarGroup options={arr}></AvatarGroup>
-<AvatarGroup options={arr} maxCount={2}></AvatarGroup>
-
-## 展示代码
-
-```js
-import { AvatarGroup } from 'miniEx';
-import React from 'react';
-
-const arr = [
+<AvatarGroup options={[
     {
       label: '',
       value: '1',
@@ -126,11 +118,88 @@ const arr = [
       label: 'k',
       value: '4',
     },
-  ]
+  ]}></AvatarGroup>
+<AvatarGroup options={[
+    {
+      label: '',
+      value: '1',
+    },
+    {
+      src: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
+      value: '2',
+    },
+    {
+      label:'u' ,
+      value: '3',
+    },
+    {
+      label: 'k',
+      value: '4',
+    },
+  ]} maxCount={2}></AvatarGroup>
+
+## Show code
+
+```js
+import { AvatarGroup } from 'miniEx';
+import React from 'react';
+
+// const  = [
+//     {
+//       label: '',
+//       value: '1',
+//     },
+//     {
+//       src: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
+//       value: '2',
+//     },
+//     {
+//       label:'u' ,
+//       value: '3',
+//     },
+//     {
+//       label: 'k',
+//       value: '4',
+//     },
+//   ]
 
 const App: React.FC = () => (
-    <AvatarGroup options={arr}></AvatarGroup>
-      <AvatarGroup options={arr} maxCount={2}></AvatarGroup>
+    <AvatarGroup options={[
+    {
+      label: '',
+      value: '1',
+    },
+    {
+      src: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
+      value: '2',
+    },
+    {
+      label:'u' ,
+      value: '3',
+    },
+    {
+      label: 'k',
+      value: '4',
+    },
+  ]}></AvatarGroup>
+      <AvatarGroup options={[
+    {
+      label: '',
+      value: '1',
+    },
+    {
+      src: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
+      value: '2',
+    },
+    {
+      label:'u' ,
+      value: '3',
+    },
+    {
+      label: 'k',
+      value: '4',
+    },
+  ]} maxCount={2}></AvatarGroup>
 );
 
 export default App;

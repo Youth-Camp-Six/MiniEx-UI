@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar test case1 for types (string | src | icon) 1`] = `
+<div>
+  <div
+    class="mi-avatar"
+    style="width: 40px; height: 40px;"
+  >
+    <div
+      class="icon-box"
+    >
+      <span
+        style="transform: scale(1); font-size: 18px;"
+      >
+        U
+      </span>
+    </div>
+  </div>
+  <div
+    class="mi-avatar"
+    style="width: 40px; height: 40px;"
+  >
+    <div
+      class="icon-box"
+    >
+      <svg
+        fill="none"
+        height="24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="5"
+          r="3"
+        />
+        <line
+          x1="12"
+          x2="12"
+          y1="22"
+          y2="8"
+        />
+        <path
+          d="M5 12H2a10 10 0 0 0 20 0h-3"
+        />
+      </svg>
+    </div>
+  </div>
+  <div
+    class="mi-avatar"
+    style="width: 40px; height: 40px;"
+  >
+    <img
+      alt=""
+      class=""
+      src="https://api.lew.kamtao.com/manage/common/avatar/350/4B78CA/李"
+    />
+  </div>
+</div>
+`;
