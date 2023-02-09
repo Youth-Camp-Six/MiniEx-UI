@@ -1,0 +1,138 @@
+import { Avatar,AvatarGroup,MiIcon,Badge } from '../../src';
+import logo from '../../assets/logo.png'
+const arr = [
+    {
+      label: '',
+      value: '1',
+    },
+    {
+      src: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
+      value: '2',
+    },
+    {
+      label:'u' ,
+      value: '3',
+    },
+    {
+      label: 'k',
+      value: '4',
+    },
+  ]
+# 头像
+
+## 类型
+头像可自定义尺寸，两种形状可选。
+
+<Avatar>U</Avatar>
+<Avatar icon={<MiIcon.User></MiIcon.User>}></Avatar>
+<Avatar src={logo} round='round'></Avatar>
+
+## 展示代码
+
+```js
+import { Avatar, MiIcon } from 'miniEx';
+import React from 'react';
+
+const url = 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg';
+
+const App: React.FC = () => (
+    <Avatar  icon={<MiIcon.User></MiIcon.User>}></Avatar>
+    <Avatar >U</Avatar>
+    <Avatar  src={url} />
+);
+
+export default App;
+```
+
+## 尺寸
+支持三种类型：图片、Icon 以及字符，其中 Icon 和字符型可以自定义图标颜色及背景色。
+
+<Avatar width="30px" height="30px" icon={<MiIcon.User></MiIcon.User>}></Avatar>
+<Avatar width="40px" height="40px">U</Avatar>
+<Avatar width="50px" height="50px" src={url} />
+
+## 展示代码
+
+```js
+import { Avatar, MiIcon } from 'miniEx';
+import React from 'react';
+
+const url = 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg';
+
+const App: React.FC = () => (
+  <Avatar width="30px" height="30px" icon={<MiIcon.User></MiIcon.User>}></Avatar>
+    <Avatar width="40px" height="40px">U</Avatar>
+    <Avatar width="50px" height="50px" src={url} />
+    <Avatar style={{ backgroundColor: '#fde3cf', color: '#f56a00' }}>U</Avatar>
+);
+
+export default App;
+```
+
+## 带徽标的头像
+通常用于消息提示。
+
+<Avatar status="busy" statusPosition="top-right">U</Avatar>
+<Avatar status="online" statusPosition="bottom-right">U</Avatar>
+<Badge value="15">
+   <Avatar>U</Avatar>
+</Badge>
+
+
+## 展示代码
+
+```js
+import { Avatar, MiIcon } from 'miniEx';
+import React from 'react';
+
+const App: React.FC = () => (
+  <Avatar status="busy" statusPosition="top-right">U</Avatar>
+<Avatar status="online" statusPosition="bottom-right">U</Avatar>
+<Badge value="15">
+   <Avatar>U</Avatar>
+</Badge>
+);
+
+export default App;
+```
+
+
+## 头像组
+头像组合展现。
+
+<AvatarGroup options={arr}></AvatarGroup>
+<AvatarGroup options={arr} maxCount={2}></AvatarGroup>
+
+## 展示代码
+
+```js
+import { AvatarGroup } from 'miniEx';
+import React from 'react';
+
+const arr = [
+    {
+      label: '',
+      value: '1',
+    },
+    {
+      src: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
+      value: '2',
+    },
+    {
+      label:'u' ,
+      value: '3',
+    },
+    {
+      label: 'k',
+      value: '4',
+    },
+  ]
+
+const App: React.FC = () => (
+    <AvatarGroup options={arr}></AvatarGroup>
+      <AvatarGroup options={arr} maxCount={2}></AvatarGroup>
+);
+
+export default App;
+```
+## API
