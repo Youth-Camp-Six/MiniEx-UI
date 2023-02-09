@@ -1,3 +1,5 @@
+const isDev = process.env.NODE_ENV === 'development';
+
 import React, { memo, useState } from 'react';
 import cls from './header.module.less';
 import { Link, To, useLocation, useNavigate } from 'react-router-dom';
@@ -65,9 +67,11 @@ const Header: React.FC = () => {
         <Link to={'/' + languageMode + '/home'}>
           <Button btnType='link'>{t('headerHome', { ns: ['home'] })}</Button>
         </Link>
-        <Link to={'/' + languageMode + '/dev'}>
-          <Button btnType='link'>{t('headerdev', { ns: ['home'] })}</Button>
-        </Link>
+        {isDev && (
+          <Link to={'/' + languageMode + '/dev'}>
+            <Button btnType='link'>{t('headerdev', { ns: ['home'] })}</Button>
+          </Link>
+        )}
         <Link to={'/' + languageMode + '/doc/button'}>
           <Button btnType='link'>{t('headerDoc', { ns: ['home'] })}</Button>
         </Link>

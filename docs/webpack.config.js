@@ -2,7 +2,9 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
+const MkdirPlugin = require('../plugins/mkdir-webpack-plugin');
+// eslint-disable-next-line import/namespace, import/default, import/no-named-as-default, import/no-named-as-default-member
+// import remarkMdxImages from 'remark-mdx-images';
 module.exports = {
   mode: 'production',
   devtool: 'source-map',
@@ -16,6 +18,9 @@ module.exports = {
     fallback: {
       path: require.resolve('path-browserify'),
       fs: false,
+    },
+    alias: {
+      '@': path.resolve(__dirname),
     },
   },
   experiments: {
@@ -59,7 +64,9 @@ module.exports = {
           {
             loader: '@mdx-js/loader',
             /** @type {import('@mdx-js/loader').Options} */
-            options: {},
+            options: {
+              // remarkPlugins: [remarkMdxImages],
+            },
           },
         ],
       },
@@ -78,6 +85,8 @@ module.exports = {
       template: './docs/index.html',
     }),
     new CleanWebpackPlugin(),
+    // 创建docs/views/dev文件夹, 用于开发组件时测试
+    new MkdirPlugin(),
   ],
   optimization: {
     moduleIds: 'deterministic',

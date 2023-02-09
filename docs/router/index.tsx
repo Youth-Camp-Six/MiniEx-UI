@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react';
-import remarkMdxImages from 'remark-mdx-images';
-import { compile } from '@mdx-js/mdx';
+import CodeBlock from './components/code-block';
 
 import Main from '../layout/main/main';
 import Docs from '../views/doc/doc';
@@ -31,6 +30,12 @@ await compile(AvatarUS, { remarkPlugins: [remarkMdxImages] });
 await compile(AvatarCN, { remarkPlugins: [remarkMdxImages] });
 await compile(DropdownUS, { remarkPlugins: [remarkMdxImages] });
 await compile(DropdownCN, { remarkPlugins: [remarkMdxImages] });
+/**
+ * 定义html标签替换组件
+ */
+const components = {
+  code: CodeBlock,
+};
 
 // 判断是否存在/views/dev/dev组件, 若存在则引入
 const requireCustomFile = require.context('../views/dev/', false, /dev.tsx$/);
@@ -73,15 +78,15 @@ export const router = createHashRouter([
         children: [
           {
             path: '/en/doc/button',
-            element: <ButtonUS />,
+            element: <ButtonUS components={components} />,
           },
           {
             path: '/en/doc/menu',
-            element: <MenuUS />,
+            element: <MenuUS components={components} />,
           },
           {
             path: '/en/doc/title',
-            element: <TitleUS />,
+            element: <TitleUS components={components} />,
           },
           {
             path: '/en/doc/avatar',
@@ -119,15 +124,15 @@ export const router = createHashRouter([
         children: [
           {
             path: '/zh/doc/button',
-            element: <ButtonCN />,
+            element: <ButtonCN components={components} />,
           },
           {
             path: '/zh/doc/menu',
-            element: <MenuCN />,
+            element: <MenuCN components={components} />,
           },
           {
             path: '/zh/doc/title',
-            element: <TitleCN />,
+            element: <TitleCN components={components} />,
           },
           {
             path: '/zh/doc/avatar',

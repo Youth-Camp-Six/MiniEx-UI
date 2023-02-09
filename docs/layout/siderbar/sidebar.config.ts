@@ -1,4 +1,4 @@
-import { ISiderbarConfig } from './doc.type';
+import { ISiderbarConfig } from './sidebar.type';
 
 export const siderbarConfig: ISiderbarConfig = {
   us: [
