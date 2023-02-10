@@ -32,6 +32,10 @@ export const siderbarConfig: ISiderbarConfig = {
       title: 'Data Display',
       children: [
         {
+          title: 'Avatar',
+          path: '/doc/avatar',
+        },
+        {
           title: 'Title',
           path: '/doc/title',
         },
@@ -60,6 +64,10 @@ export const siderbarConfig: ISiderbarConfig = {
       title: '导航',
       children: [
         {
+          title: 'Dropdown 下拉菜单',
+          path: '/doc/dropdown',
+        },
+        {
           title: 'Menu 菜单',
           path: '/doc/menu',
         },
@@ -72,6 +80,10 @@ export const siderbarConfig: ISiderbarConfig = {
     {
       title: '数据展示',
       children: [
+        {
+          title: 'Avatar 头像',
+          path: '/doc/avatar',
+        },
         {
           title: 'Title 标题',
           path: '/doc/title',
