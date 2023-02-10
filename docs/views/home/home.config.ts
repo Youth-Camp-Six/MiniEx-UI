@@ -5,6 +5,7 @@ const user = {
   sex: '1',
   hobby: [],
   tags: ['美丽', '大方'],
+  tagsUS: ['Beautiful', 'generous'],
   school: '',
   home: '',
   dark: true,
@@ -17,12 +18,23 @@ const sexOtions = [
   { label: '男', value: '1' },
   { label: '女', value: '2' },
 ];
+const sexOtionsUS = [
+  { label: 'Unknown', value: '0' },
+  { label: 'man', value: '1' },
+  { label: 'woman', value: '2' },
+];
 
 const hobbyOptions = [
   { label: '唱歌', value: 1 },
   { label: '跳', value: 2 },
   { label: 'rap', value: 3 },
   { label: '打篮球', value: 44 },
+];
+const hobbyOptionsUS = [
+  { label: 'sing', value: 1 },
+  { label: 'jump', value: 2 },
+  { label: 'rap', value: 3 },
+  { label: 'Play basketball', value: 44 },
 ];
 const homeOptions = [
   {
@@ -46,6 +58,28 @@ const homeOptions = [
     value: '5',
   },
 ];
+const homeOptionsUS = [
+  {
+    label: 'Guangdong',
+    value: '1',
+  },
+  {
+    label: 'Shenzhen',
+    value: '2',
+  },
+  {
+    label: 'Hangzhou',
+    value: '3',
+  },
+  {
+    label: 'Shanghai',
+    value: '4',
+  },
+  {
+    label: 'Beijing',
+    value: '5',
+  },
+];
 
 const breadcrumbOptions = [
   {
@@ -66,7 +100,33 @@ const breadcrumbOptions = [
     active: true,
   },
 ];
+const breadcrumbOptionsUS = [
+  {
+    label: 'Home',
+    to: '/',
+  },
+  {
+    label: 'React',
+    to: 'https://react.docschina.org/',
+  },
+  {
+    label: 'List of goods',
+    to: '',
+  },
+  {
+    label: 'Product details',
+    to: '',
+    active: true,
+  },
+];
 
+const tabSoptionsUS = [
+  { label: 'Beijing', value: '1' },
+  { label: 'Shanghai', value: '2' },
+  { label: 'Guangzhou', value: '3' },
+  { label: 'Shenzhen', value: '4' },
+  { label: 'urumchi', value: '5' },
+];
 const tabSoptions = [
   { label: '北京', value: '1' },
   { label: '上海', value: '2' },
@@ -90,6 +150,24 @@ const dropdownOptions = [
   },
   {
     label: '红楼梦',
+    value: '4',
+  },
+];
+const dropdownOptionsUS = [
+  {
+    label: 'Journey',
+    value: '1',
+  },
+  {
+    label: 'Outlaws',
+    value: '2',
+  },
+  {
+    label: 'Three kingdoms',
+    value: '3',
+  },
+  {
+    label: 'Dream',
     value: '4',
   },
 ];
@@ -122,14 +200,49 @@ const list = [
     content: '',
   },
 ];
+const listUS = [
+  {
+    type: 'info',
+    title: 'A message was sent successfully',
+    content: '',
+  },
+  {
+    type: 'normal',
+    title: 'A message was sent successfully',
+    content: '',
+  },
+  {
+    type: 'warning',
+    title: 'A message was sent successfully',
+    content: '',
+  },
+
+  {
+    type: 'error',
+    title: 'A message was sent successfully',
+    content: '',
+  },
+  {
+    type: 'success',
+    title: 'A message was sent successfully',
+    content: '',
+  },
+];
 
 export {
   user,
   sexOtions,
+  sexOtionsUS,
   hobbyOptions,
+  hobbyOptionsUS,
   homeOptions,
+  homeOptionsUS,
   breadcrumbOptions,
+  breadcrumbOptionsUS,
+  tabSoptionsUS,
   tabSoptions,
   dropdownOptions,
+  dropdownOptionsUS,
   list,
+  listUS,
 };

@@ -3,7 +3,8 @@ import CodeBlock from './components/code-block';
 
 import Main from '../layout/main/main';
 import Docs from '../views/doc/doc';
-import Home from '../views/home/home';
+import HomeCN from '../views/home/homeZH';
+import HomeUS from '../views/home/homeUS';
 import NotFound from '../views/not-found/not-found';
 
 import MenuUS from '../components-docs/menuUS.mdx';
@@ -50,7 +51,7 @@ export const router = createHashRouter([
     children: [
       {
         path: 'home',
-        element: <Home />,
+        element: <HomeUS />,
         children: [],
       },
       {
@@ -96,7 +97,7 @@ export const router = createHashRouter([
     children: [
       {
         path: 'home',
-        element: <Home />,
+        element: <HomeCN />,
         children: [],
       },
       {

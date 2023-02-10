@@ -7,6 +7,7 @@ export const Select: React.FC<selectProps> = (props) => {
   const {
     className,
     // modelvalue,
+    placeholder,
     options,
     placement,
     trigger,
@@ -107,7 +108,7 @@ export const Select: React.FC<selectProps> = (props) => {
       >
         <MiIcon.ChevronDown size='16px' className='mi-select-icon'></MiIcon.ChevronDown>
         {(!multiple && labelStr.length == 0) || (multiple && multipleLabelStr.length == 0) ? (
-          <div className='mi-select-placeholder'>请选择</div>
+          <div className='mi-select-placeholder'>{placeholder}</div>
         ) : null}
         {/* 单选 or 多选*/}
         {!multiple ? (
@@ -151,6 +152,7 @@ Select.defaultProps = {
   showIcon: true,
   labelSlot: false,
   size: 'medium',
+  placeholder: '请选择',
 };
 
 export default memo(Select);
