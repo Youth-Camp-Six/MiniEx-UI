@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breadcrumb test all TabsProps  1`] = `
+<div>
+  <div
+    class="mi-tabs mi-tabs-block"
+  >
+    <div
+      class="mi-tabs-item-animation-active"
+      style="transform: translateX(0px); width: 0px;"
+    />
+    <div
+      class="mi-tabs-item mi-tabs-item-active"
+    >
+      北京
+    </div>
+    <div
+      class="mi-tabs-item "
+    >
+      上海
+    </div>
+    <div
+      class="mi-tabs-item "
+    >
+      广州
+    </div>
+    <div
+      class="mi-tabs-item "
+    >
+      深圳
+    </div>
+    <div
+      class="mi-tabs-item "
+    >
+      乌鲁木齐
+    </div>
+  </div>
+   
+  <br />
+  <br />
+  <div
+    class="mi-tabs mi-tabs-block mi-tabs-round"
+  >
+    <div
+      class="mi-tabs-item-animation-active"
+      style="transform: translateX(0px); width: 0px;"
+    />
+    <div
+      class="mi-tabs-item mi-tabs-item-active"
+    >
+      Light
+    </div>
+    <div
+      class="mi-tabs-item "
+    >
+      Dark
+    </div>
+  </div>
+  <br />
+  <br />
+  <div
+    class="mi-tabs mi-tabs-line"
+  >
+    <div
+      class="mi-tabs-item-animation-active"
+      style="transform: translateX(0px); width: 0px;"
+    />
+    <div
+      class="mi-tabs-item mi-tabs-item-active"
+    >
+      北京
+    </div>
+    <div
+      class="mi-tabs-item "
+    >
+      上海
+    </div>
+    <div
+      class="mi-tabs-item "
+    >
+      广州
+    </div>
+    <div
+      class="mi-tabs-item "
+    >
+      深圳
+    </div>
+    <div
+      class="mi-tabs-item "
+    >
+      乌鲁木齐
+    </div>
+  </div>
+  <br />
+  <br />
+  <div
+    class="mi-tabs mi-tabs-block"
+  >
+    <div
+      class="mi-tabs-item-animation-active"
+      style="transform: translateX(0px); width: 0px;"
+    />
+    <div
+      class="mi-tabs-item mi-tabs-item-active"
+      style="width: 120px;"
+    >
+      北京
+    </div>
+    <div
+      class="mi-tabs-item "
+      style="width: 120px;"
+    >
+      上海
+    </div>
+    <div
+      class="mi-tabs-item "
+      style="width: 120px;"
+    >
+      广州
+    </div>
+    <div
+      class="mi-tabs-item "
+      style="width: 120px;"
+    >
+      深圳
+    </div>
+    <div
+      class="mi-tabs-item "
+      style="width: 120px;"
+    >
+      乌鲁木齐
+    </div>
+  </div>
+</div>
+`;
