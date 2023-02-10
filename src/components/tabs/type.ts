@@ -12,4 +12,5 @@ export interface TabsProps {
   round?: string;
   change?: (e: any) => void;
   type?: string;
+  style?: React.CSSProperties;
 }

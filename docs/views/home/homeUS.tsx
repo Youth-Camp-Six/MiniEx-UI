@@ -128,7 +128,7 @@ const Home: React.FC = () => {
             </Flex>
             <Flex x={'end'} gap={20}>
               <Button>Cancel</Button>
-              <Button disabled>Confirm</Button>Breadcrumb
+              <Button disabled>Confirm</Button>
               <Button btnType='primary'>Confirm</Button>
               <Button btnType='danger'>Confirm</Button>
               <Button btnType='link'>www.miniex.com</Button>
