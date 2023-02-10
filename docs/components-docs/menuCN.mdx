@@ -1,26 +1,38 @@
 import { Menu, MenuItem } from '../../src';
 
 # 菜单
+<div className='Menu' style={{ width: '200px' }}>
+  <Menu defaultIndex={1}>
+    <MenuItem index={1}>元素1</MenuItem>
+    <MenuItem index={2}>元素2</MenuItem>
+    <MenuItem index={3}>元素3</MenuItem>
+    <MenuItem disabled>元素4</MenuItem>
+    <MenuItem index={4}>元素5</MenuItem>
+  </Menu>
+</div>
 
-## 展示组件
+## 代码
+```ts
+import React from 'react';
+import { Button, Space } from 'antd';
 
-<Menu mode='horizontal'>
-  <MenuItem index={1}>item1</MenuItem>
-  <MenuItem index={2} disabled>
-    item2
-  </MenuItem>
-  <MenuItem index={3}>item3</MenuItem>
-</Menu>
-<Menu mode='vertical'>
-  <MenuItem index={1}>item1</MenuItem>
-  <MenuItem index={2}>item2</MenuItem>
-  <MenuItem index={3}>item3</MenuItem>
-</Menu>
+const handleSelect = (index: number) => {
+  console.log(index);
+};
 
-## 展示代码
+const Dev: React.FC = () => (
+  <div style={{ width: '200px' }}>
+    <Menu onSelect={handleSelect} defaultIndex={1}>
+      <MenuItem index={1}>元素1</MenuItem>
+      <MenuItem index={2}>元素2</MenuItem>
+      <MenuItem index={3}>元素3</MenuItem>
+      <MenuItem disabled>元素4 disabled</MenuItem>
+      <MenuItem index={4}>元素5</MenuItem>
+    </Menu>
+  </div>
+);
 
-```js
-const a = 0;
+export default memo(Dev);
 ```
 
 ## API

@@ -2,35 +2,70 @@ import { Button } from '../../src';
 
 # 按钮
 
-## 展示组件
+## 基础
 
 <Button btnType='default'>default按钮</Button>
 <Button btnType='primary'>primary按钮</Button>
 <Button btnType='danger'>danger按钮</Button>
 <Button btnType='link'>link按钮</Button>
-<Button size='lg'>lg按钮</Button>
-<Button size='sm'>sm按钮</Button>
-<Button disabled={true}>禁用按钮</Button>
 
-## 展示代码
+```ts
+import { Button } from 'miniEx';
+import React from 'react';
 
+const App: React.FC = () => (
+  <div>
+    <Button btnType='default'>default按钮</Button>
+    <Button btnType='primary'>primary按钮</Button>
+    <Button btnType='danger'>danger按钮</Button>
+    <Button btnType='link'>link按钮</Button>
+  </div>
+);
+
+export default App;
+```
+
+## 禁用样式
+
+<Button disabled btnType='default'>default按钮</Button>
+<Button disabled btnType='primary'>primary按钮</Button>
+<Button disabled btnType='danger'>danger按钮</Button>
+<Button disabled btnType='link'>link按钮</Button>
 ```js
 import { Button } from 'miniEx';
 import React from 'react';
 
-<Button btnType='default'>default按钮</Button>
+const App: React.FC = () => (
+  <div>
+    <Button disabled btnType='default'>default按钮</Button>
+    <Button disabled btnType='primary'>primary按钮</Button>
+    <Button disabled btnType='danger'>danger按钮</Button>
+    <Button disabled btnType='link'>link按钮</Button>
+  </div>
+);
 
-<Button btnType='primary'>primary按钮</Button>
+export default App;
 
-<Button btnType='danger'>danger按钮</Button>
-
-<Button btnType='link'>link按钮</Button>
-
-<Button size='lg'>lg按钮</Button>
-
-<Button size='sm'>sm按钮</Button>
-
-<Button disabled>禁用按钮</Button>
 ```
 
-## Props
+## 不同尺寸
+
+<Button size='lg'>大尺寸</Button>
+<Button>默认尺寸</Button>
+<Button size='sm'>小尺寸</Button>
+```ts
+import {Button} from 'miniEx'
+import React from 'react'
+
+const App: React.FC = () => (
+  <div>
+    <Button size='lg'>大尺寸</Button>
+    <Button>默认尺寸</Button>
+    <Button size='sm'>小尺寸</Button>
+  </div>
+);
+
+export default App
+```
+
+## 参数

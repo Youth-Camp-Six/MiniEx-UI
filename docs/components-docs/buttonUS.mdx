@@ -2,34 +2,69 @@ import { Button } from '../../src';
 
 # Button
 
-## Show Components
+## Basic
 
 <Button btnType='default'>default</Button>
 <Button btnType='primary'>primary</Button>
 <Button btnType='danger'>danger</Button>
 <Button btnType='link'>link</Button>
-<Button size='lg'>lg</Button>
-<Button size='sm'>sm</Button>
-<Button disabled>Forbideen</Button>
 
-## Show code
-
-```js
+```ts
 import { Button } from 'miniEx';
 import React from 'react';
-<Button btnType='default'>default</Button>
 
-<Button btnType='primary'>primary</Button>
+const App: React.FC = () => (
+  <div>
+    <Button btnType='default'>default</Button>
+    <Button btnType='primary'>primary</Button>
+    <Button btnType='danger'>danger</Button>
+    <Button btnType='link'>link</Button>
+  </div>
+);
 
-<Button btnType='danger'>danger</Button>
+export default App;
+```
 
-<Button btnType='link'>link</Button>
+## disabled
 
-<Button size='lg'>lg</Button>
+<Button disabled btnType='default'>default</Button>
+<Button disabled btnType='primary'>primary</Button>
+<Button disabled btnType='danger'>danger</Button>
+<Button disabled btnType='link'>link</Button>
+```ts
+import { Button } from 'miniEx';
+import React from 'react';
 
-<Button size='sm'>sm</Button>
+const App: React.FC = () => (
+  <div>
+    <Button disabled btnType='default'>default</Button>
+    <Button disabled btnType='primary'>primary</Button>
+    <Button disabled btnType='danger'>danger</Button>
+    <Button disabled btnType='link'>link</Button>
+  </div>
+);
 
-<Button disabled>Forbideen</Button>
+export default App;
+```
+
+## size
+
+<Button size="lg">large</Button>
+<Button>default</Button>
+<Button size="sm">small</Button>
+```ts
+import { Button } from 'miniEx';
+import React from 'react';
+
+const App: React.FC = () => (
+  <div>
+    <Button size="lg">large</Button>
+    <Button>default</Button>
+    <Button size="sm">small</Button>
+  </div>
+);
+
+export default memo(App);
 ```
 
 ## API
