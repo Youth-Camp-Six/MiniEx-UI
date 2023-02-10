@@ -19,8 +19,20 @@ export const siderbarConfig: ISiderbarConfig = {
       title: 'Navigation',
       children: [
         {
+          title: 'Breadcrumb ',
+          path: '/doc/breadcrumb',
+        },
+        {
+          title: 'Dropdown ',
+          path: '/doc/dropdown',
+        },
+        {
           title: 'Menu',
           path: '/doc/menu',
+        },
+        {
+          title: 'Tabs',
+          path: '/doc/tabs',
         },
       ],
     },
@@ -64,12 +76,20 @@ export const siderbarConfig: ISiderbarConfig = {
       title: '导航',
       children: [
         {
+          title: 'Breadcrumb 面包屑',
+          path: '/doc/breadcrumb',
+        },
+        {
           title: 'Dropdown 下拉菜单',
           path: '/doc/dropdown',
         },
         {
           title: 'Menu 菜单',
           path: '/doc/menu',
+        },
+        {
+          title: 'Tabs 选项卡',
+          path: '/doc/tabs',
         },
       ],
     },

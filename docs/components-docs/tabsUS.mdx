@@ -1,0 +1,63 @@
+import { Tabs } from '../../src';
+
+# Tabs
+
+## Showcase components
+
+
+<Tabs options={[
+  { label: 'Beijing', value: '1' },
+  { label: 'Shanghai', value: '2' },
+  { label: 'Guangzhou', value: '3' },
+  { label: 'Shenzhen', value: '4' },
+  { label: 'urumchi', value: '5' },
+]} ></Tabs><br /><br />
+<Tabs round="round" options={[
+        { label: 'Light', value: '1' },
+        { label: 'Dark', value: '2' },
+]}></Tabs><br /><br />
+<Tabs type="line" options={[
+  { label: 'Beijing', value: '1' },
+  { label: 'Shanghai', value: '2' },
+  { label: 'Guangzhou', value: '3' },
+  { label: 'Shenzhen', value: '4' },
+  { label: 'urumchi', value: '5' },
+]}></Tabs><br /><br />
+<Tabs itemWidth='120px' options={[
+  { label: 'Beijing', value: '1' },
+  { label: 'Shanghai', value: '2' },
+  { label: 'Guangzhou', value: '3' },
+  { label: 'Shenzhen', value: '4' },
+  { label: 'urumchi', value: '5' },
+]}></Tabs>
+
+
+## Show code
+
+```js
+import { Dropdown, Button } from 'miniEx';
+import React from 'react';
+
+const App: React.FC = () => (
+  const options=[
+  { label: 'Beijing', value: '1' },
+  { label: 'Shanghai', value: '2' },
+  { label: 'Guangzhou', value: '3' },
+  { label: 'Shenzhen', value: '4' },
+  { label: 'urumchi', value: '5' },
+]
+ <div>
+      <Tabs options={options} ></Tabs> <br /><br />
+      <Tabs round="round" options={[
+        { label: 'Light', value: '1' },
+        { label: 'Dark', value: '2' },
+      ]}></Tabs><br /><br />
+      <Tabs type="line" options={options}></Tabs><br /><br />
+      <Tabs itemWidth='120px' options={options}></Tabs>
+    </div>
+);
+
+export default App;
+```
+
+## Props

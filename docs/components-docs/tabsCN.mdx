@@ -1,0 +1,62 @@
+import { Tabs } from '../../src';
+
+# 选项卡
+
+## 展示组件
+
+<Tabs options={[
+    { label: '北京', value: '1' },
+    { label: '上海', value: '2' },
+    { label: '广州', value: '3' },
+    { label: '深圳', value: '4' },
+    { label: '乌鲁木齐', value: '5' },
+  ]} ></Tabs><br /><br />
+<Tabs round="round" options={[
+        { label: 'Light', value: '1' },
+        { label: 'Dark', value: '2' },
+]}></Tabs><br /><br />
+<Tabs type="line" options={[
+    { label: '北京', value: '1' },
+    { label: '上海', value: '2' },
+    { label: '广州', value: '3' },
+    { label: '深圳', value: '4' },
+    { label: '乌鲁木齐', value: '5' },
+  ]}></Tabs><br /><br />
+<Tabs itemWidth='120px' options={[
+    { label: '北京', value: '1' },
+    { label: '上海', value: '2' },
+    { label: '广州', value: '3' },
+    { label: '深圳', value: '4' },
+    { label: '乌鲁木齐', value: '5' },
+  ]}></Tabs>
+
+
+## 展示代码
+
+```js
+import { Dropdown } from 'miniEx';
+import React from 'react';
+
+const App: React.FC = () => (
+  const options=[
+    { label: '北京', value: '1' },
+    { label: '上海', value: '2' },
+    { label: '广州', value: '3' },
+    { label: '深圳', value: '4' },
+    { label: '乌鲁木齐', value: '5' },
+  ]
+ <div>
+      <Tabs options={options} ></Tabs> <br /><br />
+      <Tabs round="round" options={[
+        { label: 'Light', value: '1' },
+        { label: 'Dark', value: '2' },
+      ]}></Tabs><br /><br />
+      <Tabs type="line" options={options}></Tabs><br /><br />
+      <Tabs itemWidth='120px' options={options}></Tabs>
+    </div>
+);
+
+export default App;
+```
+
+## Props
