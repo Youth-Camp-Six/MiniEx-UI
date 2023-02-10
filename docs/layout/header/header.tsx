@@ -3,13 +3,13 @@ const isDev = process.env.NODE_ENV === 'development';
 import React, { memo, useState } from 'react';
 import cls from './header.module.less';
 import { Link, To, useLocation, useNavigate } from 'react-router-dom';
-import { Button } from '../../../src';
+import { Button, Tabs } from '../../../src';
 
 import myImg from '../../assets/logo.png';
 import { useTranslation } from 'react-i18next';
 
 const Header: React.FC = () => {
-  const [themeMode, setThemeMode] = useState('light');
+  // const [themeMode, setThemeMode] = useState('light');
   const { t, i18n } = useTranslation(['home']);
   const [languageMode, setLanguageMode] = useState('en');
   const nav = useNavigate();
@@ -30,12 +30,12 @@ const Header: React.FC = () => {
     }
   };
 
-  const handleModule = () => {
-    if (themeMode === 'light') {
-      setThemeMode('mi-dark');
+  const handleModule = (e) => {
+    if (e !== 'Light') {
+      // setThemeMode('mi-dark');
       document.body.classList.add('mi-dark');
     } else {
-      setThemeMode('light');
+      // setThemeMode('light');
       document.body.classList.remove('mi-dark');
     }
   };
@@ -75,8 +75,18 @@ const Header: React.FC = () => {
         <Link to={'/' + languageMode + '/doc/button'}>
           <Button btnType='link'>{t('headerDoc', { ns: ['home'] })}</Button>
         </Link>
-        <Button onClick={handleModule}>{themeMode}</Button>
-        <Button onClick={onClickLanguageChange}>{languageMode}</Button>
+        <Button onClick={onClickLanguageChange}>{languageMode}</Button> &nbsp;&nbsp;
+        <Tabs
+          round='round'
+          itemWidth='40px'
+          change={(e) => {
+            handleModule(e.label);
+          }}
+          options={[
+            { label: 'Light', value: '1' },
+            { label: 'Dark', value: '2' },
+          ]}
+        ></Tabs>
       </div>
     </div>
   );

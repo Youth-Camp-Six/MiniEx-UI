@@ -9,6 +9,7 @@ export const Tabs: React.FC<TabsProps> = (props) => {
     options,
     width,
     itemWidth,
+    iteHeight,
     round,
     style,
     change,
@@ -88,7 +89,7 @@ export const Tabs: React.FC<TabsProps> = (props) => {
           <div
             key={item.value}
             className={`mi-tabs-item ${v == item.value ? 'mi-tabs-item-active' : ''}`}
-            style={{ width: `${itemWidth}` }}
+            style={{ width: `${itemWidth}`, height: `${iteHeight}` }}
             ref={(el) => {
               itemRef.push(el);
             }}
