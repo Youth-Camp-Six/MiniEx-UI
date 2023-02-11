@@ -1,4 +1,6 @@
 import { Button } from '../../src';
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
 
 # 按钮
 
@@ -12,8 +14,17 @@ import { Button } from '../../src';
 <Button size='sm'>sm按钮</Button>
 <Button disabled={true}>禁用按钮</Button>
 
+此为组件源码展示使用示例
+<ShowSouceCode
+  element={<Button btnType='default'>default按钮</Button>}
+  code="import React from 'react'
+  import Example from './place'
+
+export default () => <Example />" language="js" />
+
 ## 展示代码
 
+此为代码段使用示例
 ```js
 import React from 'react'
 import Example from './place'
@@ -22,3 +33,25 @@ export default () => <Example />
 ```
 
 ## Props
+
+此为Props展示使用示例
+<PropsShow propsInfo={[
+  {
+    name: '参数名',
+    description: '描述',
+    type: '类型',
+    initValue: '默认值',
+  },
+  {
+    name: '参数',
+    description: '描述',
+    type: '类型',
+    initValue: '/',
+  },
+  {
+    name: '参',
+    description: '描述',
+    type: '类型',
+    initValue: '默认值',
+  }
+]} />

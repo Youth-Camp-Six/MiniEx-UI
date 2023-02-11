@@ -1,12 +1,14 @@
-const isDev = process.env.NODE_ENV === 'development';
-
 import React, { memo, useState } from 'react';
-import cls from './header.module.less';
 import { Link, To, useLocation, useNavigate } from 'react-router-dom';
-import { Button, Tabs } from '../../../src';
-
-import myImg from '../../assets/logo.png';
 import { useTranslation } from 'react-i18next';
+
+import { Button, Tabs } from '../../../src';
+import myImg from '../../assets/logo.png';
+import githubSVG from '@/assets/github.svg';
+
+import cls from './header.module.less';
+
+const isDev = process.env.NODE_ENV === 'development';
 
 const Header: React.FC = () => {
   // const [themeMode, setThemeMode] = useState('light');
@@ -42,7 +44,7 @@ const Header: React.FC = () => {
 
   return (
     <div className={cls.header}>
-      <div className='left'>
+      <div className={cls.left}>
         <div className={cls.logo}>
           <img
             src={myImg}
@@ -63,9 +65,12 @@ const Header: React.FC = () => {
           </span>
         </div>
       </div>
-      <div className='right'>
+      <div className={cls.right}>
         <Link to={'/' + languageMode + '/home'}>
           <Button btnType='link'>{t('headerHome', { ns: ['home'] })}</Button>
+        </Link>
+        <Link to='/changelogs/md'>
+          <Button btnType='link'>{t('changelog', { ns: ['home'] })}</Button>
         </Link>
         {isDev && (
           <Link to={'/' + languageMode + '/dev'}>
@@ -75,7 +80,11 @@ const Header: React.FC = () => {
         <Link to={'/' + languageMode + '/doc/button'}>
           <Button btnType='link'>{t('headerDoc', { ns: ['home'] })}</Button>
         </Link>
-        <Button onClick={onClickLanguageChange}>{languageMode}</Button> &nbsp;&nbsp;
+        <Button onClick={onClickLanguageChange}>{t('language', { ns: ['home'] })}</Button>{' '}
+        &nbsp;&nbsp;
+        <Link to={'https://github.com/Youth-Camp-Six/MiniEx-UI'} target='_blank'>
+          <img className={cls.image} src={githubSVG} />
+        </Link>
         <Tabs
           round='round'
           itemWidth='40px'
