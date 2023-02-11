@@ -4,7 +4,7 @@ import { breadcrumbProps } from './type';
 import { useNavigate } from 'react-router-dom';
 
 export const Breadcrumb: React.FC<breadcrumbProps> = (props) => {
-  const { className, iconType, options } = props;
+  const { className, iconType, options, style, ...restProps } = props;
 
   const classes = classNames('mi-breadcrumb', className);
 
@@ -20,7 +20,7 @@ export const Breadcrumb: React.FC<breadcrumbProps> = (props) => {
   };
 
   return (
-    <div className={classes}>
+    <div className={classes} style={style} {...restProps}>
       {options.map((item, index) => {
         return (
           <div
@@ -37,7 +37,7 @@ export const Breadcrumb: React.FC<breadcrumbProps> = (props) => {
             </span>
             {index !== options.length - 1 ? (
               <div className='mi-breadcrumb-parting'>
-                {iconType == 'shoulder' ? (
+                {iconType == 'sprit' ? (
                   <svg
                     viewBox='0 0 48 48'
                     fill='none'
@@ -73,7 +73,7 @@ export const Breadcrumb: React.FC<breadcrumbProps> = (props) => {
 
 Breadcrumb.defaultProps = {
   options: [],
-  iconType: 'shoulder',
+  iconType: 'sprit',
 };
 
 export default memo(Breadcrumb);

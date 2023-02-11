@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breadcrumb test Breadcrumb  1`] = `
+<div
+  class="mi-breadcrumb"
+>
+  <div
+    class="mi-breadcrumb-item "
+  >
+    <span
+      class="mi-breadcrumb-isPath"
+    >
+      首页
+    </span>
+    <div
+      class="mi-breadcrumb-parting"
+    >
+      <svg
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="butt"
+        stroke-linejoin="miter"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M29.506 6.502 18.493 41.498"
+        />
+      </svg>
+    </div>
+  </div>
+  <div
+    class="mi-breadcrumb-item "
+  >
+    <span
+      class="mi-breadcrumb-isPath"
+    >
+      Vue
+    </span>
+    <div
+      class="mi-breadcrumb-parting"
+    >
+      <svg
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="butt"
+        stroke-linejoin="miter"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M29.506 6.502 18.493 41.498"
+        />
+      </svg>
+    </div>
+  </div>
+  <div
+    class="mi-breadcrumb-item mi-breadcrumb-active"
+  >
+    <span
+      class=""
+    >
+      商品列表
+    </span>
+    <div
+      class="mi-breadcrumb-parting"
+    >
+      <svg
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="butt"
+        stroke-linejoin="miter"
+        stroke-width="4"
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M29.506 6.502 18.493 41.498"
+        />
+      </svg>
+    </div>
+  </div>
+  <div
+    class="mi-breadcrumb-item "
+  >
+    <span
+      class=""
+    >
+      <div
+        aria-expanded="false"
+        class="mi-popover"
+        trigger="hover"
+      >
+        <label>
+          <div
+            class="trigger"
+          >
+            <div>
+              纯文本
+            </div>
+          </div>
+        </label>
+      </div>
+    </span>
+  </div>
+</div>
+`;

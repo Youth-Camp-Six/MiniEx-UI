@@ -17,6 +17,10 @@ import AvatarUS from '../components-docs/avatarUS.mdx';
 import AvatarCN from '../components-docs/avatarCN.mdx';
 import DropdownUS from '../components-docs/dropdownUS.mdx';
 import DropdownCN from '../components-docs/dropdownCN.mdx';
+import TabsUS from '../components-docs/tabsUS.mdx';
+import TabsCN from '../components-docs/tabsCN.mdx';
+import BreadcrumbUS from '../components-docs/breadcrumbUS.mdx';
+import BreadcrumbCN from '../components-docs/breadcrumbCN.mdx';
 
 import '../i18n';
 import { createHashRouter, Navigate } from 'react-router-dom';
@@ -87,6 +91,14 @@ export const router = createHashRouter([
             path: '/en/doc/dropdown',
             element: <DropdownUS components={components} />,
           },
+          {
+            path: '/en/doc/tabs',
+            element: <TabsUS components={components} />,
+          },
+          {
+            path: '/en/doc/breadcrumb',
+            element: <BreadcrumbUS components={components} />,
+          },
         ],
       },
     ],
@@ -132,6 +144,14 @@ export const router = createHashRouter([
           {
             path: '/zh/doc/dropdown',
             element: <DropdownCN components={components} />,
+          },
+          {
+            path: '/zh/doc/tabs',
+            element: <TabsCN components={components} />,
+          },
+          {
+            path: '/zh/doc/breadcrumb',
+            element: <BreadcrumbCN components={components} />,
           },
         ],
       },

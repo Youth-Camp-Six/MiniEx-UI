@@ -1,0 +1,81 @@
+import { Breadcrumb } from '../../src';
+
+# 面包屑
+
+## 展示组件
+
+<Breadcrumb options={[
+  {
+    label: '首页',
+    to: '/',
+  },
+  {
+    label: 'React',
+    to: 'https://react.docschina.org/',
+  },
+  {
+    label: '商品列表',
+    to: '',
+  },
+  {
+    label: '商品详情',
+    to: '',
+    active: true,
+  },
+]} ></Breadcrumb><br /><br />
+<Breadcrumb iconType="shoulder" options={[
+  {
+    label: '首页',
+    to: '/',
+  },
+  {
+    label: 'React',
+    to: 'https://react.docschina.org/',
+  },
+  {
+    label: '商品列表',
+    to: '',
+  },
+  {
+    label: '商品详情',
+    to: '',
+    active: true,
+  },
+]}></Breadcrumb>
+
+## 展示代码
+
+```js
+import { Dropdown } from 'miniEx';
+import React from 'react';
+
+const App: React.FC = () => (
+  const options=[
+  {
+    label: '首页',
+    to: '/',
+  },
+  {
+    label: 'React',
+    to: 'https://react.docschina.org/',
+  },
+  {
+    label: '商品列表',
+    to: '',
+  },
+  {
+    label: '商品详情',
+    to: '',
+    active: true,
+  },
+]
+ <div>
+     <Breadcrumb options={options}></Breadcrumb> <br /><br />
+      <Breadcrumb options={options} iconType="shoulder"></Breadcrumb>
+    </div>
+);
+
+export default App;
+```
+
+## Props
