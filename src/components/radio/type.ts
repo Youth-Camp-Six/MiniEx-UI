@@ -8,6 +8,8 @@ export interface RadioProps {
   size?: string;
   children?: ReactNode;
   className?: string;
+  onChange: () => void;
+  key: string;
 }
 
 type Options = {
@@ -15,7 +17,7 @@ type Options = {
   value: string;
 };
 export interface RadioGroupProps {
-  modelvalue?: string;
+  value?: string | number;
   block?: boolean;
   iconable?: boolean;
   options: Options[];
@@ -23,4 +25,5 @@ export interface RadioGroupProps {
   size?: string;
   children?: ReactNode;
   className?: string;
+  onChange?: (e: string | number) => void;
 }
