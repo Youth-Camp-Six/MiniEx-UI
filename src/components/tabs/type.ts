@@ -9,7 +9,9 @@ export interface TabsProps {
   options: Options[];
   width?: string;
   itemWidth?: string;
+  iteHeight?: string;
   round?: string;
   change?: (e: any) => void;
   type?: string;
+  style?: React.CSSProperties;
 }
