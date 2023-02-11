@@ -19,7 +19,7 @@ describe('test RadioGroup comonent', () => {
     expect(wrapper.asFragment()).toMatchSnapshot();
   });
 
-  it('renders options and updates selected value', () => {
+  it('renders radio options and updates selected value', () => {
     const onChange = jest.fn();
     const wrapper = render(
       <RadioGroup value={1} options={radioDataList} onChange={onChange}></RadioGroup>
