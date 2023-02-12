@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { CheckboxGroupProps } from './type';
 import { Flex } from '../flex';
@@ -25,19 +25,28 @@ export const CheckboxGroup: React.FC<CheckboxGroupProps> = (props) => {
 
   const [checkBoxValue, setCheckBoxValue] = useState(value);
 
+  useEffect(() => {
+    setCheckBoxValue(value);
+  }, [value]);
+
   const checkBoxChange = (checked: boolean, key: string | number) => {
     if (checked) {
       // 当前item已选择
-      setCheckBoxValue([...checkBoxValue, key]);
+      const newCheckBoxValue = [...checkBoxValue, key];
+      setCheckBoxValue(newCheckBoxValue);
+      onChange?.(newCheckBoxValue);
     } else {
       // 当前item未选择
       const index = checkBoxValue?.findIndex((item) => item === key);
       if (index !== undefined) {
-        setCheckBoxValue([...checkBoxValue.slice(0, index), ...checkBoxValue.slice(index + 1)]);
+        const newCheckBoxValue = [
+          ...checkBoxValue.slice(0, index),
+          ...checkBoxValue.slice(index + 1),
+        ];
+        setCheckBoxValue(newCheckBoxValue);
+        onChange?.(newCheckBoxValue);
       }
     }
-
-    onChange?.(checkBoxValue);
   };
   return (
     <Flex x='start' direction={direction} gap={15} className={classes} {...restProps}>
@@ -54,6 +63,7 @@ export const CheckboxGroup: React.FC<CheckboxGroupProps> = (props) => {
             onChange={(checked) => {
               checkBoxChange(checked, item.value);
             }}
+            data-testid={`checkbox-${item.value}`}
           ></Checkbox>
         );
       })}

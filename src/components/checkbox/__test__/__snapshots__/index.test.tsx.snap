@@ -1,170 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test CheckboxGroup comonent CheckboxGroup snapshot test 1`] = `
-<DocumentFragment>
-  <div
-    class="mi-flex mi-checkbox mi-checkbox-group-x mi-checkbox-group-medium mi-flex-x mi-flex-x-start mi-flex-y-center"
-    style="gap: 15px;"
-  >
-    <label
-      class="mi-checkbox 
-        mi--checkbox-block
-        mi-checkbox-round
-        mi-checkbox-checked
-        mi-checkbox-medium
-        
-        "
-    >
-      <div
-        class="icon-checkbox-box"
-      >
-        <svg
-          class="icon-checkbox"
-          fill="none"
-          height="24"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="4"
-          viewBox="0 0 24 24"
-          width="24"
-        >
-          <polyline
-            points="20 6 9 17 4 12"
-          />
-        </svg>
-      </div>
-      <input
-        checked=""
-        style="display: none;"
-        type="checkbox"
-      />
-      <span
-        class="mi-checkbox-label"
-      >
-        labe1
-      </span>
-    </label>
-    <label
-      class="mi-checkbox 
-        mi--checkbox-block
-        mi-checkbox-round
-        mi-checkbox-checked
-        mi-checkbox-medium
-        
-        "
-    >
-      <div
-        class="icon-checkbox-box"
-      >
-        <svg
-          class="icon-checkbox"
-          fill="none"
-          height="24"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="4"
-          viewBox="0 0 24 24"
-          width="24"
-        >
-          <polyline
-            points="20 6 9 17 4 12"
-          />
-        </svg>
-      </div>
-      <input
-        checked=""
-        style="display: none;"
-        type="checkbox"
-      />
-      <span
-        class="mi-checkbox-label"
-      >
-        labe2
-      </span>
-    </label>
-    <label
-      class="mi-checkbox 
-        mi--checkbox-block
-        mi-checkbox-round
-        mi-checkbox-checked
-        mi-checkbox-medium
-        
-        "
-    >
-      <div
-        class="icon-checkbox-box"
-      >
-        <svg
-          class="icon-checkbox"
-          fill="none"
-          height="24"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="4"
-          viewBox="0 0 24 24"
-          width="24"
-        >
-          <polyline
-            points="20 6 9 17 4 12"
-          />
-        </svg>
-      </div>
-      <input
-        checked=""
-        style="display: none;"
-        type="checkbox"
-      />
-      <span
-        class="mi-checkbox-label"
-      >
-        labe3
-      </span>
-    </label>
-    <label
-      class="mi-checkbox 
-        mi--checkbox-block
-        mi-checkbox-round
-        
-        mi-checkbox-medium
-        
-        "
-    >
-      <div
-        class="icon-checkbox-box"
-      >
-        <svg
-          class="icon-checkbox"
-          fill="none"
-          height="24"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="4"
-          viewBox="0 0 24 24"
-          width="24"
-        >
-          <polyline
-            points="20 6 9 17 4 12"
-          />
-        </svg>
-      </div>
-      <input
-        style="display: none;"
-        type="checkbox"
-      />
-      <span
-        class="mi-checkbox-label"
-      >
-        labe4
-      </span>
-    </label>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`test CheckboxGroup comonent checkbox snapshot test 1`] = `
 <DocumentFragment>
   <div
@@ -175,10 +10,50 @@ exports[`test CheckboxGroup comonent checkbox snapshot test 1`] = `
       class="mi-checkbox 
         
         mi-checkbox-round
+        
+        mi-checkbox-medium
+        
+        "
+      data-testid="checkbox-0"
+    >
+      <div
+        class="icon-checkbox-box"
+      >
+        <svg
+          class="icon-checkbox"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="4"
+          viewBox="0 0 24 24"
+          width="24"
+        >
+          <polyline
+            points="20 6 9 17 4 12"
+          />
+        </svg>
+      </div>
+      <input
+        style="display: none;"
+        type="checkbox"
+      />
+      <span
+        class="mi-checkbox-label"
+      >
+        labe-0
+      </span>
+    </label>
+    <label
+      class="mi-checkbox 
+        
+        mi-checkbox-round
         mi-checkbox-checked
         mi-checkbox-medium
         
         "
+      data-testid="checkbox-1"
     >
       <div
         class="icon-checkbox-box"
@@ -207,7 +82,7 @@ exports[`test CheckboxGroup comonent checkbox snapshot test 1`] = `
       <span
         class="mi-checkbox-label"
       >
-        labe1
+        labe-1
       </span>
     </label>
     <label
@@ -218,6 +93,7 @@ exports[`test CheckboxGroup comonent checkbox snapshot test 1`] = `
         mi-checkbox-medium
         
         "
+      data-testid="checkbox-2"
     >
       <div
         class="icon-checkbox-box"
@@ -246,84 +122,7 @@ exports[`test CheckboxGroup comonent checkbox snapshot test 1`] = `
       <span
         class="mi-checkbox-label"
       >
-        labe2
-      </span>
-    </label>
-    <label
-      class="mi-checkbox 
-        
-        mi-checkbox-round
-        mi-checkbox-checked
-        mi-checkbox-medium
-        
-        "
-    >
-      <div
-        class="icon-checkbox-box"
-      >
-        <svg
-          class="icon-checkbox"
-          fill="none"
-          height="24"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="4"
-          viewBox="0 0 24 24"
-          width="24"
-        >
-          <polyline
-            points="20 6 9 17 4 12"
-          />
-        </svg>
-      </div>
-      <input
-        checked=""
-        style="display: none;"
-        type="checkbox"
-      />
-      <span
-        class="mi-checkbox-label"
-      >
-        labe3
-      </span>
-    </label>
-    <label
-      class="mi-checkbox 
-        
-        mi-checkbox-round
-        
-        mi-checkbox-medium
-        
-        "
-    >
-      <div
-        class="icon-checkbox-box"
-      >
-        <svg
-          class="icon-checkbox"
-          fill="none"
-          height="24"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="4"
-          viewBox="0 0 24 24"
-          width="24"
-        >
-          <polyline
-            points="20 6 9 17 4 12"
-          />
-        </svg>
-      </div>
-      <input
-        style="display: none;"
-        type="checkbox"
-      />
-      <span
-        class="mi-checkbox-label"
-      >
-        labe4
+        labe-2
       </span>
     </label>
   </div>
