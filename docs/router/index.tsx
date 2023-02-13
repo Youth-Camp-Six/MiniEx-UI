@@ -17,6 +17,8 @@ import SelectUS from '../components-docs/selectUS.mdx';
 import SelectCN from '../components-docs/selectCN.mdx';
 import TitleUS from '../components-docs/titleUS.mdx';
 import TitleCN from '../components-docs/titleCN.mdx';
+import TagUS from '../components-docs/tagUS.mdx';
+import TagCN from '../components-docs/tagCN.mdx';
 
 import '../i18n';
 
@@ -28,6 +30,8 @@ await compile(FlexUS, { remarkPlugins: [remarkMdxImages] });
 await compile(FlexCN, { remarkPlugins: [remarkMdxImages] });
 await compile(SelectUS, { remarkPlugins: [remarkMdxImages] });
 await compile(SelectCN, { remarkPlugins: [remarkMdxImages] });
+await compile(TagUS, { remarkPlugins: [remarkMdxImages] });
+await compile(TagCN, { remarkPlugins: [remarkMdxImages] });
 await compile(TitleUS, { remarkPlugins: [remarkMdxImages] });
 await compile(TitleCN, { remarkPlugins: [remarkMdxImages] });
 // todo 修改router类型
@@ -70,6 +74,10 @@ export const router = createHashRouter([
             path: '/en/doc/flex',
             element: <FlexUS />,
           },
+          {
+            path: '/en/doc/tag',
+            element: <TagUS />,
+          },
         ],
       },
     ],
@@ -106,6 +114,10 @@ export const router = createHashRouter([
           {
             path: '/zh/doc/select',
             element: <SelectCN />,
+          },
+          {
+            path: '/zh/doc/tag',
+            element: <TagCN />,
           },
         ],
       },

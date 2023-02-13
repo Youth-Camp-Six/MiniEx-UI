@@ -31,10 +31,6 @@ export const Checkbox: React.FC<CheckboxProps> = (props) => {
         set_checked(!(e.target as HTMLInputElement).checked);
         handleChange(_checked);
     };
-    const test = (e) => {
-        console.log(123);
-        
-    }
     return (
         <label className={classes} {...restProps}>
             {

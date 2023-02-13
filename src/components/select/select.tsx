@@ -2,6 +2,7 @@ import React, { memo, useEffect,useRef,Ref } from 'react';
 import { SelectOptions, selectProps } from './type';
 import classNames from 'classnames';
 import { Popover, MiIcon, Tag, Flex, Checkbox } from '../../index';
+import { Value } from '../../../../dux-ui-react/src/components/Checkbox/interface';
 // import  from 'react';
 
 export const Select: React.FC<selectProps> = (props) => {
@@ -29,26 +30,7 @@ export const Select: React.FC<selectProps> = (props) => {
   const classesView = classNames('mi-select-view', className);
   const classes = classNames('mi-select', `mi-select-${size} mi-select-align-${align}`);
 
-  const MultipleBody = (arr: string[]) => {
-    return (
-      <Flex wrap gap={5} x={'start'} className='mi-isSelect-label-box'>
-        {arr.map((item, index) => {
-          return (
-            <Tag key={index} type='primary' closable size={size}>
-              {item}
-            </Tag>
-          );
-        })}
-      </Flex>
-    );
-  };
 
-  const classesSelectBody = classNames(
-    'mi-select-body',
-    `${size ? 'mi-select-body-' + size : ''} ${multiple ? 'mi-select-multiple-body' : ''} ${
-      align ? 'mi-select-body-align-' + align : ''
-    } `
-  );
   let SelectRef: any;
   const SelectWidth = SelectRef?.offsetWidth - 12 + 'px';
   useEffect(
@@ -62,24 +44,20 @@ export const Select: React.FC<selectProps> = (props) => {
     }, []);
   useEffect(
       () => {     
-          // 如果是多选
-        // if (!_modelValue) {
-        //       return;
-        //   }
+        // 如果是多选
+        if (!_modelValue) {
+              return;
+          }
       if (multiple && _modelValue instanceof Array) {
             setMultipleV(_modelValue as Array<string>)
-            setMultipleLabelStr(filterSelect(_modelValue as Array<string>,options))
+            setMultipleLabelStr(filterSelect(_modelValue as Array<string>, options))
+            // console.log(multipleLabelStr);
       } else if (typeof _modelValue == 'string') {        
             setV(_modelValue)
             setLabelStr(options?.find((e) => e.value == _modelValue)?.label || '');     
           }
   }, [_modelValue]);
-  const delTag = (i: number) => {
-      setMultipleV(multipleV.splice(i, 1))
-      setMultipleLabelStr(multipleLabelStr.splice(i, 1))
-      if (i == 0 && multipleV.length == 0) {
-      }
-  };
+
   const filterSelect = (v: string[], options: SelectOptions[]) => {
     let _v: Array<string> = [];
     if (v && options) {
@@ -117,7 +95,34 @@ export const Select: React.FC<selectProps> = (props) => {
   const getChecked = (_value: string) => {
     return _modelValue?.includes(_value);
   };
-  
+  const delTag = (i: number) => {
+    console.log(i);
+    multipleV.splice(i, 1);
+    setMultipleLabelStr(multipleLabelStr.splice(i, 1));
+    set_modelValue(multipleV as any)
+    console.log(_modelValue);
+};
+  const MultipleBody = (arr: string[]) => {
+    return (
+      <Flex wrap gap={5} x={'start'} className='mi-isSelect-label-box'>
+        {arr.map((item, index) => {
+          return (
+            <Tag key={index} type='primary' closable close={()=>delTag(index)} size={size}>
+              {item}
+            </Tag>
+          );
+        })}
+      </Flex>
+    );
+  };
+
+  const classesSelectBody = classNames(
+    'mi-select-body',
+    `${size ? 'mi-select-body-' + size : ''} ${multiple ? 'mi-select-multiple-body' : ''} ${
+      align ? 'mi-select-body-align-' + align : ''
+    } `
+  );
+
   const SelectBody = (options: SelectOptions[]) => {
     return (
       <div className={classesSelectBody} style={{ width: SelectWidth }}>
@@ -185,7 +190,7 @@ export const Select: React.FC<selectProps> = (props) => {
         ) : (
           <div className='mi-select-label-multiple'>
             {multipleLabelStr.length > 0 ? (
-              <Tag type='primary' size={size} closable={true}>
+              <Tag type='primary' size={size} closable={true} close={()=>delTag(0)}>
                 {multipleLabelStr[0]}
               </Tag>
             ) : null}
