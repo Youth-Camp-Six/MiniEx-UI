@@ -1,12 +1,13 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect,useRef,Ref } from 'react';
 import { SelectOptions, selectProps } from './type';
 import classNames from 'classnames';
 import { Popover, MiIcon, Tag, Flex, Checkbox } from '../../index';
+// import  from 'react';
 
 export const Select: React.FC<selectProps> = (props) => {
   const {
     className,
-    // modelvalue,
+    modelValue,
     options,
     placement,
     trigger,
@@ -20,9 +21,11 @@ export const Select: React.FC<selectProps> = (props) => {
     label,
     ...restProps
   } = props;
-
-  const labelStr = '';
-  const multipleLabelStr: string[] = [];
+  const [v, setV] = React.useState('');
+  const [_modelValue,set_modelValue]=React.useState<[string, Array<string>]>(['',[]]);
+  const [labelStr, setLabelStr] = React.useState('');
+  const [multipleLabelStr, setMultipleLabelStr] = React.useState<Array<string>>([]);
+  const [multipleV, setMultipleV] = React.useState<Array<string>>([]);
   const classesView = classNames('mi-select-view', className);
   const classes = classNames('mi-select', `mi-select-${size} mi-select-align-${align}`);
 
@@ -46,37 +49,104 @@ export const Select: React.FC<selectProps> = (props) => {
       align ? 'mi-select-body-align-' + align : ''
     } `
   );
-
-  // const [SelectRef,setSelectRef]=useState()
   let SelectRef: any;
   const SelectWidth = SelectRef?.offsetWidth - 12 + 'px';
-
+  useEffect(
+    () => {     
+      set_modelValue(modelValue) 
+      if (multiple && _modelValue instanceof Array) {
+        setMultipleLabelStr(filterSelect(_modelValue as Array<string>, options))
+      } else if (typeof _modelValue == 'string') {
+        setLabelStr(options?.find((e) => e.value == _modelValue)?.label || '')
+    }
+    }, []);
+  useEffect(
+      () => {     
+          // 如果是多选
+        // if (!_modelValue) {
+        //       return;
+        //   }
+      if (multiple && _modelValue instanceof Array) {
+            setMultipleV(_modelValue as Array<string>)
+            setMultipleLabelStr(filterSelect(_modelValue as Array<string>,options))
+      } else if (typeof _modelValue == 'string') {        
+            setV(_modelValue)
+            setLabelStr(options?.find((e) => e.value == _modelValue)?.label || '');     
+          }
+  }, [_modelValue]);
+  const delTag = (i: number) => {
+      setMultipleV(multipleV.splice(i, 1))
+      setMultipleLabelStr(multipleLabelStr.splice(i, 1))
+      if (i == 0 && multipleV.length == 0) {
+      }
+  };
+  const filterSelect = (v: string[], options: SelectOptions[]) => {
+    let _v: Array<string> = [];
+    if (v && options) {
+        v.map((e: string) => {
+            options.map((o) => {
+                if (e == o.value) {
+                    _v.push(o.label);
+                }
+            });
+        });
+    }
+    return _v;
+  };
+  const check = (item: SelectOptions, isChecked: boolean) => {
+    
+    if (_modelValue instanceof Array) {
+        let updatedValue = [..._modelValue];
+        if (isChecked) {
+            updatedValue.push(item.value);
+        } else {
+            updatedValue.splice(updatedValue.indexOf(item.value), 1);
+      }
+      set_modelValue(updatedValue as any)
+    } else {
+      if (v != item.value) {
+        setLabelStr(item.label);
+            // labelStr = item.label;
+        setV(item.value)
+            // v.value = item.value;
+            // emit('change', item.value);
+        }
+      set_modelValue(item.value as any)
+    }
+  };
+  const getChecked = (_value: string) => {
+    return _modelValue?.includes(_value);
+  };
+  
   const SelectBody = (options: SelectOptions[]) => {
     return (
       <div className={classesSelectBody} style={{ width: SelectWidth }}>
         {header}
         <div className='mi-select-options-box'>
           {options.map((item) => {
+            // const i = 0;
             return (
-              <div key={item.value}>
-                <label>
+              <div key={item.value} >
+                <label  >
                   {!labelSlot ? (
-                    <div
-                      className={`me-select-item ${item.disabled ? 'mi-select-item-disabled' : ''}`}
+                    <div 
+                      className={`mi-select-item  ${item.disabled ? 'mi-select-item-disabled' : ''}`}
                     >
-                      {showIcon && multiple ? (
-                        <Checkbox
-                          size={size}
-                          label={item.label}
-                          disabled={item.disabled}
-                          className='mi-select-checkbox'
-                        ></Checkbox>
-                      ) : null}
-                      {!multiple ? <div className='mi-select-label'>{item.label}</div> : null}
+                      <Checkbox
+                        size={size}
+                        label={item.label}
+                        disabled={item.disabled}
+                        className={`mi-select-checkbox ${showIcon && multiple ? '' : 'mi-select-checkbox-none'} `}
+                        checked={getChecked(item.value)}
+                        handleChange={(e: Event) => check(item, e)
+                        }
+                      ></Checkbox>
+                      <div className='mi-select-label'>{item.label}</div>
                     </div>
                   ) : (
-                    <div className='mi-select-slot-item'>
-                      {label}
+                      <div className='mi-select-slot-item'>
+                        {label}
+                        {/* {slots['label']} */}
                       {/* <Checkbox label='' ></Checkbox> */}
                     </div>
                   )}
@@ -142,13 +212,13 @@ export const Select: React.FC<selectProps> = (props) => {
 };
 
 Select.defaultProps = {
-  modelvalue: [],
+  modelValue: "",
   options: [],
   placement: 'bottom-start',
   trigger: 'click',
   multiple: false,
   align: 'left',
-  showIcon: true,
+  showIcon: false,
   labelSlot: false,
   size: 'medium',
 };

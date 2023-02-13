@@ -16,6 +16,10 @@ export const siderbarConfig: ISiderbarConfig[] = [
         title: 'Title',
         path: '/doc/title',
       },
+      {
+        title: 'Flex',
+        path: '/doc/flex',
+      },
     ],
   },
   {
@@ -32,6 +36,10 @@ export const siderbarConfig: ISiderbarConfig[] = [
       {
         title: 'Title 标题',
         path: '/doc/title',
+      },
+      {
+        title: 'Flex 弹性布局',
+        path: '/doc/flex',
       },
     ],
   },

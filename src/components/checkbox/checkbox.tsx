@@ -4,17 +4,37 @@ import { CheckboxProps } from './type';
 
 export const Checkbox: React.FC<CheckboxProps> = (props) => {
     const { className, size, round, block, iconable, disabled, checked,
-        label, ...restProps } = props;
+        label, handleChange, updateModelValue, ...restProps } = props;
+    const [_checked, set_checked] = React.useState(!checked);
 
+    
     const classesLabel = `
         ${block ? 'mi--checkbox-block' : ''} 
         ${round ? 'mi-checkbox-round' : ''}
-        ${checked ? 'mi-checkbox-checked' : ''}
+        ${_checked ? 'mi-checkbox-checked' : ''}
         ${size ? 'mi-checkbox-' + size : ''}
         ${!iconable ? 'mi-checkbox-unicon' : ''}
         `
-    const classes = classNames('mi-checkbox', className, classesLabel);
+    const classes = classNames('mi-checkbox',className, classesLabel);
+    // React.useEffect(() => {
 
+    //     if (checkRef.current?.checked !== _checked) {
+    //         set_checked(!checkRef.current?.checked as boolean)
+            
+    //     }
+          
+    // }, [checkRef.current?.checked])
+    const setChecked =  (e: Event) => {
+        if (disabled) {
+            return;
+        }
+        set_checked(!(e.target as HTMLInputElement).checked);
+        handleChange(_checked);
+    };
+    const test = (e) => {
+        console.log(123);
+        
+    }
     return (
         <label className={classes} {...restProps}>
             {
@@ -26,7 +46,7 @@ export const Checkbox: React.FC<CheckboxProps> = (props) => {
                         </svg>
                     </div> : null
             }
-            <input style={{ display: 'none' }} type="checkbox" defaultChecked={checked} />
+            <input style={{ display: 'none' }} type="checkbox" defaultChecked={checked}  onChange={(e:Event)=>setChecked(e)} /> 
             {label ? <span className="mi-checkbox-label">{label}</span> : null}
         </label>
     );

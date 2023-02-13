@@ -11,6 +11,8 @@ import MenuUS from '../components-docs/menuUS.mdx';
 import MenuCN from '../components-docs/menuCN.mdx';
 import ButtonUS from '../components-docs/buttonUS.mdx';
 import ButtonCN from '../components-docs/buttonCN.mdx';
+import FlexUS from '../components-docs/flexUS.mdx';
+import FlexCN from '../components-docs/flexCN.mdx';
 import SelectUS from '../components-docs/selectUS.mdx';
 import SelectCN from '../components-docs/selectCN.mdx';
 import TitleUS from '../components-docs/titleUS.mdx';
@@ -22,6 +24,8 @@ await compile(MenuUS, { remarkPlugins: [remarkMdxImages] });
 await compile(MenuCN, { remarkPlugins: [remarkMdxImages] });
 await compile(ButtonUS, { remarkPlugins: [remarkMdxImages] });
 await compile(ButtonCN, { remarkPlugins: [remarkMdxImages] });
+await compile(FlexUS, { remarkPlugins: [remarkMdxImages] });
+await compile(FlexCN, { remarkPlugins: [remarkMdxImages] });
 await compile(SelectUS, { remarkPlugins: [remarkMdxImages] });
 await compile(SelectCN, { remarkPlugins: [remarkMdxImages] });
 await compile(TitleUS, { remarkPlugins: [remarkMdxImages] });
@@ -62,6 +66,10 @@ export const router = createHashRouter([
             path: '/en/doc/select',
             element: <SelectUS />,
           },
+          {
+            path: '/en/doc/flex',
+            element: <FlexUS />,
+          },
         ],
       },
     ],
@@ -82,6 +90,10 @@ export const router = createHashRouter([
           {
             path: '/zh/doc/button',
             element: <ButtonCN />,
+          },
+          {
+            path: '/zh/doc/flex',
+            element: <FlexCN />,
           },
           {
             path: '/zh/doc/menu',
