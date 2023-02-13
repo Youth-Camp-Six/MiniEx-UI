@@ -1,0 +1,71 @@
+import { RadioGroup, Button } from '../../src';
+import { RadioUSBasic } from './components/radio/radio-us.tsx'
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
+
+# RadioGroup
+
+<ShowSouceCode
+
+  element={<RadioUSBasic/>}
+  code={
+    `
+import { Button } from 'miniEx';
+import React from 'react';
+
+const App: React.FC = () => (
+  const options = [
+    { label: 'A', value: '0' },
+    { label: 'B', value: '1' },
+    { label: 'C', value: '2' },
+  ];
+
+  const defaultValue = '0';
+
+  const changeHandler = (e) => {
+    console.log('current value:', e);
+  };
+
+  return (
+    <RadioGroup
+      options={options}
+      value={defaultValue}
+      onChange={changeHandler}
+    ></RadioGroup>
+  );
+);
+
+export default App;
+    `
+  }
+language="ts"
+/>
+
+## Props
+
+<PropsShow propsInfo={[
+  {
+    name: 'value',
+    description: 'displayed value',
+    type: 'string | number',
+    initValue: '/',
+  },
+  {
+    name: 'onChange',
+    description: 'changed callback function',
+    type: '{label: string; value: string}[]',
+    initValue: '/',
+  },
+  {
+    name: 'options',
+    description: 'checkbox item config data',
+    type: '(chengedValue: string | number) => void',
+    initValue: '/',
+  },
+  {
+    name: 'iconable',
+    description: 'if show checkbox icon',
+    type: 'boolean',
+    initValue: 'true',
+  },
+]} />

@@ -1,0 +1,70 @@
+import { RadioGroup, Button } from '../../src';
+import { RadioCNBasic } from './components/radio/radio-cn.tsx'
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
+
+# 按钮
+<ShowSouceCode
+
+  element={<RadioCNBasic/>}
+  code={
+    `
+import { Button } from 'miniEx';
+import React from 'react';
+
+const App: React.FC = () => (
+  const options = [
+    { label: 'A', value: '0' },
+    { label: 'B', value: '1' },
+    { label: 'C', value: '2' },
+  ];
+
+  const defaultValue = '0';
+
+  const changeHandler = (e) => {
+    console.log('当前value:', e);
+  };
+
+  return (
+    <RadioGroup
+      options={options}
+      value={defaultValue}
+      onChange={changeHandler}
+    ></RadioGroup>
+  );
+);
+
+export default App;
+    `
+  }
+language="ts"
+/>
+
+## Props
+
+<PropsShow propsInfo={[
+  {
+    name: 'value',
+    description: '显示的值',
+    type: 'string | number',
+    initValue: '/',
+  },
+  {
+    name: 'onChange',
+    description: '选择时回掉函数',
+    type: '{label: string; value: string}[]',
+    initValue: '/',
+  },
+  {
+    name: 'options',
+    description: 'checkbox item数据',
+    type: '(chengedValue: string | number) => void',
+    initValue: '/',
+  },
+  {
+    name: 'iconable',
+    description: '是否显示checkbox图标',
+    type: 'boolean',
+    initValue: 'true',
+  },
+]} />

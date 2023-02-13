@@ -5,8 +5,7 @@ import { Flex } from '../flex';
 import { Radio } from './index';
 
 export const RadioGroup: React.FC<RadioGroupProps> = (props) => {
-  const { className, size, value, block, iconable, options, direction, onChange, ...restProps } =
-    props;
+  const { className, size, value, iconable, options, direction, onChange, ...restProps } = props;
 
   const classes = classNames('mi-radio', className, {
     [`lew-radio-group-${direction}`]: direction,
@@ -30,7 +29,6 @@ export const RadioGroup: React.FC<RadioGroupProps> = (props) => {
         <Radio
           label={item.label}
           key={item.value}
-          block={block}
           iconable={iconable}
           size={size}
           checked={selectedValue == item.value}
@@ -43,7 +41,6 @@ export const RadioGroup: React.FC<RadioGroupProps> = (props) => {
 };
 
 RadioGroup.defaultProps = {
-  block: false,
   iconable: true,
   size: 'medium',
   direction: 'x',

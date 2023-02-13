@@ -18,7 +18,6 @@ type Options = {
 };
 export interface RadioGroupProps {
   value?: string | number;
-  block?: boolean;
   iconable?: boolean;
   options: Options[];
   direction?: string;
