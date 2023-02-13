@@ -5,50 +5,115 @@ import PropsShow from './components/props-show';
 # 按钮
 
 ## 基础
-
-<Button btnType='default'>default按钮</Button>
-<Button btnType='primary'>primary按钮</Button>
-<Button btnType='danger'>danger按钮</Button>
-<Button btnType='link'>link按钮</Button>
-
-此为组件源码展示使用示例
 <ShowSouceCode
-  element={<Button btnType='default'>default按钮</Button>}
-  code="import React from 'react'
-  import Example from './place'
+  element={
+    <div>
+      <Button style={{marginRight: "4px"}} btnType='default'>default按钮</Button>
+      <Button style={{marginRight: "4px"}} btnType='primary'>primary按钮</Button>
+      <Button style={{marginRight: "4px"}} btnType='danger'>danger按钮</Button>
+      <Button style={{marginRight: "4px"}} btnType='link'>link按钮</Button>
+    </div>
 
-export default () => <Example />" language="js" />
+  }
+  code={
+    `
+import { Button } from 'miniEx';
+import React from 'react';
 
-## 展示代码
-
-此为代码段使用示例
-```js
-import React from 'react'
-import Example from './place'
+const App: React.FC = () => (
+  <div>
+    <Button btnType='default'>default按钮</Button>
+    <Button btnType='primary'>primary按钮</Button>
+    <Button btnType='danger'>danger按钮</Button>
+    <Button btnType='link'>link按钮</Button>
+  </div>
+);
 
 export default App;
-```
+    `
+  }
+language="ts"
+/>
+
+## 禁用样式
+<ShowSouceCode
+  element={
+    <div>
+      <Button disabled style={{marginRight: "4px"}} btnType='default'>default按钮</Button>
+      <Button disabled style={{marginRight: "4px"}} btnType='primary'>primary按钮</Button>
+      <Button disabled style={{marginRight: "4px"}} btnType='danger'>danger按钮</Button>
+      <Button disabled style={{marginRight: "4px"}} btnType='link'>link按钮</Button>
+    </div>
+
+  }
+  code={
+    `
+import { Button } from 'miniEx';
+import React from 'react';
+
+const App: React.FC = () => (
+  <div>
+    <Button disabled btnType='default'>default按钮</Button>
+    <Button disabled btnType='primary'>primary按钮</Button>
+    <Button disabled btnType='danger'>danger按钮</Button>
+    <Button disabled btnType='link'>link按钮</Button>
+  </div>
+);
+
+export default App;
+    `
+  }
+language="ts"
+/>
+
+## 不同尺寸
+<ShowSouceCode
+  element={
+    <div>
+      <Button style={{marginRight: "4px"}} size='lg'>大尺寸</Button>
+      <Button style={{marginRight: "4px"}}>默认尺寸</Button>
+      <Button style={{marginRight: "4px"}} size='sm'>小尺寸</Button>
+    </div>
+  }
+  code={
+    `
+import { Button } from 'miniEx';
+import React from 'react';
+
+const App: React.FC = () => (
+  <div>
+    <Button size='lg'>大尺寸</Button>
+    <Button >默认尺寸</Button>
+    <Button size='sm'>小尺寸</Button>
+  </div>
+);
+
+export default App;
+    `
+  }
+language="ts"
+/>
 
 ## Props
 
 此为Props展示使用示例
 <PropsShow propsInfo={[
   {
-    name: '参数名',
-    description: '描述',
-    type: '类型',
-    initValue: '默认值',
+    name: 'btnType',
+    description: '按钮类型',
+    type: 'primary | default | danger | link',
+    initValue: 'default',
   },
   {
-    name: '参数',
-    description: '描述',
-    type: '类型',
+    name: 'size',
+    description: '按钮大小',
+    type: 'lg | sm',
     initValue: '/',
   },
   {
-    name: '参',
-    description: '描述',
-    type: '类型',
-    initValue: '默认值',
+    name: 'disabled',
+    description: '是否禁用',
+    type: 'boolean',
+    initValue: 'false',
   }
 ]} />

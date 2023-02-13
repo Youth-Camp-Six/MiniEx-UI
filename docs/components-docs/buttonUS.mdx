@@ -1,15 +1,22 @@
 import { Button } from '../../src';
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
 
 # Button
 
 ## Basic
+<ShowSouceCode
+  element={
+    <div>
+      <Button style={{marginRight: "4px"}} btnType='default'>default</Button>
+      <Button style={{marginRight: "4px"}} btnType='primary'>primary</Button>
+      <Button style={{marginRight: "4px"}} btnType='danger'>danger</Button>
+      <Button style={{marginRight: "4px"}} btnType='link'>link</Button>
+    </div>
 
-<Button btnType='default'>default</Button>
-<Button btnType='primary'>primary</Button>
-<Button btnType='danger'>danger</Button>
-<Button btnType='link'>link</Button>
-
-```ts
+  }
+  code={
+    `
 import { Button } from 'miniEx';
 import React from 'react';
 
@@ -23,15 +30,24 @@ const App: React.FC = () => (
 );
 
 export default App;
-```
+    `
+  }
+language="ts"
+/>
 
-## disabled
+## Disabled
+<ShowSouceCode
+  element={
+    <div>
+      <Button disabled style={{marginRight: "4px"}} btnType='default'>default</Button>
+      <Button disabled style={{marginRight: "4px"}} btnType='primary'>primary</Button>
+      <Button disabled style={{marginRight: "4px"}} btnType='danger'>danger</Button>
+      <Button disabled style={{marginRight: "4px"}} btnType='link'>link</Button>
+    </div>
 
-<Button disabled btnType='default'>default</Button>
-<Button disabled btnType='primary'>primary</Button>
-<Button disabled btnType='danger'>danger</Button>
-<Button disabled btnType='link'>link</Button>
-```ts
+  }
+  code={
+    `
 import { Button } from 'miniEx';
 import React from 'react';
 
@@ -45,26 +61,59 @@ const App: React.FC = () => (
 );
 
 export default App;
-```
+    `
+  }
+language="ts"
+/>
 
-## size
-
-<Button size="lg">large</Button>
-<Button>default</Button>
-<Button size="sm">small</Button>
-```ts
+## Size
+<ShowSouceCode
+  element={
+    <div>
+      <Button style={{marginRight: "4px"}} size='lg'>large</Button>
+      <Button style={{marginRight: "4px"}}>default</Button>
+      <Button style={{marginRight: "4px"}} size='sm'>small</Button>
+    </div>
+  }
+  code={
+    `
 import { Button } from 'miniEx';
 import React from 'react';
 
 const App: React.FC = () => (
   <div>
-    <Button size="lg">large</Button>
+    <Button size='lg'>large</Button>
     <Button>default</Button>
-    <Button size="sm">small</Button>
+    <Button size='sm'>small</Button>
   </div>
 );
 
-export default memo(App);
-```
+export default App;
+    `
+  }
+language="ts"
+/>
 
-## API
+## Props
+
+此为Props展示使用示例
+<PropsShow propsInfo={[
+  {
+    name: 'btnType',
+    description: '按钮类型',
+    type: 'primary | default | danger | link',
+    initValue: 'default',
+  },
+  {
+    name: 'size',
+    description: '按钮大小',
+    type: 'lg | sm',
+    initValue: '/',
+  },
+  {
+    name: 'disabled',
+    description: '是否禁用',
+    type: 'boolean',
+    initValue: 'false',
+  }
+]} />
