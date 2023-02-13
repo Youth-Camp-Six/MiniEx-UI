@@ -1,4 +1,6 @@
 import { Button } from '../../src';
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
 
 # 按钮
 
@@ -9,63 +11,44 @@ import { Button } from '../../src';
 <Button btnType='danger'>danger按钮</Button>
 <Button btnType='link'>link按钮</Button>
 
-```ts
-import { Button } from 'miniEx';
-import React from 'react';
+此为组件源码展示使用示例
+<ShowSouceCode
+  element={<Button btnType='default'>default按钮</Button>}
+  code="import React from 'react'
+  import Example from './place'
 
-const App: React.FC = () => (
-  <div>
-    <Button btnType='default'>default按钮</Button>
-    <Button btnType='primary'>primary按钮</Button>
-    <Button btnType='danger'>danger按钮</Button>
-    <Button btnType='link'>link按钮</Button>
-  </div>
-);
+export default () => <Example />" language="js" />
 
-export default App;
-```
+## 展示代码
 
-## 禁用样式
-
-<Button disabled btnType='default'>default按钮</Button>
-<Button disabled btnType='primary'>primary按钮</Button>
-<Button disabled btnType='danger'>danger按钮</Button>
-<Button disabled btnType='link'>link按钮</Button>
+此为代码段使用示例
 ```js
-import { Button } from 'miniEx';
-import React from 'react';
-
-const App: React.FC = () => (
-  <div>
-    <Button disabled btnType='default'>default按钮</Button>
-    <Button disabled btnType='primary'>primary按钮</Button>
-    <Button disabled btnType='danger'>danger按钮</Button>
-    <Button disabled btnType='link'>link按钮</Button>
-  </div>
-);
+import React from 'react'
+import Example from './place'
 
 export default App;
-
 ```
 
-## 不同尺寸
+## Props
 
-<Button size='lg'>大尺寸</Button>
-<Button>默认尺寸</Button>
-<Button size='sm'>小尺寸</Button>
-```ts
-import {Button} from 'miniEx'
-import React from 'react'
-
-const App: React.FC = () => (
-  <div>
-    <Button size='lg'>大尺寸</Button>
-    <Button>默认尺寸</Button>
-    <Button size='sm'>小尺寸</Button>
-  </div>
-);
-
-export default App
-```
-
-## 参数
+此为Props展示使用示例
+<PropsShow propsInfo={[
+  {
+    name: '参数名',
+    description: '描述',
+    type: '类型',
+    initValue: '默认值',
+  },
+  {
+    name: '参数',
+    description: '描述',
+    type: '类型',
+    initValue: '/',
+  },
+  {
+    name: '参',
+    description: '描述',
+    type: '类型',
+    initValue: '默认值',
+  }
+]} />

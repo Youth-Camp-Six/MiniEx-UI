@@ -6,6 +6,7 @@ import Docs from '../views/doc/doc';
 import HomeCN from '../views/home/homeZH';
 import HomeUS from '../views/home/homeUS';
 import NotFound from '../views/not-found/not-found';
+import Changelogs from '../views/changelogs';
 
 import MenuUS from '../components-docs/menuUS.mdx';
 import MenuCN from '../components-docs/menuCN.mdx';
@@ -160,6 +161,16 @@ export const router = createHashRouter([
   {
     path: '*',
     element: <NotFound />,
+  },
+  {
+    path: '/changelogs',
+    element: <Main />,
+    children: [
+      {
+        path: 'md',
+        element: <Changelogs />,
+      },
+    ],
   },
 ]);
 

@@ -3,6 +3,7 @@ export const translationEnglish = {
   headerHome: 'Home',
   headerDoc: 'Document',
   headerdev: 'Dev',
+  changelog: 'Changelog',
 };
 
 export const translationChinese = {
@@ -10,4 +11,5 @@ export const translationChinese = {
   headerHome: '首页',
   headerDoc: '文档',
   headerdev: '开发',
+  changelog: '更新日志',
 };

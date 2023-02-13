@@ -42,7 +42,29 @@ module.exports = {
       },
       {
         test: /\.less$/,
-        use: ['style-loader', 'css-loader', 'less-loader', 'postcss-loader'],
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'less-loader',
+            // options: {
+            //   importLoaders: 1,
+            //   modules: {
+            //     localIdentName:
+            //       process.env.NODE_ENV === 'development'
+            //         ? '[path][name]__[local]--[hash:base64]'
+            //         : '[hash:base64]',
+            //   },
+            // },
+          },
+          {
+            loader: 'postcss-loader',
+          },
+        ],
       },
       {
         test: /\.(png|jpg|jpeg|gif)$/i,

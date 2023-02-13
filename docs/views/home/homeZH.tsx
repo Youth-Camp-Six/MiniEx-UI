@@ -93,16 +93,16 @@ const Home: React.FC = () => {
           <Flex className={cls.item} gap={40} x={'end'} direction={'y'}>
             <Flex gap={0} x={'end'} direction={'y'}>
               <Title size={'m'} style={{ fontWeight: '200', margin: '0' }}>
-                MiniEX Design
+                MiniEX UI
               </Title>
               <Title size={'xl'} style={{ fontWeight: '400', margin: '0' }}>
-                MiniEX Design
+                MiniEX UI
               </Title>
               <Title size={'xxl'} style={{ fontWeight: '400', margin: '0' }}>
-                MiniEX Design
+                MiniEX UI
               </Title>
               <Title size={'xxxl'} style={{ fontWeight: '800', margin: '0' }}>
-                MiniEX <span className={cls.design}>Design</span>
+                MiniEX <span className={cls.design}>UI</span>
               </Title>
             </Flex>
             <Flex x={'end'} gap={20}>
