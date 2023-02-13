@@ -1,37 +1,37 @@
 .mi-input-tag-view {
-    min-height: 36px;
-    display: inline-flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 5px 0px;
-    box-sizing: border-box;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: 36px;
+  padding: 5px 0;
 
-    .mi-input-tag {
-        height: 26px;
-        flex-shrink: 1;
+  .mi-input-tag {
+    flex-shrink: 1;
+    height: 26px;
 
-        ::v-deep input {
-            height: 26px;
-        }
+    input {
+      height: 26px;
     }
+  }
 }
 
 .mi-input-tag-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    height: 26px;
-    width: 65px;
-    box-sizing: border-box;
-    border-radius: var(--mi-border-radius);
-    background-color: var(--mi-bgcolor-0);
-    color: var(--mi-text-color-8);
-    border: var(--mi-text-color-8) var(--mi-form-border-width) dashed;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 65px;
+  height: 26px;
+  color: var(--mi-text-color-8);
+  background-color: var(--mi-bgcolor-0);
+  border: var(--mi-text-color-8) var(--mi-form-border-width) dashed;
+  border-radius: var(--mi-border-radius);
+  cursor: pointer;
 }
 
 .mi-input-tag-button:hover {
-    color: var(--mi-primary-color);
-    border: var(--mi-primary-color) var(--mi-form-border-width) dashed;
+  color: var(--mi-primary-color);
+  border: var(--mi-primary-color) var(--mi-form-border-width) dashed;
 }
