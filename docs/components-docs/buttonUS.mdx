@@ -13,7 +13,6 @@ import PropsShow from './components/props-show';
       <Button style={{marginRight: "4px"}} btnType='danger'>danger</Button>
       <Button style={{marginRight: "4px"}} btnType='link'>link</Button>
     </div>
-
   }
   code={
     `
@@ -44,7 +43,6 @@ language="ts"
       <Button disabled style={{marginRight: "4px"}} btnType='danger'>danger</Button>
       <Button disabled style={{marginRight: "4px"}} btnType='link'>link</Button>
     </div>
-
   }
   code={
     `
@@ -100,19 +98,19 @@ language="ts"
 <PropsShow propsInfo={[
   {
     name: 'btnType',
-    description: '按钮类型',
+    description: 'Button type',
     type: 'primary | default | danger | link',
     initValue: 'default',
   },
   {
     name: 'size',
-    description: '按钮大小',
+    description: 'Button size',
     type: 'lg | sm',
     initValue: '/',
   },
   {
     name: 'disabled',
-    description: '是否禁用',
+    description: 'Disabled state',
     type: 'boolean',
     initValue: 'false',
   }
