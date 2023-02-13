@@ -1,7 +1,7 @@
 import React, { memo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import confetti from 'canvas-confetti';
-import cls from './home.module.less';
+
 import {
   user,
   sexOtions,
@@ -31,6 +31,8 @@ import {
   Alert,
   Select,
 } from '../../../src';
+
+import cls from './home.module.less';
 
 const Home: React.FC = () => {
   useEffect(() => {
@@ -82,7 +84,7 @@ const Home: React.FC = () => {
         <Button
           btnType='primary'
           onClick={() => {
-            navigate('/doc/button');
+            navigate('/en/doc/button');
           }}
         >
           开始使用

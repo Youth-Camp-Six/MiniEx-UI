@@ -84,7 +84,7 @@ const Home: React.FC = () => {
         <Button
           btnType='primary'
           onClick={() => {
-            navigate('/doc/button');
+            navigate('/en/doc/button');
           }}
         >
           Get started
