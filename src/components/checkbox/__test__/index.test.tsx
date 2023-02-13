@@ -51,5 +51,9 @@ describe('test CheckboxGroup comonent', () => {
     expect(checkbox0).not.toHaveClass('mi-checkbox-checked');
     expect(checkbox1).toHaveClass('mi-checkbox-checked');
     expect(checkbox2).toHaveClass('mi-checkbox-checked');
+
+    checkbox0.click();
+    expect(checkbox0).toHaveClass('mi-checkbox-checked');
+    expect(onChange).toBeCalledWith([1, 2, 0]);
   });
 });
