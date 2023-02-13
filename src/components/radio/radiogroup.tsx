@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { RadioGroupProps } from './type';
 import { Flex } from '../flex';
@@ -14,6 +14,10 @@ export const RadioGroup: React.FC<RadioGroupProps> = (props) => {
   });
 
   const [selectedValue, setSelectedValue] = useState(value);
+
+  useEffect(() => {
+    setSelectedValue(value);
+  }, [value]);
 
   function handleChange(key: string | number) {
     setSelectedValue(key);
