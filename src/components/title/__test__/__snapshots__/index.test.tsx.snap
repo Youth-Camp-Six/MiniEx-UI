@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`title title snapshot test 1`] = `
+<div>
+  <h1
+    class="mi-title"
+    style="font-size: 14px;"
+  >
+    标题组件 s
+  </h1>
+  <h1
+    class="mi-title"
+    style="font-size: 18px;"
+  >
+    标题组件 l
+  </h1>
+  <h1
+    class="mi-title"
+    style="font-size: 16px;"
+  >
+    标题组件 m
+  </h1>
+  <h1
+    class="mi-title"
+    style="font-size: 24px;"
+  >
+    标题组件 xl
+  </h1>
+  <h1
+    class="mi-title"
+    style="font-size: 32px;"
+  >
+    标题组件 xxl
+  </h1>
+</div>
+`;

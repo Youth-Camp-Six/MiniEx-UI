@@ -1,19 +1,24 @@
 import { Title } from '../../src';
 
 # Title
-
-## Show Components
-
 <Title size='s'>Title component s</Title>
-<Title size='l'>Title component l</Title>
 <Title size='m'>Title component m</Title>
+<Title size='l'>Title component l</Title>
 <Title size='xl'>Title component xl</Title>
 <Title size='xxl'>Title component xxl</Title>
 
-## Show Code
+```ts
+const App: React.FC = () => (
+  <div>
+    <Title size='s'>Title component s</Title>
+    <Title size='m'>Title component m</Title>
+    <Title size='l'>Title component l</Title>
+    <Title size='xl'>Title component xl</Title>
+    <Title size='xxl'>Title component xxl</Title>
+  </div>
+);
 
-```js
-const a = 0;
+export default App;
 ```
 
 ## API
