@@ -51,7 +51,7 @@ if (requireCustomFile.keys()?.length) {
 export const router = createHashRouter([
   {
     path: '/',
-    element: <Navigate to='/en' />,
+    element: <Navigate to='/zh' />,
     children: [],
   },
   {

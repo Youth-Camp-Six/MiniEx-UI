@@ -13,21 +13,21 @@ const isDev = process.env.NODE_ENV === 'development';
 const Header: React.FC = () => {
   // const [themeMode, setThemeMode] = useState('light');
   const { t, i18n } = useTranslation(['home']);
-  const [languageMode, setLanguageMode] = useState('en');
-  const nav = useNavigate();
   const location = useLocation();
+  const nav = useNavigate();
+  const [languageMode, setLanguageMode] = useState(location.pathname.split('/')[1]);
 
   const onClickLanguageChange = () => {
     let temp: To;
-    if (languageMode === 'zh') {
-      setLanguageMode('en');
-      temp = location.pathname.replace('/zh', '/en');
-      i18n.changeLanguage('en');
-      nav(temp);
-    } else {
+    if (languageMode === 'en') {
       setLanguageMode('zh');
       temp = location.pathname.replace('/en', '/zh');
       i18n.changeLanguage('zh');
+      nav(temp);
+    } else {
+      setLanguageMode('en');
+      temp = location.pathname.replace('/zh', '/en');
+      i18n.changeLanguage('en');
       nav(temp);
     }
   };

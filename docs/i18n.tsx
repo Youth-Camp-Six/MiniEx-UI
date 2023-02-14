@@ -15,7 +15,7 @@ const resources = {
 
 i18next.use(initReactI18next).init({
   resources,
-  lng: 'en', //default language
+  lng: window.location.hash.split('/')[1] || 'zh', //default language
 });
 
 export default i18next;
