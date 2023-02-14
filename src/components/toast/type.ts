@@ -6,12 +6,12 @@ export type ToastPosition =
   | 'bottom-right'
   | 'bottom-center';
 
-export type TypeOptions = 'info' | 'success' | 'warning' | 'error' | 'default';
+export type TypeOptions = 'info' | 'success' | 'warn' | 'error' | 'default';
 
 export type Theme = 'light' | 'dark';
 
 export interface ToastProps {
-  title?: string;
+  title: string;
   message: string;
   onClose?: () => void;
   timeout?: number;
