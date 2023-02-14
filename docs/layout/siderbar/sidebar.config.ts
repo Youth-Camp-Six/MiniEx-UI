@@ -60,7 +60,12 @@ export const siderbarConfig: ISiderbarConfig = {
     },
     {
       title: 'Feedback',
-      children: [],
+      children: [
+        {
+          title: 'Toast',
+          path: '/doc/toast',
+        },
+      ],
     },
   ],
   zh: [
@@ -122,7 +127,12 @@ export const siderbarConfig: ISiderbarConfig = {
     },
     {
       title: '反馈',
-      children: [],
+      children: [
+        {
+          title: 'Toast',
+          path: '/doc/toast',
+        },
+      ],
     },
   ],
 };
