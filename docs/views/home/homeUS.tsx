@@ -32,7 +32,7 @@ import {
   Switch,
   Alert,
   Select,
-} from '../../../src';
+} from '../../../src/components';
 
 const Home: React.FC = () => {
   useEffect(() => {

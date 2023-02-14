@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React from 'react';
 import type { ReactNode } from 'react';
-import { RadioGroup } from '../../../../src';
+import { RadioGroup } from '../../../../src/components';
 
 interface IProps {
   children?: ReactNode;

@@ -1,6 +1,6 @@
 import React, { memo, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
-import { Menu, MenuItem } from '../../../src';
+import { Menu, MenuItem } from '../../../src/components';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { IRouterConfig, ISiderbarConfig, ISiderbarItemConfig } from './sidebar.type';
 import { siderbarConfig } from './sidebar.config';

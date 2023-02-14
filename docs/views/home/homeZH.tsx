@@ -30,7 +30,7 @@ import {
   Switch,
   Alert,
   Select,
-} from '../../../src';
+} from '../../../src/components';
 
 import cls from './home.module.less';
 
