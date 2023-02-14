@@ -1,0 +1,650 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Table Table snapshot test 1`] = `
+<div
+  style="width: 813px;"
+>
+  <div
+    class="mi-table"
+    style="overflow-x: auto; overflow-y: hidden;"
+  >
+    <div
+      class="mi-table-head"
+    >
+      <div
+        class="mi-table-tr"
+      >
+        <div
+          class="mi-flex mi-table-td 
+              
+              
+              
+               mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: 100px;"
+        >
+          id
+        </div>
+        <div
+          class="mi-flex mi-table-td 
+              
+              
+              
+               mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: 180px;"
+        >
+          信息
+        </div>
+        <div
+          class="mi-flex mi-table-td 
+              
+              
+              
+               mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: -70.8px;"
+        >
+          年龄
+        </div>
+        <div
+          class="mi-flex mi-table-td 
+              
+              
+              
+               mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: -70.8px;"
+        >
+          性别
+        </div>
+        <div
+          class="mi-flex mi-table-td 
+              
+              
+              
+               mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: -70.8px;"
+        >
+          成绩
+        </div>
+        <div
+          class="mi-flex mi-table-td 
+              
+              
+              
+               mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: -70.8px;"
+        >
+          介绍
+        </div>
+      </div>
+    </div>
+    <div
+      class="mi-table-body"
+    >
+      <div
+        class="mi-table-tr"
+      >
+        <div
+          class="mi-flex mi-table-td 
+                
+                
+                
+                 mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: 100px;"
+        >
+          <div>
+            1
+          </div>
+        </div>
+        <div
+          class="mi-flex mi-table-td 
+                
+                
+                
+                 mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: 180px;"
+        >
+          <div
+            class="mi-flex info mi-flex-x mi-flex-x-center mi-flex-y-center"
+            style="gap: 10px;"
+          >
+            <div
+              class="mi-avatar"
+              style="width: 40px; height: 40px;"
+            >
+              <img
+                alt=""
+                class="mi-avatar-round"
+                src="https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668"
+              />
+            </div>
+            <div
+              class="mi-flex right mi-flex-y mi-flex-x-start mi-flex-y-center"
+              style="gap: 0px;"
+            >
+              <div
+                class="name"
+              >
+                小明
+              </div>
+              <div
+                class="mail"
+              >
+                div@kamtao.com
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mi-flex mi-table-td 
+                
+                
+                
+                 mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: -70.8px;"
+        >
+          <div>
+            14
+          </div>
+        </div>
+        <div
+          class="mi-flex mi-table-td 
+                
+                
+                
+                 mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: -70.8px;"
+        >
+          <div>
+            男
+          </div>
+        </div>
+        <div
+          class="mi-flex mi-table-td 
+                
+                
+                
+                 mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: -70.8px;"
+        >
+          <div
+            class="mi-flex mi-flex-x mi-flex-x-center mi-flex-y-center"
+            style="gap: 10px;"
+          >
+            <div
+              class="mi-badge mi-badge-success mi-badge-round"
+            >
+              <div
+                class="mi-badge-dot"
+              />
+            </div>
+            良好
+          </div>
+        </div>
+        <div
+          class="mi-flex mi-table-td 
+                
+                
+                
+                 mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: -70.8px;"
+        >
+          <div>
+            从小独立呼吸，讲卫生懂礼貌，不会随便捡地上的东西吃。
+          </div>
+        </div>
+      </div>
+      <div
+        class="mi-table-tr"
+      >
+        <div
+          class="mi-flex mi-table-td 
+                
+                
+                
+                 mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: 100px;"
+        >
+          <div>
+            2
+          </div>
+        </div>
+        <div
+          class="mi-flex mi-table-td 
+                
+                
+                
+                 mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: 180px;"
+        >
+          <div
+            class="mi-flex info mi-flex-x mi-flex-x-center mi-flex-y-center"
+            style="gap: 10px;"
+          >
+            <div
+              class="mi-avatar"
+              style="width: 40px; height: 40px;"
+            >
+              <img
+                alt=""
+                class="mi-avatar-round"
+                src="https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668"
+              />
+            </div>
+            <div
+              class="mi-flex right mi-flex-y mi-flex-x-start mi-flex-y-center"
+              style="gap: 0px;"
+            >
+              <div
+                class="name"
+              >
+                小卢
+              </div>
+              <div
+                class="mail"
+              >
+                div@kamtao.com
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mi-flex mi-table-td 
+                
+                
+                
+                 mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: -70.8px;"
+        >
+          <div>
+            24
+          </div>
+        </div>
+        <div
+          class="mi-flex mi-table-td 
+                
+                
+                
+                 mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: -70.8px;"
+        >
+          <div>
+            男
+          </div>
+        </div>
+        <div
+          class="mi-flex mi-table-td 
+                
+                
+                
+                 mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: -70.8px;"
+        >
+          <div
+            class="mi-flex mi-flex-x mi-flex-x-center mi-flex-y-center"
+            style="gap: 10px;"
+          >
+            <div
+              class="mi-badge mi-badge-success mi-badge-round"
+            >
+              <div
+                class="mi-badge-dot"
+              />
+            </div>
+            良好
+          </div>
+        </div>
+        <div
+          class="mi-flex mi-table-td 
+                
+                
+                
+                 mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: -70.8px;"
+        >
+          <div>
+            从小独立呼吸，讲卫生懂礼貌，不会随便捡地上的东西吃。
+          </div>
+        </div>
+      </div>
+      <div
+        class="mi-table-tr"
+      >
+        <div
+          class="mi-flex mi-table-td 
+                
+                
+                
+                 mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: 100px;"
+        >
+          <div>
+            3
+          </div>
+        </div>
+        <div
+          class="mi-flex mi-table-td 
+                
+                
+                
+                 mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: 180px;"
+        >
+          <div
+            class="mi-flex info mi-flex-x mi-flex-x-center mi-flex-y-center"
+            style="gap: 10px;"
+          >
+            <div
+              class="mi-avatar"
+              style="width: 40px; height: 40px;"
+            >
+              <img
+                alt=""
+                class="mi-avatar-round"
+                src="https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668"
+              />
+            </div>
+            <div
+              class="mi-flex right mi-flex-y mi-flex-x-start mi-flex-y-center"
+              style="gap: 0px;"
+            >
+              <div
+                class="name"
+              >
+                小娟
+              </div>
+              <div
+                class="mail"
+              >
+                div@kamtao.com
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mi-flex mi-table-td 
+                
+                
+                
+                 mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: -70.8px;"
+        >
+          <div>
+            25
+          </div>
+        </div>
+        <div
+          class="mi-flex mi-table-td 
+                
+                
+                
+                 mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: -70.8px;"
+        >
+          <div>
+            女
+          </div>
+        </div>
+        <div
+          class="mi-flex mi-table-td 
+                
+                
+                
+                 mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: -70.8px;"
+        >
+          <div
+            class="mi-flex mi-flex-x mi-flex-x-center mi-flex-y-center"
+            style="gap: 10px;"
+          >
+            <div
+              class="mi-badge mi-badge-success mi-badge-round"
+            >
+              <div
+                class="mi-badge-dot"
+              />
+            </div>
+            良好
+          </div>
+        </div>
+        <div
+          class="mi-flex mi-table-td 
+                
+                
+                
+                 mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: -70.8px;"
+        >
+          <div>
+            从小独立呼吸，讲卫生懂礼貌，不会随便捡地上的东西吃。
+          </div>
+        </div>
+      </div>
+      <div
+        class="mi-table-tr"
+      >
+        <div
+          class="mi-flex mi-table-td 
+                
+                
+                
+                 mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: 100px;"
+        >
+          <div>
+            4
+          </div>
+        </div>
+        <div
+          class="mi-flex mi-table-td 
+                
+                
+                
+                 mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: 180px;"
+        >
+          <div
+            class="mi-flex info mi-flex-x mi-flex-x-center mi-flex-y-center"
+            style="gap: 10px;"
+          >
+            <div
+              class="mi-avatar"
+              style="width: 40px; height: 40px;"
+            >
+              <img
+                alt=""
+                class="mi-avatar-round"
+                src="https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668"
+              />
+            </div>
+            <div
+              class="mi-flex right mi-flex-y mi-flex-x-start mi-flex-y-center"
+              style="gap: 0px;"
+            >
+              <div
+                class="name"
+              >
+                小贝
+              </div>
+              <div
+                class="mail"
+              >
+                div@kamtao.com
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mi-flex mi-table-td 
+                
+                
+                
+                 mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: -70.8px;"
+        >
+          <div>
+            22
+          </div>
+        </div>
+        <div
+          class="mi-flex mi-table-td 
+                
+                
+                
+                 mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: -70.8px;"
+        >
+          <div>
+            女
+          </div>
+        </div>
+        <div
+          class="mi-flex mi-table-td 
+                
+                
+                
+                 mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: -70.8px;"
+        >
+          <div
+            class="mi-flex mi-flex-x mi-flex-x-center mi-flex-y-center"
+            style="gap: 10px;"
+          >
+            <div
+              class="mi-badge mi-badge-error mi-badge-round"
+            >
+              <div
+                class="mi-badge-dot"
+              />
+            </div>
+            很差
+          </div>
+        </div>
+        <div
+          class="mi-flex mi-table-td 
+                
+                
+                
+                 mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: -70.8px;"
+        >
+          <div>
+            从小独立呼吸，讲卫生懂礼貌，不会随便捡地上的东西吃。
+          </div>
+        </div>
+      </div>
+      <div
+        class="mi-table-tr"
+      >
+        <div
+          class="mi-flex mi-table-td 
+                
+                
+                
+                 mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: 100px;"
+        >
+          <div>
+            5
+          </div>
+        </div>
+        <div
+          class="mi-flex mi-table-td 
+                
+                
+                
+                 mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: 180px;"
+        >
+          <div
+            class="mi-flex info mi-flex-x mi-flex-x-center mi-flex-y-center"
+            style="gap: 10px;"
+          >
+            <div
+              class="mi-avatar"
+              style="width: 40px; height: 40px;"
+            >
+              <img
+                alt=""
+                class="mi-avatar-round"
+                src="https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668"
+              />
+            </div>
+            <div
+              class="mi-flex right mi-flex-y mi-flex-x-start mi-flex-y-center"
+              style="gap: 0px;"
+            >
+              <div
+                class="name"
+              >
+                小飞
+              </div>
+              <div
+                class="mail"
+              >
+                div@kamtao.com
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mi-flex mi-table-td 
+                
+                
+                
+                 mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: -70.8px;"
+        >
+          <div>
+            13
+          </div>
+        </div>
+        <div
+          class="mi-flex mi-table-td 
+                
+                
+                
+                 mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: -70.8px;"
+        >
+          <div>
+            男
+          </div>
+        </div>
+        <div
+          class="mi-flex mi-table-td 
+                
+                
+                
+                 mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: -70.8px;"
+        >
+          <div
+            class="mi-flex mi-flex-x mi-flex-x-center mi-flex-y-center"
+            style="gap: 10px;"
+          >
+            <div
+              class="mi-badge mi-badge-error mi-badge-round"
+            >
+              <div
+                class="mi-badge-dot"
+              />
+            </div>
+            很差
+          </div>
+        </div>
+        <div
+          class="mi-flex mi-table-td 
+                
+                
+                
+                 mi-flex-x mi-flex-x-center mi-flex-y-center"
+          style="position: sticky; width: -70.8px;"
+        >
+          <div>
+            从小独立呼吸，讲卫生懂礼貌，不会随便捡地上的东西吃。
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

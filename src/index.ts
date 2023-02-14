@@ -20,3 +20,4 @@ export * from './components/tag';
 export * from './components/alert';
 export * from './components/popover';
 export * from './components/select';
+export * from './components/table';

@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-export type Options = {
+type Options = {
   label: string | ReactNode;
   to: string;
   active?: boolean;
