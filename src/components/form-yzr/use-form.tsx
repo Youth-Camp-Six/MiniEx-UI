@@ -62,16 +62,16 @@ class FormStore {
     // todo 校验
     // 简版校验
 
-    this.fieldEntities.forEach((entity) => {
-      const { name, rules } = entity.props;
+    // this.fieldEntities.forEach((entity) => {
+    //   const { name, rules } = entity.props;
 
-      const value = this.getFieldValue(name);
-      const rule = rules[0];
+    //   const value = this.getFieldValue(name);
+    //   const rule = rules[0];
 
-      if (rule && rule.required && (value === undefined || value === '')) {
-        err.push({ [name]: rule.message, value });
-      }
-    });
+    //   if (rule && rule.required && (value === undefined || value === '')) {
+    //     err.push({ [name]: rule.message, value });
+    //   }
+    // });
 
     return err;
   };

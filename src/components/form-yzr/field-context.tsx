@@ -5,6 +5,9 @@ interface IContext {
   getFieldValue: (...args: any) => any;
   setFieldsValue: (...args: any) => any;
   registerFieldEntities: (...args: any) => any;
+  labelwidth?: string;
+  direction?: 'x' | 'y';
+  labelalign?: 'start' | 'end';
 }
 
 const FieldContext = React.createContext<IContext>({
