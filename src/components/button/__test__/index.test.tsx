@@ -22,7 +22,6 @@ const disabledProps: ButtonProps = {
 };
 
 describe('test button comonent', () => {
-  // 快照测试
   it('button snapshot test', () => {
     const wrapper = render(
       <div>

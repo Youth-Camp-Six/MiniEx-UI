@@ -6,6 +6,7 @@ import Docs from '../views/doc/doc';
 import HomeCN from '../views/home/homeZH';
 import HomeUS from '../views/home/homeUS';
 import NotFound from '../views/not-found/not-found';
+import Changelogs from '../views/changelogs';
 
 import MenuUS from '../components-docs/menuUS.mdx';
 import MenuCN from '../components-docs/menuCN.mdx';
@@ -21,6 +22,10 @@ import TabsUS from '../components-docs/tabsUS.mdx';
 import TabsCN from '../components-docs/tabsCN.mdx';
 import BreadcrumbUS from '../components-docs/breadcrumbUS.mdx';
 import BreadcrumbCN from '../components-docs/breadcrumbCN.mdx';
+import RadioUS from '../components-docs/radioUS.mdx';
+import RadioCN from '../components-docs/radioCN.mdx';
+import ToastUS from '../components-docs/toastUS.mdx';
+import ToastCN from '../components-docs/toastCN.mdx';
 
 import '../i18n';
 import { createHashRouter, Navigate } from 'react-router-dom';
@@ -99,6 +104,14 @@ export const router = createHashRouter([
             path: '/en/doc/breadcrumb',
             element: <BreadcrumbUS components={components} />,
           },
+          {
+            path: '/en/doc/radio',
+            element: <RadioUS components={components} />,
+          },
+          {
+            path: '/en/doc/toast',
+            element: <ToastUS components={components} />,
+          },
         ],
       },
     ],
@@ -153,6 +166,14 @@ export const router = createHashRouter([
             path: '/zh/doc/breadcrumb',
             element: <BreadcrumbCN components={components} />,
           },
+          {
+            path: '/zh/doc/radio',
+            element: <RadioCN components={components} />,
+          },
+          {
+            path: '/zh/doc/toast',
+            element: <ToastCN components={components} />,
+          },
         ],
       },
     ],
@@ -160,6 +181,16 @@ export const router = createHashRouter([
   {
     path: '*',
     element: <NotFound />,
+  },
+  {
+    path: '/changelogs',
+    element: <Main />,
+    children: [
+      {
+        path: 'md',
+        element: <Changelogs />,
+      },
+    ],
   },
 ]);
 

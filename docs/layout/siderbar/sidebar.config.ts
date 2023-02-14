@@ -38,7 +38,12 @@ export const siderbarConfig: ISiderbarConfig = {
     },
     {
       title: 'Data Entry',
-      children: [],
+      children: [
+        {
+          title: 'Radio',
+          path: '/doc/radio',
+        },
+      ],
     },
     {
       title: 'Data Display',
@@ -55,7 +60,12 @@ export const siderbarConfig: ISiderbarConfig = {
     },
     {
       title: 'Feedback',
-      children: [],
+      children: [
+        {
+          title: 'Toast',
+          path: '/doc/toast',
+        },
+      ],
     },
   ],
   zh: [
@@ -95,7 +105,12 @@ export const siderbarConfig: ISiderbarConfig = {
     },
     {
       title: '数据录入',
-      children: [],
+      children: [
+        {
+          title: 'Radio 单选框',
+          path: '/doc/radio',
+        },
+      ],
     },
     {
       title: '数据展示',
@@ -112,7 +127,12 @@ export const siderbarConfig: ISiderbarConfig = {
     },
     {
       title: '反馈',
-      children: [],
+      children: [
+        {
+          title: 'Toast',
+          path: '/doc/toast',
+        },
+      ],
     },
   ],
 };

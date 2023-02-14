@@ -6,6 +6,7 @@ export * from './components/title';
 export * from './components/flex';
 export * from './components/icon/icon';
 export * from './components/tabs';
+export * from './components/toast';
 export * from './components/breadcrumb';
 export * from './components/dropdown';
 export * from './components/input';

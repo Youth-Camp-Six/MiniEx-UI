@@ -32,7 +32,7 @@ const Siderbar: React.FC<IProps> = () => {
     }
   }, [location]);
 
-  const navgate = useNavigate();
+  const navigate = useNavigate();
 
   const handleClick = (index: number) => {
     let lng: string;
@@ -41,7 +41,7 @@ const Siderbar: React.FC<IProps> = () => {
     } else {
       lng = '/en';
     }
-    navgate((lng + menuConfig[index].path) as string);
+    navigate((lng + menuConfig[index].path) as string);
   };
 
   return (
