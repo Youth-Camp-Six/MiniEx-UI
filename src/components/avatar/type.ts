@@ -15,7 +15,7 @@ export interface AvatarProps {
   children?: ReactNode;
 }
 type baseOptions = {
-  label: string;
+  label?: string;
   value: string;
 };
 export type AvatarOptions = AvatarProps & baseOptions;

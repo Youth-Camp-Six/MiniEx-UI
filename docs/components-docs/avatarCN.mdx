@@ -1,12 +1,14 @@
 import { Avatar,AvatarGroup,MiIcon,Badge,Flex } from '../../src';
 import ShowSouceCode from './components/show-source-code';
 import PropsShow from './components/props-show';
+import {AvatarGroupCN} from './components/avatar/avatarGroup.tsx'
 import img from '../assets/logo.png'
 
 # 头像
 
 ## 类型
 支持三种类型：图片、Icon 以及字符，其中 Icon 和字符型可以自定义图标颜色及背景色。
+
 <ShowSouceCode
   element={
     <Flex x='start'>
@@ -18,12 +20,12 @@ import img from '../assets/logo.png'
     </Flex>
   }
   code={`
-    import { Avatar, MiIcon,Flex } from 'miniEx';
+    import { Avatar, MiIcon , Flex } from 'miniEx';
     import React from 'react';
     import img from '../assets/logo.png'
 
     const App: React.FC = () => (
-      <Flex x='start'>
+    <Flex x='start'>
       <Avatar>U</Avatar>
       <Avatar icon={<MiIcon.User/>}></Avatar>
       <Avatar src={img} round='round'></Avatar>
@@ -38,166 +40,204 @@ import img from '../assets/logo.png'
   language="ts"
   />
 
-## 展示代码
-
 
 ## 尺寸
 头像可自定义尺寸，两种形状可选。
 
-<Avatar width="30px" height="30px" icon={<MiIcon.User></MiIcon.User>}></Avatar>
-<Avatar width="40px" height="40px">U</Avatar>
-<Avatar width="50px" height="50px" src={'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg'} />
+<ShowSouceCode
+  element={
+    <Flex x='start'>
+      <Avatar width="30px" height="30px" icon={<MiIcon.User></MiIcon.User>}></Avatar>
+      <Avatar width="50px" height="50px">U</Avatar>
+      <Avatar width="70px" height="70px" round='round' src={'https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668'} />
+      <Avatar width="70px" height="70px" src={'https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668'} />
+    </Flex>
+  }
+  code={`
+    import { Avatar, MiIcon , Flex } from 'miniEx';
+    import React from 'react';
 
-## 展示代码
+    const App: React.FC = () => (
+    <Flex x='start'>
+      <Avatar width="30px" height="30px" icon={<MiIcon.User></MiIcon.User>}></Avatar>
+      <Avatar width="50px" height="50px">U</Avatar>
+      <Avatar width="70px" height="70px"
+      round='round' src={'https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668'} />
+      <Avatar width="70px" height="70px" src={'https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668'} />
+    </Flex>
+    );
 
-```js
-import { Avatar, MiIcon } from 'miniEx';
-import React from 'react';
+    export default App;
+    `
+  }
+  language="ts"
+  />
 
-// const url = 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg';
 
-const App: React.FC = () => (
-  <Avatar width="30px" height="30px" icon={<MiIcon.User></MiIcon.User>}></Avatar>
-    <Avatar width="40px" height="40px">U</Avatar>
-    <Avatar width="50px" height="50px" src={'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg'} />
-    <Avatar style={{ backgroundColor: '#fde3cf', color: '#f56a00' }}>U</Avatar>
-);
-
-export default App;
-```
 
 ## 带徽标的头像
 通常用于消息提示。
 
-<Avatar status="busy" statusPosition="top-right">U</Avatar>
-<Avatar status="online" statusPosition="bottom-right">U</Avatar>
-<Badge value="15">
-   <Avatar>U</Avatar>
-</Badge>
+<ShowSouceCode
+  element={
+    <Flex x='start'>
+      <Avatar status="busy" statusPosition="top-right">U</Avatar>
+      <Avatar status="online" statusPosition="bottom-right">U</Avatar>
+      <Badge value="15">
+          <Avatar>U</Avatar>
+      </Badge>
+    </Flex>
+  }
+  code={`
+    import { Avatar, MiIcon , Flex } from 'miniEx';
+    import React from 'react';
 
+    const App: React.FC = () => (
+    <Flex x='start'>
+      Avatar status="busy" statusPosition="top-right">U</Avatar>
+      <Avatar status="online" statusPosition="bottom-right">U</Avatar>
+      <Badge value="15">
+          <Avatar>U</Avatar>
+      </Badge>
+    </Flex>
+    );
 
-## 展示代码
+    export default App;
+    `
+  }
+  language="ts"
+  />
 
-```js
-import { Avatar, MiIcon } from 'miniEx';
-import React from 'react';
-
-const App: React.FC = () => (
-  <Avatar status="busy" statusPosition="top-right">U</Avatar>
-<Avatar status="online" statusPosition="bottom-right">U</Avatar>
-<Badge value="15">
-   <Avatar>U</Avatar>
-</Badge>
-);
-
-export default App;
-```
 
 
 ## 头像组
 头像组合展现。
 
-<AvatarGroup options={[
-    {
-      label: '',
-      value: '1',
-    },
-    {
-      src: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
-      value: '2',
-    },
-    {
-      label:'u' ,
-      value: '3',
-    },
-    {
-      label: 'k',
-      value: '4',
-    },
-  ]}></AvatarGroup>
-<AvatarGroup options={[
-    {
-      label: '',
-      value: '1',
-    },
-    {
-      src: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
-      value: '2',
-    },
-    {
-      label:'u' ,
-      value: '3',
-    },
-    {
-      label: 'k',
-      value: '4',
-    },
-  ]} maxCount={2}></AvatarGroup>
+<ShowSouceCode
+  element={AvatarGroupCN()}
+  code={`
+    import { AvatarGroup, MiIcon , Flex } from 'miniEx';
+    import React from 'react';
 
-## 展示代码
+    const App: React.FC = () => (
+      const options = [
+        {
+          label: 'U',
+          value: '1',
+          style: { backgroundColor: '#fde3cf', color: '#f56a00' },
+        },
+        {
+          icon: <MiIcon.User />,
+          value: '2',
+          style: { backgroundColor: '#87d068' },
+        },
+        {
+          src: 'https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668',
+          value: '3',
+          round: 'round',
+        },
+        {
+          label: 'k',
+          value: '4',
+        },
+      ];
+    return (
+    <Flex direction='y'>
+      <AvatarGroup options={options}></AvatarGroup>
+      <AvatarGroup maxCount={2} options={options}></AvatarGroup>
+    </Flex>
+  );
 
-```js
-import { AvatarGroup } from 'miniEx';
-import React from 'react';
+    export default App;
+    `
+  }
+  language="ts"
+  />
 
-// const arr = [
-//     {
-//       label: '',
-//       value: '1',
-//     },
-//     {
-//       src: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
-//       value: '2',
-//     },
-//     {
-//       label:'u' ,
-//       value: '3',
-//     },
-//     {
-//       label: 'k',
-//       value: '4',
-//     },
-//   ]
 
-const App: React.FC = () => (
-    <AvatarGroup options={[
-    {
-      label: '',
-      value: '1',
-    },
-    {
-      src: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
-      value: '2',
-    },
-    {
-      label:'u' ,
-      value: '3',
-    },
-    {
-      label: 'k',
-      value: '4',
-    },
-  ]}></AvatarGroup>
-      <AvatarGroup options={[
-    {
-      label: '',
-      value: '1',
-    },
-    {
-      src: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
-      value: '2',
-    },
-    {
-      label:'u' ,
-      value: '3',
-    },
-    {
-      label: 'k',
-      value: '4',
-    },
-  ]} maxCount={2}></AvatarGroup>
-);
+## Props
+头像
+<PropsShow propsInfo={[
+  {
+    name: 'src',
+    description: '链接',
+    type: 'string',
+    initValue: '/',
+  },
+  {
+    name: 'icon',
+    description: '设置头像的自定义图标',
+    type: 'ReactNode',
+    initValue: '/',
+  },
+  {
+    name: 'alt',
+    description: '图像无法显示时的文本',
+    type: 'string',
+    initValue: '/',
+  },
+  {
+    name: 'round',
+    description: '是否为圆形',
+    type: 'round|/',
+    initValue: '/',
+  },
+  {
+    name: 'status',
+    description: '状态',
+    type: 'online|processing|away|offline|busy|/',
+    initValue: '/',
+  },
+  {
+    name: 'statusPosition',
+    description: '状态标记位置',
+    type: 'top-left|top-right|bottom-left|bottom-right',
+    initValue: '/',
+  },
+  {
+    name: 'width/height',
+    description: '头像宽高',
+    type: 'string',
+    initValue: '40px',
+  },
+]} />
 
-export default App;
-```
-## API
+头像组
+<PropsShow propsInfo={[
+  {
+    name: 'options',
+    description: '头像展示数据',
+    type: '参考头像props，且value属性必填',
+    initValue: '[]',
+  },
+  {
+    name: 'maxCount',
+    description: '显示的最大头像个数',
+    type: 'number',
+    initValue: '/',
+  },
+  {
+    name: 'options',
+    description: 'checkbox item数据',
+    type: '(chengedValue: string | number) => void',
+    initValue: '/',
+  },
+  {
+    name: 'maxPopoverPlacement',
+    description: '多余头像气泡弹出位置',
+    type: 'top|bottom',
+    initValue: 'bottom',
+  },
+  {
+    name: 'maxPopoverTrigger',
+    description: '多余头像Popover的触发方式',
+    type: 'hover|focus|click',
+    initValue: 'hover',
+  },
+  {
+    name: 'maxStyle',
+    description: '多余头像样式',
+    type: 'CSSProperties',
+    initValue: '/',
+  },
+]} />
