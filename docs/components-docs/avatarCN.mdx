@@ -1,52 +1,48 @@
-import { Avatar,AvatarGroup,MiIcon,Badge } from '../../src';
-// import logo from '@/assets/logo.png'
-// const arr = [
-//     {
-//       label: '',
-//       value: '1',
-//     },
-//     {
-//       src: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
-//       value: '2',
-//     },
-//     {
-//       label:'u' ,
-//       value: '3',
-//     },
-//     {
-//       label: 'k',
-//       value: '4',
-//     },
-//   ]
+import { Avatar,AvatarGroup,MiIcon,Badge,Flex } from '../../src';
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
+import img from '../assets/logo.png'
 
 # 头像
 
 ## 类型
-头像可自定义尺寸，两种形状可选。
+支持三种类型：图片、Icon 以及字符，其中 Icon 和字符型可以自定义图标颜色及背景色。
+<ShowSouceCode
+  element={
+    <Flex x='start'>
+      <Avatar>U</Avatar>
+      <Avatar icon={<MiIcon.User/>}></Avatar>
+      <Avatar src={img} round='round'></Avatar>
+      <Avatar style={{ backgroundColor: '#fde3cf', color: '#f56a00' }}>U</Avatar>
+      <Avatar style={{ backgroundColor: '#87d068' }} icon={<MiIcon.User style={{color:'yellow'}}/>} />
+    </Flex>
+  }
+  code={`
+    import { Avatar, MiIcon,Flex } from 'miniEx';
+    import React from 'react';
+    import img from '../assets/logo.png'
 
-<Avatar>U</Avatar>
-<Avatar icon={<MiIcon.User></MiIcon.User>}></Avatar>
-<Avatar src={'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg'} round='round'></Avatar>
+    const App: React.FC = () => (
+      <Flex x='start'>
+      <Avatar>U</Avatar>
+      <Avatar icon={<MiIcon.User/>}></Avatar>
+      <Avatar src={img} round='round'></Avatar>
+      <Avatar style={{ backgroundColor: '#fde3cf', color: '#f56a00' }}>U</Avatar>
+      <Avatar style={{ backgroundColor: '#87d068' }} icon={<MiIcon.User style={{color:'yellow'}}/>} />
+    </Flex>
+    );
+
+    export default App;
+    `
+  }
+  language="ts"
+  />
 
 ## 展示代码
 
-```js
-import { Avatar, MiIcon } from 'miniEx';
-import React from 'react';
-
-// const url = 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg';
-
-const App: React.FC = () => (
-    <Avatar  icon={<MiIcon.User></MiIcon.User>}></Avatar>
-    <Avatar >U</Avatar>
-    <Avatar  src={'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg'} />
-);
-
-export default App;
-```
 
 ## 尺寸
-支持三种类型：图片、Icon 以及字符，其中 Icon 和字符型可以自定义图标颜色及背景色。
+头像可自定义尺寸，两种形状可选。
 
 <Avatar width="30px" height="30px" icon={<MiIcon.User></MiIcon.User>}></Avatar>
 <Avatar width="40px" height="40px">U</Avatar>
