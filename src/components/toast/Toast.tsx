@@ -2,15 +2,7 @@ import React, { useState, useEffect, useRef, memo, type FC } from 'react';
 import type { ToastProps } from './type';
 
 export const Toast: FC<ToastProps> = (props) => {
-  const {
-    title,
-    message,
-    onClose,
-    timeout = 3000,
-    pauseOnHover = true,
-    position = 'bottom-right',
-    style = 'default',
-  } = props;
+  const { title, message, onClose, timeout, pauseOnHover, position, style } = props;
 
   const [show, setShow] = useState<boolean>(true);
   const [progress, setProgress] = useState<number>(100);
@@ -87,6 +79,13 @@ export const Toast: FC<ToastProps> = (props) => {
       <div className='progressbar' style={{ width: `${progress}%` }}></div>
     </div>
   );
+};
+
+Toast.defaultProps = {
+  timeout: 3000,
+  pauseOnHover: true,
+  position: 'bottom-right',
+  style: 'default',
 };
 
 export default memo(Toast);
