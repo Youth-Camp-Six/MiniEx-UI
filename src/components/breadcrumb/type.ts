@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-type Options = {
+export type BreadcrumbOptions = {
   label: string | ReactNode;
   to: string;
   active?: boolean;
@@ -8,7 +8,7 @@ type Options = {
 type iconType = 'sprit' | 'shoulder';
 export interface breadcrumbProps {
   className?: string;
-  options: Options[];
+  options: BreadcrumbOptions[];
   iconType?: iconType;
   style?: React.CSSProperties;
 }

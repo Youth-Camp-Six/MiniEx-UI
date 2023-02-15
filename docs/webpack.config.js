@@ -23,9 +23,6 @@ module.exports = {
       '@': path.resolve(__dirname),
     },
   },
-  experiments: {
-    topLevelAwait: true,
-  },
   module: {
     rules: [
       {
@@ -110,6 +107,13 @@ module.exports = {
     // 创建docs/views/dev文件夹, 用于开发组件时测试
     new MkdirPlugin(),
   ],
+  performance: {
+    hints: false,
+  },
+  cache: {
+    type: 'filesystem',
+    allowCollectingMemory: true,
+  },
   optimization: {
     runtimeChunk: true,
     moduleIds: 'deterministic',

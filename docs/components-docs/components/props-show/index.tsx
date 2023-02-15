@@ -16,6 +16,10 @@ interface IPropShowProps {
   propsInfo: PropsItem[];
 }
 
+const heightLightColumnLine = (type: string): string => {
+  return type.replace(/[|]/g, '<span style="color: orange; padding: 0 10px">|</span>');
+};
+
 const PropShow: React.FC<IPropShowProps> = (props) => {
   const { propsInfo } = props;
   return (
@@ -30,7 +34,10 @@ const PropShow: React.FC<IPropShowProps> = (props) => {
         <div className={cls.item} key={item.name}>
           <div className={cls.name}>{item.name}</div>
           <div className={cls.description}>{item.description}</div>
-          <div className={cls.type}>{item.type}</div>
+          <div className={cls.type}>
+            {/* xss */}
+            <div dangerouslySetInnerHTML={{ __html: heightLightColumnLine(item.type) }} />
+          </div>
           <div className={cls.initValue}>{item.initValue}</div>
         </div>
       ))}

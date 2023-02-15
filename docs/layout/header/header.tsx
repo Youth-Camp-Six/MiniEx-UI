@@ -2,7 +2,7 @@ import React, { memo, useState } from 'react';
 import { Link, To, useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import { Button, Tabs } from '../../../src';
+import { Button, Tabs } from '../../../src/components';
 import myImg from '../../assets/logo.png';
 import githubSVG from '@/assets/github.svg';
 
@@ -11,7 +11,6 @@ import cls from './header.module.less';
 const isDev = process.env.NODE_ENV === 'development';
 
 const Header: React.FC = () => {
-  // const [themeMode, setThemeMode] = useState('light');
   const { t, i18n } = useTranslation(['home']);
   const location = useLocation();
   const nav = useNavigate();
@@ -34,10 +33,8 @@ const Header: React.FC = () => {
 
   const handleModule = (e) => {
     if (e !== 'Light') {
-      // setThemeMode('mi-dark');
       document.body.classList.add('mi-dark');
     } else {
-      // setThemeMode('light');
       document.body.classList.remove('mi-dark');
     }
   };

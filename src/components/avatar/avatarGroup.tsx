@@ -1,6 +1,6 @@
 import React, { memo, useEffect, useState } from 'react';
-import { AvatarGroupProps, Options } from './type';
-import { Flex, Avatar, Popover } from '../../index';
+import { AvatarGroupProps, AvatarOptions } from './type';
+import { Flex, Avatar, Popover } from '../index';
 
 export const AvatarGroup: React.FC<AvatarGroupProps> = (props) => {
   const {
@@ -17,10 +17,10 @@ export const AvatarGroup: React.FC<AvatarGroupProps> = (props) => {
   } = props;
 
   const numOfChildren = options.length;
-  const [childrenShow, setChildrenShow] = useState<Options[]>([]);
-  const [childrenHidden, setChildrenHidden] = useState<Options[]>([]);
+  const [childrenShow, setChildrenShow] = useState<AvatarOptions[]>([]);
+  const [childrenHidden, setChildrenHidden] = useState<AvatarOptions[]>([]);
 
-  const HiddenBody = (arr: Options[]) => {
+  const HiddenBody = (arr: AvatarOptions[]) => {
     return (
       <Flex x='start' gap={0}>
         {arr.map((item) => {

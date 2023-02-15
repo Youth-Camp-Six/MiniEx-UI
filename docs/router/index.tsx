@@ -26,6 +26,8 @@ import RadioUS from '../components-docs/radioUS.mdx';
 import RadioCN from '../components-docs/radioCN.mdx';
 import ToastUS from '../components-docs/toastUS.mdx';
 import ToastCN from '../components-docs/toastCN.mdx';
+import UploadUS from '../components-docs/uploadUS.mdx';
+import UploadCN from '../components-docs/uploadCN.mdx';
 
 import '../i18n';
 import { createHashRouter, Navigate } from 'react-router-dom';
@@ -34,7 +36,7 @@ import { createHashRouter, Navigate } from 'react-router-dom';
  * 定义html标签替换组件
  */
 const components = {
-  code: CodeBlock,
+  code: CodeBlock as any,
 };
 
 // 判断是否存在/views/dev/dev组件, 若存在则引入
@@ -112,6 +114,10 @@ export const router = createHashRouter([
             path: '/en/doc/toast',
             element: <ToastUS components={components} />,
           },
+          {
+            path: '/en/doc/upload',
+            element: <UploadUS components={components} />,
+          },
         ],
       },
     ],
@@ -173,6 +179,10 @@ export const router = createHashRouter([
           {
             path: '/zh/doc/toast',
             element: <ToastCN components={components} />,
+          },
+          {
+            path: '/zh/doc/upload',
+            element: <UploadCN components={components} />,
           },
         ],
       },

@@ -15,7 +15,7 @@ const CodeBlock = ({ children, className }) => {
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre
           className={className}
-          style={{ ...style, padding: '15px', borderRadius: '3px', margin: '0' }}
+          style={{ ...style, padding: '15px', borderRadius: '3px', margin: '0', fontSize: '15px' }}
         >
           {tokens.map((line, i) => (
             <div key={i} {...getLineProps({ line, key: i })}>
