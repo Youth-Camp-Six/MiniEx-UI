@@ -47,6 +47,10 @@ export const siderbarConfig: ISiderbarConfig = {
           title: 'Radio',
           path: '/doc/radio',
         },
+        {
+          title: 'InputTag',
+          path: '/doc/inputTag',
+        },
       ],
     },
     {
@@ -121,6 +125,10 @@ export const siderbarConfig: ISiderbarConfig = {
         {
           title: 'Radio 单选框',
           path: '/doc/radio',
+        },
+        {
+          title: 'InputTag 标签输入框',
+          path: '/doc/inputTag',
         },
       ],
     },

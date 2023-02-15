@@ -30,6 +30,8 @@ import UploadUS from '../components-docs/uploadUS.mdx';
 import UploadCN from '../components-docs/uploadCN.mdx';
 import TableUS from '../components-docs/tableUS.mdx';
 import TableCN from '../components-docs/tableCN.mdx';
+import InputTagUS from '../components-docs/inputTagUS.mdx';
+import InputTagCN from '../components-docs/inputTagCN.mdx';
 
 import '../i18n';
 import { createHashRouter, Navigate } from 'react-router-dom';
@@ -124,6 +126,10 @@ export const router = createHashRouter([
             path: '/en/doc/table',
             element: <TableUS components={components} />,
           },
+          {
+            path: '/en/doc/inputTag',
+            element: <InputTagUS components={components} />,
+          },
         ],
       },
     ],
@@ -193,6 +199,10 @@ export const router = createHashRouter([
           {
             path: '/zh/doc/table',
             element: <TableCN components={components} />,
+          },
+          {
+            path: '/zh/doc/inputTag',
+            element: <InputTagCN components={components} />,
           },
         ],
       },

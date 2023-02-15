@@ -1,0 +1,41 @@
+import { InputTag } from '../../src';
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
+
+
+# 标签输入框
+
+<ShowSouceCode
+  element={
+    <InputTag modelvalue={['英俊','帅气']}></InputTag>
+  }
+  code={`
+    import { Avatar, MiIcon , Flex } from 'miniEx';
+    import React from 'react';
+    import img from '../assets/logo.png'
+
+    const App: React.FC = () => (
+      return <InputTag modelvalue={['英俊','帅气']}></InputTag>
+    );
+
+    export default App;
+    `
+  }
+  language="ts"
+  />
+
+## Props
+<PropsShow propsInfo={[
+  {
+    name: 'modelvalue',
+    description: '绑定值',
+    type: 'Array',
+    initValue: '[美丽,大方]',
+  },
+  {
+    name: 'type',
+    description: '类型(参考Tag 标签)',
+    type: 'String',
+    initValue: 'normal',
+  },
+]} />
