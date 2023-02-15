@@ -22,3 +22,4 @@ export * from './alert';
 export * from './popover';
 export * from './select';
 export * from './upload';
+export * from './table';

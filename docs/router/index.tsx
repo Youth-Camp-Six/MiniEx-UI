@@ -28,6 +28,8 @@ import ToastUS from '../components-docs/toastUS.mdx';
 import ToastCN from '../components-docs/toastCN.mdx';
 import UploadUS from '../components-docs/uploadUS.mdx';
 import UploadCN from '../components-docs/uploadCN.mdx';
+import TableUS from '../components-docs/tableUS.mdx';
+import TableCN from '../components-docs/tableCN.mdx';
 
 import '../i18n';
 import { createHashRouter, Navigate } from 'react-router-dom';
@@ -118,6 +120,10 @@ export const router = createHashRouter([
             path: '/en/doc/upload',
             element: <UploadUS components={components} />,
           },
+          {
+            path: '/en/doc/table',
+            element: <TableUS components={components} />,
+          },
         ],
       },
     ],
@@ -183,6 +189,10 @@ export const router = createHashRouter([
           {
             path: '/zh/doc/upload',
             element: <UploadCN components={components} />,
+          },
+          {
+            path: '/zh/doc/table',
+            element: <TableCN components={components} />,
           },
         ],
       },

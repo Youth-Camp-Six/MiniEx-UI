@@ -1,0 +1,799 @@
+import { Table , Flex } from '../../src/components';
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
+import {conmomTableCN, gdTableCN, czTableCN, soltTableCN, zdyTableCN} from './components/table/table.tsx'
+
+# Table
+
+## routine
+
+<ShowSouceCode
+  element={conmomTableCN()}
+  code={`
+    import { Table, Flex, TableColumns} from 'miniEx';
+    import React from 'react';
+const data = [
+  {
+    id: 1,
+    name: 'Bob',
+    avatar: 'https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668',
+    age: '14',
+    fraction: 63,
+    mail: 'div@kamtao.com',
+    sex: 1,
+    intro: 'Be hygienic and polite',
+  },
+  {
+    id: 2,
+    name: 'Little Lu',
+    avatar: 'https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668',
+    age: '24',
+    fraction: 82,
+    mail: 'div@kamtao.com',
+    sex: 1,
+    intro: 'Be hygienic and polite',
+  },
+  {
+    id: 3,
+    name: 'Xiaojuan',
+    avatar: 'https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668',
+    age: '25',
+    fraction: 91,
+    mail: 'div@kamtao.com',
+    sex: 0,
+    intro: 'Be hygienic and polite',
+  },
+  {
+    id: 4,
+    name: 'Little shell',
+    avatar: 'https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668',
+    age: '22',
+    mail: 'div@kamtao.com',
+    fraction: 31,
+    sex: 0,
+    intro: 'Be hygienic and polite',
+  },
+  {
+    id: 5,
+    name: 'Dumbo',
+    avatar: 'https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668',
+    age: '13',
+    fraction: 54,
+    mail: 'div@kamtao.com',
+    sex: 3,
+    intro: 'Be hygienic and polite',
+  },
+];
+const columns: TableColumns[] = [
+  {
+    title: 'id',
+    width: '100px',
+    field: 'id',
+    x: 'center',
+  },
+  {
+    title: '信息',
+    width: '200px',
+    field: 'info',
+  },
+  {
+    title: '年龄',
+    width: 'auto',
+    field: 'age',
+    x: 'center',
+  },
+  {
+    title: '性别',
+    width: 'auto',
+    field: 'sex',
+    x: 'center',
+  },
+  {
+    title: '成绩',
+    width: 'auto',
+    field: 'fraction',
+    x: 'center',
+  },
+  {
+    title: '介绍',
+    width: 'auto',
+    field: 'intro',
+  },
+];
+const cell = (field: any, row) => {
+  switch (field) {
+    case 'id':
+      return <div>{row.id}</div>;
+    case 'info':
+      return (
+        <Flex className='info'>
+          <Avatar src={row.avatar} round='round'></Avatar>
+          <Flex className='right' direction='y' x='start' gap={0}>
+            <div className='name'>{row.name}</div>
+            <div className='mail'>{row.mail}</div>
+          </Flex>
+        </Flex>
+      );
+    case 'age':
+      return <div>{row.age}</div>;
+    case 'fraction':
+      return (
+        <Flex>
+          <Badge round='round' type={success}></Badge>
+          {row.fraction >= 60 ? '良好' : '很差'}
+        </Flex>
+      );
+    case 'sex':
+      return <div>{row.sex > 0 ? '男' : '女'}</div>;
+    case 'intro':
+      return <div>{row.intro}</div>;
+  }
+};
+
+    const App: React.FC = () => (
+      return(<Table data={data} columns={columns} cell={cell}></Table>)
+    );
+
+    export default App;
+    `
+  }
+  language="ts"
+  />
+
+## Fixed columns
+
+<ShowSouceCode
+  element={gdTableCN()}
+  code={`
+    import { Table, Flex, TableColumns} from 'miniEx';
+    import React from 'react';
+const data2: any = [
+  {
+    id: 1,
+    name: 'Bob',
+    age: '14',
+    sex: 1,
+    intro: 'Be hygienic and polite',
+    hobby: ['sing', 'jump', 'rap', 'swim', 'hiking', 'movie', 'Off-road'],
+  },
+  {
+    id: 2,
+    name: 'Little Lu',
+    age: '24',
+    sex: 1,
+    intro: 'Be hygienic and polite',
+    hobby: ['sing', 'jump', 'rap', 'swim', 'hiking', 'movie', 'Off-road'],
+  },
+  {
+    id: 3,
+    name: 'Xiaojuan',
+    age: '25',
+    sex: 0,
+    intro: 'Be hygienic and polite',
+    hobby: ['sing', 'jump', 'rap', 'swim', 'hiking', 'movie', 'Off-road'],
+  },
+  {
+    id: 4,
+    name: 'Little shell',
+    age: '22',
+    sex: 0,
+    intro: 'Be hygienic and polite',
+    hobby: ['sing', 'jump', 'rap', 'swim', 'hiking', 'movie', 'Off-road'],
+  },
+  {
+    id: 5,
+    name: 'Dumbo',
+    age: '13',
+    sex: 3,
+    intro: 'Be hygienic and polite',
+    hobby: ['sing', 'jump', 'rap', 'swim', 'hiking', 'movie', 'Off-road'],
+  },
+];
+
+const columns2: TableColumns[] = [
+  {
+    title: 'id',
+    width: '50px',
+    field: 'id',
+    x: 'center',
+    sticky: 'left',
+    offsetX: '0px',
+  },
+  {
+    title: '姓名',
+    width: '100px',
+    field: 'name',
+    x: 'center',
+    sticky: 'left',
+    offsetX: '50px',
+  },
+  {
+    title: '年龄',
+    width: '400px',
+    field: 'age',
+    x: 'center',
+  },
+  {
+    title: '爱好',
+    width: '400px',
+    field: 'hobby',
+  },
+  {
+    title: '介绍',
+    width: '400px',
+    field: 'intro',
+  },
+  {
+    title: '性别',
+    width: '80px',
+    field: 'sex',
+    x: 'center',
+    sticky: 'right',
+    offsetX: '-1px',
+  },
+];
+const cell2 = (field: any, row) => {
+  switch (field) {
+    case 'id':
+      return <div>{row.id}</div>;
+    case 'name':
+      return <div>{row.name}</div>;
+    case 'age':
+      return <div>{row.age}</div>;
+    case 'sex':
+      return <div>{row.sex > 0 ? '男' : '女'}</div>;
+    case 'hobby':
+      return (
+        <Flex gap={5} x='start'>
+          {row.hobby.map((item, index) => {
+            return (
+              <Tag size='small' type='info' key={index}>
+                {item}
+              </Tag>
+            );
+          })}
+        </Flex>
+      );
+    case 'intro':
+      return <div>{row.intro}</div>;
+  }
+};
+
+    const App: React.FC = () => (
+      return(<Table data={data2} columns={columns2} cell={cell2}></Table>)
+    );
+
+    export default App;
+    `
+  }
+  language="ts"
+  />
+
+## Custom actions
+
+<ShowSouceCode
+  element={czTableCN()}
+  code={`
+    import { Table, Flex, TableColumns} from 'miniEx';
+    import React from 'react';
+const data3: any = [
+  {
+    id: 1,
+    name: 'Bob',
+    age: '14',
+    sex: 1,
+    intro: 'Be hygienic and polite',
+    hobby: ['sing', 'jump', 'rap', 'swim', 'hiking', 'movie', 'Off-road'],
+  },
+  {
+    id: 2,
+    name: 'Little Lu',
+    age: '24',
+    sex: 1,
+    intro: 'Be hygienic and polite',
+    hobby: ['sing', 'jump', 'rap', 'swim', 'hiking', 'movie', 'Off-road'],
+  },
+  {
+    id: 3,
+    name: 'Xiaojuan',
+    age: '25',
+    sex: 0,
+    intro: 'Be hygienic and polite',
+    hobby: ['sing', 'jump', 'rap', 'swim', 'hiking', 'movie', 'Off-road'],
+  },
+  {
+    id: 4,
+    name: 'Little shell',
+    age: '22',
+    sex: 0,
+    intro: 'Be hygienic and polite',
+    hobby: ['sing', 'jump', 'rap', 'swim', 'hiking', 'movie', 'Off-road'],
+  },
+  {
+    id: 5,
+    name: 'Dumbo',
+    age: '13',
+    sex: 3,
+    intro: 'Be hygienic and polite',
+    hobby: ['sing', 'jump', 'rap', 'swim', 'hiking', 'movie', 'Off-road'],
+  },
+];
+
+const columns3: TableColumns[] = [
+  {
+    title: 'id',
+    width: '50px',
+    field: 'id',
+    x: 'center',
+    sticky: 'left',
+    offsetX: '0px',
+  },
+  {
+    title: '姓名',
+    width: '100px',
+    field: 'name',
+    x: 'center',
+    sticky: 'left',
+    offsetX: '50px',
+  },
+  {
+    title: '年龄',
+    width: '200px',
+    field: 'age',
+    x: 'center',
+  },
+  {
+    title: '性别',
+    width: '200px',
+    field: 'sex',
+    x: 'center',
+  },
+  {
+    title: '爱好',
+    width: '400px',
+    field: 'hobby',
+  },
+  {
+    title: '介绍',
+    width: '400px',
+    field: 'intro',
+  },
+  {
+    title: '操作',
+    width: '120px',
+    field: 'action',
+    sticky: 'right',
+    offsetX: '0px',
+    x: 'center',
+  },
+];
+const cell3 = (field: any, row) => {
+  switch (field) {
+    case 'id':
+      return <div>{row.id}</div>;
+    case 'name':
+      return <div>{row.name}</div>;
+    case 'age':
+      return <div>{row.age}</div>;
+    case 'sex':
+      return <div>{row.sex > 0 ? '男' : '女'}</div>;
+    case 'hobby':
+      return (
+        <Flex gap={5} x='start'>
+          {row.hobby.map((item, index) => {
+            return (
+              <Tag size='small' type='info' key={index}>
+                {item}
+              </Tag>
+            );
+          })}
+        </Flex>
+      );
+    case 'intro':
+      return <div>{row.intro}</div>;
+    case 'action':
+      return (
+        <Flex>
+          <Button>管理</Button>
+          <Button>删除</Button>
+        </Flex>
+      );
+  }
+};
+
+    const App: React.FC = () => (
+      return(<Table data={data2} columns={columns2} cell={cell2}></Table>)
+    );
+
+    export default App;
+    `
+  }
+  language="ts"
+  />
+
+## Slot
+
+<ShowSouceCode
+  element={soltTableCN()}
+  code={`
+    import { Table, Flex, TableColumns} from 'miniEx';
+    import React from 'react';
+const data3: any = [
+  {
+    id: 1,
+    name: 'Bob',
+    age: '14',
+    sex: 1,
+    intro: 'Be hygienic and polite',
+    hobby: ['sing', 'jump', 'rap', 'swim', 'hiking', 'movie', 'Off-road'],
+  },
+  {
+    id: 2,
+    name: 'Little Lu',
+    age: '24',
+    sex: 1,
+    intro: 'Be hygienic and polite',
+    hobby: ['sing', 'jump', 'rap', 'swim', 'hiking', 'movie', 'Off-road'],
+  },
+  {
+    id: 3,
+    name: 'Xiaojuan',
+    age: '25',
+    sex: 0,
+    intro: 'Be hygienic and polite',
+    hobby: ['sing', 'jump', 'rap', 'swim', 'hiking', 'movie', 'Off-road'],
+  },
+  {
+    id: 4,
+    name: 'Little shell',
+    age: '22',
+    sex: 0,
+    intro: 'Be hygienic and polite',
+    hobby: ['sing', 'jump', 'rap', 'swim', 'hiking', 'movie', 'Off-road'],
+  },
+  {
+    id: 5,
+    name: 'Dumbo',
+    age: '13',
+    sex: 3,
+    intro: 'Be hygienic and polite',
+    hobby: ['sing', 'jump', 'rap', 'swim', 'hiking', 'movie', 'Off-road'],
+  },
+];
+
+const columns3: TableColumns[] = [
+  {
+    title: 'id',
+    width: '50px',
+    field: 'id',
+    x: 'center',
+    sticky: 'left',
+    offsetX: '0px',
+  },
+  {
+    title: '姓名',
+    width: '100px',
+    field: 'name',
+    x: 'center',
+    sticky: 'left',
+    offsetX: '50px',
+  },
+  {
+    title: '年龄',
+    width: '200px',
+    field: 'age',
+    x: 'center',
+  },
+  {
+    title: '性别',
+    width: '200px',
+    field: 'sex',
+    x: 'center',
+  },
+  {
+    title: '爱好',
+    width: '400px',
+    field: 'hobby',
+  },
+  {
+    title: '介绍',
+    width: '400px',
+    field: 'intro',
+  },
+  {
+    title: '操作',
+    width: '120px',
+    field: 'action',
+    sticky: 'right',
+    offsetX: '0px',
+    x: 'center',
+  },
+];
+const cell4 = (field: any, row) => {
+  switch (field) {
+    case 'id':
+      return <div>{row.id}</div>;
+    case 'name':
+      return <div>{row.name}</div>;
+    case 'age':
+      return <div>{row.age}</div>;
+    case 'sex':
+      return <div>{row.sex > 0 ? '男' : '女'}</div>;
+    case 'hobby':
+      return (
+        <Flex gap={5} x='start'>
+          {row.hobby.map((item, index) => {
+            return (
+              <Tag size='small' type='info' key={index}>
+                {item}
+              </Tag>
+            );
+          })}
+        </Flex>
+      );
+    case 'intro':
+      return <div>{row.intro}</div>;
+    case 'action':
+      return (
+        <Flex>
+          <Popover childrenData={lrData}>
+            <div>录入</div>
+          </Popover>
+          <Popover childrenData={scData}>
+            <div>删除</div>
+          </Popover>
+        </Flex>
+      );
+  }
+};
+
+    const App: React.FC = () => (
+      return(<Table data={data2} columns={columns2} cell={cell4}></Table>)
+    );
+
+    export default App;
+    `
+  }
+  language="ts"
+  />
+
+
+## Custom styles
+
+<ShowSouceCode
+  element={zdyTableCN()}
+  code={`
+    import { Table, Flex, TableColumns} from 'miniEx';
+    import React from 'react';
+const data5: any = [
+  {
+    id: 1,
+    name: 'Bob',
+    age: '14',
+    sex: 1,
+    intro: 'Be hygienic and polite',
+    hobby: ['sing', 'jump', 'rap', 'swim', 'hiking', 'movie', 'Off-road'],
+    // 定义这一单元格的样式
+    tdStyle: {
+      age: { background: 'var(--mi-primary-color-dark', color: '#fff' },
+    },
+  },
+  {
+    id: 2,
+    name: 'Little Lu',
+    age: '24',
+    sex: 1,
+    intro: 'Be hygienic and polite',
+    hobby: ['sing', 'jump', 'rap', 'swim', 'hiking', 'movie', 'Off-road'],
+    // 定义这一行的样式
+    rowStyle: { background: 'var(--mi-error-color-light)' },
+  },
+  {
+    id: 3,
+    name: 'Xiaojuan',
+    age: '25',
+    sex: 0,
+    intro: 'Be hygienic and polite',
+    hobby: ['sing', 'jump', 'rap', 'swim', 'hiking', 'movie', 'Off-road'],
+    // 定义这一单元格的样式
+    tdStyle: {
+      sex: { color: 'var(--mi-warning-color-dark)' },
+      intro: { background: 'var(--mi-warning-color-dark)', color: '#fff' },
+    },
+  },
+  {
+    id: 4,
+    name: 'Little shell',
+    age: '22',
+    sex: 0,
+    intro: 'Be hygienic and polite',
+    hobby: ['sing', 'jump', 'rap', 'swim', 'hiking', 'movie', 'Off-road'],
+    tdStyle: {
+      sex: { background: 'var(--mi-error-color-dark)', color: '#fff' },
+    },
+  },
+  {
+    id: 5,
+    name: 'Dumbo',
+    age: '13',
+    sex: 3,
+    intro: 'Be hygienic and polite',
+    hobby: ['sing', 'jump', 'rap', 'swim', 'hiking', 'movie', 'Off-road'],
+  },
+]
+
+const columns5: TableColumns[] = [
+{
+    title: 'id',
+    width: '50px',
+    field: 'id',
+    x: 'center',
+    sticky: 'left',
+    offsetX: '0px'
+  },
+  {
+    title: '姓名',
+    width: '100px',
+    field: 'name',
+    x: 'center',
+    sticky: 'left',
+    offsetX: '50px',
+    // 定义这一列的样式
+    columnStyle: { background: var(--mi-success-color-light) }
+  },
+  {
+    title: '年龄',
+    width: '200px',
+    field: 'age',
+    x: 'center'
+  },
+  {
+    title: '性别',
+    width: '200px',
+    field: 'sex',
+    x: 'center'
+  },
+  {
+    title: '爱好',
+    width: '400px',
+    field: 'hobby'
+  },
+  {
+    title: '介绍',
+    width: '400px',
+    field: 'intro'
+  },
+  {
+    title: '操作',
+    width: '120px',
+    field: 'action',
+    sticky: 'right',
+    offsetX: '0px',
+    x: 'center'
+  }
+]
+
+  const cell3 = (field: any, row) => {
+     switch (field) {
+       case 'id':
+         return <div>{row.id}</div>;
+       case 'name':
+         return <div>{row.name}</div>;
+       case 'age':
+         return <div>{row.age}</div>;
+       case 'sex':
+         return <div>{row.sex > 0 ? '男' : '女'}</div>;
+       case 'hobby':
+         return (
+           <Flex gap={5} x='start'>
+             {row.hobby.map((item, index) => {
+               return (
+                 <Tag size='small' type='info' key={index}>
+                   {item}
+                 </Tag>
+               );
+             })}
+           </Flex>
+         );
+       case 'intro':
+         return <div>{row.intro}</div>;
+       case 'action':
+         return (
+           <Flex>
+             <Button>管理</Button>
+             <Button>删除</Button>
+           </Flex>
+         );
+     }
+  };
+
+    const App: React.FC = () => (
+      return(<Table data={data5} columns={columns5} cell={cell3}></Table>)
+    );
+
+    export default App;
+    `
+  }
+  language="ts"
+  />
+
+
+## Props
+<PropsShow propsInfo={[
+  {
+    name: 'columns',
+    description: '配置列',
+    type: 'TableColumns',
+    initValue: '[]',
+  },
+  {
+    name: 'data',
+    description: '数据',
+    type: 'Array<any>',
+    initValue: '[]',
+  },
+  {
+    name: 'width',
+    description: '填充函数',
+    type: '(field: any, row: any) => ReactNode',
+    initValue: '/',
+  },
+  {
+    name: 'width',
+    description: 'table宽度',
+    type: 'string',
+    initValue: '/',
+  },
+  {
+    name: 'maxHeight',
+    description: 'table最大高度',
+    type: 'string',
+    initValue: '/',
+  }
+]} />
+
+## TableColumns
+<PropsShow propsInfo={[
+  {
+    name: 'title',
+    description: '标题',
+    type: 'string',
+    initValue: '/',
+  },
+  {
+    name: 'field',
+    description: '字段',
+    type: 'string',
+    initValue: '/',
+  },
+  {
+    name: 'sticky',
+    description: '是否粘性',
+    type: 'string',
+    initValue: '/',
+  },
+  {
+    name: 'x',
+    description: '水平布局',
+    type: 'center| start | end',
+    initValue: '/',
+  },
+  {
+    name: 'y',
+    description: '垂直布局',
+    type: 'center| start | end',
+    initValue: '/',
+  },
+  {
+    name: 'width',
+    description: '列宽度',
+    type: 'string',
+    initValue: '/',
+  },
+  {
+    name: 'columnStyle',
+    description: '列样式',
+    type: 'React.CSSProperties',
+    initValue: '/',
+  }
+]} />

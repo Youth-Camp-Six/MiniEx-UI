@@ -60,6 +60,10 @@ export const siderbarConfig: ISiderbarConfig = {
           title: 'Title',
           path: '/doc/title',
         },
+        {
+          title: 'Table',
+          path: '/doc/table',
+        },
       ],
     },
     {
@@ -130,6 +134,10 @@ export const siderbarConfig: ISiderbarConfig = {
         {
           title: 'Title 标题',
           path: '/doc/title',
+        },
+        {
+          title: 'Table 表格',
+          path: '/doc/table',
         },
       ],
     },
