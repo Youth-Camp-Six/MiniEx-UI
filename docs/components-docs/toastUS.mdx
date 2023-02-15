@@ -1,5 +1,5 @@
 import { Toast } from "../../src/components";
-import ToastApp from "./components/toast/toastApp"
+import ToastApp from "./demos/toast/toastApp"
 import ShowSouceCode from './components/show-source-code';
 import PropsShow from './components/props-show';
 
@@ -7,7 +7,7 @@ import PropsShow from './components/props-show';
 
 # Toast
 ## Show components
-<ShowSouceCode 
+<ShowSouceCode
     element={
         <ToastApp />
     }
@@ -18,15 +18,15 @@ import PropsShow from './components/props-show';
     const [showToast3, setShowToast3] = useState<boolean>(false);
     const [showToast4, setShowToast4] = useState<boolean>(false);
     const [showToast5, setShowToast5] = useState<boolean>(false);
-    
+
     const handleShowToast1 = () => {
         setShowToast1(true);
     };
-    
+
     const handleShowToast2 = () => {
         setShowToast2(true);
     };
-    
+
     const handleShowToast3 = () => {
         setShowToast3(true);
     };
