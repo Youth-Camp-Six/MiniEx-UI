@@ -1,5 +1,5 @@
-import { Toast } from "../../src";
-import ToastApp from "./components/toast/toastApp"
+import { Toast } from "../../src/components";
+import ToastApp from "./demos/toast/toastApp"
 import ShowSouceCode from './components/show-source-code';
 import PropsShow from './components/props-show';
 
@@ -100,7 +100,6 @@ import PropsShow from './components/props-show';
       );
 }`
     }
-    language="ts"
 />
 
 ## Props
@@ -119,9 +118,9 @@ import PropsShow from './components/props-show';
   },
   {
     name: 'onClose',
-    description: 'onClose function for close action',
+    description: 'onClose callback function',
     type: 'function',
-    initValue: '() => void',
+    initValue: '( ) => void',
   },
   {
     name: 'timeout',

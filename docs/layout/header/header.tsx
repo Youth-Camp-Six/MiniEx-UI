@@ -2,7 +2,7 @@ import React, { memo, useState } from 'react';
 import { Link, To, useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import { Button, Tabs } from '../../../src';
+import { Button, Tabs } from '../../../src/components';
 import myImg from '../../assets/logo.png';
 import githubSVG from '@/assets/github.svg';
 

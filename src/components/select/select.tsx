@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { SelectOptions, selectProps } from './type';
 import classNames from 'classnames';
-import { Popover, MiIcon, Tag, Flex, Checkbox } from '../../index';
+import { Popover, MiIcon, Tag, Flex, Checkbox } from '../index';
 
 export const Select: React.FC<selectProps> = (props) => {
   const {

@@ -16,11 +16,11 @@ interface IShowSourceProps {
   /**
    * 代码类型，如js、java、html...
    */
-  language: string;
+  language?: string;
 }
 
 const ShowSourceCode: React.FC<IShowSourceProps> = (props) => {
-  const { element, code, language } = props;
+  const { element, code, language = 'tsx' } = props;
   const [isShowCode, setIsShowCode] = useState(false);
   return (
     <div className={cls.sourceCodeContainer}>

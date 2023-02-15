@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Toast } from '../../../../src';
+import { Button, Toast } from '../../../../src/components';
 
 function App() {
   const [showToast1, setShowToast1] = useState<boolean>(false);

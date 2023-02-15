@@ -1,13 +1,13 @@
 /* eslint-disable no-console */
 import React from 'react';
 import type { ReactNode } from 'react';
-import { RadioGroup } from '../../../../src';
+import { RadioGroup } from '../../../../src/components';
 
 interface IProps {
   children?: ReactNode;
 }
 
-export const RadioCNBasic: React.FC<IProps> = () => {
+export const RadioUSBasic: React.FC<IProps> = () => {
   const options = [
     { label: 'A', value: '0' },
     { label: 'B', value: '1' },
@@ -17,7 +17,7 @@ export const RadioCNBasic: React.FC<IProps> = () => {
   const defaultValue = '0';
 
   const changeHandler = (e) => {
-    console.log('当前value:', e);
+    console.log('current value:', e);
   };
 
   return <RadioGroup options={options} value={defaultValue} onChange={changeHandler}></RadioGroup>;

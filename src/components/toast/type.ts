@@ -14,7 +14,7 @@ export interface ToastProps {
   title: string;
   message: string;
   onClose?: () => void;
-  timeout?: number;
+  timeout: number;
   pauseOnHover?: boolean;
   position?: ToastPosition;
   style?: TypeOptions;
