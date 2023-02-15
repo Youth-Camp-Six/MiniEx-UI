@@ -2,7 +2,6 @@ import React, { memo, useEffect,useRef,Ref } from 'react';
 import { SelectOptions, selectProps } from './type';
 import classNames from 'classnames';
 import { Popover, MiIcon, Tag, Flex, Checkbox } from '../../index';
-import { Value } from '../../../../dux-ui-react/src/components/Checkbox/interface';
 // import  from 'react';
 
 export const Select: React.FC<selectProps> = (props) => {
@@ -25,6 +24,7 @@ export const Select: React.FC<selectProps> = (props) => {
   const [v, setV] = React.useState('');
   const [_modelValue,set_modelValue]=React.useState<[string, Array<string>]>(['',[]]);
   const [labelStr, setLabelStr] = React.useState('');
+  // const multipleLabelStr = useRef<Array<string>>([]);
   const [multipleLabelStr, setMultipleLabelStr] = React.useState<Array<string>>([]);
   const [multipleV, setMultipleV] = React.useState<Array<string>>([]);
   const classesView = classNames('mi-select-view', className);
@@ -49,9 +49,8 @@ export const Select: React.FC<selectProps> = (props) => {
               return;
           }
       if (multiple && _modelValue instanceof Array) {
-            setMultipleV(_modelValue as Array<string>)
-            setMultipleLabelStr(filterSelect(_modelValue as Array<string>, options))
-            // console.log(multipleLabelStr);
+        setMultipleV(_modelValue as Array<string>)
+        setMultipleLabelStr(filterSelect(_modelValue as Array<string>, options))
       } else if (typeof _modelValue == 'string') {        
             setV(_modelValue)
             setLabelStr(options?.find((e) => e.value == _modelValue)?.label || '');     
@@ -72,7 +71,6 @@ export const Select: React.FC<selectProps> = (props) => {
     return _v;
   };
   const check = (item: SelectOptions, isChecked: boolean) => {
-    
     if (_modelValue instanceof Array) {
         let updatedValue = [..._modelValue];
         if (isChecked) {
@@ -84,10 +82,9 @@ export const Select: React.FC<selectProps> = (props) => {
     } else {
       if (v != item.value) {
         setLabelStr(item.label);
-            // labelStr = item.label;
+
         setV(item.value)
-            // v.value = item.value;
-            // emit('change', item.value);
+
         }
       set_modelValue(item.value as any)
     }
@@ -96,11 +93,17 @@ export const Select: React.FC<selectProps> = (props) => {
     return _modelValue?.includes(_value);
   };
   const delTag = (i: number) => {
-    console.log(i);
-    multipleV.splice(i, 1);
-    setMultipleLabelStr(multipleLabelStr.splice(i, 1));
-    set_modelValue(multipleV as any)
-    console.log(_modelValue);
+    // console.log(options[i].checked);
+    let VArr=multipleV.filter((item, index) => {
+      return index !== i;
+    })
+    setMultipleV([...VArr])
+     let labelStrArr=multipleLabelStr.filter((item, index) => {
+      return index !== i;
+    })
+    setMultipleLabelStr([...labelStrArr]);
+    set_modelValue([...VArr] as [string, Array<string>])
+    console.log(multipleLabelStr);
 };
   const MultipleBody = (arr: string[]) => {
     return (

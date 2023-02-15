@@ -13,5 +13,5 @@ export interface TagProps {
     to?: string;
     bold?: string;
     children: ReactNode;
-    close?:()=>{void}
+    close?: (e) => void;
 }
