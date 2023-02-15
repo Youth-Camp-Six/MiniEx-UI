@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import Field from './field';
+import { Field } from './field';
 import useForm from './use-form';
 
 export interface FormProps {
@@ -10,6 +10,7 @@ export interface FormProps {
   labelwidth?: string;
   direction?: 'x' | 'y';
   labelalign?: 'start' | 'end';
+  rules?: any;
   onFinish?: (values: any) => void;
   onFinishFailed?: (values: any) => void;
 }
@@ -29,3 +30,17 @@ export interface FormStaticProps {
   Field: typeof Field;
   useForm: typeof useForm;
 }
+
+export interface FormRef {
+  getFieldsValue: any;
+  getFieldValue: any;
+  setFieldsValue: any;
+  registerFieldEntities: any;
+  submit: any;
+  setCallbacks: any;
+  subscribe: any;
+  setFormRules: any;
+  validate: any;
+}
+
+export type IFormType = (form: any) => [value: FormRef];

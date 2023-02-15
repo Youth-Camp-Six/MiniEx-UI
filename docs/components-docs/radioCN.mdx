@@ -8,10 +8,6 @@ import PropsShow from './components/props-show';
   element={<RadioCNBasic/>}
   code={
     `
-import { Button } from 'miniEx';
-import React from 'react';
-
-const App: React.FC = () => (
   const options = [
     { label: 'A', value: '0' },
     { label: 'B', value: '1' },
@@ -31,9 +27,6 @@ const App: React.FC = () => (
       onChange={changeHandler}
     ></RadioGroup>
   );
-);
-
-export default App;
     `
   }
 />

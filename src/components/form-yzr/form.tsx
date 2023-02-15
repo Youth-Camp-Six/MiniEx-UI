@@ -15,6 +15,7 @@ export const Form = React.forwardRef<any, FormProps>((props, ref) => {
     direction = 'x',
     labelalign = 'end',
     labelwidth = '80px',
+    rules,
     ...restProps
   } = props;
 
@@ -28,6 +29,8 @@ export const Form = React.forwardRef<any, FormProps>((props, ref) => {
     onFinish,
     onFinishFailed,
   });
+
+  formInstance.setFormRules(rules);
 
   const providerValue = {
     ...formInstance,

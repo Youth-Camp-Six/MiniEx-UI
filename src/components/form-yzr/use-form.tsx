@@ -1,17 +1,21 @@
-// 定义状态管理库
-
 import { useRef } from 'react';
+import { FormRef } from './type';
+import Schema from 'async-validator';
+import type { Rules } from 'async-validator';
 
 class FormStore {
   store: any;
   fieldEntities: any[];
   callbacks: any;
+  subscribeCB: (store: any) => any;
+  rules: Rules;
 
   constructor() {
     this.store = {}; // 状态值： name: value
     this.fieldEntities = [];
-
     this.callbacks = {};
+    this.subscribeCB = () => ({});
+    this.rules = {};
   }
 
   setCallbacks = (callbacks: any) => {
@@ -55,41 +59,44 @@ class FormStore {
         }
       });
     });
+    // 3. callback
+    this.subscribeCB(newStore);
+  };
+
+  // subscribe
+  subscribe = (cb: () => any) => {
+    this.subscribeCB = cb;
+  };
+
+  // rules
+  setFormRules = (rules: any) => {
+    this.rules = rules;
   };
 
   validate = () => {
-    const err: any = [];
-    // todo 校验
-    // 简版校验
-
-    // this.fieldEntities.forEach((entity) => {
-    //   const { name, rules } = entity.props;
-
-    //   const value = this.getFieldValue(name);
-    //   const rule = rules[0];
-
-    //   if (rule && rule.required && (value === undefined || value === '')) {
-    //     err.push({ [name]: rule.message, value });
-    //   }
-    // });
-
-    return err;
+    const validator = new Schema(this.rules);
+    return validator.validate(this.getFieldsValue());
   };
 
   submit = () => {
-    // console.log('submit'); //sy-log
-
-    const err = this.validate();
-    // 提交
     const { onFinish, onFinishFailed } = this.callbacks;
+    // const err = this.validate();
+    this.validate()
+      .then(() => {
+        onFinish && onFinish(this.getFieldsValue());
+      })
+      .catch(({ errors, fields }) => {
+        onFinishFailed && onFinishFailed(errors, fields);
+      });
+    // 提交
 
-    if (err.length === 0) {
-      // 校验通过
-      onFinish(this.getFieldsValue());
-    } else {
-      // 校验不通过
-      onFinishFailed(err, this.getFieldsValue());
-    }
+    // if (err.length === 0) {
+    //   // 校验通过
+    //   onFinish(this.getFieldsValue());
+    // } else {
+    //   // 校验不通过
+    //   onFinishFailed(err, this.getFieldsValue());
+    // }
   };
 
   getForm = () => {
@@ -98,15 +105,18 @@ class FormStore {
       getFieldValue: this.getFieldValue,
       setFieldsValue: this.setFieldsValue,
       registerFieldEntities: this.registerFieldEntities,
+      subscribe: this.subscribe,
       submit: this.submit,
       setCallbacks: this.setCallbacks,
+      setFormRules: this.setFormRules,
+      validate: this.validate,
     };
   };
 }
 
-export default function useForm(form?: any) {
+const useForm = (form?: FormRef) => {
   // 存值，在组件卸载之前指向的都是同一个值
-  const formRef = useRef<any>();
+  const formRef = useRef<FormRef>();
 
   if (!formRef.current) {
     if (form) {
@@ -117,4 +127,6 @@ export default function useForm(form?: any) {
     }
   }
   return [formRef.current];
-}
+};
+
+export default useForm;
