@@ -18,6 +18,7 @@
     "dev": "webpack-dev-server --config ./docs/webpack.dev.js --mode development",
     "start": "webpack-dev-server --config ./docs/webpack.config.js --mode production",
     "prepare": "husky install",
+    "lint": "eslint src --fix",
     "build:pkg": "webpack --config webpack.config.js",
     "build:doc": "webpack --config ./docs/webpack.config.js",
     "build:doc:dev": "webpack --config ./docs/webpack.dev.js"
