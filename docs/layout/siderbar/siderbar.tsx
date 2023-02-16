@@ -23,6 +23,14 @@ const Siderbar: React.FC<IProps> = () => {
     return group.flat();
   };
 
+  const findMenuIndex = (arr: string | any[]) => {
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i].path === location.pathname.split('zh')[1]) {
+        return flatSiderbarConfig(siderbarConfig.zh).indexOf(arr[i]);
+      }
+    }
+  };
+
   useEffect(() => {
     setMenuConfig([]);
     if (location.pathname.indexOf('/zh/') >= 0) {
@@ -48,7 +56,7 @@ const Siderbar: React.FC<IProps> = () => {
     <div className='siderbar'>
       <Menu
         mode='vertical'
-        defaultIndex={1}
+        defaultIndex={findMenuIndex(flatSiderbarConfig(siderbarConfig.zh))}
         style={{ width: '220px' }}
         onSelect={(i) => handleClick(i)}
       >
