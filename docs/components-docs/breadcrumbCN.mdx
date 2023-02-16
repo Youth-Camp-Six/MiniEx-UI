@@ -31,10 +31,6 @@ import PropsShow from './components/props-show';
     </Flex>
   }
   code={`
-    import { Breadcrumb , Flex } from 'miniEx';
-    import React from 'react';
-
-    const App: React.FC = () => (
       const options=[
         {
           label: '首页',
@@ -53,16 +49,11 @@ import PropsShow from './components/props-show';
           to: '',
           active: true,
         }]
-      return(
         <Flex x='start'>
          <Breadcrumb options={options}></Breadcrumb>
-        </Flex>)
-    );
-
-    export default App;
+        </Flex>
     `
   }
-  language="ts"
   />
 
 ## 自定义当前选中
@@ -91,10 +82,6 @@ import PropsShow from './components/props-show';
     </Flex>
   }
   code={`
-    import { Breadcrumb , Flex } from 'miniEx';
-    import React from 'react';
-
-    const App: React.FC = () => (
       const options=[
         {
           label: '首页',
@@ -113,16 +100,12 @@ import PropsShow from './components/props-show';
           label: '商品详情',
           to: '',
         }]
-      return(
+
         <Flex x='start'>
          <Breadcrumb options={options}></Breadcrumb>
-        </Flex>)
-    );
-
-    export default App;
+        </Flex>
     `
   }
-  language="ts"
   />
 
 
@@ -152,10 +135,6 @@ import PropsShow from './components/props-show';
     </Flex>
   }
   code={`
-    import { Breadcrumb , Flex } from 'miniEx';
-    import React from 'react';
-
-    const App: React.FC = () => (
       const options=[
         {
           label: '首页',
@@ -174,16 +153,12 @@ import PropsShow from './components/props-show';
           to: '',
           active: true,
         }]
-      return(
+
         <Flex x='start'>
          <Breadcrumb iconType="shoulder" options={options}></Breadcrumb>
-        </Flex>)
-    );
-
-    export default App;
+        </Flex>
     `
   }
-  language="ts"
   />
 
 

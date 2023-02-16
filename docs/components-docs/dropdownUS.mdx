@@ -51,12 +51,7 @@ import PropsShow from './components/props-show';
 </Dropdown>
     </Flex>
   }
-  code={`
-    import { Breadcrumb , Flex } from 'miniEx';
-    import React from 'react';
-
-    const App: React.FC = () => (
-      const options=[
+  code={`const options=[
          {
              label: 'Journey',
              value: '1',
@@ -74,17 +69,13 @@ import PropsShow from './components/props-show';
              value: '4',
          }
        ]
-      return(
+
         <Flex x='start'>
          <Dropdown options={options}><div>Plain text</div></Dropdown>
          <Dropdown options={options}><Button>click</Button></Dropdown>
-        </Flex>)
-    );
-
-    export default App;
+        </Flex>
     `
   }
-  language="ts"
   />
 
 
@@ -197,12 +188,7 @@ import PropsShow from './components/props-show';
       </Dropdown>
     </Flex>
   }
-  code={`
-    import { Breadcrumb , Flex } from 'miniEx';
-    import React from 'react';
-
-    const App: React.FC = () => (
-      const options=[
+  code={`const options=[
           {
               label: 'Modify your avatar',
               value: '1',
@@ -220,7 +206,7 @@ import PropsShow from './components/props-show';
               value: '4',
           },
       ]
-      return(
+
         <Flex x='start'>
          <Dropdown options={options} placement="bottom-start">
           <Avatar src="https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668"></Avatar>
@@ -237,13 +223,9 @@ import PropsShow from './components/props-show';
          <Dropdown options={options}>
           <Avatar status="busy" statusPosition="top-right">点击</Avatar>
          </Dropdown>
-        </Flex>)
-    );
-
-    export default App;
+        </Flex>
     `
   }
-  language="ts"
   />
 
 
@@ -294,12 +276,7 @@ import PropsShow from './components/props-show';
 </Dropdown>
     </Flex>
   }
-  code={`
-    import { Breadcrumb , Flex } from 'miniEx';
-    import React from 'react';
-
-    const App: React.FC = () => (
-      const options=[
+  code={`const options=[
          {
              label: 'Journey',
              value: '1',
@@ -317,17 +294,13 @@ import PropsShow from './components/props-show';
              value: '4',
          }
        ]
-      return(
+
         <Flex x='start'>
          <Dropdown arrow={false} options={options}><div>Plain text</div></Dropdown>
          <Dropdown arrow={false} options={options}><Button>click</Button></Dropdown>
-        </Flex>)
-    );
-
-    export default App;
+        </Flex>
     `
   }
-  language="ts"
   />
 
 

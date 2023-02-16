@@ -43,10 +43,6 @@ import PropsShow from './components/props-show';
     </Flex>
   }
   code={`
-    import { Breadcrumb , Flex } from 'miniEx';
-    import React from 'react';
-
-    const App: React.FC = () => (
       const options=[
            { label: 'Beijing', value: '1' },
            { label: 'Shanghai', value: '2' },
@@ -54,7 +50,7 @@ import PropsShow from './components/props-show';
            { label: 'Shenzhen', value: '4' },
            { label: 'urumchi', value: '5' }
         ]
-      return(
+
         <Flex direction="y" x='start' gap={20}>
           conventional
           <Tabs options={options} ></Tabs>
@@ -68,13 +64,8 @@ import PropsShow from './components/props-show';
             { label: 'Dark', value: '2' },
             ]}>
           </Tabs>
-        </Flex>
-    );
-
-    export default App;
-    `
+        </Flex>`
   }
-  language="ts"
   />
 
 

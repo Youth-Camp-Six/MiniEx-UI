@@ -20,11 +20,6 @@ Image, Icon and letter are supported, and the latter two kinds of avatar can hav
     </Flex>
   }
   code={`
-    import { Avatar, MiIcon , Flex } from 'miniEx';
-    import React from 'react';
-    import img from '../assets/logo.png'
-
-    const App: React.FC = () => (
     <Flex x='start'>
       <Avatar>U</Avatar>
       <Avatar icon={<MiIcon.User/>}></Avatar>
@@ -32,12 +27,8 @@ Image, Icon and letter are supported, and the latter two kinds of avatar can hav
       <Avatar style={{ backgroundColor: '#fde3cf', color: '#f56a00' }}>U</Avatar>
       <Avatar style={{ backgroundColor: '#87d068' }} icon={<MiIcon.User style={{color:'yellow'}}/>} />
     </Flex>
-    );
-
-    export default App;
     `
   }
-  language="ts"
   />
 
 
@@ -54,10 +45,6 @@ any sizes and two shapes are available.
     </Flex>
   }
   code={`
-    import { Avatar, MiIcon , Flex } from 'miniEx';
-    import React from 'react';
-
-    const App: React.FC = () => (
     <Flex x='start'>
       <Avatar width="30px" height="30px" icon={<MiIcon.User></MiIcon.User>}></Avatar>
       <Avatar width="50px" height="50px">U</Avatar>
@@ -65,12 +52,8 @@ any sizes and two shapes are available.
       round='round' src={'https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668'} />
       <Avatar width="70px" height="70px" src={'https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668'} />
     </Flex>
-    );
-
-    export default App;
     `
   }
-  language="ts"
   />
 
 
@@ -89,23 +72,15 @@ Usually used for reminders and notifications.
     </Flex>
   }
   code={`
-    import { Avatar, MiIcon , Flex } from 'miniEx';
-    import React from 'react';
-
-    const App: React.FC = () => (
     <Flex x='start'>
-      Avatar status="busy" statusPosition="top-right">U</Avatar>
+      <Avatar status="busy" statusPosition="top-right">U</Avatar>
       <Avatar status="online" statusPosition="bottom-right">U</Avatar>
       <Badge value="15">
           <Avatar>U</Avatar>
       </Badge>
     </Flex>
-    );
-
-    export default App;
     `
   }
-  language="ts"
   />
 
 
@@ -116,10 +91,6 @@ Avatar group display.
 <ShowSouceCode
   element={AvatarGroupCN()}
   code={`
-    import { AvatarGroup, MiIcon , Flex } from 'miniEx';
-    import React from 'react';
-
-    const App: React.FC = () => (
       const options = [
         {
           label: 'U',
@@ -141,17 +112,13 @@ Avatar group display.
           value: '4',
         },
       ];
-    return (
+
     <Flex direction='y'>
       <AvatarGroup options={options}></AvatarGroup>
       <AvatarGroup maxCount={2} options={options}></AvatarGroup>
     </Flex>
-  );
-
-    export default App;
     `
   }
-  language="ts"
   />
 
 

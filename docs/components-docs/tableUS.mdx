@@ -10,8 +10,6 @@ import {conmomTableCN, gdTableCN, czTableCN, soltTableCN, zdyTableCN} from './de
 <ShowSouceCode
   element={conmomTableCN()}
   code={`
-    import { Table, Flex, TableColumns} from 'miniEx';
-    import React from 'react';
 const data = [
   {
     id: 1,
@@ -130,14 +128,8 @@ const cell = (field: any, row) => {
   }
 };
 
-    const App: React.FC = () => (
-      return(<Table data={data} columns={columns} cell={cell}></Table>)
-    );
-
-    export default App;
-    `
+<Table data={data} columns={columns} cell={cell}></Table> `
   }
-  language="ts"
   />
 
 ## Fixed columns
@@ -145,8 +137,6 @@ const cell = (field: any, row) => {
 <ShowSouceCode
   element={gdTableCN()}
   code={`
-    import { Table, Flex, TableColumns} from 'miniEx';
-    import React from 'react';
 const data2: any = [
   {
     id: 1,
@@ -259,14 +249,8 @@ const cell2 = (field: any, row) => {
   }
 };
 
-    const App: React.FC = () => (
-      return(<Table data={data2} columns={columns2} cell={cell2}></Table>)
-    );
-
-    export default App;
-    `
+<Table data={data2} columns={columns2} cell={cell2}></Table>`
   }
-  language="ts"
   />
 
 ## Custom actions
@@ -274,8 +258,6 @@ const cell2 = (field: any, row) => {
 <ShowSouceCode
   element={czTableCN()}
   code={`
-    import { Table, Flex, TableColumns} from 'miniEx';
-    import React from 'react';
 const data3: any = [
   {
     id: 1,
@@ -401,14 +383,8 @@ const cell3 = (field: any, row) => {
   }
 };
 
-    const App: React.FC = () => (
-      return(<Table data={data2} columns={columns2} cell={cell2}></Table>)
-    );
-
-    export default App;
-    `
+<Table data={data2} columns={columns2} cell={cell2}></Table> `
   }
-  language="ts"
   />
 
 ## Slot
@@ -416,8 +392,6 @@ const cell3 = (field: any, row) => {
 <ShowSouceCode
   element={soltTableCN()}
   code={`
-    import { Table, Flex, TableColumns} from 'miniEx';
-    import React from 'react';
 const data3: any = [
   {
     id: 1,
@@ -547,14 +521,8 @@ const cell4 = (field: any, row) => {
   }
 };
 
-    const App: React.FC = () => (
-      return(<Table data={data2} columns={columns2} cell={cell4}></Table>)
-    );
-
-    export default App;
-    `
+<Table data={data2} columns={columns2} cell={cell4}></Table> `
   }
-  language="ts"
   />
 
 
@@ -563,8 +531,6 @@ const cell4 = (field: any, row) => {
 <ShowSouceCode
   element={zdyTableCN()}
   code={`
-    import { Table, Flex, TableColumns} from 'miniEx';
-    import React from 'react';
 const data5: any = [
   {
     id: 1,
@@ -707,14 +673,8 @@ const columns5: TableColumns[] = [
      }
   };
 
-    const App: React.FC = () => (
-      return(<Table data={data5} columns={columns5} cell={cell3}></Table>)
-    );
-
-    export default App;
-    `
+<Table data={data5} columns={columns5} cell={cell3}></Table>`
   }
-  language="ts"
   />
 
 
