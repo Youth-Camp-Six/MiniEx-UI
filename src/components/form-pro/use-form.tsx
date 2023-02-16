@@ -11,7 +11,7 @@ class FormStore {
   rules: Rules;
 
   constructor() {
-    this.store = {}; // 状态值： name: value
+    this.store = {};
     this.fieldEntities = [];
     this.callbacks = {};
     this.subscribeCB = () => ({});
@@ -22,9 +22,6 @@ class FormStore {
     this.callbacks = { ...this.callbacks, ...callbacks };
   };
 
-  // 注册实例(forceUpdate)
-  // 注册与取消注册
-  // 订阅与取消订阅
   registerFieldEntities = (entity: any) => {
     this.fieldEntities.push(entity);
 
@@ -34,69 +31,79 @@ class FormStore {
     };
   };
 
-  // get
   getFieldsValue = () => {
     return { ...this.store };
   };
 
-  getFieldValue = (name: any) => {
-    return this.store[name];
+  getFieldValue = (key: string) => {
+    return this.store[key];
   };
 
-  // set
-  // password: 123
   setFieldsValue = (newStore: any) => {
-    // 1. update store
     this.store = {
       ...this.store,
       ...newStore,
     };
-    // 2. update Field
     this.fieldEntities.forEach((entity) => {
       Object.keys(newStore).forEach((k) => {
         if (k === entity.props.name) {
+          // 更新目标组件
           entity.onStoreChange();
         }
       });
     });
-    // 3. callback
     this.subscribeCB(newStore);
   };
 
-  // subscribe
   subscribe = (cb: () => any) => {
     this.subscribeCB = cb;
   };
 
-  // rules
-  setFormRules = (rules: any) => {
+  setFormRules = (rules: Rules) => {
     this.rules = rules;
+  };
+
+  getTargetFieldEntities = (field: string) => {
+    for (let i = 0; i < this.fieldEntities.length; i++) {
+      if (field === this.fieldEntities[i].props.name) {
+        return this.fieldEntities[i];
+      }
+    }
   };
 
   validate = () => {
     const validator = new Schema(this.rules);
+
+    // 清除所有校验信息
+    this.fieldEntities.forEach((entity) => {
+      entity.onValidate('');
+    });
+
+    validator.validate(this.getFieldsValue()).catch(({ errors }) => {
+      // 设置错误校验信息
+      errors.forEach((err: any) => {
+        const targetFieldEntity = this.getTargetFieldEntities(err.field);
+        targetFieldEntity.onValidate(err.message);
+      });
+    });
+
     return validator.validate(this.getFieldsValue());
   };
 
   submit = () => {
     const { onFinish, onFinishFailed } = this.callbacks;
-    // const err = this.validate();
-    this.validate()
-      .then(() => {
-        onFinish && onFinish(this.getFieldsValue());
-      })
-      .catch(({ errors, fields }) => {
-        onFinishFailed && onFinishFailed(errors, fields);
-      });
-    // 提交
 
-    // if (err.length === 0) {
-    //   // 校验通过
-    //   onFinish(this.getFieldsValue());
-    // } else {
-    //   // 校验不通过
-    //   onFinishFailed(err, this.getFieldsValue());
-    // }
+    return new Promise<{ [key: string]: any }>((resolve, reject) => {
+      this.validate()
+        .then((res) => {
+          onFinish && onFinish(res);
+          resolve(res);
+        })
+        .catch(({ errors, fields }) => {
+          onFinishFailed && onFinishFailed(errors, fields);
+          reject({ errors, fields });
+        });
+    });
   };
 
   getForm = () => {
@@ -115,7 +122,6 @@ class FormStore {
 }
 
 const useForm = (form?: FormRef) => {
-  // 存值，在组件卸载之前指向的都是同一个值
   const formRef = useRef<FormRef>();
 
   if (!formRef.current) {

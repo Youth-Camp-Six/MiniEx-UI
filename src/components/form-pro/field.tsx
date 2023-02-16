@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { memo } from 'react';
+import React, { memo, useEffect } from 'react';
 import FieldContext from './field-context';
 import { FieldProps } from './type';
 
@@ -23,12 +23,34 @@ export const Field: React.FC<FieldProps> = (props) => {
     [`mi-form-item-${labelalign}`]: labelalign,
   });
 
+  // 数据变化时更新组件
   const [, forceUpdate] = React.useReducer((x) => x + 1, 0);
 
+  const [validateMessage, setValidateMessage] = React.useState<string>('');
+  const [messageClassnames, setMessageClassnames] = React.useState<string>(
+    'mi-form-item-view-message'
+  );
+
+  // 数据校验信息显示
+  const onValidate = (msg: string) => {
+    setValidateMessage(msg);
+  };
+
+  // 设置校验信息样式
+  useEffect(() => {
+    setMessageClassnames(
+      classNames('mi-form-item-view-message', {
+        'mi-form-item-view-message-error': validateMessage,
+      })
+    );
+  }, [validateMessage]);
+
+  // 组件生成时注册, 组件销毁时注销
   React.useLayoutEffect(() => {
     const unregister = registerFieldEntities({
       props,
       onStoreChange: forceUpdate,
+      onValidate,
     });
     return unregister;
   }, []);
@@ -38,9 +60,7 @@ export const Field: React.FC<FieldProps> = (props) => {
     return {
       value: getFieldValue(name),
       onChange: (e: any) => {
-        // console.log(e);
         const newValue = e;
-        // set state
         setFieldsValue({ [name]: newValue });
       },
     };
@@ -64,6 +84,7 @@ export const Field: React.FC<FieldProps> = (props) => {
       </div>
       <div className='mi-form-item-view'>
         <div className='mi-form-item-view-inner'>{returnChildNode}</div>
+        <div className={messageClassnames}>{validateMessage}</div>
       </div>
     </div>
   );

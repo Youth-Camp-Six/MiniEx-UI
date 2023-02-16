@@ -2,9 +2,9 @@
 import React from 'react';
 
 interface IContext {
-  getFieldValue: (...args: any) => any;
-  setFieldsValue: (...args: any) => any;
-  registerFieldEntities: (...args: any) => any;
+  getFieldValue: (key: string) => any;
+  setFieldsValue: (newStore: any) => void;
+  registerFieldEntities: (...entity: any) => void;
   labelwidth?: string;
   direction?: 'x' | 'y';
   labelalign?: 'start' | 'end';

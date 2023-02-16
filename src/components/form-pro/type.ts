@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react';
-import { Field } from './field';
-import useForm from './use-form';
+import type { Rules } from 'async-validator';
 
 export interface FormProps {
   children: ReactNode;
@@ -26,21 +25,16 @@ export interface FieldProps {
   labelalign?: 'start' | 'end';
 }
 
-export interface FormStaticProps {
-  Field: typeof Field;
-  useForm: typeof useForm;
-}
-
 export interface FormRef {
-  getFieldsValue: any;
-  getFieldValue: any;
-  setFieldsValue: any;
-  registerFieldEntities: any;
-  submit: any;
-  setCallbacks: any;
-  subscribe: any;
-  setFormRules: any;
-  validate: any;
+  getFieldsValue: () => { [key: string]: any };
+  getFieldValue: (key: string) => any;
+  setFieldsValue: (newStore: { [key: string]: any }) => void;
+  registerFieldEntities: (entity: any) => void;
+  submit: () => Promise<{ [key: string]: any }>;
+  setCallbacks: (callbacks: any) => void;
+  subscribe: (cb: any) => void;
+  setFormRules: (rules: Rules) => void;
+  validate: () => Promise<any>;
 }
 
 export type IFormType = (form: any) => [value: FormRef];

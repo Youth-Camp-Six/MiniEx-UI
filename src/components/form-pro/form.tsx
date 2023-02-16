@@ -1,10 +1,10 @@
 import classNames from 'classnames';
-import React, { ReactNode } from 'react';
+import React, { memo } from 'react';
 import FieldContext from './field-context';
-import { FormProps } from './type';
+import type { FormProps, FormRef } from './type';
 import useForm from './use-form';
 
-export const Form = React.forwardRef<any, FormProps>((props, ref) => {
+export const FormPro = React.forwardRef<FormRef, FormProps>((props, ref) => {
   const {
     children,
     form,
@@ -54,6 +54,6 @@ export const Form = React.forwardRef<any, FormProps>((props, ref) => {
   );
 });
 
-Form.displayName = 'Form';
+FormPro.displayName = 'FormPro';
 
-export default Form;
+export default memo(FormPro);
