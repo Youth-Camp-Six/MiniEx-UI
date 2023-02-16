@@ -25,8 +25,14 @@ const Siderbar: React.FC<IProps> = () => {
 
   const findMenuIndex = (arr: string | any[]) => {
     for (let i = 0; i < arr.length; i++) {
-      if (arr[i].path === location.pathname.split('zh')[1]) {
-        return flatSiderbarConfig(siderbarConfig.zh).indexOf(arr[i]);
+      if (location.pathname.indexOf('/zh/') >= 0) {
+        if (arr[i].path === location.pathname.split('zh')[1]) {
+          return flatSiderbarConfig(siderbarConfig.zh).indexOf(arr[i]);
+        }
+      } else {
+        if (arr[i].path === location.pathname.split('en')[1]) {
+          return flatSiderbarConfig(siderbarConfig.zh).indexOf(arr[i]);
+        }
       }
     }
   };
