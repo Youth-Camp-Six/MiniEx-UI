@@ -70,30 +70,30 @@ const columns: TableColumns[] = [
     x: 'center',
   },
   {
-    title: '信息',
+    title: 'Information',
     width: '200px',
     field: 'info',
   },
   {
-    title: '年龄',
+    title: 'age',
     width: 'auto',
     field: 'age',
     x: 'center',
   },
   {
-    title: '性别',
+    title: 'sex',
     width: 'auto',
     field: 'sex',
     x: 'center',
   },
   {
-    title: '成绩',
+    title: 'grades',
     width: 'auto',
     field: 'fraction',
     x: 'center',
   },
   {
-    title: '介绍',
+    title: 'introduce',
     width: 'auto',
     field: 'intro',
   },
@@ -118,11 +118,11 @@ const cell = (field: any, row) => {
       return (
         <Flex>
           <Badge round='round' type={success}></Badge>
-          {row.fraction >= 60 ? '良好' : '很差'}
+          {row.fraction >= 60 ? 'good' : 'bad'}
         </Flex>
       );
     case 'sex':
-      return <div>{row.sex > 0 ? '男' : '女'}</div>;
+      return <div>{row.sex > 0 ? 'man' : 'woman'}</div>;
     case 'intro':
       return <div>{row.intro}</div>;
   }
@@ -190,7 +190,7 @@ const columns2: TableColumns[] = [
     offsetX: '0px',
   },
   {
-    title: '姓名',
+    title: 'name',
     width: '100px',
     field: 'name',
     x: 'center',
@@ -198,23 +198,23 @@ const columns2: TableColumns[] = [
     offsetX: '50px',
   },
   {
-    title: '年龄',
+    title: 'age',
     width: '400px',
     field: 'age',
     x: 'center',
   },
   {
-    title: '爱好',
+    title: 'hobby',
     width: '400px',
     field: 'hobby',
   },
   {
-    title: '介绍',
+    title: 'introduce',
     width: '400px',
     field: 'intro',
   },
   {
-    title: '性别',
+    title: 'sex',
     width: '80px',
     field: 'sex',
     x: 'center',
@@ -231,7 +231,7 @@ const cell2 = (field: any, row) => {
     case 'age':
       return <div>{row.age}</div>;
     case 'sex':
-      return <div>{row.sex > 0 ? '男' : '女'}</div>;
+      return <div>{row.sex > 0 ? 'man' : 'woman'}</div>;
     case 'hobby':
       return (
         <Flex gap={5} x='start'>
@@ -311,7 +311,7 @@ const columns3: TableColumns[] = [
     offsetX: '0px',
   },
   {
-    title: '姓名',
+    title: 'name',
     width: '100px',
     field: 'name',
     x: 'center',
@@ -319,29 +319,29 @@ const columns3: TableColumns[] = [
     offsetX: '50px',
   },
   {
-    title: '年龄',
+    title: 'age',
     width: '200px',
     field: 'age',
     x: 'center',
   },
   {
-    title: '性别',
+    title: 'sex',
     width: '200px',
     field: 'sex',
     x: 'center',
   },
   {
-    title: '爱好',
+    title: 'hobby',
     width: '400px',
     field: 'hobby',
   },
   {
-    title: '介绍',
+    title: 'introduce',
     width: '400px',
     field: 'intro',
   },
   {
-    title: '操作',
+    title: 'operate',
     width: '120px',
     field: 'action',
     sticky: 'right',
@@ -358,7 +358,7 @@ const cell3 = (field: any, row) => {
     case 'age':
       return <div>{row.age}</div>;
     case 'sex':
-      return <div>{row.sex > 0 ? '男' : '女'}</div>;
+      return <div>{row.sex > 0 ? 'man' : 'woman'}</div>;
     case 'hobby':
       return (
         <Flex gap={5} x='start'>
@@ -376,8 +376,8 @@ const cell3 = (field: any, row) => {
     case 'action':
       return (
         <Flex>
-          <Button>管理</Button>
-          <Button>删除</Button>
+          <Button>manage</Button>
+          <Button>Delete</Button>
         </Flex>
       );
   }
@@ -445,7 +445,7 @@ const columns3: TableColumns[] = [
     offsetX: '0px',
   },
   {
-    title: '姓名',
+    title: 'name',
     width: '100px',
     field: 'name',
     x: 'center',
@@ -453,29 +453,29 @@ const columns3: TableColumns[] = [
     offsetX: '50px',
   },
   {
-    title: '年龄',
+    title: 'age',
     width: '200px',
     field: 'age',
     x: 'center',
   },
   {
-    title: '性别',
+    title: 'sex',
     width: '200px',
     field: 'sex',
     x: 'center',
   },
   {
-    title: '爱好',
+    title: 'hobby',
     width: '400px',
     field: 'hobby',
   },
   {
-    title: '介绍',
+    title: 'introduce',
     width: '400px',
     field: 'intro',
   },
   {
-    title: '操作',
+    title: 'operate',
     width: '120px',
     field: 'action',
     sticky: 'right',
@@ -492,7 +492,7 @@ const cell4 = (field: any, row) => {
     case 'age':
       return <div>{row.age}</div>;
     case 'sex':
-      return <div>{row.sex > 0 ? '男' : '女'}</div>;
+      return <div>{row.sex > 0 ? 'man' : 'woman'}</div>;
     case 'hobby':
       return (
         <Flex gap={5} x='start'>
@@ -511,10 +511,10 @@ const cell4 = (field: any, row) => {
       return (
         <Flex>
           <Popover childrenData={lrData}>
-            <div>录入</div>
+            <div>Input</div>
           </Popover>
           <Popover childrenData={scData}>
-            <div>删除</div>
+            <div>Delete</div>
           </Popover>
         </Flex>
       );
@@ -539,7 +539,7 @@ const data5: any = [
     sex: 1,
     intro: 'Be hygienic and polite',
     hobby: ['sing', 'jump', 'rap', 'swim', 'hiking', 'movie', 'Off-road'],
-    // 定义这一单元格的样式
+    // Defines the style of this cell
     tdStyle: {
       age: { background: 'var(--mi-primary-color-dark', color: '#fff' },
     },
@@ -551,7 +551,7 @@ const data5: any = [
     sex: 1,
     intro: 'Be hygienic and polite',
     hobby: ['sing', 'jump', 'rap', 'swim', 'hiking', 'movie', 'Off-road'],
-    // 定义这一行的样式
+    // Defines the style of this row
     rowStyle: { background: 'var(--mi-error-color-light)' },
   },
   {
@@ -561,7 +561,7 @@ const data5: any = [
     sex: 0,
     intro: 'Be hygienic and polite',
     hobby: ['sing', 'jump', 'rap', 'swim', 'hiking', 'movie', 'Off-road'],
-    // 定义这一单元格的样式
+    // Defines the style of this cell
     tdStyle: {
       sex: { color: 'var(--mi-warning-color-dark)' },
       intro: { background: 'var(--mi-warning-color-dark)', color: '#fff' },
@@ -598,39 +598,39 @@ const columns5: TableColumns[] = [
     offsetX: '0px'
   },
   {
-    title: '姓名',
+    title: 'name',
     width: '100px',
     field: 'name',
     x: 'center',
     sticky: 'left',
     offsetX: '50px',
-    // 定义这一列的样式
+    // Define the style of this column
     columnStyle: { background: var(--mi-success-color-light) }
   },
   {
-    title: '年龄',
+    title: 'age',
     width: '200px',
     field: 'age',
     x: 'center'
   },
   {
-    title: '性别',
+    title: 'sex',
     width: '200px',
     field: 'sex',
     x: 'center'
   },
   {
-    title: '爱好',
+    title: 'hobby',
     width: '400px',
     field: 'hobby'
   },
   {
-    title: '介绍',
+    title: 'introduce',
     width: '400px',
     field: 'intro'
   },
   {
-    title: '操作',
+    title: 'operate',
     width: '120px',
     field: 'action',
     sticky: 'right',
@@ -648,7 +648,7 @@ const columns5: TableColumns[] = [
        case 'age':
          return <div>{row.age}</div>;
        case 'sex':
-         return <div>{row.sex > 0 ? '男' : '女'}</div>;
+         return <div>{row.sex > 0 ? 'man' : 'woman'}</div>;
        case 'hobby':
          return (
            <Flex gap={5} x='start'>
@@ -666,8 +666,8 @@ const columns5: TableColumns[] = [
        case 'action':
          return (
            <Flex>
-             <Button>管理</Button>
-             <Button>删除</Button>
+             <Button>manage</Button>
+             <Button>Delete</Button>
            </Flex>
          );
      }
@@ -682,31 +682,31 @@ const columns5: TableColumns[] = [
 <PropsShow propsInfo={[
   {
     name: 'columns',
-    description: '配置列',
+    description: 'Configure columns',
     type: 'TableColumns',
     initValue: '[]',
   },
   {
     name: 'data',
-    description: '数据',
+    description: 'data',
     type: 'Array<any>',
     initValue: '[]',
   },
   {
-    name: 'width',
-    description: '填充函数',
+    name: 'cell',
+    description: 'Fill function',
     type: '(field: any, row: any) => ReactNode',
     initValue: '/',
   },
   {
     name: 'width',
-    description: 'table宽度',
+    description: 'Table width',
     type: 'string',
     initValue: '/',
   },
   {
     name: 'maxHeight',
-    description: 'table最大高度',
+    description: 'The maximum height of the table',
     type: 'string',
     initValue: '/',
   }
@@ -716,43 +716,43 @@ const columns5: TableColumns[] = [
 <PropsShow propsInfo={[
   {
     name: 'title',
-    description: '标题',
+    description: 'title',
     type: 'string',
     initValue: '/',
   },
   {
     name: 'field',
-    description: '字段',
+    description: 'field',
     type: 'string',
     initValue: '/',
   },
   {
     name: 'sticky',
-    description: '是否粘性',
+    description: 'sticky',
     type: 'string',
     initValue: '/',
   },
   {
     name: 'x',
-    description: '水平布局',
+    description: 'Horizontal layout',
     type: 'center| start | end',
     initValue: '/',
   },
   {
     name: 'y',
-    description: '垂直布局',
+    description: 'Vertical layout',
     type: 'center| start | end',
     initValue: '/',
   },
   {
     name: 'width',
-    description: '列宽度',
+    description: 'Column width',
     type: 'string',
     initValue: '/',
   },
   {
     name: 'columnStyle',
-    description: '列样式',
+    description: 'Column style',
     type: 'React.CSSProperties',
     initValue: '/',
   }
