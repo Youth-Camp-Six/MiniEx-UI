@@ -9,7 +9,7 @@ export interface TabsProps {
   options: Options[];
   width?: string;
   itemWidth?: string;
-  iteHeight?: string;
+  itemHeight?: string;
   round?: string;
   change?: (e: any) => void;
   type?: string;

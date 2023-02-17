@@ -1,0 +1,30 @@
+import { InputTag } from '../../src';
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
+
+
+# InputTag
+
+<ShowSouceCode
+  element={
+    <InputTag modelvalue={['handsome','cool']}></InputTag>
+  }
+  code={`<InputTag modelvalue={['handsome','cool']}></InputTag>`
+  }
+  />
+
+## Props
+<PropsShow propsInfo={[
+  {
+    name: 'modelvalue',
+    description: 'Bind the value',
+    type: 'Array',
+    initValue: '[Beautiful,generous]',
+  },
+  {
+    name: 'type',
+    description: 'Type (refer to Tag tags)',
+    type: 'String',
+    initValue: 'normal',
+  },
+]} />

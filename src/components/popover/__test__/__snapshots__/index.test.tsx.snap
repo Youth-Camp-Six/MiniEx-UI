@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Popover test Popover 1`] = `
+<div>
+  <div
+    aria-expanded="false"
+    class="mi-popover"
+    trigger="mouseenter"
+  >
+    <label>
+      <div
+        class="trigger"
+      >
+        纯文本
+      </div>
+    </label>
+  </div>
+  <div
+    aria-expanded="false"
+    class="mi-popover"
+    trigger="mouseenter"
+  >
+    <label>
+      <div
+        class="trigger"
+      >
+        <button
+          class="btn btn-default"
+        >
+          button
+        </button>
+      </div>
+    </label>
+  </div>
+</div>
+`;

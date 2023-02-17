@@ -47,6 +47,10 @@ export const siderbarConfig: ISiderbarConfig = {
           title: 'Radio',
           path: '/doc/radio',
         },
+        {
+          title: 'InputTag',
+          path: '/doc/inputTag',
+        },
       ],
     },
     {
@@ -59,6 +63,10 @@ export const siderbarConfig: ISiderbarConfig = {
         {
           title: 'Title',
           path: '/doc/title',
+        },
+        {
+          title: 'Table',
+          path: '/doc/table',
         },
       ],
     },
@@ -118,6 +126,10 @@ export const siderbarConfig: ISiderbarConfig = {
           title: 'Radio 单选框',
           path: '/doc/radio',
         },
+        {
+          title: 'InputTag 标签输入框',
+          path: '/doc/inputTag',
+        },
       ],
     },
     {
@@ -130,6 +142,10 @@ export const siderbarConfig: ISiderbarConfig = {
         {
           title: 'Title 标题',
           path: '/doc/title',
+        },
+        {
+          title: 'Table 表格',
+          path: '/doc/table',
         },
       ],
     },

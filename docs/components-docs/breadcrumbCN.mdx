@@ -1,81 +1,201 @@
-import { Breadcrumb } from '../../src/components';
+import { Breadcrumb , Flex } from '../../src/components';
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
 
 # 面包屑
 
-## 展示组件
+## 基本
 
-<Breadcrumb options={[
-  {
-    label: '首页',
-    to: '/',
-  },
-  {
-    label: 'React',
-    to: 'https://react.docschina.org/',
-  },
-  {
-    label: '商品列表',
-    to: '',
-  },
-  {
-    label: '商品详情',
-    to: '',
-    active: true,
-  },
-]} ></Breadcrumb><br /><br />
-<Breadcrumb iconType="shoulder" options={[
-  {
-    label: '首页',
-    to: '/',
-  },
-  {
-    label: 'React',
-    to: 'https://react.docschina.org/',
-  },
-  {
-    label: '商品列表',
-    to: '',
-  },
-  {
-    label: '商品详情',
-    to: '',
-    active: true,
-  },
-]}></Breadcrumb>
+<ShowSouceCode
+  element={
+    <Flex x='start'>
+      <Breadcrumb options={[
+        {
+          label: '首页',
+          to: '/',
+        },
+        {
+          label: 'React',
+          to: 'https://react.docschina.org/',
+        },
+        {
+          label: '商品列表',
+          to: '',
+        },
+        {
+          label: '商品详情',
+          to: '',
+          active: true,
+        }]} >
+        </Breadcrumb>
+    </Flex>
+  }
+  code={`
+      const options=[
+        {
+          label: '首页',
+          to: '/',
+        },
+        {
+          label: 'React',
+          to: 'https://react.docschina.org/',
+        },
+        {
+          label: '商品列表',
+          to: '',
+        },
+        {
+          label: '商品详情',
+          to: '',
+          active: true,
+        }]
+        <Flex x='start'>
+         <Breadcrumb options={options}></Breadcrumb>
+        </Flex>
+    `
+  }
+  />
 
-## 展示代码
+## 自定义当前选中
+<ShowSouceCode
+  element={
+    <Flex x='start'>
+      <Breadcrumb options={[
+        {
+          label: '首页',
+          to: '/',
+        },
+        {
+          label: 'React',
+          to: 'https://react.docschina.org/',
+        },
+        {
+          label: '商品列表',
+          active: true,
+          to: '',
+        },
+        {
+          label: '商品详情',
+          to: '',
+        }]} >
+        </Breadcrumb>
+    </Flex>
+  }
+  code={`
+      const options=[
+        {
+          label: '首页',
+          to: '/',
+        },
+        {
+          label: 'React',
+          to: 'https://react.docschina.org/',
+        },
+        {
+          label: '商品列表',
+          to: '',
+          active: true,
+        },
+        {
+          label: '商品详情',
+          to: '',
+        }]
 
-```js
-import { Dropdown } from 'miniEx';
-import React from 'react';
+        <Flex x='start'>
+         <Breadcrumb options={options}></Breadcrumb>
+        </Flex>
+    `
+  }
+  />
 
-const App: React.FC = () => (
-  const options=[
-  {
-    label: '首页',
-    to: '/',
-  },
-  {
-    label: 'React',
-    to: 'https://react.docschina.org/',
-  },
-  {
-    label: '商品列表',
-    to: '',
-  },
-  {
-    label: '商品详情',
-    to: '',
-    active: true,
-  },
-]
- <div>
-     <Breadcrumb options={options}></Breadcrumb> <br /><br />
-      <Breadcrumb options={options} iconType="shoulder"></Breadcrumb>
-    </div>
-);
 
-export default App;
-```
+## 图标类型
+<ShowSouceCode
+  element={
+    <Flex x='start'>
+      <Breadcrumb iconType="shoulder" options={[
+          {
+            label: '首页',
+            to: '/',
+          },
+          {
+            label: 'React',
+            to: 'https://react.docschina.org/',
+          },
+          {
+            label: '商品列表',
+            to: '',
+          },
+          {
+            label: '商品详情',
+            to: '',
+            active: true,
+          },
+        ]}></Breadcrumb>
+    </Flex>
+  }
+  code={`
+      const options=[
+        {
+          label: '首页',
+          to: '/',
+        },
+        {
+          label: 'React',
+          to: 'https://react.docschina.org/',
+        },
+        {
+          label: '商品列表',
+          to: '',
+        },
+        {
+          label: '商品详情',
+          to: '',
+          active: true,
+        }]
+
+        <Flex x='start'>
+         <Breadcrumb iconType="shoulder" options={options}></Breadcrumb>
+        </Flex>
+    `
+  }
+  />
+
 
 ## Props
+<PropsShow propsInfo={[
+  {
+    name: 'options',
+    description: '配置表',
+    type: 'options',
+    initValue: '[]',
+  },
+  {
+    name: 'iconType',
+    description: '显示类型',
+    type: 'sprit | shoulder',
+    initValue: 'sprit',
+  }
+]} />
+
+## Options
+<PropsShow propsInfo={[
+  {
+    name: 'label',
+    description: '文本内容',
+    type: 'string | ReactNode',
+    initValue: '/',
+  },
+  {
+    name: 'to',
+    description: '绑定跳转链接',
+    type: 'string',
+    initValue: '/',
+  },
+  {
+    name: 'active',
+    description: '是否是选中状态',
+    type: 'boolean',
+    initValue: 'false',
+  },
+]} />
