@@ -161,7 +161,7 @@ export const siderbarConfig: ISiderbarConfig = {
       title: '反馈',
       children: [
         {
-          title: 'Toast',
+          title: 'Toast 吐司',
           path: '/doc/toast',
         },
       ],

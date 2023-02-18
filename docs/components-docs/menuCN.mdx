@@ -1,22 +1,22 @@
 import { Menu, MenuItem } from '../../src/components';
+import ShowSouceCode from './components/show-source-code';
 
 # 菜单
-<div className='Menu' style={{ width: '200px' }}>
-  <Menu defaultIndex={1}>
-    <MenuItem index={1}>元素1</MenuItem>
-    <MenuItem index={2}>元素2</MenuItem>
-    <MenuItem index={3}>元素3</MenuItem>
-    <MenuItem disabled>元素4</MenuItem>
-    <MenuItem index={4}>元素5</MenuItem>
-  </Menu>
-</div>
-
-## 代码
-```ts
-import React from 'react';
-import { Button, Space } from 'antd';
-
-const handleSelect = (index: number) => {
+## 基本
+<ShowSouceCode
+  element={
+    <div className='Menu' style={{ width: '200px' }}>
+      <Menu defaultIndex={1}>
+        <MenuItem index={1}>元素1</MenuItem>
+        <MenuItem index={2}>元素2</MenuItem>
+        <MenuItem index={3}>元素3</MenuItem>
+        <MenuItem disabled>元素4</MenuItem>
+        <MenuItem index={4}>元素5</MenuItem>
+      </Menu>
+    </div>
+  }
+  code = {`
+  const handleSelect = (index: number) => {
   console.log(index);
 };
 
@@ -30,9 +30,7 @@ const Dev: React.FC = () => (
       <MenuItem index={4}>元素5</MenuItem>
     </Menu>
   </div>
-);
-
-export default memo(Dev);
-```
+);`}
+/>
 
 ## API
