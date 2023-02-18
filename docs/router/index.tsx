@@ -33,6 +33,8 @@ import TableCN from '../components-docs/tableCN.mdx';
 import InputTagUS from '../components-docs/inputTagUS.mdx';
 import InputTagCN from '../components-docs/inputTagCN.mdx';
 
+import InputSearchCN from '../components-docs/inputSearchCN.mdx';
+import InputSearchUS from '../components-docs/inputSearchUS.mdx';
 import '../i18n';
 import { createHashRouter, Navigate } from 'react-router-dom';
 
@@ -130,6 +132,10 @@ export const router = createHashRouter([
             path: '/en/doc/inputTag',
             element: <InputTagUS components={components} />,
           },
+          {
+            path: '/en/doc/input',
+            element: <InputSearchUS components={components} />,
+          },
         ],
       },
     ],
@@ -203,6 +209,10 @@ export const router = createHashRouter([
           {
             path: '/zh/doc/inputTag',
             element: <InputTagCN components={components} />,
+          },
+          {
+            path: '/zh/doc/input',
+            element: <InputSearchCN components={components} />,
           },
         ],
       },

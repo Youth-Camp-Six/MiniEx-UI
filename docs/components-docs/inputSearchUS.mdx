@@ -1,0 +1,72 @@
+import { InputSearch, MiIcon } from '../../src/components';
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
+import InputApp from "./demos/input/inputAppUS";
+
+# Input
+A basic widget for getting the user input is a text field. Keyboard and mouse can be used for providing or changing data.
+
+## When To Use
+A user input in a form field is needed.
+A search input is required.
+
+<InputSearch placeholder="input search text"></InputSearch>
+
+## Show Codes
+<ShowSouceCode
+   element={
+        <InputApp />
+    }
+    code = {
+    `
+import { InputSearch, MiIcon } from 'miniEx';
+import React from 'react';
+
+const suffix = (
+  <MiIcon.Search
+    style={{
+      fontSize: 16,
+      color: '#1890ff',
+    }}
+  />
+);
+
+const onSearch = (value: string) => console.log(value);
+
+const App: React.FC = () => (
+  <InputSearch placeholder="input search text" suffix={suffix} onSearch={onSearch} size={'medium'}></InputSearch>
+  <InputSearch placeholder="input search text" enterButton="Search" onSearch={onSearch} size={'medium'}></InputSearch>
+);
+
+export default App;`
+    }
+/>
+
+## Props
+<PropsShow propsInfo={[
+  {
+    name: 'size',
+    description: 'The size of the input box.',
+    type: 'large | medium | small',
+    initValue: 'medium',
+  },
+  {
+    name: 'onSearch',
+    description: 'The callback function triggered when you click on the search-icon, the clear-icon or press the Enter key',
+    type: 'function(value, e)',
+    initValue: '-',
+  },
+  {
+    name: 'enterButton',
+    description: 'Whether to show an enter button after input. This property conflicts with the suffix property',
+    type: 'string',
+    initValue: '',
+  },
+  {
+    name: 'suffix',
+    description: 'The suffix icon for the Input',
+    type: 'ReactNode',
+    initValue: '-',
+  }
+]} />
+

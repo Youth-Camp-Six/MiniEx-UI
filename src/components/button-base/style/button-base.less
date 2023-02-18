@@ -1,0 +1,43 @@
+.mixin-button-size(@padding-y, @padding-x, @font-size, @border-radius) {
+  padding: @padding-y @padding-x;
+  font-size: @font-size;
+  // border-radius: @border-radius;
+}
+
+.mi-button-base {
+  margin-bottom: 0.2rem;
+  border-radius: 0 10px 10px 0;
+}
+
+.mi-button-base-small {
+  .mixin-button-size(
+        0.19rem,
+        0.5rem,
+        var(--mi-font-size-small),
+        // var(--mi-border-radius)
+      );
+}
+
+.mi-button-base-medium {
+  .mixin-button-size(
+      0.32rem,
+      0.75rem,
+    var(--mi-font-size-medium),
+    // var(--mi-border-radius)
+  );
+  // margin-bottom: 0.2rem;
+}
+
+.mi-button-base-large {
+  .mixin-button-size(
+    0.45rem,
+    1rem,
+    var(--mi-font-size-large),
+    // var(--mi-border-radius)
+  );
+  // margin-bottom: 0.2rem;
+}
+
+.mi-button-base-span {
+  font-size: 16px;
+}
