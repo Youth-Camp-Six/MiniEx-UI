@@ -1,0 +1,36 @@
+.doc {
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  .content {
+    flex: 1;
+    height: 100%;
+    padding: 50px 50px 150px;
+    overflow-y: scroll;
+  }
+
+  .siderbar {
+    width: 220px;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border-right: var(--mi-border-1);
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+  }
+
+  /* 定义滑块 内阴影+圆角 */
+  ::-webkit-scrollbar-thumb {
+    background: #f2f2f2;
+    border-radius: 10px;
+  }
+
+  /* 定义滚动条轨道 内阴影+圆角 */
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+}

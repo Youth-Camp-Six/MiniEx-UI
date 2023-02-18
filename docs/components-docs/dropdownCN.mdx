@@ -1,0 +1,352 @@
+import { Dropdown,Avatar,Button,Flex } from '../../src/components';
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
+
+# 下拉菜单
+
+## 基本
+
+<ShowSouceCode
+  element={
+    <Flex x='start'>
+      <Dropdown options={[
+    {
+        label: '西游记',
+        value: '1',
+    },
+    {
+        label: '水浒传',
+        value: '2',
+    },
+    {
+        label: '三国演义',
+        value: '3',
+    },
+    {
+        label: '红楼梦',
+        value: '4',
+    }
+]} >
+  <div>纯文本</div>
+</Dropdown>
+<Dropdown options={[
+    {
+        label: '西游记',
+        value: '1',
+    },
+    {
+        label: '水浒传',
+        value: '2',
+    },
+    {
+        label: '三国演义',
+        value: '3',
+    },
+    {
+        label: '红楼梦',
+        value: '4',
+    }
+]} trigger='click'>
+  <Button>click</Button>
+</Dropdown>
+    </Flex>
+  }
+  code={`
+      const options=[
+         {
+             label: '西游记',
+             value: '1',
+         },
+         {
+             label: '水浒传',
+             value: '2',
+         },
+         {
+             label: '三国演义',
+             value: '3',
+         },
+         {
+             label: '红楼梦',
+             value: '4',
+         }
+       ]
+
+        <Flex x='start'>
+         <Dropdown options={options}><div>纯文本</div></Dropdown>
+         <Dropdown options={options}><Button>click</Button></Dropdown>
+        </Flex>
+    `
+  }
+  />
+
+
+
+
+## 配合头像使用
+
+<ShowSouceCode
+  element={
+    <Flex x='start'>
+         <Dropdown placement="bottom-start" options={[
+        {
+            label: '修改头像',
+            value: '1',
+        },
+        {
+            label: '个人中心',
+            value: '2',
+        },
+        {
+            label: '开通会员',
+            value: '3',
+        },
+        {
+            label: '退出登陆',
+            value: '4',
+        },
+       ]}>
+        <Avatar src="https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668"></Avatar>
+      </Dropdown>
+       <Dropdown placement="top-start" options={[
+        {
+            label: '修改头像',
+            value: '1',
+        },
+        {
+            label: '个人中心',
+            value: '2',
+        },
+        {
+            label: '开通会员',
+            value: '3',
+        },
+        {
+            label: '退出登陆',
+            value: '4',
+        },
+       ]}>
+        <Avatar src="https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668"></Avatar>
+      </Dropdown>
+       <Dropdown placement="left-start" options={[
+        {
+            label: '修改头像',
+            value: '1',
+        },
+        {
+            label: '个人中心',
+            value: '2',
+        },
+        {
+            label: '开通会员',
+            value: '3',
+        },
+        {
+            label: '退出登陆',
+            value: '4',
+        },
+       ]}>
+        <Avatar src="https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668"></Avatar>
+      </Dropdown>
+       <Dropdown placement="right-start" options={[
+        {
+            label: '修改头像',
+            value: '1',
+        },
+        {
+            label: '个人中心',
+            value: '2',
+        },
+        {
+            label: '开通会员',
+            value: '3',
+        },
+        {
+            label: '退出登陆',
+            value: '4',
+        },
+       ]}>
+        <Avatar src="https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668"></Avatar>
+      </Dropdown>
+      <Dropdown options={[
+          {
+              label: '修改头像',
+              value: '1',
+          },
+          {
+              label: '个人中心',
+              value: '2',
+          },
+          {
+              label: '开通会员',
+              value: '3',
+          },
+          {
+              label: '退出登陆',
+              value: '4',
+          },
+      ]} trigger='click'>
+        <Avatar status="busy" statusPosition="top-right">点击</Avatar>
+      </Dropdown>
+    </Flex>
+  }
+  code={`
+      const options=[
+          {
+              label: '修改头像',
+              value: '1',
+          },
+          {
+              label: '个人中心',
+              value: '2',
+          },
+          {
+              label: '开通会员',
+              value: '3',
+          },
+          {
+              label: '退出登陆',
+              value: '4',
+          },
+      ]
+
+        <Flex x='start'>
+         <Dropdown options={options} placement="bottom-start">
+          <Avatar src="https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668"></Avatar>
+         </Dropdown>
+         <Dropdown options={options}placement="top-start">
+          <Avatar src="https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668"></Avatar>
+         </Dropdown>
+         <Dropdown options={options}placement="left-start">
+          <Avatar src="https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668"></Avatar>
+         </Dropdown>
+         <Dropdown options={options}placement="right-start">
+          <Avatar src="https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668"></Avatar>
+         </Dropdown>
+         <Dropdown options={options}>
+          <Avatar status="busy" statusPosition="top-right">点击</Avatar>
+         </Dropdown>
+        </Flex>
+    `
+  }
+  />
+
+
+## 无箭头
+
+<ShowSouceCode
+  element={
+    <Flex x='start'>
+      <Dropdown arrow={false} options={[
+    {
+        label: '西游记',
+        value: '1',
+    },
+    {
+        label: '水浒传',
+        value: '2',
+    },
+    {
+        label: '三国演义',
+        value: '3',
+    },
+    {
+        label: '红楼梦',
+        value: '4',
+    }
+]} >
+  <div>纯文本</div>
+</Dropdown>
+<Dropdown arrow={false} options={[
+    {
+        label: '西游记',
+        value: '1',
+    },
+    {
+        label: '水浒传',
+        value: '2',
+    },
+    {
+        label: '三国演义',
+        value: '3',
+    },
+    {
+        label: '红楼梦',
+        value: '4',
+    }
+]} trigger='click'>
+  <Button>click</Button>
+</Dropdown>
+    </Flex>
+  }
+  code={`
+      const options=[
+         {
+             label: '西游记',
+             value: '1',
+         },
+         {
+             label: '水浒传',
+             value: '2',
+         },
+         {
+             label: '三国演义',
+             value: '3',
+         },
+         {
+             label: '红楼梦',
+             value: '4',
+         }
+       ]
+
+        <Flex x='start'>
+         <Dropdown arrow={false} options={options}><div>纯文本</div></Dropdown>
+         <Dropdown arrow={false} options={options}><Button>click</Button></Dropdown>
+        </Flex>
+    `
+  }
+  />
+
+
+## Props
+<PropsShow propsInfo={[
+  {
+    name: 'options',
+    description: '列表配置',
+    type: 'array',
+    initValue: '[]',
+  },
+  {
+    name: 'trigger',
+    description: '触发方式',
+    type: 'hover | click',
+    initValue: 'hover',
+  },
+  {
+    name: 'placement',
+    description: '下拉展示的位置,展示空间不足时自动调整',
+    type: 'string',
+    initValue: 'bottom',
+  },
+   {
+    name: 'width',
+    description: '下拉气泡宽度',
+    type: 'string(px)',
+    initValue: '/',
+  },
+]} />
+
+## Options
+<PropsShow propsInfo={[
+  {
+    name: 'label',
+    description: '文本内容',
+    type: 'number | string',
+    initValue: '/',
+  },
+  {
+    name: 'value',
+    description: '绑定key值',
+    type: 'number | string',
+    initValue: '/',
+  },
+]} />

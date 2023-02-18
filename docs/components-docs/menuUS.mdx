@@ -1,0 +1,39 @@
+import { Menu, MenuItem } from '../../src/components';
+
+# Menu
+<div className='Menu' style={{ width: '200px' }}>
+  <Menu defaultIndex={1}>
+    <MenuItem index={1}>item1</MenuItem>
+    <MenuItem index={2}>item2</MenuItem>
+    <MenuItem index={3}>item3</MenuItem>
+    <MenuItem disabled>item4</MenuItem>
+    <MenuItem index={4}>item5</MenuItem>
+  </Menu>
+</div>
+
+## Code
+
+```ts
+import React from 'react';
+import { Button, Space } from 'antd';
+
+const handleSelect = (index: number) => {
+  console.log(index);
+};
+
+const App: React.FC = () => (
+  <div style={{ width: '200px' }}>
+    <Menu onSelect={handleSelect} defaultIndex={1}>
+      <MenuItem index={1}>item1</MenuItem>
+      <MenuItem index={2}>item2</MenuItem>
+      <MenuItem index={3}>item3</MenuItem>
+      <MenuItem disabled>item4 disabled</MenuItem>
+      <MenuItem index={4}>item5</MenuItem>
+    </Menu>
+  </div>
+);
+
+export default memo(App);
+```
+
+## API

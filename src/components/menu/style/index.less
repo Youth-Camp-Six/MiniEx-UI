@@ -1,0 +1,37 @@
+.menu {
+  display: flex;
+  flex-flow: column nowrap;
+  padding-left: 0;
+  color: var(--mi-black-text-color);
+  list-style: none;
+  border-bottom: 0;
+
+  > .menu-item {
+    padding: 0.8rem 1rem;
+    padding-left: calc(1rem + 2px);
+    cursor: pointer;
+    transition: color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+      background-color 0.15s ease-in-out;
+
+    &.is-disabled {
+      color: var(--mi-text-color-7);
+      cursor: default;
+      pointer-events: none;
+    }
+
+    &.is-active {
+      padding-left: 1rem;
+      color: var(--mi-primary-color-dark);
+      background-color: var(--mi-primary-color-7);
+      border-left: 2px solid var(--mi-primary-color);
+    }
+
+    &:hover {
+      background-color: var(--mi-primary-color-8);
+    }
+
+    &:active {
+      background-color: var(--mi-primary-color-7);
+    }
+  }
+}

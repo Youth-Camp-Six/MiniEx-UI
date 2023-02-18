@@ -1,10 +1,26 @@
 {
   "name": "miniex-ui",
-  "version": "1.0.1",
+  "author": "MiniEx-UI",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Youth-Camp-Six/MiniEx-UI.git"
+  },
+  "version": "1.0.3",
   "description": "a react ui libiary.",
-  "main": "index.js",
+  "private": false,
+  "files": [
+    "packages",
+    "docs/dist"
+  ],
+  "main": "packages/miniex-ui.js",
   "scripts": {
-    "prepare": "husky install"
+    "dev": "webpack-dev-server --config ./docs/webpack.dev.js --mode development",
+    "start": "webpack-dev-server --config ./docs/webpack.config.js --mode production",
+    "prepare": "husky install",
+    "build:pkg": "webpack --config webpack.config.js",
+    "build:doc": "webpack --config ./docs/webpack.config.js",
+    "build:doc:dev": "webpack --config ./docs/webpack.dev.js"
   },
   "keywords": [
     "ui",
@@ -14,48 +30,95 @@
   "engines": {
     "node": ">= 16"
   },
-  "author": "Whiskeyi",
-  "license": "MIT",
+  "browserslist": [
+    "last 2 version",
+    "> 1%",
+    "iOS >= 7",
+    "Android > 4.1",
+    "Firefox > 20"
+  ],
   "dependencies": {
+    "@mdx-js/mdx": "^2.2.1",
+    "@mdx-js/react": "^2.2.1",
     "@testing-library/react": "^13.4.0",
+    "@tippyjs/react": "^4.2.6",
+    "@types/react-dom": "^18.0.10",
+    "autoprefixer": "^9.8.6",
+    "canvas-confetti": "^1.6.0",
     "classnames": "^2.3.2",
     "dayjs": "^1.11.7",
-    "pnpm": "^7.9.5"
+    "i18next": "^22.4.9",
+    "path-browserify": "^1.0.1",
+    "pnpm": "^7.9.5",
+    "postcss": "^8.1.6",
+    "prism-react-renderer": "^1.3.5",
+    "rc-input": "^0.2.2",
+    "rc-util": "^5.27.2",
+    "react-feather": "^2.0.10",
+    "react-i18next": "^12.1.4",
+    "react-router-dom": "6",
+    "remark-mdx-images": "^2.0.0",
+    "tippy.js": "^6.3.7",
+    "webpack-dev-server": "^4.11.1",
+    "webpack-merge": "^5.8.0"
   },
   "devDependencies": {
     "@babel/core": "7.16.7",
+    "@babel/eslint-parser": "^7.19.1",
     "@babel/preset-env": "7.16.7",
     "@babel/preset-react": "7.16.7",
     "@babel/preset-typescript": "7.16.7",
     "@changesets/cli": "^2.26.0",
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
+    "@mdx-js/loader": "^2.2.1",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@types/canvas-confetti": "^1.6.0",
     "@types/jest": "^28.1.7",
-    "@types/node": "^18.7.6",
+    "@types/node": "^18.11.18",
     "@types/react": "^18.0.26",
+    "@types/testing-library__jest-dom": "^5.14.5",
+    "@types/webpack-env": "^1.18.0",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.7",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "4.0.0",
     "commitlint": "^17.4.2",
+    "css-loader": "~5.2.7",
+    "css-minimizer-webpack-plugin": "^4.2.2",
     "eslint": "^8.19.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.0",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.1",
+    "img-loader": "^4.0.0",
     "jest": "^29.3.1",
     "jest-environment-jsdom": "^29.3.1",
+    "less-loader": "^6.2.0",
     "lint-staged": "^13.0.3",
+    "postcss-loader": "^4.0.4",
     "prettier": "^2.8.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "style-loader": "^1.2.1",
     "stylelint": "^14.16.1",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard": "^26.0.0",
     "stylelint-less": "^1.0.6",
     "stylelint-prettier": "^2.0.0",
-    "typescript": "^4.8.4"
+    "svg-sprite-loader": "^6.0.11",
+    "terser-webpack-plugin": "^5.3.1",
+    "ts-loader": "~8.2.0",
+    "typescript": "^4.8.4",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.75.0",
+    "webpack-bundle-analyzer": "^4.8.0",
+    "webpack-cli": "^5.0.1"
   },
   "husky": {
     "hooks": {
@@ -64,7 +127,8 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "eslint --quiet --cache --fix"
+    "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
+    "*.{css,less}": "stylelint --cache --fix"
   },
   "resolutions": {
     "eslint": "8.28.0"

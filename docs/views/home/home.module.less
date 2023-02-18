@@ -1,0 +1,137 @@
+.popover-body {
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.homewrapper {
+  width: 100%;
+  overflow: hidden;
+  perspective: 800;
+
+  .startbox {
+    position: fixed;
+    top: 75px;
+    left: 50px;
+    z-index: 99;
+    opacity: 0;
+    animation: start 3s ease;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+
+    .slogan {
+      display: flex;
+      font-weight: 900;
+      font-size: 45px;
+      cursor: pointer;
+
+      .dm {
+        width: 50px;
+        overflow: hidden;
+
+        .text {
+          display: flex;
+          transition: all 0.5s ease;
+        }
+      }
+    }
+
+    .slogan:hover {
+      .text {
+        transform: translateX(-100%);
+      }
+    }
+  }
+
+  .home {
+    box-sizing: border-box;
+    min-height: 100vh;
+    margin-top: -50px;
+    transform: scale(1) rotateX(0deg) rotateY(0deg);
+    opacity: 0;
+    animation: demo 3s ease;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+
+    .item {
+      flex-shrink: 0;
+      width: 420px;
+      height: calc(100vh - 70px);
+    }
+
+    .design {
+      color: transparent;
+      background: linear-gradient(to left, transparent, #b48df9),
+        linear-gradient(to top, transparent, #86c3ef);
+      background-clip: text;
+      /* stylelint-disable-next-line */
+      -webkit-background-clip: text;
+    }
+  }
+
+  @keyframes demo {
+    from {
+      transform: scale(0.8) rotateX(0deg) rotateY(0deg);
+      opacity: 0;
+    }
+
+    to {
+      transform: scale(1.2) rotateX(15deg) rotateY(-15deg);
+      opacity: 1;
+    }
+  }
+
+  @keyframes start {
+    from {
+      transform: translateY(15%);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .homewrapper {
+    .startbox {
+      top: 25px;
+      left: 50%;
+      white-space: nowrap;
+      text-align: center;
+    }
+
+    @keyframes start {
+      from {
+        transform: translate(-50%, 100%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translate(-50%, 50%);
+        opacity: 1;
+      }
+    }
+
+    @keyframes demo {
+      from {
+        transform: scale(0.3) translate(-320px, 200px) rotateX(0deg) rotateY(0deg);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(0.5) translate(-320px, 200px) rotateX(15deg) rotateY(-15deg);
+        opacity: 1;
+      }
+    }
+
+    .home {
+      .item {
+        flex-shrink: 0;
+        width: 300px;
+        height: calc(100vh - 70px);
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text default button 1`] = `
+<div>
+  <button
+    class="btn btn-default"
+  >
+    default按钮
+  </button>
+  <button
+    class="btn btn-primary"
+  >
+    primary按钮
+  </button>
+  <button
+    class="btn btn-danger"
+  >
+    danger按钮
+  </button>
+  <button
+    class="btn btn-link"
+  >
+    link按钮
+  </button>
+  <button
+    class="btn btn-default btn-lg"
+  >
+    lg按钮
+  </button>
+  <button
+    class="btn btn-default btn-sm"
+  >
+    sm按钮
+  </button>
+  <button
+    class="btn btn-default disabled"
+    disabled=""
+  >
+    禁用按钮
+  </button>
+</div>
+`;
+
+exports[`test button comonent button snapshot test 1`] = `
+<div>
+  <button
+    class="btn btn-default"
+  >
+    default按钮
+  </button>
+  <button
+    class="btn btn-primary"
+  >
+    primary按钮
+  </button>
+  <button
+    class="btn btn-danger"
+  >
+    danger按钮
+  </button>
+  <button
+    class="btn btn-link"
+  >
+    link按钮
+  </button>
+  <button
+    class="btn btn-default btn-lg"
+  >
+    lg按钮
+  </button>
+  <button
+    class="btn btn-default btn-sm"
+  >
+    sm按钮
+  </button>
+  <button
+    class="btn btn-default disabled"
+    disabled=""
+  >
+    禁用按钮
+  </button>
+</div>
+`;

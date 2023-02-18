@@ -1,0 +1,93 @@
+import { Button } from '../../src/components';
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
+
+# Button
+
+## Basic
+<ShowSouceCode
+  element={
+    <div>
+      <Button style={{marginRight: "4px"}} btnType='default'>default</Button>
+      <Button style={{marginRight: "4px"}} btnType='primary'>primary</Button>
+      <Button style={{marginRight: "4px"}} btnType='danger'>danger</Button>
+      <Button style={{marginRight: "4px"}} btnType='link'>link</Button>
+    </div>
+  }
+  code={
+    `
+  <div>
+    <Button btnType='default'>default</Button>
+    <Button btnType='primary'>primary</Button>
+    <Button btnType='danger'>danger</Button>
+    <Button btnType='link'>link</Button>
+  </div>
+    `
+  }
+/>
+
+## Disabled
+<ShowSouceCode
+  element={
+    <div>
+      <Button disabled style={{marginRight: "4px"}} btnType='default'>default</Button>
+      <Button disabled style={{marginRight: "4px"}} btnType='primary'>primary</Button>
+      <Button disabled style={{marginRight: "4px"}} btnType='danger'>danger</Button>
+      <Button disabled style={{marginRight: "4px"}} btnType='link'>link</Button>
+    </div>
+  }
+  code={
+    `
+  <div>
+    <Button disabled btnType='default'>default</Button>
+    <Button disabled btnType='primary'>primary</Button>
+    <Button disabled btnType='danger'>danger</Button>
+    <Button disabled btnType='link'>link</Button>
+  </div>
+    `
+  }
+/>
+
+## Size
+<ShowSouceCode
+  element={
+    <div>
+      <Button style={{marginRight: "4px"}} size='lg'>large</Button>
+      <Button style={{marginRight: "4px"}}>default</Button>
+      <Button style={{marginRight: "4px"}} size='sm'>small</Button>
+    </div>
+  }
+  code={
+    `
+  <div>
+    <Button size='lg'>large</Button>
+    <Button>default</Button>
+    <Button size='sm'>small</Button>
+  </div>
+    `
+  }
+/>
+
+## Props
+
+此为Props展示使用示例
+<PropsShow propsInfo={[
+  {
+    name: 'btnType',
+    description: 'Button type',
+    type: 'primary | default | danger | link',
+    initValue: 'default',
+  },
+  {
+    name: 'size',
+    description: 'Button size',
+    type: 'lg | sm',
+    initValue: '/',
+  },
+  {
+    name: 'disabled',
+    description: 'Disabled state',
+    type: 'boolean',
+    initValue: 'false',
+  }
+]} />

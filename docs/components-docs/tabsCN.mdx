@@ -1,0 +1,132 @@
+import { Tabs , Flex } from '../../src/components';
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
+
+# 选项卡
+
+## 基本
+
+<ShowSouceCode
+  element={
+    <Flex direction="y" x='start' gap={20}>
+      常规
+      <Tabs options={[
+           { label: '北京', value: '1' },
+           { label: '上海', value: '2' },
+           { label: '广州', value: '3' },
+           { label: '深圳', value: '4' },
+           { label: '乌鲁木齐', value: '5' }
+        ]} ></Tabs>
+      自定义item宽度
+      <Tabs itemWidth='120px'
+        modelvalue='5'
+        options={[
+          { label: '北京', value: '1' },
+          { label: '上海', value: '2' },
+          { label: '广州', value: '3' },
+          { label: '深圳', value: '4' },
+          { label: '乌鲁木齐', value: '5' }
+        ]}></Tabs>
+        线
+      <Tabs type="line" options={[
+          { label: '北京', value: '1' },
+          { label: '上海', value: '2' },
+          { label: '广州', value: '3' },
+          { label: '深圳', value: '4' },
+          { label: '乌鲁木齐', value: '5' }
+        ]}></Tabs>
+        弧形
+        <Tabs round="round" options={[
+        { label: 'Light', value: '1' },
+        { label: 'Dark', value: '2' },
+        ]}></Tabs>
+    </Flex>
+  }
+  code={`
+      const options=[
+           { label: '北京', value: '1' },
+           { label: '上海', value: '2' },
+           { label: '广州', value: '3' },
+           { label: '深圳', value: '4' },
+           { label: '乌鲁木齐', value: '5' }
+        ]
+
+        <Flex direction="y" x='start' gap={20}>
+          常规
+          <Tabs options={options} ></Tabs>
+          自定义item宽度
+          <Tabs itemWidth='120px' modelvalue='5' options={options}></Tabs>)
+          线
+          <Tabs type="line" options={options={options}></Tabs>
+          弧形
+          <Tabs round="round" options={[
+            { label: 'Light', value: '1' },
+            { label: 'Dark', value: '2' },
+            ]}>
+          </Tabs>
+        </Flex>`
+  }
+  />
+
+
+## Props
+<PropsShow propsInfo={[
+  {
+    name: 'options',
+    description: '配置表',
+    type: 'options',
+    initValue: '[]',
+  },
+  {
+    name: 'modelvalue',
+    description: '选中的值',
+    type: 'string',
+    initValue: '/',
+  },
+  {
+    name: 'width',
+    description: 'tabs整体宽度',
+    type: 'string',
+    initValue: '/',
+  },
+  {
+    name: 'itemWidth',
+    description: 'item宽度',
+    type: 'string',
+    initValue: '/',
+  },
+  {
+    name: 'round',
+    description: '是否弧形',
+    type: 'round|/',
+    initValue: '/',
+  },
+  {
+    name: 'change',
+    description: '切换函数',
+    type: 'function',
+    initValue: '/',
+  },
+  {
+    name: 'type',
+    description: '类型',
+    type: 'string',
+    initValue: '/',
+  }
+]} />
+
+## Options
+<PropsShow propsInfo={[
+  {
+    name: 'label',
+    description: '文本内容',
+    type: 'string',
+    initValue: '必填',
+  },
+  {
+    name: 'value',
+    description: '绑定元素',
+    type: 'string',
+    initValue: '必填',
+  }
+]} />

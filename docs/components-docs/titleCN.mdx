@@ -1,0 +1,45 @@
+import { Title } from '../../src/components';
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
+
+# 标题
+
+<ShowSouceCode element={
+    <Title size='s'>标题组件 s</Title>
+  }
+  code={`<Title size='s'>标题组件 s</Title>`}
+/>
+
+<ShowSouceCode element={
+    <Title size='m'>标题组件 m</Title>
+  }
+  code={`<Title size='m'>标题组件 m</Title>`}
+/>
+
+<ShowSouceCode element={
+    <Title size='l'>标题组件 l</Title>
+  }
+  code={`<Title size='l'>标题组件 l</Title>`}
+/>
+
+<ShowSouceCode element={
+    <Title size='xl'>标题组件 xl</Title>
+  }
+  code={`<Title size='xl'>标题组件 xl</Title>`}
+/>
+
+<ShowSouceCode element={
+    <Title size='xxl'>标题组件 xxl</Title>
+  }
+  code={`<Title size='xxl'>标题组件 xxl</Title>`}
+/>
+
+## Props
+<PropsShow propsInfo={[
+  {
+    name: 'size',
+    description: 'title font size',
+    type: 's | m | l | xl | xxl',
+    initValue: 'm',
+  }
+]} />

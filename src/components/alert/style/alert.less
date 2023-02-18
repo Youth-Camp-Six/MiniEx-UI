@@ -1,0 +1,91 @@
+.mi-alert-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 0px;
+
+    .mi-alert {
+        position: relative;
+        display: inline-flex;
+        align-items: flex-start;
+        width: 100%;
+        min-height: 32px;
+        background-color: var(--mi-normal-color);
+        border-radius: var(--mi-border-radius);
+        margin-bottom: 10px;
+        padding: 8px 12px;
+        box-sizing: border-box;
+
+        .alert-icon {
+            margin: 1px 5px 0px 0px;
+        }
+
+        .btn-close {
+            position: absolute;
+            top: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            right: 8px;
+            border-radius: var(--mi-border-radius);
+            box-sizing: border-box;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .btn-close:hover {
+            background: rgba(#000000, 0.05);
+        }
+
+        .btn-close:active {
+            background: rgba(#000000, 0.15);
+        }
+
+        .message {
+            width: calc(100% - 80px);
+            margin-left: 5px;
+
+            .title {
+                font-size: 14px;
+                width: 100%;
+                word-wrap: break-word;
+                white-space: pre-line;
+                font-weight: 400;
+            }
+
+            .content {
+                margin-top: 8px;
+                font-size: 14px;
+                width: 100%;
+                font-weight: 300;
+                word-wrap: break-word;
+                white-space: pre-line;
+            }
+        }
+    }
+
+    .mi-alert-normal {
+        color: var(--mi-text-color-5);
+        background-color: var(--mi-normal-color-light);
+    }
+
+    .mi-alert-success {
+        color: var(--mi-success-color-dark);
+        background-color: var(--mi-success-color-light);
+    }
+
+    .mi-alert-warning {
+        color: var(--mi-warning-color-dark);
+        background-color: var(--mi-warning-color-light);
+    }
+
+    .mi-alert-error {
+        color: var(--mi-error-color-dark);
+        background-color: var(--mi-error-color-light);
+    }
+
+    .mi-alert-info {
+        color: var(--mi-info-color-dark);
+        background-color: var(--mi-info-color-light);
+    }
+}

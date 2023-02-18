@@ -12,3 +12,5 @@ packages/
 
 .eslintcache
 .stylelintcache
+
+docs/views/dev/**

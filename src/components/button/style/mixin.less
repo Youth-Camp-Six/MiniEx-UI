@@ -1,0 +1,43 @@
+/* stylelint-disable selector-class-pattern */
+.mixin-button-size(@padding-y, @padding-x, @font-size, @border-radius) {
+  padding: @padding-y @padding-x;
+  font-size: @font-size;
+  border-radius: @border-radius;
+}
+
+.mixin-button-style(
+  @bg,
+  @border,
+  @color,
+  @hover-bg: @bg,
+  @hover-border: @border,
+  @hover-color: @color,
+  @active-bg: @bg,
+  @active-border: @border,
+  @active-color: @color,
+) {
+  color: @color;
+  background: @bg;
+  border-color: @border;
+  outline: null;
+
+  &:hover {
+    color: @hover-color;
+    background: @hover-bg;
+    border-color: @hover-border;
+  }
+
+  &:active,
+  &.active {
+    color: @active-color;
+    background: @active-bg;
+    border-color: @active-border;
+  }
+
+  &:disabled,
+  &.disabled {
+    color: @color;
+    background: @bg;
+    border-color: @border;
+  }
+}

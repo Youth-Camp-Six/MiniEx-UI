@@ -1,0 +1,139 @@
+/* stylelint-disable no-invalid-double-slash-comments */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--mi-text-color-0);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  /*  使用IE盒模型（个人取舍，我一般设置width是这是盒子的真实大小，包括padding和border） */
+  box-sizing: border-box;
+
+  /* 标准字体大小可以，在移动端使用的rem适配的话会动态改变。 */
+  font-size: 14px;
+}
+
+html,
+body {
+  /* 提升移动端滚动的体验效果  */
+  -webkit-overflow-scrolling: touch;
+
+  /* 与浏览器窗口高度一致 */
+  height: 100%;
+}
+
+// /* 去除浏览器默认的margin和padding, 自行删减一些不必要的标签 */
+// body,
+// p,
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6,
+// dl,
+// dd,
+// ul,
+// ol,
+// th,
+// td,
+// button,
+// input,
+// textarea,
+// form,
+// pre,
+// blockquote,
+// figure {
+//   margin: 0;
+//   padding: 0;
+// }
+
+a {
+  /* 取消超链接的默认下划线 */
+  text-decoration: none;
+
+  /* 小手 */
+  cursor: pointer;
+
+  /* antd里面还做了 ， 看你团队需不需要这样的风格 */
+  transition: color 0.3s ease;
+}
+
+ol,
+ul {
+  /* 去除自带的ugly样式。 */
+  list-style: none;
+}
+
+// /* 这些节点部分属性没有继承父节点样式，所有继承一下，并取消outline，外轮廓的效果 */
+// a,
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6,
+// input,
+// select,
+// button,
+// textarea {
+//   color: inherit;
+//   font-weight: inherit;
+//   font-size: inherit;
+//   font-family: inherit;
+//   font-style: inherit;
+//   line-height: inherit;
+//   outline: none;
+// }
+
+button,
+input[type='submit'],
+input[type='button'] {
+  /* 可点击小手 */
+  cursor: pointer;
+}
+
+/* 取消部分浏览器数字输入控件的操作按钮 apperance可以改变控件的外观。 */
+input[type='number'] {
+  appearance: textfield;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  margin: 0;
+  appearance: none;
+}
+
+/**
+* 删除Firefox中的内边框和填充。
+*/
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+/**
+* 让html5中的hidden在IE10中正确显示
+*/
+
+[hidden] {
+  display: none;
+}
+
+template {
+  /* 有些浏览器会显示template 不过template标签用的也少，自行取舍。 */
+  display: none;
+}
