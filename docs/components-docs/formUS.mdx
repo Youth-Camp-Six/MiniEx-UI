@@ -1,0 +1,78 @@
+import { Form, FormItem, Button, RadioGroup, CheckboxGroup } from '../../src/components';
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
+
+# Form表单
+### This component is a basic form component that only provides form styles. If you need data collection and validation functions for the form, please use the FormPro component.
+<ShowSouceCode
+  element={
+     <Form direction='x'>
+        <FormItem label='Radio'>
+          <RadioGroup
+            options={[
+              { label: 'Options-0', value: '0' },
+              { label: 'Options-1', value: '1' },
+              { label: 'Options-2', value: '2' },
+            ]}
+          ></RadioGroup>
+        </FormItem>
+        <FormItem label='Checkbox'>
+          <CheckboxGroup
+            options={[
+              { label: 'Checkbox-0', value: 0 },
+              { label: 'Checkbox-1', value: 1 },
+              { label: 'Checkbox-2', value: 2 },
+            ]}
+          ></CheckboxGroup>
+        </FormItem>
+        <FormItem>
+          <Button>Submit</Button>
+        </FormItem>
+      </Form>
+  }
+  code={
+    `
+<Form>
+  <FormItem label='Radio'>
+    <RadioGroup
+      options={[
+        { label: 'Options-0', value: '0' },
+        { label: 'Options-1', value: '1' },
+        { label: 'Options-2', value: '2' },
+      ]}
+    ></RadioGroup>
+  </FormItem>
+
+  <FormItem label='Checkbox'>
+    <CheckboxGroup
+      options={[
+        { label: 'Checkbox-0', value: 0 },
+        { label: 'Checkbox-1', value: 1 },
+        { label: 'Checkbox-2', value: 2 },
+      ]}
+    ></CheckboxGroup>
+  </FormItem>
+
+  <FormItem>
+    <Button>提交</Button>
+  </FormItem>
+</Form>
+    `
+  }
+/>
+
+## Props
+<PropsShow propsInfo={[
+  {
+    name: 'labelwidth',
+    description: 'label width',
+    type: 'string',
+    initValue: '80px',
+  },
+  {
+    name: 'labelalign',
+    description: 'label align',
+    type: 'string',
+    initValue: 'end',
+  }
+]} />

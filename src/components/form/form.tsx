@@ -16,9 +16,8 @@ export const Form: React.FC<FormProps> = (props) => {
 
 Form.defaultProps = {
   width: '',
-  labelwidth: 'auto',
+  labelwidth: '80px',
   labelalign: 'end',
-  direction: 'x',
 };
 
 export default memo(Form);

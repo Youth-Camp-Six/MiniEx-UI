@@ -52,7 +52,7 @@ class FormStore {
         }
       });
     });
-    this.subscribeCB(newStore);
+    this.subscribeCB(this.getFieldsValue());
   };
 
   subscribe = (cb: () => any) => {
@@ -72,6 +72,8 @@ class FormStore {
   };
 
   validate = () => {
+    if (!this.rules) return Promise.resolve(this.getFieldsValue());
+
     const validator = new Schema(this.rules);
 
     // 清除所有校验信息

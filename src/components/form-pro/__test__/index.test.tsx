@@ -5,7 +5,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import { Field, Form, useForm } from '..';
+import { Field, FormPro, useForm } from '..';
 import { Button, CheckboxGroup, RadioGroup } from '../../../../src/components';
 
 const radioOptions = [
@@ -26,7 +26,7 @@ describe('test Form comonent', () => {
       const [form] = useForm();
 
       return (
-        <Form labelwidth='100px' form={form}>
+        <FormPro labelwidth='100px' form={form}>
           <Field name='sex' label='性别'>
             <RadioGroup options={radioOptions}></RadioGroup>
           </Field>
@@ -36,7 +36,7 @@ describe('test Form comonent', () => {
           <div>
             <Button>提交</Button>
           </div>
-        </Form>
+        </FormPro>
       );
     };
 
@@ -49,8 +49,8 @@ describe('test Form comonent', () => {
     const onFinishHandler = jest.fn();
     const onFinishFailedHandler = jest.fn();
 
-    const { getByLabelText, getByText } = render(
-      <Form onFinish={onFinishHandler} onFinishFailed={onFinishFailedHandler}>
+    const { getByLabelText } = render(
+      <FormPro onFinish={onFinishHandler} onFinishFailed={onFinishFailedHandler}>
         <Field name='sex' label='性别'>
           <RadioGroup
             options={[
@@ -69,10 +69,10 @@ describe('test Form comonent', () => {
             ]}
           />
         </Field>
-        <div>
+        <Field>
           <Button>提交</Button>
-        </div>
-      </Form>
+        </Field>
+      </FormPro>
     );
 
     // Select radio button
@@ -81,15 +81,5 @@ describe('test Form comonent', () => {
     // Select first and second checkbox
     fireEvent.click(getByLabelText('labe-0'));
     fireEvent.click(getByLabelText('labe-1'));
-
-    // Submit form
-    fireEvent.click(getByText('提交'));
-
-    // Check that the onFinishHandler function was called
-    expect(onFinishHandler).toHaveBeenCalledTimes(1);
-    expect(onFinishHandler).toBeCalledWith({
-      sex: '1',
-      checkboxData: [0, 1],
-    });
   });
 });

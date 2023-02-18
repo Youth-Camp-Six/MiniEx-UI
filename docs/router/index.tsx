@@ -28,6 +28,10 @@ import ToastUS from '../components-docs/toastUS.mdx';
 import ToastCN from '../components-docs/toastCN.mdx';
 import UploadUS from '../components-docs/uploadUS.mdx';
 import UploadCN from '../components-docs/uploadCN.mdx';
+import FormUS from '../components-docs/formUS.mdx';
+import FormCN from '../components-docs/formCN.mdx';
+import FormProUS from '../components-docs/formproUS.mdx';
+import FormProCN from '../components-docs/formproCN.mdx';
 
 import '../i18n';
 import { createHashRouter, Navigate } from 'react-router-dom';
@@ -118,6 +122,14 @@ export const router = createHashRouter([
             path: '/en/doc/upload',
             element: <UploadUS components={components} />,
           },
+          {
+            path: '/en/doc/form',
+            element: <FormUS components={components} />,
+          },
+          {
+            path: '/en/doc/formpro',
+            element: <FormProUS components={components} />,
+          },
         ],
       },
     ],
@@ -183,6 +195,14 @@ export const router = createHashRouter([
           {
             path: '/zh/doc/upload',
             element: <UploadCN components={components} />,
+          },
+          {
+            path: '/zh/doc/form',
+            element: <FormCN components={components} />,
+          },
+          {
+            path: '/zh/doc/formpro',
+            element: <FormProCN components={components} />,
           },
         ],
       },

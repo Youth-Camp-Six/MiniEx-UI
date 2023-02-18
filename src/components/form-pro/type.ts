@@ -17,7 +17,7 @@ export interface FormProps {
 export interface FieldProps {
   children: ReactNode;
   className?: string;
-  name: string;
+  name?: string;
   label?: string;
   width?: string;
   labelwidth?: string;

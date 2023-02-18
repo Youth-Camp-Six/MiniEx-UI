@@ -47,12 +47,14 @@ export const Field: React.FC<FieldProps> = (props) => {
 
   // 组件生成时注册, 组件销毁时注销
   React.useLayoutEffect(() => {
-    const unregister = registerFieldEntities({
-      props,
-      onStoreChange: forceUpdate,
-      onValidate,
-    });
-    return unregister;
+    if (name) {
+      const unregister = registerFieldEntities({
+        props,
+        onStoreChange: forceUpdate,
+        onValidate,
+      });
+      return unregister;
+    }
   }, []);
 
   // 劫持子组件的onChange事件, 修改value值

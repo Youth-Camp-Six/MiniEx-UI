@@ -1,0 +1,390 @@
+import { Button } from '../../src/components';
+import { FormProBase, FormProOneWayDataFlow, FormValidate } from './demos/formpro/formpro.tsx'
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
+
+# FormPro
+
+### This component is a higher-order form component. The Form component will manage the data of each Field uniformly, realizing functions such as data collection and form verification.
+
+## Basic usage
+1.Use the FormPro component to wrap the Field component to achieve form data collection and verification.
+
+2.The name property of the Field component is the key of the form data, and the label property is the form label.
+
+3.The children of the Field component are the form components.
+
+<ShowSouceCode
+  element={
+    <FormProBase />
+  }
+  code={
+    `
+export const FormProBase: React.FC = () => {
+  // init form
+  const [form] = useForm();
+
+  // handler on submit
+  const submitHandler = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await form.submit();
+      console.log(res);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const radioOptions = [    { label: 'Unknown', value: '0' },    { label: 'man', value: '1' },    { label: 'woman', value: '2' },  ];
+
+  const checkboxOptions = [    { label: 'labe-0', value: 0 },    { label: 'labe-1', value: 1 },    { label: 'labe-2', value: 2 },  ];
+
+  return (
+    <div>
+      <FormPro form={form}>
+
+        <Field name='sex' label='Gender' >
+          <RadioGroup options={radioOptions}></RadioGroup>
+        </Field>
+
+        <Field name='checkboxData' label='Label'>
+          <CheckboxGroup options={checkboxOptions}></CheckboxGroup>
+        </Field>
+
+        <Field>
+          <Button onClick={submitHandler}>Submit</Button>
+        </Field>
+
+      </FormPro>
+    </div>
+  );
+};
+
+    `
+  }
+/>
+
+
+## One-way data flow
+
+### Pass the form instance to the FormPro component through the form property, following the one-way data flow concept of React.
+
+1.The setFieldsValue() method can be used to set form data and dynamically update form data.
+
+2.The getFieldValue() method can be used to obtain form data and dynamically obtain form data.
+
+3.The subscribe() method can be used to monitor changes in form data and dynamically listen to form data.
+<ShowSouceCode
+  element={
+    <FormProOneWayDataFlow />
+  }
+  code={
+    `
+export const FormProOneWayDataFlow: React.FC<IProps> = () => {
+  // init form
+  const [form] = useForm();
+
+  // submit form and get field value
+  form.subscribe((e) => {
+    console.log('form changed', e);
+  });
+
+  // set form field value
+  form.setFieldsValue({ sex: '1' });
+
+  // get form fields value
+  const fieldsValue = form.getFieldsValue();
+  console.log('fieldsValue', fieldsValue);
+
+  // get form field value
+  const fieldValue = form.getFieldValue('sex');
+  console.log('sex fieldValue', fieldValue);
+
+  const radioOptions = [
+    { label: 'Unknown', value: '0' },
+    { label: 'man', value: '1' },
+    { label: 'woman', value: '2' },
+  ];
+
+  const checkboxOptions = [
+    { label: 'beijing', value: 0 },
+    { label: 'shanghai', value: 1 },
+    { label: 'tianjin', value: 2 },
+  ];
+
+  return (
+    <div className='FormDev'>
+      <div>
+        <FormPro form={form}>
+          <Field name='sex' label='check sex'>
+            <RadioGroup options={radioOptions}></RadioGroup>
+          </Field>
+          <Field name='city' label='check cities'>
+            <CheckboxGroup options={checkboxOptions}></CheckboxGroup>
+          </Field>
+        </FormPro>
+      </div>
+    </div>
+  );
+};
+`
+}/>
+
+## Form Validation
+
+### Validate the form by passing validation rules to the rules property of the FormPro component
+
+1.The form data will be automatically validated when it is submitted. If the validation fails, it will prevent the form submission and display error messages on the corresponding form fields.
+
+2.Use the onFinishFailed and onFinish properties of the FormPro component to receive callbacks for failed and successful validation.
+
+3.Use the validate() method of the form instance to manually validate the form.
+
+<ShowSouceCode
+  element={
+    <FormValidate />
+  }
+  code={
+    `
+const [form] = useForm();
+
+const rules = {
+  sex: {
+    required: true,
+    message: 'sex is required',
+  },
+  checkboxData: [
+    {
+      required: true,
+    },
+    {
+      validator: (rule, value) => {
+        if (value?.length === 1) {
+          return Promise.reject('checkboxData length must be greater than 1');
+        }
+        return Promise.resolve();
+      },
+    },
+  ],
+};
+
+// verify and submit
+const submitHandler = async () => {
+  try {
+    const res = await form.submit();
+    console.log(res);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+// validate the form successfully and submit callback
+const onFinishHandler = (e) => {
+  console.log('onFinishHandler', e);
+};
+
+// failed to validate the form callback
+const onFinishFailedHandler = (e) => {
+  console.log('onFinishFailedHandler', e);
+};
+
+// validate the form
+const validateHandler = async () => {
+  try {
+    const res = await form?.validate();
+    console.log(res);
+  } catch ({ errors, fields }) {
+    console.log('validateHandler', errors, fields);
+  }
+};
+
+const radioOptions = [
+  { label: 'Unknown', value: '0' },
+  { label: 'man', value: '1' },
+  { label: 'woman', value: '2' },
+];
+
+const checkboxOptions = [
+  { label: 'beijing', value: 0 },
+  { label: 'shanghai', value: 1 },
+  { label: 'tianjin', value: 2 },
+];
+
+return (
+  <div className='FormDev'>
+    <div>
+      <FormPro
+        form={form}
+        rules={rules}
+        onFinish={onFinishHandler}
+        onFinishFailed={onFinishFailedHandler}
+      >
+
+        <Field name='sex' label='check sex'>
+          <RadioGroup options={radioOptions}></RadioGroup>
+        </Field>
+
+        <Field name='city' label='check cities'>
+          <CheckboxGroup options={checkboxOptions}></CheckboxGroup>
+        </Field>
+
+      </FormPro>
+
+      <Button onClick={validateHandler}>校验数据</Button>
+      <Button onClick={submitHandler}>手动提交数据</Button>
+    </div>
+  </div>
+);
+
+    `
+  }
+/>
+
+## Props
+### FormPro Props
+<PropsShow propsInfo={[
+  {
+    name: 'form',
+    description: 'The form instance object obtained through the useForm() hook',
+    type: 'FormRef',
+    initValue: '/',
+  },
+  {
+    name: 'rules',
+    description: 'Form validation rules, see the async-validator library for details',
+    type: 'Rules',
+    initValue: '/',
+  },
+  {
+    name: 'onFinish',
+    description: 'Callback after the form is successfully validated',
+    type: '(values: any) => void',
+    initValue: '/',
+  },
+  {
+    name: 'onFinishFailed',
+    description: 'Callback after the form validation fails',
+    type: '(values: any) => void',
+    initValue: '/',
+  },
+  {
+    name: 'width',
+    description: 'Width of the form',
+    type: 'string',
+    initValue: 'auto',
+  },
+  {
+    name: 'labelwidth',
+    description: 'Width of the label',
+    type: 'string',
+    initValue: '80px',
+  },
+  {
+    name: 'direction',
+    description: 'Arrangement direction',
+    type: 'x | y',
+    initValue: 'x',
+  },
+  {
+    name: 'labelalign',
+    description: 'Alignment of the label',
+    type: 'start | end',
+    initValue: 'end',
+  },
+]} />
+
+
+### Field Props
+<PropsShow propsInfo={[
+  {
+    name: 'name',
+    description: 'The name of the form field',
+    type: 'string',
+    initValue: '/',
+  },
+  {
+    name: 'label',
+    description: 'The label of the form field',
+    type: 'string',
+    initValue: '/',
+  },
+  {
+    name: 'width',
+    description: 'The width of the form field',
+    type: 'string',
+    initValue: 'auto',
+  },
+  {
+    name: 'labelwidth',
+    description: 'The width of the label',
+    type: 'string',
+    initValue: '80px',
+  },
+  {
+    name: 'direction',
+    description: 'The direction of the field items',
+    type: 'x | y',
+    initValue: 'x',
+  },
+  {
+    name: 'labelalign',
+    description: 'The alignment of the label',
+    type: 'start | end',
+    initValue: 'end',
+  },
+]} />
+
+
+
+### The form instance object returned by the useForm() hook
+<PropsShow propsInfo={[
+  {
+    name: 'form',
+    description: 'Form instance object obtained through useForm()',
+    type: 'FormRef',
+    initValue: '/',
+  },
+  {
+    name: 'rules',
+    description: 'Validation rules for the form, see async-validator library for details',
+    type: 'Rules',
+    initValue: '/',
+  },
+  {
+    name: 'onFinish',
+    description: 'Callback function triggered when the form is successfully validated',
+    type: '(values: any) => void',
+    initValue: '/',
+  },
+  {
+    name: 'onFinishFailed',
+    description: 'Callback function triggered when the form validation fails',
+    type: '(values: any) => void',
+    initValue: '/',
+  },
+  {
+    name: 'width',
+    description: 'Width of the form',
+    type: 'string',
+    initValue: 'auto',
+  },
+  {
+    name: 'labelwidth',
+    description: 'Width of the label',
+    type: 'string',
+    initValue: '80px',
+  },
+  {
+    name: 'direction',
+    description: 'Direction of the arrangement',
+    type: 'x | y',
+    initValue: 'x',
+  },
+  {
+    name: 'labelalign',
+    description: 'Alignment of the label',
+    type: 'start | end',
+    initValue: 'end',
+  },
+]} />

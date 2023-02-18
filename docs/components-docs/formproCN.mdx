@@ -1,0 +1,386 @@
+import { Button } from '../../src/components';
+import { FormProBase, FormProOneWayDataFlow, FormValidate } from './demos/formpro/formpro.tsx'
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
+
+# FormPro
+
+### 此组件为高阶表单组件, From组件会对每个Field的数据进行统一托管, 实现数据收集与表单验证等功能。
+
+## 基础使用
+1.使用FormPro组件包裹Field组件, 实现表单数据收集与验证。
+
+2.Field组件的name属性为表单数据的key, label属性为表单label。
+
+3.Field组件的children为表单组件。
+<ShowSouceCode
+  element={
+    <FormProBase />
+  }
+  code={
+    `
+export const FormProBase: React.FC = () => {
+  // init form
+  const [form] = useForm();
+
+  // handler on submit
+  const submitHandler = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await form.submit();
+      console.log(res);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const radioOptions = [
+    { label: 'Unknown', value: '0' },
+    { label: 'man', value: '1' },
+    { label: 'woman', value: '2' },
+  ];
+
+  const checkboxOptions = [
+    { label: 'beijing', value: 0 },
+    { label: 'shanghai', value: 1 },
+    { label: 'tianjin', value: 2 },
+  ];
+
+  return (
+    <div>
+      <FormPro form={form}>
+
+        <Field name='sex' label='性别' >
+          <RadioGroup options={radioOptions}></RadioGroup>
+        </Field>
+
+        <Field name='checkboxData' label='lebel'>
+          <CheckboxGroup options={checkboxOptions}></CheckboxGroup>
+        </Field>
+
+        <Field>
+          <Button onClick={submitHandler}>提交</Button>
+        </Field>
+
+      </FormPro>
+    </div>
+  );
+};
+
+    `
+  }
+/>
+
+
+## 单向数据流
+
+### 通过FormPro组件的form属性, 传入form实例, 遵循react的单向数据流思想
+
+1.通过setFieldsValue()方法, 可以设置表单数据, 实现表单数据的动态更新
+
+2.通过getFieldValue()方法, 可以获取表单数据, 实现表单数据的动态获取
+
+3.通过subscribe()方法, 可以监听表单数据的变化, 实现表单数据的动态监听
+<ShowSouceCode
+  element={
+    <FormProOneWayDataFlow />
+  }
+  code={
+    `
+export const FormProOneWayDataFlow: React.FC<IProps> = () => {
+  // init form
+  const [form] = useForm();
+
+  // submit form and get field value
+  form.subscribe((e) => {
+    console.log('form changed', e);
+  });
+
+  // set form field value
+  form.setFieldsValue({ sex: '1' });
+
+  // get form fields value
+  const fieldsValue = form.getFieldsValue();
+  console.log('fieldsValue', fieldsValue);
+
+  // get form field value
+  const fieldValue = form.getFieldValue('sex');
+  console.log('sex fieldValue', fieldValue);
+
+  const radioOptions = [
+    { label: 'Unknown', value: '0' },
+    { label: 'man', value: '1' },
+    { label: 'woman', value: '2' },
+  ];
+
+  const checkboxOptions = [
+    { label: 'beijing', value: 0 },
+    { label: 'shanghai', value: 1 },
+    { label: 'tianjin', value: 2 },
+  ];
+
+  return (
+    <div className='FormDev'>
+      <div>
+        <FormPro form={form}>
+          <Field name='sex' label='check sex'>
+            <RadioGroup options={radioOptions}></RadioGroup>
+          </Field>
+          <Field name='city' label='check cities'>
+            <CheckboxGroup options={checkboxOptions}></CheckboxGroup>
+          </Field>
+        </FormPro>
+      </div>
+    </div>
+  );
+};
+    `
+  }
+/>
+## 表单校验
+
+### 通过FormPro组件的rule属性, 传入校验规则, 对表单进行校验
+1.表单提交时会自动进行数据校验, 如果校验失败则会阻止表单提交, 并且会在对应的表单项上显示错误信息
+
+2.通过FormPro组件的onFinishFailed和onFinish属性, 获取校验失败和成功的回调
+
+3.通过form实例的validate()方法, 手动进行表单校验
+
+<ShowSouceCode
+  element={
+    <FormValidate />
+  }
+  code={
+    `
+const [form] = useForm();
+
+const rules = {
+  sex: {
+    required: true,
+    message: 'sex is required',
+  },
+  checkboxData: [
+    {
+      required: true,
+    },
+    {
+      validator: (rule, value) => {
+        if (value?.length === 1) {
+          return Promise.reject('checkboxData length must be greater than 1');
+        }
+        return Promise.resolve();
+      },
+    },
+  ],
+};
+
+// verify and submit
+const submitHandler = async () => {
+  try {
+    const res = await form.submit();
+    console.log(res);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+// validate the form successfully and submit callback
+const onFinishHandler = (e) => {
+  console.log('onFinishHandler', e);
+};
+
+// failed to validate the form callback
+const onFinishFailedHandler = (e) => {
+  console.log('onFinishFailedHandler', e);
+};
+
+// validate the form
+const validateHandler = async () => {
+  try {
+    const res = await form?.validate();
+    console.log(res);
+  } catch ({ errors, fields }) {
+    console.log('validateHandler', errors, fields);
+  }
+};
+
+const radioOptions = [
+  { label: 'Unknown', value: '0' },
+  { label: 'man', value: '1' },
+  { label: 'woman', value: '2' },
+];
+
+const checkboxOptions = [
+  { label: 'beijing', value: 0 },
+  { label: 'shanghai', value: 1 },
+  { label: 'tianjin', value: 2 },
+];
+
+return (
+  <div className='FormDev'>
+    <div>
+      <FormPro
+        form={form}
+        rules={rules}
+        onFinish={onFinishHandler}
+        onFinishFailed={onFinishFailedHandler}
+      >
+
+        <Field name='sex' label='check sex'>
+          <RadioGroup options={radioOptions}></RadioGroup>
+        </Field>
+
+        <Field name='city' label='check cities'>
+          <CheckboxGroup options={checkboxOptions}></CheckboxGroup>
+        </Field>
+
+      </FormPro>
+
+      <Button onClick={validateHandler}>校验数据</Button>
+      <Button onClick={submitHandler}>手动提交数据</Button>
+    </div>
+  </div>
+);
+`
+  }
+/>
+
+## Props
+### FormPro Props
+<PropsShow propsInfo={[
+  {
+    name: 'form',
+    description: '通过useForm()获取的表单实例对象',
+    type: 'FormRef',
+    initValue: '/',
+  },
+  {
+    name: 'rules',
+    description: '表单校验规则, 详见async-validator库',
+    type: 'Rules',
+    initValue: '/',
+  },
+  {
+    name: 'onFinish',
+    description: '表单校验成功后的回调',
+    type: '(values: any) => void',
+    initValue: '/',
+  },
+  {
+    name: 'onFinishFailed',
+    description: '表单校验失败后的回调',
+    type: '(values: any) => void',
+    initValue: '/',
+  },
+  {
+    name: 'width',
+    description: '表单宽度',
+    type: 'string',
+    initValue: 'auto',
+  },
+  {
+    name: 'labelwidth',
+    description: 'label宽度',
+    type: 'string',
+    initValue: '80px',
+  },
+  {
+    name: 'direction',
+    description: '排列方向',
+    type: 'x | y',
+    initValue: 'x',
+  },
+  {
+    name: 'labelalign',
+    description: 'label对齐方式',
+    type: 'start | end',
+    initValue: 'end',
+  },
+]} />
+
+### Field Props
+<PropsShow propsInfo={[
+  {
+    name: 'name',
+    description: '表单项的name',
+    type: 'string',
+    initValue: '/',
+  },
+  {
+    name: 'label',
+    description: '表单项的label',
+    type: 'string',
+    initValue: '/',
+  },
+  {
+    name: 'width',
+    description: 'field宽度',
+    type: 'string',
+    initValue: 'auto',
+  },
+  {
+    name: 'labelwidth',
+    description: 'label宽度',
+    type: 'string',
+    initValue: '80px',
+  },
+  {
+    name: 'direction',
+    description: '排列方向',
+    type: 'x | y',
+    initValue: 'x',
+  },
+  {
+    name: 'labelalign',
+    description: 'label对齐方式',
+    type: 'start | end',
+    initValue: 'end',
+  },
+]} />
+
+### useForm() hook返回的表单实例对象 Props
+<PropsShow propsInfo={[
+  {
+    name: 'getFieldsValue',
+    description: '获取表单完整数据',
+    type: '() => { [key: string]: any }',
+    initValue: '/',
+  },
+  {
+    name: 'getFieldValue',
+    description: '获取表单某个字段的值',
+    type: 'str(key: string) => any',
+    initValue: '/',
+  },
+  {
+    name: 'setFieldsValue',
+    description: '设置表单数据',
+    type: '(newStore: { [key: string]: any }) => void',
+    initValue: '/',
+  },
+  {
+    name: 'subscribe',
+    description: '订阅表单数据变化',
+    type: '(callbacks: any) => void',
+    initValue: '/',
+  },
+  {
+    name: 'submit',
+    description: '提交表单',
+    type: '() => Promise<{ [key: string]: any }>',
+    initValue: '/',
+  },
+  {
+    name: 'setFormRules',
+    description: '设置表单校验规则',
+    type: '(rules: Rules) => void',
+    initValue: '/',
+  },
+  {
+    name: 'validate',
+    description: '校验表单',
+    type: '() => Promise<{ [key: string]: any }>',
+    initValue: '/',
+  },
+]} />

@@ -44,6 +44,14 @@ export const siderbarConfig: ISiderbarConfig = {
       title: 'Data Entry',
       children: [
         {
+          title: 'Form',
+          path: '/doc/form',
+        },
+        {
+          title: 'FormPro',
+          path: '/doc/formpro',
+        },
+        {
           title: 'Radio',
           path: '/doc/radio',
         },
@@ -114,6 +122,14 @@ export const siderbarConfig: ISiderbarConfig = {
     {
       title: '数据录入',
       children: [
+        {
+          title: 'Form 表单',
+          path: '/doc/form',
+        },
+        {
+          title: 'FormPro 高级表单',
+          path: '/doc/formpro',
+        },
         {
           title: 'Radio 单选框',
           path: '/doc/radio',
