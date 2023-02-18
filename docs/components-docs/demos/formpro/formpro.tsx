@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-console */
-import React, { memo, useState } from 'react';
+import React from 'react';
 import type { ReactNode } from 'react';
 import FormPro from '../../../../src/components/form-pro/formpro';
 import Field from '../../../../src/components/form-pro/field';

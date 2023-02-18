@@ -44,20 +44,24 @@ export const siderbarConfig: ISiderbarConfig = {
       title: 'Data Entry',
       children: [
         {
-          title: 'Radio',
-          path: '/doc/radio',
-        },
-        {
-          title: 'Input',
-          path: '/doc/input',
-        },
-        {
           title: 'Form',
           path: '/doc/form',
         },
         {
           title: 'FormPro',
           path: '/doc/formpro',
+        },
+        {
+          title: 'Input',
+          path: '/doc/input',
+        },
+        {
+          title: 'Radio',
+          path: '/doc/radio',
+        },
+        {
+          title: 'Checkbox',
+          path: '/doc/checkbox',
         },
         {
           title: 'InputTag',
@@ -135,10 +139,6 @@ export const siderbarConfig: ISiderbarConfig = {
       title: '数据录入',
       children: [
         {
-          title: 'Input 输入框',
-          path: '/doc/input',
-        },
-        {
           title: 'Form 表单',
           path: '/doc/form',
         },
@@ -147,8 +147,16 @@ export const siderbarConfig: ISiderbarConfig = {
           path: '/doc/formpro',
         },
         {
+          title: 'Input 输入框',
+          path: '/doc/input',
+        },
+        {
           title: 'Radio 单选框',
           path: '/doc/radio',
+        },
+        {
+          title: 'Checkbox 多选框',
+          path: '/doc/checkbox',
         },
         {
           title: 'InputTag 标签输入框',

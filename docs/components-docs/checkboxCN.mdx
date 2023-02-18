@@ -1,0 +1,70 @@
+import { Checkbox } from './demos/checkbox/checkbox'
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
+
+# 多选框
+<ShowSouceCode
+
+  element={<Checkbox/>}
+  code={
+    `
+const checkboxOptions = [
+    { label: 'beijing', value: 0 },
+    { label: 'shanghai', value: 1 },
+    { label: 'tianjin', value: 2 },
+  ];
+
+const changeHandler = (e) => {
+  console.log('current value:', e);
+};
+
+<Checkbox
+  options={options}
+  value={defaultValue}
+  onChange={changeHandler}
+></Checkbox>
+
+return (
+  <CheckboxGroup
+    options={checkboxOptions}
+    onChange={changeHandler}
+  />
+);
+`
+  }
+/>
+
+## Props
+
+<PropsShow propsInfo={[
+  {
+    name: 'value',
+    description: '显示的值',
+    type: 'string | number',
+    initValue: '/',
+  },
+  {
+    name: 'onChange',
+    description: '选择时回掉函数',
+    type: '{label: string; value: string}[]',
+    initValue: '/',
+  },
+  {
+    name: 'options',
+    description: 'checkbox item数据',
+    type: '(chengedValue: string | number) => void',
+    initValue: '/',
+  },
+  {
+    name: 'iconable',
+    description: '是否显示checkbox图标',
+    type: 'boolean',
+    initValue: 'true',
+  },
+  {
+    name: 'round',
+    description: '图标是否圆角显示',
+    type: 'boolean',
+    initValue: 'false',
+  },
+]} />

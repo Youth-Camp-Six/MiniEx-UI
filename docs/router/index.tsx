@@ -36,9 +36,11 @@ import FormUS from '../components-docs/formUS.mdx';
 import FormCN from '../components-docs/formCN.mdx';
 import FormProUS from '../components-docs/formproUS.mdx';
 import FormProCN from '../components-docs/formproCN.mdx';
-
+import CheckboxUS from '../components-docs/checkboxUS.mdx';
+import CheckboxCN from '../components-docs/checkboxCN.mdx';
 import InputSearchCN from '../components-docs/inputSearchCN.mdx';
 import InputSearchUS from '../components-docs/inputSearchUS.mdx';
+
 import '../i18n';
 import { createHashRouter, Navigate } from 'react-router-dom';
 
@@ -148,6 +150,10 @@ export const router = createHashRouter([
             path: '/en/doc/formpro',
             element: <FormProUS components={components} />,
           },
+          {
+            path: '/en/doc/Checkbox',
+            element: <CheckboxUS components={components} />,
+          },
         ],
       },
     ],
@@ -233,6 +239,10 @@ export const router = createHashRouter([
           {
             path: '/zh/doc/formpro',
             element: <FormProCN components={components} />,
+          },
+          {
+            path: '/zh/doc/Checkbox',
+            element: <CheckboxCN components={components} />,
           },
         ],
       },

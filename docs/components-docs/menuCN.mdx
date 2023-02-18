@@ -1,38 +1,63 @@
 import { Menu, MenuItem } from '../../src/components';
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
 
 # 菜单
-<div className='Menu' style={{ width: '200px' }}>
-  <Menu defaultIndex={1}>
-    <MenuItem index={1}>元素1</MenuItem>
-    <MenuItem index={2}>元素2</MenuItem>
-    <MenuItem index={3}>元素3</MenuItem>
-    <MenuItem disabled>元素4</MenuItem>
-    <MenuItem index={4}>元素5</MenuItem>
-  </Menu>
-</div>
 
-## 代码
-```ts
-import React from 'react';
-import { Button, Space } from 'antd';
+<ShowSouceCode
 
-const handleSelect = (index: number) => {
-  console.log(index);
-};
+  element={
+    <div className='Menu' style={{ width: '200px' }}>
+      <Menu defaultIndex={1}>
+        <MenuItem index={1}>元素1</MenuItem>
+        <MenuItem index={2}>元素2</MenuItem>
+        <MenuItem index={3}>元素3</MenuItem>
+        <MenuItem disabled>元素4</MenuItem>
+        <MenuItem index={4}>元素5</MenuItem>
+      </Menu>
+    </div>
+  }
+  code={
+    `
+<Menu defaultIndex={1}>
+  <MenuItem index={1}>元素1</MenuItem>
+  <MenuItem index={2}>元素2</MenuItem>
+  <MenuItem index={3}>元素3</MenuItem>
+  <MenuItem disabled>元素4 disabled</MenuItem>
+  <MenuItem index={4}>元素5</MenuItem>
+</Menu>
+    `
+  }
+/>
 
-const Dev: React.FC = () => (
-  <div style={{ width: '200px' }}>
-    <Menu onSelect={handleSelect} defaultIndex={1}>
-      <MenuItem index={1}>元素1</MenuItem>
-      <MenuItem index={2}>元素2</MenuItem>
-      <MenuItem index={3}>元素3</MenuItem>
-      <MenuItem disabled>元素4 disabled</MenuItem>
-      <MenuItem index={4}>元素5</MenuItem>
-    </Menu>
-  </div>
-);
+## Menu Props
+<PropsShow propsInfo={[
+  {
+    name: 'defaultIndex',
+    description: '默认显示的index',
+    type: 'number',
+    initValue: '0',
+  },
+  {
+    name: 'onSelect',
+    description: '选择时回掉函数',
+    type: '(selectedIndex: number) => void',
+    initValue: '/',
+  },
+]} />
 
-export default memo(Dev);
-```
-
-## API
+## MenuItem Props
+<PropsShow propsInfo={[
+  {
+    name: 'index',
+    description: '索引',
+    type: 'number',
+    initValue: '/',
+  },
+  {
+    name: 'disabled',
+    description: '是否禁用',
+    type: 'boolean',
+    initValue: 'false',
+  },
+]} />
