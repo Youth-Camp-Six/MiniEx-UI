@@ -82,6 +82,8 @@ export const FormProBase: React.FC = () => {
 2.通过getFieldValue()方法, 可以获取表单数据, 实现表单数据的动态获取
 
 3.通过subscribe()方法, 可以监听表单数据的变化, 实现表单数据的动态监听
+
+4.自定义表单控件时, 需要提供受控属性value, 和onChange事件, 参数即为表单数据
 <ShowSouceCode
   element={
     <FormProOneWayDataFlow />
