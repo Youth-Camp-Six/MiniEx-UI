@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge test case1 for avatar 1`] = `
+<div>
+  <div
+    class="mi-badge mi-badge-info"
+  >
+    <div
+      class="mi-badge-value"
+    >
+      9
+    </div>
+    <div
+      class="mi-avatar"
+      style="width: 40px; height: 40px;"
+    >
+      <div
+        class="icon-box"
+      >
+        <span
+          style="transform: scale(1); font-size: 18px;"
+        >
+          U
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Badge test case1 for direct use 1`] = `
+<div>
+  <div
+    class="mi-badge mi-badge-normal"
+  >
+    <div
+      class="mi-badge-value"
+    >
+      5
+    </div>
+  </div>
+  <div
+    class="mi-badge mi-badge-info"
+  >
+    <div
+      class="mi-badge-value"
+    >
+      15
+    </div>
+  </div>
+  <div
+    class="mi-badge mi-badge-success"
+  >
+    <div
+      class="mi-badge-value"
+    >
+      65
+    </div>
+  </div>
+  <div
+    class="mi-badge mi-badge-warning"
+  >
+    <div
+      class="mi-badge-value"
+    >
+      9
+    </div>
+  </div>
+  <div
+    class="mi-badge mi-badge-error"
+  >
+    <div
+      class="mi-badge-value"
+    >
+      99+
+    </div>
+  </div>
+  <div
+    class="mi-badge mi-badge-normal mi-badge-round"
+  >
+    <div
+      class="mi-badge-dot"
+    />
+  </div>
+  <div
+    class="mi-badge mi-badge-info mi-badge-round"
+  >
+    <div
+      class="mi-badge-dot"
+    />
+  </div>
+  <div
+    class="mi-badge mi-badge-success mi-badge-round"
+  >
+    <div
+      class="mi-badge-dot"
+    />
+  </div>
+  <div
+    class="mi-badge mi-badge-warning mi-badge-round"
+  >
+    <div
+      class="mi-badge-dot"
+    />
+  </div>
+  <div
+    class="mi-badge mi-badge-error mi-badge-round"
+  >
+    <div
+      class="mi-badge-dot"
+    />
+  </div>
+</div>
+`;

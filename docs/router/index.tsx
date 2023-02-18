@@ -28,11 +28,17 @@ import ToastUS from '../components-docs/toastUS.mdx';
 import ToastCN from '../components-docs/toastCN.mdx';
 import UploadUS from '../components-docs/uploadUS.mdx';
 import UploadCN from '../components-docs/uploadCN.mdx';
+import TableUS from '../components-docs/tableUS.mdx';
+import TableCN from '../components-docs/tableCN.mdx';
+import InputTagUS from '../components-docs/inputTagUS.mdx';
+import InputTagCN from '../components-docs/inputTagCN.mdx';
 import FormUS from '../components-docs/formUS.mdx';
 import FormCN from '../components-docs/formCN.mdx';
 import FormProUS from '../components-docs/formproUS.mdx';
 import FormProCN from '../components-docs/formproCN.mdx';
 
+import InputSearchCN from '../components-docs/inputSearchCN.mdx';
+import InputSearchUS from '../components-docs/inputSearchUS.mdx';
 import '../i18n';
 import { createHashRouter, Navigate } from 'react-router-dom';
 
@@ -57,7 +63,7 @@ if (requireCustomFile.keys()?.length) {
 export const router = createHashRouter([
   {
     path: '/',
-    element: <Navigate to='/en' />,
+    element: <Navigate to='/zh' />,
     children: [],
   },
   {
@@ -121,6 +127,18 @@ export const router = createHashRouter([
           {
             path: '/en/doc/upload',
             element: <UploadUS components={components} />,
+          },
+          {
+            path: '/en/doc/table',
+            element: <TableUS components={components} />,
+          },
+          {
+            path: '/en/doc/inputTag',
+            element: <InputTagUS components={components} />,
+          },
+          {
+            path: '/en/doc/input',
+            element: <InputSearchUS components={components} />,
           },
           {
             path: '/en/doc/form',
@@ -195,6 +213,18 @@ export const router = createHashRouter([
           {
             path: '/zh/doc/upload',
             element: <UploadCN components={components} />,
+          },
+          {
+            path: '/zh/doc/table',
+            element: <TableCN components={components} />,
+          },
+          {
+            path: '/zh/doc/inputTag',
+            element: <InputTagCN components={components} />,
+          },
+          {
+            path: '/zh/doc/input',
+            element: <InputSearchCN components={components} />,
           },
           {
             path: '/zh/doc/form',

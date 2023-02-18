@@ -2,7 +2,7 @@ import { RadioCNBasic } from './demos/radio/radio-cn.tsx'
 import ShowSouceCode from './components/show-source-code';
 import PropsShow from './components/props-show';
 
-# 按钮
+# 单选框
 <ShowSouceCode
 
   element={<RadioCNBasic/>}
@@ -20,14 +20,11 @@ import PropsShow from './components/props-show';
     console.log('当前value:', e);
   };
 
-  return (
     <RadioGroup
       options={options}
       value={defaultValue}
       onChange={changeHandler}
-    ></RadioGroup>
-  );
-    `
+    ></RadioGroup>`
   }
 />
 

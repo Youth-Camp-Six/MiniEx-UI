@@ -22,10 +22,15 @@ export const Avatar: React.FC<AvatarProps> = (props) => {
   const classesImg = classNames({
     [`mi-avatar-${round}`]: round,
   });
-  const classDot = classNames('dot', {
-    [`dot-${status}`]: status,
-    [`dot-${statusPosition}`]: statusPosition,
-  });
+  const classDot = classNames(
+    'dot',
+    `dot-${round}-${statusPosition}`,
+    `${src ? '' : `dot-round-${statusPosition}`}`,
+    {
+      [`dot-${status}`]: status,
+      [`dot-${statusPosition}`]: statusPosition,
+    }
+  );
 
   const avatarNodeRef = useRef<HTMLSpanElement>(null);
   const [scale, setScale] = React.useState(1);

@@ -1,4 +1,4 @@
-import Popover from './popover'
+import Popover from './popover';
 
-export * from './type'
-export { Popover } 
+export * from './type';
+export { Popover };

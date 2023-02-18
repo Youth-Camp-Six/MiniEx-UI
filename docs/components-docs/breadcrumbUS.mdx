@@ -1,81 +1,216 @@
-import { Breadcrumb } from '../../src/components';
+import { Breadcrumb , Flex } from '../../src/components';
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
 
 # Breadcrumb
 
-## Showcase components
+## Basic
 
-<Breadcrumb options={[
-  {
-    label: 'Home',
-    to: '/',
-  },
-  {
-    label: 'React',
-    to: 'https://react.docschina.org/',
-  },
-  {
-    label: 'List of goods',
-    to: '',
-  },
-  {
-    label: 'Product details',
-    to: '',
-    active: true,
-  },
-]} ></Breadcrumb><br /><br />
-<Breadcrumb iconType="shoulder" options={[
-  {
-    label: 'Home',
-    to: '/',
-  },
-  {
-    label: 'React',
-    to: 'https://react.docschina.org/',
-  },
-  {
-    label: 'List of goods',
-    to: '',
-  },
-  {
-    label: 'Product details',
-    to: '',
-    active: true,
-  },
-]}></Breadcrumb>
+<ShowSouceCode
+  element={
+    <Flex x='start'>
+      <Breadcrumb options={[
+        {
+          label: 'Home',
+          to: '/',
+        },
+        {
+          label: 'React',
+          to: 'https://react.docschina.org/',
+        },
+        {
+          label: 'List of goods',
+          to: '',
+        },
+        {
+          label: 'Product details',
+          to: '',
+          active: true,
+        }]} >
+        </Breadcrumb>
+    </Flex>
+  }
+  code={`
+    import { Breadcrumb , Flex } from 'miniEx';
+    import React from 'react';
 
-## Show code
+    const App: React.FC = () => (
+      const options=[
+        {
+          label: 'Home',
+          to: '/',
+        },
+        {
+          label: 'React',
+          to: 'https://react.docschina.org/',
+        },
+        {
+          label: 'List of goods',
+          to: '',
+        },
+        {
+          label: 'Product details',
+          to: '',
+          active: true,
+        }]
+      return(
+        <Flex x='start'>
+         <Breadcrumb options={options}></Breadcrumb>
+        </Flex>)
+    );
 
-```js
-import { Dropdown } from 'miniEx';
-import React from 'react';
+    export default App;
+    `
+  }
+  />
 
-const App: React.FC = () => (
-  const options=const breadcrumbOptionsUS = [
-  {
-    label: 'Home',
-    to: '/',
-  },
-  {
-    label: 'React',
-    to: 'https://react.docschina.org/',
-  },
-  {
-    label: 'List of goods',
-    to: '',
-  },
-  {
-    label: 'Product details',
-    to: '',
-    active: true,
-  },
-];
- <div>
-     <Breadcrumb options={options}></Breadcrumb> <br /><br />
-      <Breadcrumb options={options} iconType="shoulder"></Breadcrumb>
-    </div>
-);
+## Customize the current selection
+<ShowSouceCode
+  element={
+    <Flex x='start'>
+      <Breadcrumb options={[
+        {
+          label: 'Home',
+          to: '/',
+        },
+        {
+          label: 'React',
+          to: 'https://react.docschina.org/',
+        },
+        {
+          label: 'List of goods',
+          active: true,
+          to: '',
+        },
+        {
+          label: 'Product details',
+          to: '',
+        }]} >
+        </Breadcrumb>
+    </Flex>
+  }
+  code={`
+    import { Breadcrumb , Flex } from 'miniEx';
+    import React from 'react';
 
-export default App;
-```
+    const App: React.FC = () => (
+      const options=[
+        {
+          label: 'Home',
+          to: '/',
+        },
+        {
+          label: 'React',
+          to: 'https://react.docschina.org/',
+        },
+        {
+          label: 'List of goods',
+          to: '',
+          active: true,
+        },
+        {
+          label: 'Product details',
+          to: '',
+        }]
+      return(
+        <Flex x='start'>
+         <Breadcrumb options={options}></Breadcrumb>
+        </Flex>)
+    );
+
+    export default App;
+    `
+  }
+  />
+
+
+## Icon type
+<ShowSouceCode
+  element={
+    <Flex x='start'>
+      <Breadcrumb iconType="shoulder" options={[
+          {
+            label: 'Home',
+            to: '/',
+          },
+          {
+            label: 'React',
+            to: 'https://react.docschina.org/',
+          },
+          {
+            label: 'List of goods',
+            to: '',
+          },
+          {
+            label: 'Product details',
+            to: '',
+            active: true,
+          },
+        ]}></Breadcrumb>
+    </Flex>
+  }
+  code={`
+      const options=[
+        {
+          label: 'Home',
+          to: '/',
+        },
+        {
+          label: 'React',
+          to: 'https://react.docschina.org/',
+        },
+        {
+          label: 'List of goods',
+          to: '',
+        },
+        {
+          label: 'Product details',
+          to: '',
+          active: true,
+        }]
+
+        <Flex x='start'>
+         <Breadcrumb iconType="shoulder" options={options}></Breadcrumb>
+        </Flex>
+    `
+  }
+  />
+
 
 ## Props
+<PropsShow propsInfo={[
+  {
+    name: 'options',
+    description: 'Configure the table',
+    type: 'options',
+    initValue: '[]',
+  },
+  {
+    name: 'iconType',
+    description: 'Display type',
+    type: 'sprit | shoulder',
+    initValue: 'sprit',
+  }
+]} />
+
+## Options
+<PropsShow propsInfo={[
+  {
+    name: 'label',
+    description: 'Text content',
+    type: 'string | ReactNode',
+    initValue: '/',
+  },
+  {
+    name: 'to',
+    description: 'Bind a jump link',
+    type: 'string',
+    initValue: '/',
+  },
+  {
+    name: 'active',
+    description: 'Whether it is selected',
+    type: 'boolean',
+    initValue: 'false',
+  },
+]} />

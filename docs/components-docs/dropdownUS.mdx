@@ -1,29 +1,15 @@
-import { Dropdown,Avatar,Button } from '../../src/components';
-// const arr = [
-//     {
-//         label: 'Journey',
-//         value: '1',
-//     },
-//     {
-//         label: 'Outlaws',
-//         value: '2',
-//     },
-//     {
-//         label: 'Three kingdoms',
-//         value: '3',
-//     },
-//     {
-//         label: 'Dream',
-//         value: '4',
-//     },
-// ]
+import { Dropdown,Avatar,Button,Flex } from '../../src/components';
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
 
 # Dropdown
 
 ## Basic
-The most basic dropdown menu.
 
-<Dropdown options={[
+<ShowSouceCode
+  element={
+    <Flex x='start'>
+      <Dropdown options={[
     {
         label: 'Journey',
         value: '1',
@@ -39,7 +25,7 @@ The most basic dropdown menu.
     {
         label: 'Dream',
         value: '4',
-    },
+    }
 ]} >
   <div>Plain text</div>
 </Dropdown>
@@ -59,85 +45,196 @@ The most basic dropdown menu.
     {
         label: 'Dream',
         value: '4',
-    },
+    }
 ]} trigger='click'>
   <Button>click</Button>
 </Dropdown>
+    </Flex>
+  }
+  code={`const options=[
+         {
+             label: 'Journey',
+             value: '1',
+         },
+         {
+             label: 'Outlaws',
+             value: '2',
+         },
+         {
+             label: 'Three kingdoms',
+             value: '3',
+         },
+         {
+             label: 'Dream',
+             value: '4',
+         }
+       ]
 
-## Show code
+        <Flex x='start'>
+         <Dropdown options={options}><div>Plain text</div></Dropdown>
+         <Dropdown options={options}><Button>click</Button></Dropdown>
+        </Flex>
+    `
+  }
+  />
 
-```js
-import { Dropdown, Button } from 'miniEx';
-import React from 'react';
 
-// const arr = [
-//     {
-//         label: 'Journey',
-//         value: '1',
-//     },
-//     {
-//         label: 'Outlaws',
-//         value: '2',
-//     },
-//     {
-//         label: 'Three kingdoms',
-//         value: '3',
-//     },
-//     {
-//         label: 'Dream',
-//         value: '4',
-//     },
-// ]
 
-const App: React.FC = () => (
-<Dropdown options={[
-    {
-        label: 'Journey',
-        value: '1',
-    },
-    {
-        label: 'Outlaws',
-        value: '2',
-    },
-    {
-        label: 'Three kingdoms',
-        value: '3',
-    },
-    {
-        label: 'Dream',
-        value: '4',
-    },
-]} >
-  <div>Plain text</div>
-</Dropdown>
-<Dropdown options={[
-    {
-        label: 'Journey',
-        value: '1',
-    },
-    {
-        label: 'Outlaws',
-        value: '2',
-    },
-    {
-        label: 'Three kingdoms',
-        value: '3',
-    },
-    {
-        label: 'Dream',
-        value: '4',
-    },
-]} trigger='click'>
-  <Button>click</Button>
-</Dropdown>
-);
-
-export default App;
-```
 
 ## Use with avatars
 
-<Dropdown options={[
+<ShowSouceCode
+  element={
+    <Flex x='start'>
+         <Dropdown placement="bottom-start" options={[
+        {
+            label: 'Modify your avatar',
+            value: '1',
+        },
+        {
+            label: 'Personal Center',
+            value: '2',
+        },
+        {
+            label: 'Open a membership',
+            value: '3',
+        },
+        {
+            label: 'Exit Login',
+            value: '4',
+        },
+       ]}>
+        <Avatar src="https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668"></Avatar>
+      </Dropdown>
+       <Dropdown placement="top-start" options={[
+        {
+            label: 'Modify your avatar',
+            value: '1',
+        },
+        {
+            label: 'Personal Center',
+            value: '2',
+        },
+        {
+            label: 'Open a membership',
+            value: '3',
+        },
+        {
+            label: 'Exit Login',
+            value: '4',
+        },
+       ]}>
+        <Avatar src="https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668"></Avatar>
+      </Dropdown>
+       <Dropdown placement="left-start" options={[
+        {
+            label: 'Modify your avatar',
+            value: '1',
+        },
+        {
+            label: 'Personal Center',
+            value: '2',
+        },
+        {
+            label: 'Open a membership',
+            value: '3',
+        },
+        {
+            label: 'Exit Login',
+            value: '4',
+        },
+       ]}>
+        <Avatar src="https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668"></Avatar>
+      </Dropdown>
+       <Dropdown placement="right-start" options={[
+        {
+            label: 'Modify your avatar',
+            value: '1',
+        },
+        {
+            label: 'Personal Center',
+            value: '2',
+        },
+        {
+            label: 'Open a membership',
+            value: '3',
+        },
+        {
+            label: 'Exit Login',
+            value: '4',
+        },
+       ]}>
+        <Avatar src="https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668"></Avatar>
+      </Dropdown>
+      <Dropdown options={[
+          {
+              label: 'Modify your avatar',
+              value: '1',
+          },
+          {
+              label: 'Personal Center',
+              value: '2',
+          },
+          {
+              label: 'Open a membership',
+              value: '3',
+          },
+          {
+              label: 'Exit Login',
+              value: '4',
+          },
+      ]} trigger='click'>
+        <Avatar status="busy" statusPosition="top-right">Click</Avatar>
+      </Dropdown>
+    </Flex>
+  }
+  code={`const options=[
+          {
+              label: 'Modify your avatar',
+              value: '1',
+          },
+          {
+              label: 'Personal Center',
+              value: '2',
+          },
+          {
+              label: 'Open a membership',
+              value: '3',
+          },
+          {
+              label: 'Exit Login',
+              value: '4',
+          },
+      ]
+
+        <Flex x='start'>
+         <Dropdown options={options} placement="bottom-start">
+          <Avatar src="https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668"></Avatar>
+         </Dropdown>
+         <Dropdown options={options}placement="top-start">
+          <Avatar src="https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668"></Avatar>
+         </Dropdown>
+         <Dropdown options={options}placement="left-start">
+          <Avatar src="https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668"></Avatar>
+         </Dropdown>
+         <Dropdown options={options}placement="right-start">
+          <Avatar src="https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668"></Avatar>
+         </Dropdown>
+         <Dropdown options={options}>
+          <Avatar status="busy" statusPosition="top-right">点击</Avatar>
+         </Dropdown>
+        </Flex>
+    `
+  }
+  />
+
+
+## No arrows
+
+<ShowSouceCode
+  element={
+    <Flex x='start'>
+      <Dropdown arrow={false} options={[
     {
         label: 'Journey',
         value: '1',
@@ -153,11 +250,11 @@ export default App;
     {
         label: 'Dream',
         value: '4',
-    },
-]}>
-  <Avatar status="busy" statusPosition="top-right">U</Avatar>
+    }
+]} >
+  <div>Plain text</div>
 </Dropdown>
-<Dropdown options={[
+<Dropdown arrow={false} options={[
     {
         label: 'Journey',
         value: '1',
@@ -173,81 +270,80 @@ export default App;
     {
         label: 'Dream',
         value: '4',
-    },
+    }
 ]} trigger='click'>
-  <Avatar status="busy" statusPosition="top-right">U</Avatar>
+  <Button>click</Button>
 </Dropdown>
+    </Flex>
+  }
+  code={`const options=[
+         {
+             label: 'Journey',
+             value: '1',
+         },
+         {
+             label: 'Outlaws',
+             value: '2',
+         },
+         {
+             label: 'Three kingdoms',
+             value: '3',
+         },
+         {
+             label: 'Dream',
+             value: '4',
+         }
+       ]
 
-## Show code
-
-```js
-import { Avatar, MiIcon } from 'miniEx';
-import React from 'react';
-
-// const arr = [
-//     {
-//         label: 'Modify your avatar',
-//         value: '1',
-//     },
-//     {
-//         label: 'Personal Center',
-//         value: '2',
-//     },
-//     {
-//         label: 'Open a membership',
-//         value: '3',
-//     },
-//     {
-//         label: 'Exit Login',
-//         value: '4',
-//     },
-// ]
-
-const App: React.FC = () => (
-  <Dropdown options={[
-    {
-        label: 'Modify your avatar',
-        value: '1',
-    },
-    {
-        label: 'Personal Center',
-        value: '2',
-    },
-    {
-        label: 'Open a membership',
-        value: '3',
-    },
-    {
-        label: 'Exit Login',
-        value: '4',
-    },
-]}>
-  <Avatar status="busy" statusPosition="top-right">U</Avatar>
-</Dropdown>
-<Dropdown options={[
-    {
-        label: 'Modify your avatar',
-        value: '1',
-    },
-    {
-        label: 'Personal Center',
-        value: '2',
-    },
-    {
-        label: 'Open a membership',
-        value: '3',
-    },
-    {
-        label: 'Exit Login',
-        value: '4',
-    },
-]} trigger='click'>
-  <Avatar status="busy" statusPosition="top-right">U</Avatar>
-</Dropdown>
-);
-
-export default App;
-```
+        <Flex x='start'>
+         <Dropdown arrow={false} options={options}><div>Plain text</div></Dropdown>
+         <Dropdown arrow={false} options={options}><Button>click</Button></Dropdown>
+        </Flex>
+    `
+  }
+  />
 
 
-## API
+## Props
+<PropsShow propsInfo={[
+  {
+    name: 'options',
+    description: 'List configuration',
+    type: 'array',
+    initValue: '[]',
+  },
+  {
+    name: 'trigger',
+    description: 'Trigger method',
+    type: 'hover | click',
+    initValue: 'hover',
+  },
+  {
+    name: 'placement',
+    description: 'Drop-down placement',
+    type: 'string',
+    initValue: 'bottom',
+  },
+   {
+    name: 'width',
+    description: 'Drop down bubble width',
+    type: 'string(px)',
+    initValue: '/',
+  },
+]} />
+
+## Options
+<PropsShow propsInfo={[
+  {
+    name: 'label',
+    description: 'Text content',
+    type: 'number | string',
+    initValue: '/',
+  },
+  {
+    name: 'value',
+    description: 'Bind the key value',
+    type: 'number | string',
+    initValue: '/',
+  },
+]} />
