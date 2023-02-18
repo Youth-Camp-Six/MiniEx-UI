@@ -74,6 +74,10 @@ export const siderbarConfig: ISiderbarConfig = {
       title: 'Feedback',
       children: [
         {
+          title: 'Drawer',
+          path: '/doc/drawer',
+        },
+        {
           title: 'Toast',
           path: '/doc/toast',
         },
@@ -153,7 +157,11 @@ export const siderbarConfig: ISiderbarConfig = {
       title: '反馈',
       children: [
         {
-          title: 'Toast',
+          title: 'Drawer 抽屉',
+          path: '/doc/drawer',
+        },
+        {
+          title: 'Toast 吐司',
           path: '/doc/toast',
         },
       ],

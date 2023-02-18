@@ -22,3 +22,4 @@ export * from './components/alert';
 export * from './components/popover';
 export * from './components/select';
 export * from './components/table';
+export * from './components/drawer';
