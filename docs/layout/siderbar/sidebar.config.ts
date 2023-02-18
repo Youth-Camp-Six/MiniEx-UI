@@ -44,6 +44,10 @@ export const siderbarConfig: ISiderbarConfig = {
       title: 'Data Entry',
       children: [
         {
+          title: 'Input',
+          path: '/doc/input',
+        },
+        {
           title: 'Radio',
           path: '/doc/radio',
         },
@@ -126,6 +130,10 @@ export const siderbarConfig: ISiderbarConfig = {
     {
       title: '数据录入',
       children: [
+        {
+          title: 'Input 输入框',
+          path: '/doc/input',
+        },
         {
           title: 'Radio 单选框',
           path: '/doc/radio',
