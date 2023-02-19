@@ -6,7 +6,7 @@ export const flexrow = () => {
   return (
     <div>
       <div className='demo'>
-        <Flex direction='x' x='start' y='start'>
+        <Flex direction='x' x='start' y='start' className='mi-Flex'>
           <div className='box'>
             <div></div>
           </div>
@@ -17,7 +17,7 @@ export const flexrow = () => {
             <div></div>
           </div>
         </Flex>
-        <Flex direction='x' x='center' y='start'>
+        <Flex direction='x' x='center' y='start' className='mi-Flex'>
           <div className='box'>
             <div></div>
           </div>
@@ -28,42 +28,7 @@ export const flexrow = () => {
             <div></div>
           </div>
         </Flex>
-        <Flex direction='x' x='end' y='start'>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-        </Flex>
-      </div>
-      <div className='demo'>
-        <Flex direction='x' x='start' y='center'>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-        </Flex>
-        <Flex direction='x' x='center' y='center'>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-        </Flex>
-        <Flex direction='x' x='end' y='center'>
+        <Flex direction='x' x='end' y='start' className='mi-Flex'>
           <div className='box'>
             <div></div>
           </div>
@@ -76,7 +41,7 @@ export const flexrow = () => {
         </Flex>
       </div>
       <div className='demo'>
-        <Flex direction='x' x='start' y='end'>
+        <Flex direction='x' x='start' y='center' className='mi-Flex'>
           <div className='box'>
             <div></div>
           </div>
@@ -87,7 +52,7 @@ export const flexrow = () => {
             <div></div>
           </div>
         </Flex>
-        <Flex direction='x' x='center' y='end'>
+        <Flex direction='x' x='center' y='center' className='mi-Flex'>
           <div className='box'>
             <div></div>
           </div>
@@ -98,7 +63,42 @@ export const flexrow = () => {
             <div></div>
           </div>
         </Flex>
-        <Flex direction='x' x='end' y='end'>
+        <Flex direction='x' x='end' y='center' className='mi-Flex'>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+        </Flex>
+      </div>
+      <div className='demo'>
+        <Flex direction='x' x='start' y='end' className='mi-Flex'>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+        </Flex>
+        <Flex direction='x' x='center' y='end' className='mi-Flex'>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+        </Flex>
+        <Flex direction='x' x='end' y='end' className='mi-Flex'>
           <div className='box'>
             <div></div>
           </div>
@@ -118,7 +118,7 @@ export const flexcolumn = () => {
   return (
     <div>
       <div className='demo'>
-        <Flex direction='y' x='start' y='start'>
+        <Flex direction='y' x='start' y='start' className='mi-Flex'>
           <div className='box'>
             <div></div>
           </div>
@@ -129,7 +129,7 @@ export const flexcolumn = () => {
             <div></div>
           </div>
         </Flex>
-        <Flex direction='y' x='center' y='start'>
+        <Flex direction='y' x='center' y='start' className='mi-Flex'>
           <div className='box'>
             <div></div>
           </div>
@@ -140,42 +140,7 @@ export const flexcolumn = () => {
             <div></div>
           </div>
         </Flex>
-        <Flex direction='y' x='end' y='start'>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-        </Flex>
-      </div>
-      <div className='demo'>
-        <Flex direction='y' x='start' y='center'>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-        </Flex>
-        <Flex direction='y' x='center' y='center'>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-        </Flex>
-        <Flex direction='y' x='end' y='center'>
+        <Flex direction='y' x='end' y='start' className='mi-Flex'>
           <div className='box'>
             <div></div>
           </div>
@@ -188,7 +153,7 @@ export const flexcolumn = () => {
         </Flex>
       </div>
       <div className='demo'>
-        <Flex direction='y' x='start' y='end'>
+        <Flex direction='y' x='start' y='center' className='mi-Flex'>
           <div className='box'>
             <div></div>
           </div>
@@ -199,7 +164,7 @@ export const flexcolumn = () => {
             <div></div>
           </div>
         </Flex>
-        <Flex direction='y' x='center' y='end'>
+        <Flex direction='y' x='center' y='center' className='mi-Flex'>
           <div className='box'>
             <div></div>
           </div>
@@ -210,7 +175,42 @@ export const flexcolumn = () => {
             <div></div>
           </div>
         </Flex>
-        <Flex direction='y' x='end' y='end'>
+        <Flex direction='y' x='end' y='center' className='mi-Flex'>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+        </Flex>
+      </div>
+      <div className='demo'>
+        <Flex direction='y' x='start' y='end' className='mi-Flex'>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+        </Flex>
+        <Flex direction='y' x='center' y='end' className='mi-Flex'>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+        </Flex>
+        <Flex direction='y' x='end' y='end' className='mi-Flex'>
           <div className='box'>
             <div></div>
           </div>
@@ -230,7 +230,7 @@ export const flexmode = () => {
   return (
     <div>
       <div className='demo'>
-        <Flex direction='x' x='start' y='center' mode='between'>
+        <Flex direction='x' x='start' y='center' mode='between' className='mi-Flex'>
           <div className='box'>
             <div></div>
           </div>
@@ -241,7 +241,7 @@ export const flexmode = () => {
             <div></div>
           </div>
         </Flex>
-        <Flex direction='x' x='center' y='center' mode='around'>
+        <Flex direction='x' x='center' y='center' mode='around' className='mi-Flex'>
           <div className='box'>
             <div></div>
           </div>
@@ -252,7 +252,7 @@ export const flexmode = () => {
             <div></div>
           </div>
         </Flex>
-        <Flex direction='x' x='center' y='center'>
+        <Flex direction='x' x='center' y='center' className='mi-Flex'>
           <div className='box'>
             <div></div>
           </div>
@@ -265,7 +265,7 @@ export const flexmode = () => {
         </Flex>
       </div>
       <div className='demo'>
-        <Flex direction='y' x='start' y='center' mode='between'>
+        <Flex direction='y' x='start' y='center' mode='between' className='mi-Flex'>
           <div className='box'>
             <div></div>
           </div>
@@ -276,7 +276,7 @@ export const flexmode = () => {
             <div></div>
           </div>
         </Flex>
-        <Flex direction='y' x='center' y='center' mode='around'>
+        <Flex direction='y' x='center' y='center' mode='around' className='mi-Flex'>
           <div className='box'>
             <div></div>
           </div>
@@ -287,7 +287,7 @@ export const flexmode = () => {
             <div></div>
           </div>
         </Flex>
-        <Flex direction='y' x='center' y='center'>
+        <Flex direction='y' x='center' y='center' className='mi-Flex'>
           <div className='box'>
             <div></div>
           </div>
