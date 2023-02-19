@@ -6,6 +6,11 @@
 
 # MiniEx-UI🌱
 
+## 命名由来
+
+`MiniEx` 取自 `Minimal and Exquisite`，意义为极简精致。
+组件库致力于打造为极简且精致的形式面向用户。
+
 ## 项目简介
 
 
@@ -55,11 +60,6 @@ React + TS + Less + Webpack + Lint + Jest
 ## 页面展示
 
 ![miniex-ui](https://cloud.zhuchj.com/202302160127480.png)
-
-## 命名由来
-
-`MiniEx` 取自 `Minimal and Exquisite`，意义为极简精致。
-组件库致力于打造为极简且精致的形式面向用户。
 
 ## 目录说明
 
