@@ -82,6 +82,10 @@ export const siderbarConfig: ISiderbarConfig = {
           path: '/doc/drawer',
         },
         {
+          title: 'Dialog',
+          path: '/doc/dialog',
+        },
+        {
           title: 'Toast',
           path: '/doc/toast',
         },
@@ -167,6 +171,10 @@ export const siderbarConfig: ISiderbarConfig = {
         {
           title: 'Drawer 抽屉',
           path: '/doc/drawer',
+        },
+        {
+          title: 'Dialog 对话框',
+          path: '/doc/dialog',
         },
         {
           title: 'Toast 吐司',
