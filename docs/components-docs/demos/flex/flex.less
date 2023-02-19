@@ -1,0 +1,29 @@
+.demo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mi-flex {
+  box-sizing: border-box;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  margin-bottom: 20px;
+  padding: 5px;
+  background-color: var(--mi-bgcolor-1);
+  border: 1px var(--mi-bgcolor-2) solid;
+  border-radius: var(--mi-border-radius);
+
+  .box {
+    box-sizing: border-box;
+
+    > div {
+      display: inline-block;
+      padding: 10px;
+      font-size: 14px;
+      background-color: var(--mi-primary-color);
+      border-radius: var(--mi-border-radius);
+    }
+  }
+}

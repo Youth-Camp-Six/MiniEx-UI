@@ -17,7 +17,12 @@ export const siderbarConfig: ISiderbarConfig = {
     },
     {
       title: 'Layout',
-      children: [],
+      children: [
+        {
+          title: 'Flex',
+          path: '/doc/flex',
+        },
+      ],
     },
     {
       title: 'Navigation',
@@ -108,7 +113,12 @@ export const siderbarConfig: ISiderbarConfig = {
     },
     {
       title: '布局',
-      children: [],
+      children: [
+        {
+          title: 'Flex 弹性布局',
+          path: '/doc/flex',
+        },
+      ],
     },
     {
       title: '导航',
