@@ -32,6 +32,12 @@ import TableUS from '../components-docs/tableUS.mdx';
 import TableCN from '../components-docs/tableCN.mdx';
 import InputTagUS from '../components-docs/inputTagUS.mdx';
 import InputTagCN from '../components-docs/inputTagCN.mdx';
+import FormUS from '../components-docs/formUS.mdx';
+import FormCN from '../components-docs/formCN.mdx';
+import FormProUS from '../components-docs/formproUS.mdx';
+import FormProCN from '../components-docs/formproCN.mdx';
+import CheckboxUS from '../components-docs/checkboxUS.mdx';
+import CheckboxCN from '../components-docs/checkboxCN.mdx';
 import DrawerCN from '../components-docs/drawerCN.mdx';
 import DrawerUS from '../components-docs/drawerUS.mdx';
 import DialogCN from '../components-docs/dialogCN.mdx';
@@ -39,7 +45,6 @@ import DialogUS from '../components-docs/dialogUS.mdx';
 import InputSearchCN from '../components-docs/inputSearchCN.mdx';
 import InputSearchUS from '../components-docs/inputSearchUS.mdx';
 import Flex from '../components-docs/flexCN.mdx';
-
 import '../i18n';
 import { createHashRouter, Navigate } from 'react-router-dom';
 
@@ -142,6 +147,18 @@ export const router = createHashRouter([
             element: <InputSearchUS components={components} />,
           },
           {
+            path: '/en/doc/form',
+            element: <FormUS components={components} />,
+          },
+          {
+            path: '/en/doc/formpro',
+            element: <FormProUS components={components} />,
+          },
+          {
+            path: '/en/doc/Checkbox',
+            element: <CheckboxUS components={components} />,
+          },
+          {
             path: '/en/doc/drawer',
             element: <DrawerUS components={components} />,
           },
@@ -234,6 +251,18 @@ export const router = createHashRouter([
           {
             path: '/zh/doc/input',
             element: <InputSearchCN components={components} />,
+          },
+          {
+            path: '/zh/doc/form',
+            element: <FormCN components={components} />,
+          },
+          {
+            path: '/zh/doc/formpro',
+            element: <FormProCN components={components} />,
+          },
+          {
+            path: '/zh/doc/Checkbox',
+            element: <CheckboxCN components={components} />,
           },
           {
             path: '/zh/doc/dialog',
