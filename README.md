@@ -113,6 +113,17 @@ npm run start
 npm run build:pkg
 ```
 
+### 执行单测用例
+
+```
+npx jest
+```
+
+可选项：
+1. `src/xx/xx` 执行制定文件目录下单测
+2. `--coverage` 生成单测覆盖率html
+3. `-w` 实时监听单测用例变化，重新执行
+
 ## Licensed
 
 MIT.
