@@ -16,6 +16,8 @@ import FlexUS from '../components-docs/flexUS.mdx';
 import FlexCN from '../components-docs/flexCN.mdx';
 import TitleUS from '../components-docs/titleUS.mdx';
 import TitleCN from '../components-docs/titleCN.mdx';
+import ImageUS from '../components-docs/imageUS.mdx';
+import ImageCN from '../components-docs/imageCN.mdx';
 import AvatarUS from '../components-docs/avatarUS.mdx';
 import AvatarCN from '../components-docs/avatarCN.mdx';
 import DropdownUS from '../components-docs/dropdownUS.mdx';
@@ -115,6 +117,10 @@ export const router = createHashRouter([
           {
             path: '/en/doc/title',
             element: <TitleUS components={components} />,
+          },
+          {
+            path: '/en/doc/image',
+            element: <ImageUS components={components} />,
           },
           {
             path: '/en/doc/avatar',
@@ -241,6 +247,10 @@ export const router = createHashRouter([
           {
             path: '/zh/doc/title',
             element: <TitleCN components={components} />,
+          },
+          {
+            path: '/zh/doc/image',
+            element: <ImageCN components={components} />,
           },
           {
             path: '/zh/doc/avatar',

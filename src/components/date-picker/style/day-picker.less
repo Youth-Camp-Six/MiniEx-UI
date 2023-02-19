@@ -1,0 +1,59 @@
+.day-picker {
+  display: inline-block;
+  width: 300px;
+  padding: 20px;
+  background: yellowgreen;
+  box-shadow: var(--mi-box-shadow);
+  user-select: none;
+
+  &__content {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(7, 1fr);
+    row-gap: 5px;
+    place-items: center;
+  }
+}
+
+.day-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  color: grey;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &--disabled {
+    cursor: default;
+  }
+
+  &--this-month {
+    color: black;
+
+    &:hover {
+      background-color: antiquewhite;
+    }
+  }
+
+  &--selected {
+    background-color: antiquewhite;
+  }
+}
+
+.picker-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+
+  .content {
+    display: flex;
+    gap: 10px;
+  }
+
+  .back,
+  .forward {
+    cursor: pointer;
+  }
+}

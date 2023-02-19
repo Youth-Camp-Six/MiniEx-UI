@@ -103,6 +103,10 @@ export const siderbarConfig: ISiderbarConfig = {
           path: '/doc/title',
         },
         {
+          title: 'Image',
+          path: '/doc/image',
+        },
+        {
           title: 'Table',
           path: '/doc/table',
         },
@@ -226,6 +230,10 @@ export const siderbarConfig: ISiderbarConfig = {
         {
           title: 'Title 标题',
           path: '/doc/title',
+        },
+        {
+          title: 'Image 图片',
+          path: '/doc/image',
         },
         {
           title: 'Table 表格',

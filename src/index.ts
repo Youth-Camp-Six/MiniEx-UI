@@ -9,6 +9,8 @@ export * from './components/tabs';
 export * from './components/toast';
 export * from './components/breadcrumb';
 export * from './components/dropdown';
+export * from './components/image';
+export * from './components/date-picker';
 export * from './components/input';
 export * from './components/input-tag';
 export * from './components/form';
