@@ -3,6 +3,15 @@ import { ISiderbarConfig } from './sidebar.type';
 export const siderbarConfig: ISiderbarConfig = {
   us: [
     {
+      title: 'Guide',
+      children: [
+        {
+          title: 'quick start',
+          path: '/doc/quick-start',
+        },
+      ],
+    },
+    {
       title: 'General',
       children: [
         {
@@ -110,6 +119,15 @@ export const siderbarConfig: ISiderbarConfig = {
     },
   ],
   zh: [
+    {
+      title: '开发指南',
+      children: [
+        {
+          title: '快速上手',
+          path: '/doc/quick-start',
+        },
+      ],
+    },
     {
       title: '通用',
       children: [

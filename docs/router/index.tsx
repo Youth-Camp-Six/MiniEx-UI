@@ -45,6 +45,9 @@ import DialogUS from '../components-docs/dialogUS.mdx';
 import InputSearchCN from '../components-docs/inputSearchCN.mdx';
 import InputSearchUS from '../components-docs/inputSearchUS.mdx';
 import Flex from '../components-docs/flexCN.mdx';
+import StartCN from '../components-docs/quickstartCN.mdx';
+import StartUS from '../components-docs/quickstartUS.mdx';
+
 import '../i18n';
 import { createHashRouter, Navigate } from 'react-router-dom';
 
@@ -170,6 +173,10 @@ export const router = createHashRouter([
             path: '/en/doc/flex',
             element: <Flex components={components} />,
           },
+          {
+            path: '/en/doc/quick-start',
+            element: <StartUS components={components} />,
+          },
         ],
       },
     ],
@@ -271,6 +278,10 @@ export const router = createHashRouter([
           {
             path: '/zh/doc/flex',
             element: <Flex components={components} />,
+          },
+          {
+            path: '/zh/doc/quick-start',
+            element: <StartCN components={components} />,
           },
         ],
       },

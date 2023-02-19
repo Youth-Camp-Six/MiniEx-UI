@@ -10,6 +10,14 @@ export const Drawer: React.FC<DrawerProps> = (props) => {
   const classes = classNames('mi-drawer', { 'mi-drawer-show': visible });
   const classesContent = classNames('mi-drawer-main', getClass(position as string), className);
 
+  const originalWarn = console.warn;
+  console.warn = function (message) {
+    if (message.startsWith('Warning: findDOMNode is deprecated in StrictMode.')) {
+      return;
+    }
+    originalWarn.apply(console, arguments);
+  };
+
   return (
     <CSSTransition in={visible} timeout={300} classNames={position} unmountOnExit>
       <div className={classes} {...restProps} onClick={onClose} style={style}>
