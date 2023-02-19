@@ -25,3 +25,4 @@ export * from './upload';
 export * from './table';
 export * from './drawer';
 export * from './input-search';
+export * from './dialog';

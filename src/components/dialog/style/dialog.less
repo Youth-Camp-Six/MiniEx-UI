@@ -1,0 +1,184 @@
+.mi-dialogbg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--mi-modal-bgcolor);
+}
+
+.mi-dialog {
+  z-index: 2050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+  .mi-dialog-box {
+    position: relative;
+    z-index: 2051;
+    display: flex;
+    width: 375px;
+    height: auto;
+    padding: 20px;
+    background-color: var(--mi-bgcolor-2);
+    border-radius: var(--mi-border-radius);
+    box-shadow: 0 15px 50px rgba(#000, 0.05);
+    animation-fill-mode: forwards;
+
+    .icon-success {
+      color: var(--mi-success-color-dark);
+    }
+
+    .icon-warning {
+      color: var(--mi-warning-color-dark);
+    }
+
+    .icon-normal {
+      color: var(--mi-normal-color-dark);
+    }
+
+    .icon-info {
+      color: var(--mi-info-color-dark);
+    }
+
+    .icon-error {
+      color: var(--mi-error-color-dark);
+    }
+
+    header {
+      width: 100%;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    main {
+      height: auto;
+      color: var(--mi-text-color-5);
+      font-size: 14px;
+    }
+
+    footer {
+      display: flex;
+      justify-content: end;
+      width: 100%;
+
+      .mi-button {
+        margin-left: 10px;
+      }
+    }
+
+    .btn-close {
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      z-index: 2051;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      width: 25px;
+      height: 25px;
+      color: var(--mi-text-color-5);
+      border-radius: var(--mi-border-radius);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .btn-close:hover {
+      color: var(--mi-text-color-3);
+      background: rgba(#000, 0.05);
+    }
+
+    .btn-close:active {
+      color: var(--mi-text-color-0);
+      background: rgba(#000, 0.15);
+    }
+  }
+
+  .mi-dialog-box-normal {
+    .left {
+      width: 30px;
+      margin-right: 10px;
+    }
+
+    .right {
+      position: relative;
+      top: 5px;
+      width: 310px;
+    }
+
+    main {
+      padding: 10px 0 20px;
+    }
+  }
+
+  .mi-dialog-box-easy {
+    .left {
+      display: flex;
+      margin-right: 10px;
+    }
+
+    .right {
+      position: relative;
+      top: 1px;
+      display: flex;
+      justify-content: space-between;
+      width: 320px;
+
+      main {
+        width: 200px;
+        margin-right: 10px;
+      }
+
+      footer {
+        width: 80px;
+      }
+    }
+  }
+}
+
+.alert-enter {
+  z-index: 2051;
+  transform: scale(0.9);
+  opacity: 0;
+}
+
+.alert-enter-active {
+  z-index: 2051;
+  transform: translateX(0);
+  opacity: 1;
+  transition: opacity 300ms, transform 300ms;
+}
+
+.alert-exit {
+  opacity: 1;
+}
+
+.alert-exit-active {
+  transform: scale(0.9);
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+}
+
+.bg-enter {
+  opacity: 0;
+  // transform: scale(1);
+}
+
+.bg-enter-active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: opacity 300ms, transform 300ms;
+}
+
+.bg-exit {
+  opacity: 1;
+}
+
+.gb-exit-active {
+  opacity: 0;
+  // transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}
