@@ -6,12 +6,11 @@
     "type": "git",
     "url": "https://github.com/Youth-Camp-Six/MiniEx-UI.git"
   },
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "a react ui libiary.",
   "private": false,
   "files": [
-    "packages",
-    "docs/dist"
+    "packages"
   ],
   "main": "packages/miniex-ui.js",
   "scripts": {
