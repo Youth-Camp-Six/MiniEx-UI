@@ -21,7 +21,7 @@ module.exports = {
         },
       },
       {
-        test: /\.c|(le)ss$/,
+        test: /\.less$/,
         use: [
           {
             loader: 'style-loader',
