@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputTag test case1 for direct use 1`] = `
+<div>
+  <div
+    class="mi-input-tag-view"
+  >
+    <div
+      style="margin-left: -10px; height: 26px;"
+    />
+    <div
+      class="mi-tag mi-tag-medium mi-tag-normal"
+      style="max-width: 220px;"
+    >
+      <div
+        class="mi-tag-left"
+      />
+      <div
+        class="mi-tag-value"
+      >
+        美丽
+      </div>
+      <div
+        class="mi-tag-right"
+      />
+      <div
+        class="mi-tag-close"
+      >
+        <svg
+          fill="none"
+          height="14"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="14"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line
+            x1="18"
+            x2="6"
+            y1="6"
+            y2="18"
+          />
+          <line
+            x1="6"
+            x2="18"
+            y1="6"
+            y2="18"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      class="mi-tag mi-tag-medium mi-tag-normal"
+      style="max-width: 220px;"
+    >
+      <div
+        class="mi-tag-left"
+      />
+      <div
+        class="mi-tag-value"
+      >
+        大方
+      </div>
+      <div
+        class="mi-tag-right"
+      />
+      <div
+        class="mi-tag-close"
+      >
+        <svg
+          fill="none"
+          height="14"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="14"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line
+            x1="18"
+            x2="6"
+            y1="6"
+            y2="18"
+          />
+          <line
+            x1="6"
+            x2="18"
+            y1="6"
+            y2="18"
+          />
+        </svg>
+      </div>
+    </div>
+    <label
+      class="mi-input-tag-button"
+    >
+      <svg
+        fill="none"
+        height="16"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="12"
+          x2="12"
+          y1="5"
+          y2="19"
+        />
+        <line
+          x1="5"
+          x2="19"
+          y1="12"
+          y2="12"
+        />
+      </svg>
+    </label>
+  </div>
+</div>
+`;

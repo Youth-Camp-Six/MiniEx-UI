@@ -8,6 +8,7 @@ module.exports = {
   'rules': {
     'selector-type-no-unknown': null,
     'selector-pseudo-class-allowed-list': null,
+    'selector-class-pattern': null,
   },
   ignoreFiles: [
     '**/dist/**',

@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import { render, fireEvent, RenderResult, cleanup } from '@testing-library/react';
+import { render, fireEvent, RenderResult } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { Menu, MenuItem } from '..';
 import { MenuProps } from '../type';
@@ -12,11 +12,6 @@ const menuProps: MenuProps = {
   onSelect: jest.fn(),
   defaultIndex: 0,
   className: 'test',
-};
-
-const verticalMenuProps: MenuProps = {
-  mode: 'vertical',
-  defaultIndex: 0,
 };
 
 const generateMenu = (props) => (
@@ -34,7 +29,7 @@ let wrapper: RenderResult,
   activeElement: HTMLElement,
   disabledElement: HTMLElement;
 
-describe('test button comonent', () => {
+describe('test menu comonent', () => {
   beforeEach(() => {
     wrapper = render(generateMenu(menuProps));
     menuElement = wrapper.getByTestId('test-menu');
@@ -42,8 +37,7 @@ describe('test button comonent', () => {
     disabledElement = wrapper.getByText('disabled item1');
   });
 
-  // 快照测试
-  it('button snapshot test', () => {
+  it('menu snapshot test', () => {
     expect(wrapper.container.firstChild).toMatchSnapshot();
   });
 
@@ -55,7 +49,6 @@ describe('test button comonent', () => {
     expect(disabledElement).toHaveClass('menu-item is-disabled');
   });
 
-  // 点击选中后
   it('active and right callback', () => {
     const thirdItem = wrapper.getByText('item2');
     fireEvent.click(thirdItem);
@@ -65,13 +58,5 @@ describe('test button comonent', () => {
     fireEvent.click(disabledElement);
     expect(disabledElement).not.toHaveClass('is-active');
     expect(menuProps.onSelect).not.toHaveBeenCalledWith(1);
-  });
-
-  // 纵向模式
-  it('vertical mode when mode is set to vertical', () => {
-    cleanup();
-    const wrapper = render(generateMenu(verticalMenuProps));
-    const menuElement = wrapper.getByTestId('test-menu');
-    expect(menuElement).toHaveClass('menu-vertical');
   });
 });

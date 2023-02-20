@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test RadioGroup comonent radio snapshot test 1`] = `
+<DocumentFragment>
+  <div
+    class="mi-flex mi-radio lew-radio-group-x lew-radio-group-medium mi-flex-x mi-flex-x-start mi-flex-y-center"
+    style="gap: 15px;"
+  >
+    <label
+      class="mi-radio 
+    
+    mi-radio-medium
+    
+    "
+      data-testid="radio-0"
+    >
+      <div
+        class="icon-radio-box"
+      >
+        <div
+          class="icon-radio"
+        />
+      </div>
+      <input
+        style="display: none;"
+        type="radio"
+        value=""
+      />
+      <span
+        class="mi-radio-label"
+      >
+         Unknown
+      </span>
+    </label>
+    <label
+      class="mi-radio 
+    mi-radio-checked
+    mi-radio-medium
+    
+    "
+      data-testid="radio-1"
+    >
+      <div
+        class="icon-radio-box"
+      >
+        <div
+          class="icon-radio"
+        />
+      </div>
+      <input
+        checked=""
+        style="display: none;"
+        type="radio"
+        value=""
+      />
+      <span
+        class="mi-radio-label"
+      >
+         man
+      </span>
+    </label>
+    <label
+      class="mi-radio 
+    
+    mi-radio-medium
+    
+    "
+      data-testid="radio-2"
+    >
+      <div
+        class="icon-radio-box"
+      >
+        <div
+          class="icon-radio"
+        />
+      </div>
+      <input
+        style="display: none;"
+        type="radio"
+        value=""
+      />
+      <span
+        class="mi-radio-label"
+      >
+         woman
+      </span>
+    </label>
+  </div>
+</DocumentFragment>
+`;

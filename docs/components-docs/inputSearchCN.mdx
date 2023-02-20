@@ -1,0 +1,73 @@
+import { InputSearch, MiIcon } from '../../src/components';
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
+import InputApp from "./demos/input/inputAppCN";
+
+# Input 输入框
+通过鼠标或键盘输入内容，是最基础的表单域的包装。
+
+## 何时使用
+需要用户输入表单域内容时。
+提供组合型输入框，带搜索的输入框，还可以进行大小选择。
+
+## 展示代码
+<ShowSouceCode
+   element={
+        <InputApp />
+    }
+    code = {
+    `
+import { InputSearch, MiIcon } from 'miniEx';
+import React from 'react';
+
+const suffix = (
+  <MiIcon.Search
+    style={{
+      fontSize: 16,
+      color: '#1890ff',
+    }}
+  />
+);
+
+const onSearch = (value: string) => console.log(value);
+
+const App: React.FC = () => (
+  <InputSearch placeholder="input search text" suffix={suffix} onSearch={onSearch} size={'medium'}></InputSearch>
+  <InputSearch placeholder="input search text" enterButton="搜索" onSearch={onSearch} size={'medium'}></InputSearch>
+  <InputSearch placeholder="small size" suffix={suffix} onSearch={onSearch} size={'small'}></InputSearch>
+  <InputSearch placeholder="medium size" suffix={suffix} onSearch={onSearch} size={'medium'}></InputSearch>
+  <InputSearch placeholder="large size" suffix={suffix} onSearch={onSearch} size={'large'}></InputSearch>
+);
+
+export default App;`
+    }
+/>
+
+## Props
+<PropsShow propsInfo={[
+  {
+    name: 'size',
+    description: '控件大小',
+    type: 'large | medium | small',
+    initValue: 'medium',
+  },
+  {
+    name: 'onSearch',
+    description: '点击搜索图标、清除图标，或按下回车键时的回调',
+    type: 'function(value, e)',
+    initValue: '-',
+  },
+  {
+    name: 'enterButton',
+    description: '是否有确认按钮，可设为按钮文字。该属性会与 suffix 冲突。',
+    type: 'string',
+    initValue: '',
+  },
+  {
+    name: 'suffix',
+    description: '带有后缀图标的 input',
+    type: 'ReactNode',
+    initValue: '-',
+  }
+]} />
+

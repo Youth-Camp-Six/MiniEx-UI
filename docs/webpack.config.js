@@ -2,10 +2,12 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const MkdirPlugin = require('../plugins/mkdir-webpack-plugin');
+// eslint-disable-next-line import/namespace, import/default, import/no-named-as-default, import/no-named-as-default-member
+// import remarkMdxImages from 'remark-mdx-images';
 module.exports = {
   mode: 'production',
-  devtool: 'source-map',
   entry: './docs/index.tsx',
   output: {
     filename: '[name].[contenthash].js',
@@ -17,9 +19,9 @@ module.exports = {
       path: require.resolve('path-browserify'),
       fs: false,
     },
-  },
-  experiments: {
-    topLevelAwait: true,
+    alias: {
+      '@': path.resolve(__dirname),
+    },
   },
   module: {
     rules: [
@@ -37,7 +39,29 @@ module.exports = {
       },
       {
         test: /\.less$/,
-        use: ['style-loader', 'css-loader', 'less-loader', 'postcss-loader'],
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'less-loader',
+            // options: {
+            //   importLoaders: 1,
+            //   modules: {
+            //     localIdentName:
+            //       process.env.NODE_ENV === 'development'
+            //         ? '[path][name]__[local]--[hash:base64]'
+            //         : '[hash:base64]',
+            //   },
+            // },
+          },
+          {
+            loader: 'postcss-loader',
+          },
+        ],
       },
       {
         test: /\.(png|jpg|jpeg|gif)$/i,
@@ -59,7 +83,9 @@ module.exports = {
           {
             loader: '@mdx-js/loader',
             /** @type {import('@mdx-js/loader').Options} */
-            options: {},
+            options: {
+              // remarkPlugins: [remarkMdxImages],
+            },
           },
         ],
       },
@@ -78,17 +104,29 @@ module.exports = {
       template: './docs/index.html',
     }),
     new CleanWebpackPlugin(),
+    // 创建docs/views/dev文件夹, 用于开发组件时测试
+    new MkdirPlugin(),
   ],
+  performance: {
+    hints: false,
+  },
+  cache: {
+    type: 'filesystem',
+    allowCollectingMemory: true,
+  },
   optimization: {
+    runtimeChunk: true,
     moduleIds: 'deterministic',
-    runtimeChunk: 'single',
     concatenateModules: true,
     splitChunks: {
+      chunks: 'all',
       cacheGroups: {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
           chunks: 'all',
+          name: 'vendor',
+          priority: 10,
+          enforce: true,
         },
       },
     },
@@ -103,6 +141,7 @@ module.exports = {
           },
         },
       }),
+      new CssMinimizerPlugin(),
     ],
   },
 };

@@ -1,70 +1,140 @@
-import { Select } from '../../src';
+import { RadioSelect, MultipleSelect } from './demos/select/selectAppCN.tsx';
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
 
 # 选择器
 
-## 展示组件
-
 ### 单选
 
-<Select
-  header={'选择标题'}
-  modelValue={''}
-  options={[
-    {
-      label: '广东',
-      value: '1',
-    },
-    {
-      label: '深圳',
-      value: '2',
-    },
-    {
-      label: '杭州',
-      value: '3',
-    },
-    {
-      label: '上海',
-      value: '4',
-    },
-    {
-      label: '北京',
-      value: '5',
-    },
-  ]}
-></Select>
+<ShowSouceCode
+
+element={<RadioSelect />}
+code={`const header='选择标题'
+const defaultValue1 = '';
+const defaultValue2 = [];
+const options = [
+{
+label: '广东',
+value: '1'
+},
+{
+label: '深圳',
+value: '2',
+},
+{
+label: '杭州',
+value: '3',
+},
+{
+label: '上海',
+value: '4',
+},
+{
+label: '北京',
+value: '5',
+},
+];
+  const handleSelect = (e:Event) => {
+    console.log(e);
+  }
+return <Select header={header} modelValue={defaultValue} options={options}></Select>;` } />
+
 ### 多选
-<Select
-  modelValue={[]}
-  header={'选择标题'}
-  multiple
-  handleChange={() => get}
-  options={[
+
+<ShowSouceCode
+
+element={<MultipleSelect />}
+code={
+`const header='选择标题'
+const defaultValue1 = '';
+const defaultValue2 = [];
+const options = [
+{
+label: '广东',
+value: '1'
+},
+{
+label: '深圳',
+value: '2',
+},
+{
+label: '杭州',
+value: '3',
+},
+{
+label: '上海',
+value: '4',
+},
+{
+label: '北京',
+value: '5',
+},
+];
+
+const handleSelect = (e:Event) => {
+console.log(e);
+}
+
+return <Select
+modelValue={defaultValue2}
+options={options}
+header={header}
+multiple
+handleChange={(e) => handleSelect(e)} ></Select>;
+` } />
+
+## props
+
+<PropsShow
+  propsInfo={[
     {
-      label: '广东',
-      value: '1',
+      name: 'modelValue',
+      description: '显示的值',
+      type: 'string | array',
+      initValue: "''",
     },
     {
-      label: '深圳',
-      value: '2',
+      name: 'handleChange',
+      description: '选择时回掉函数',
+      type: 'function',
+      initValue: '/',
     },
     {
-      label: '杭州',
-      value: '3',
+      name: 'options',
+      description: '选项',
+      type: 'options',
+      initValue: '[]',
     },
     {
-      label: '上海',
-      value: '4',
+      name: 'trigger',
+      description: '触发方式',
+      type: 'click | hover',
+      initValue: 'click',
     },
     {
-      label: '北京',
-      value: '5',
+      name: 'multiple',
+      description: '多选模式',
+      type: 'boolean',
+      initValue: 'false',
     },
   ]}
-></Select>
-## 展示代码
+/>
 
-```js
-const a = 0;
-```
+## options
 
-## API
+<PropsShow
+  propsInfo={[
+    {
+      name: 'label',
+      description: '选项组的标签',
+      type: 'string',
+      initValue: "''",
+    },
+    {
+      name: 'value',
+      description: '值',
+      type: 'string',
+      initValue: "''",
+    },
+  ]}
+/>

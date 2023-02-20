@@ -1,10 +1,8 @@
 import { ReactNode } from 'react';
-type MenuMode = 'horizontal' | 'vertical';
 
 export interface MenuProps {
   defaultIndex?: number;
   className?: string;
-  mode?: MenuMode;
   style?: React.CSSProperties;
   onSelect?: (selectedIndex: number) => void;
   children?: ReactNode;

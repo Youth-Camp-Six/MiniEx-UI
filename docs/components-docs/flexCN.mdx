@@ -1,138 +1,392 @@
 import { Flex } from '../../src';
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
+import { flexrow, flexmode, flexcolumn } from './demos/flex/flex.tsx';
 
-# Flex 弹性布局
+# 弹性布局
 
-通过 flex 布局来进行灵活的对齐。
+## row
 
-## 展示组件
+<ShowSouceCode
+  element={flexrow()}
+  code={`
+        <div>
+      <div className='demo'>
+        <Flex direction='x' x='start' y='start'>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+        </Flex>
+        <Flex direction='x' x='center' y='start'>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+        </Flex>
+        <Flex direction='x' x='end' y='start'>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+        </Flex>
+      </div>
+      <div className='demo'>
+        <Flex direction='x' x='start' y='center'>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+        </Flex>
+        <Flex direction='x' x='center' y='center'>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+        </Flex>
+        <Flex direction='x' x='end' y='center'>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+        </Flex>
+      </div>
+      <div className='demo'>
+        <Flex direction='x' x='start' y='end'>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+        </Flex>
+        <Flex direction='x' x='center' y='end'>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+        </Flex>
+        <Flex direction='x' x='end' y='end'>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+        </Flex>
+      </div>
+    </div>
 
-_row_
+    less
+    .demo {
 
-<div>
-  <div class='demo'>
-    <Flex direction={'x'} x={'start'} y={'start'} gap={20}>
-      <div class='box'>
-        <div>1</div>
-      </div>
-      <div class='box'>
-        <div>1</div>
-      </div>
-      <div class='box'>
-        <div>1</div>
-      </div>
-    </Flex>
-    <Flex direction={'x'} x={'center'} y={'start'} gap={20}>
-      <div class='box'>
-        <div>1</div>
-      </div>
-      <div class='box'>
-        <div>1</div>
-      </div>
-      <div class='box'>
-        <div>1</div>
-      </div>
-    </Flex>
-    <Flex direction={'x'} x={'end'} y={'start'} gap={20}>
-      <div class='box'>
-        <div>1</div>
-      </div>
-      <div class='box'>
-        <div>1</div>
-      </div>
-      <div class='box'>
-        <div>1</div>
-      </div>
-    </Flex>
-  </div>
-  <div class='demo'>
-    <Flex direction={'x'} x={'start'} y={'center'} gap={20}>
-      <div class='box'>
-        <div>1</div>
-      </div>
-      <div class='box'>
-        <div>1</div>
-      </div>
-      <div class='box'>
-        <div>1</div>
-      </div>
-    </Flex>
-    <Flex direction={'x'} x={'center'} y={'center'} gap={20}>
-      <div class='box'>
-        <div>1</div>
-      </div>
-      <div class='box'>
-        <div>1</div>
-      </div>
-      <div class='box'>
-        <div>1</div>
-      </div>
-    </Flex>
-    <Flex direction={'x'} x={'end'} y={'center'} gap={20}>
-      <div class='box'>
-        <div>1</div>
-      </div>
-      <div class='box'>
-        <div>1</div>
-      </div>
-      <div class='box'>
-        <div>1</div>
-      </div>
-    </Flex>
-  </div>
-  <div class='demo'>
-    <Flex direction={'x'} x={'start'} y={'end'} gap={20}>
-      <div class='box'>
-        <div>1</div>
-      </div>
-      <div class='box'>
-        <div>1</div>
-      </div>
-      <div class='box'>
-        <div>1</div>
-      </div>
-    </Flex>
-    <Flex direction={'x'} x={'center'} y={'end'} gap={20}>
-      <div class='box'>
-        <div>1</div>
-      </div>
-      <div class='box'>
-        <div>1</div>
-      </div>
-      <div class='box'>
-        <div>1</div>
-      </div>
-    </Flex>
-    <Flex direction={'x'} x={'end'} y={'end'} gap={20}>
-      <div class='box'>
-        <div>1</div>
-      </div>
-      <div class='box'>
-        <div>1</div>
-      </div>
-      <div class='box'>
-        <div>1</div>
-      </div>
-    </Flex>
-  </div>
-</div>
-## 展示代码
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.mi-flex {
+border: 1px var(--mi-bgcolor-2) solid;
+border-radius: var(--mi-border-radius);
+background-color: var(--mi-bgcolor-1);
+margin-bottom: 20px;
+width: 200px;
+height: 200px;
+padding: 5px;
+box-sizing: border-box;
+margin: 10px;
+.box {
+box-sizing: border-box; > div {
+display: inline-block;
+padding: 10px;
+font-size: 14px;
+border-radius: var(--mi-border-radius);
+background-color: var(--mi-primary-color);
+}
+}
+}
+`
+}
+/>
 
-```code
-<SyntaxHighlighter
-           language="json"         //你需要的类型，比如url、JavaScript等
-           style={darcula}         //这个就是你代码高亮的样式，颜色类的
-           showLineNumbers={true}  //这个是显示不显示左侧的行数
-           lineNumberStyle={{color: '#ddd', fontSize: 20}}     //这个是行数的样式
-           wrapLines={true}        //确定每行代码是否应该包装在父元素中
->
-           {sItem.code}          //代码块儿内容
-</SyntaxHighlighter>
-```
+## column
 
-## API
+<ShowSouceCode
+  element={flexcolumn()}
+  code={`
+           <div>
+      <div className='demo'>
+        <Flex direction='y' x='start' y='start'>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+        </Flex>
+        <Flex direction='y' x='center' y='start'>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+        </Flex>
+        <Flex direction='y' x='end' y='start'>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+        </Flex>
+      </div>
+      <div className='demo'>
+        <Flex direction='y' x='start' y='center'>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+        </Flex>
+        <Flex direction='y' x='center' y='center'>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+        </Flex>
+        <Flex direction='y' x='end' y='center'>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+        </Flex>
+      </div>
+      <div className='demo'>
+        <Flex direction='y' x='start' y='end'>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+        </Flex>
+        <Flex direction='y' x='center' y='end'>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+        </Flex>
+        <Flex direction='y' x='end' y='end'>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+        </Flex>
+      </div>
+    </div>
+    `}
+/>
 
-| 参数名    | 描述         | 类型                 | 默认值 |
-| --------- | ------------ | -------------------- | ------ |
-| direction | 排列方向     | x \| y               | x      |
-| x         | 横向对齐方向 | start \|center \|end | center |
+## flexmode
 
+<ShowSouceCode
+  element={flexmode()}
+  code={` <div>
+      <div className='demo'>
+        <Flex direction='x' x='start' y='center' mode='between'>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+        </Flex>
+        <Flex direction='x' x='center' y='center' mode='around'>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+        </Flex>
+        <Flex direction='x' x='center' y='center'>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+        </Flex>
+      </div>
+      <div className='demo'>
+        <Flex direction='y' x='start' y='center' mode='between'>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+        </Flex>
+        <Flex direction='y' x='center' y='center' mode='around'>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+        </Flex>
+        <Flex direction='y' x='center' y='center'>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+          <div className='box'>
+            <div></div>
+          </div>
+        </Flex>
+      </div>
+    </div> `}
+/>
+
+## Props
+
+<PropsShow
+  propsInfo={[
+    {
+      name: 'direction',
+      description: '排列方向',
+      type: 'x | y',
+      initValue: 'x',
+    },
+    {
+      name: 'x',
+      description: '横向对齐方向',
+      type: 'start | center | end',
+      initValue: 'center',
+    },
+    {
+      name: 'y',
+      description: '垂直对齐方向',
+      type: 'start | center | end',
+      initValue: 'center',
+    },
+    {
+      name: 'mode',
+      description: '排序模式，这是个可选项，定义之后会干扰x或y的对齐方向，这取决于你的direction。',
+      type: 'between | around',
+      initValue: '/',
+    },
+    {
+      name: 'wrap',
+      description: '让元素在必要的时候换行',
+      type: 'boolean',
+      initValue: 'false',
+    },
+    {
+      name: 'gap',
+      description: '元素之间的空隙',
+      type: 'number',
+      initValue: '10',
+    },
+    {
+      name: 'width',
+      description: '父元素宽度',
+      type: 'string',
+      initValue: '',
+    },
+  ]}
+/>

@@ -21,8 +21,7 @@ const disabledProps: ButtonProps = {
   onClick: jest.fn(),
 };
 
-describe('test button comonent', () => {
-  // 快照测试
+describe('test button component', () => {
   it('button snapshot test', () => {
     const wrapper = render(
       <div>

@@ -1,9 +1,20 @@
+<p align="center">
+  <a href="https://github.com/Youth-Camp-Six/MiniEx-UI">
+    <img width="200" src="https://s2.loli.net/2023/02/20/XcSyCj8bsR2nU6A.png">
+  </a>
+</p>
+
+<h1 align="center">MinEx UI</h1>
+
+<div align="center">
+
 ![NPM](https://img.shields.io/npm/l/miniex-ui)
 ![issues](https://img.shields.io/github/issues/Youth-Camp-Six/MiniEx-UI)
 [![GitHub forks](https://img.shields.io/github/forks/Youth-Camp-Six/MiniEx-UI)](https://github.com/Youth-Camp-Six/MiniEx-UI/network)
 [![GitHub stars](https://img.shields.io/github/stars/Youth-Camp-Six/MiniEx-UI)](https://github.com/Youth-Camp-Six/MiniEx-UI/stargazers)
-![Vsersion](https://img.shields.io/badge/npm-1.0.3-green)
+![Vsersion](https://img.shields.io/badge/npm-1.1.0-blueviolet)
 
+</div>
 # MiniEx-UI
 
 ## 概述

@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { SwitchProps } from './type';
 
 export const Switch: React.FC<SwitchProps> = (props) => {
-  const { className, modelValue, round, request, disabled, loading,change, ...restProps } = props;
+  const { className, modelValue, round, request, disabled, loading,handleChange, ...restProps } = props;
 
   const [_modelValue, set_modelValue] = React.useState(false);
   const [_loading, set_loading] = React.useState(false);
@@ -39,9 +39,9 @@ const handleClick = async (e: any) => {
       set_modelValue(!_modelValue)
   }
   set_modelValue(!_modelValue);
-  (change as any)();
+  (handleChange as any)(e);
     // emit('update:modelValue', v.value);
-    // emit('change', v.value);
+    // emit('handleChange', v.value);
 };
   return (
     <div className={classes} {...restProps} onClick={handleClick}>

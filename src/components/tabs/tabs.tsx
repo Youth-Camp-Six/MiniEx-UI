@@ -3,14 +3,26 @@ import classNames from 'classnames';
 import { TabsProps } from './type';
 
 export const Tabs: React.FC<TabsProps> = (props) => {
-  const { className, modelvalue, options, width, itemWidth, round, change, type, ...restProps } =
-    props;
+  const {
+    className,
+    modelvalue,
+    options,
+    width,
+    itemWidth,
+    itemHeight,
+    round,
+    style,
+    change,
+    type,
+    ...restProps
+  } = props;
 
   const classes = classNames('mi-tabs', className, {
     [`mi-tabs-${type}`]: type,
-    [`mi-badge-${round}`]: round,
+    [`mi-tabs-${round}`]: round,
   });
 
+  const TabsStyle = { ...style, ...{ width: `${width}` } };
   const [activeWidth, setactiveWidth] = useState('');
   const [activetranslateX, setactivetranslateX] = useState('');
   const [v, setactiveV] = useState(modelvalue);
@@ -67,7 +79,7 @@ export const Tabs: React.FC<TabsProps> = (props) => {
     //eslint-disable-next-line
   }, []);
   return (
-    <div className={classes} style={{ width: `${width}` }} {...restProps}>
+    <div className={classes} style={TabsStyle} {...restProps}>
       <div
         className='mi-tabs-item-animation-active'
         style={{ width: `${activeWidth}px`, transform: `translateX(${activetranslateX}px)` }}
@@ -77,7 +89,7 @@ export const Tabs: React.FC<TabsProps> = (props) => {
           <div
             key={item.value}
             className={`mi-tabs-item ${v == item.value ? 'mi-tabs-item-active' : ''}`}
-            style={{ width: `${itemWidth}` }}
+            style={{ width: `${itemWidth}`, height: `${itemHeight}` }}
             ref={(el) => {
               itemRef.push(el);
             }}

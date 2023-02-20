@@ -1,26 +1,63 @@
-import { Menu, MenuItem } from '../../src';
+import { Menu, MenuItem } from '../../src/components';
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
 
 # Menu
+## Basic
+<ShowSouceCode
+  element={
+    <div className='Menu' style={{ width: '200px' }}>
+      <Menu defaultIndex={1}>
+        <MenuItem index={1}>element 1</MenuItem>
+        <MenuItem index={2}>element 2</MenuItem>
+        <MenuItem index={3}>element 3</MenuItem>
+        <MenuItem disabled>element 4</MenuItem>
+        <MenuItem index={4}>element 5</MenuItem>
+      </Menu>
+    </div>
+  }
 
-## Show Components
-
-<Menu mode='horizontal'>
-  <MenuItem index={1}>item1</MenuItem>
-  <MenuItem index={2} disabled>
-    item2
-  </MenuItem>
-  <MenuItem index={3}>item3</MenuItem>
+  code={
+    `
+<Menu defaultIndex={1}>
+  <MenuItem index={1}>Item 1</MenuItem>
+  <MenuItem index={2}>Item 2</MenuItem>
+  <MenuItem index={3}>Item 3</MenuItem>
+  <MenuItem disabled>Item 4 (disabled)</MenuItem>
+  <MenuItem index={4}>Item 5</MenuItem>
 </Menu>
-<Menu mode='vertical'>
-  <MenuItem index={1}>item1</MenuItem>
-  <MenuItem index={2}>item2</MenuItem>
-  <MenuItem index={3}>item3</MenuItem>
-</Menu>
+    `
+  }
+/>
 
-## Show Code
+## Menu Props
+<PropsShow propsInfo={[
+  {
+    name: 'defaultIndex',
+    description: 'The index of the item to be displayed by default',
+    type: 'number',
+    initValue: '0',
+  },
+  {
+    name: 'onSelect',
+    description: 'Callback function when an item is selected',
+    type: '(selectedIndex: number) => void',
+    initValue: '/',
+  },
+]} />
 
-```js
-const a = 0;
-```
-
-## API
+## MenuItem Props
+<PropsShow propsInfo={[
+  {
+    name: 'index',
+    description: 'The index of the item',
+    type: 'number',
+    initValue: '/',
+  },
+  {
+    name: 'disabled',
+    description: 'Whether the item is disabled',
+    type: 'boolean',
+    initValue: 'false',
+  },
+]} />

@@ -1,19 +1,45 @@
-import { Title } from '../../src';
+import { Title } from '../../src/components';
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
 
 # Title
 
-## Show Components
+<ShowSouceCode element={
+    <Title size='s'>Title component s</Title>
+  }
+  code={`<Title size='s'>Title component s</Title>`}
+/>
 
-<Title size='s'>Title component s</Title>
-<Title size='l'>Title component l</Title>
-<Title size='m'>Title component m</Title>
-<Title size='xl'>Title component xl</Title>
-<Title size='xxl'>Title component xxl</Title>
+<ShowSouceCode element={
+    <Title size='m'>Title component m</Title>
+  }
+  code={`<Title size='m'>Title component m</Title>`}
+/>
 
-## Show Code
+<ShowSouceCode element={
+    <Title size='l'>Title component l</Title>
+  }
+  code={`<Title size='l'>Title component l</Title>`}
+/>
 
-```js
-const a = 0;
-```
+<ShowSouceCode element={
+    <Title size='xl'>Title component xl</Title>
+  }
+  code={`<Title size='xl'>Title component xl</Title>`}
+/>
 
-## API
+<ShowSouceCode element={
+    <Title size='xxl'>Title component xxl</Title>
+  }
+  code={`<Title size='xxl'>Title component xxl</Title>`}
+/>
+
+## Props
+<PropsShow propsInfo={[
+  {
+    name: 'size',
+    description: 'title font size',
+    type: 's | m | l | xl | xxl',
+    initValue: 'm',
+  }
+]} />

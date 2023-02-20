@@ -3,7 +3,7 @@ export interface SwitchProps {
   loading?: boolean;
   disabled?: boolean;
   request?: (e: any) => void;
-  change?: () => void;
+  handleChange?: () => void;
   round?: boolean;
   className?: string;
 }

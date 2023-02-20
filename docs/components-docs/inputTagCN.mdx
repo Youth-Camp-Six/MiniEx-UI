@@ -1,0 +1,29 @@
+import { InputTag } from '../../src';
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
+
+
+# 标签输入框
+
+<ShowSouceCode
+  element={
+    <InputTag modelvalue={['英俊','帅气']}></InputTag>
+  }
+  code={`<InputTag modelvalue={['英俊','帅气']}></InputTag>`}
+  />
+
+## Props
+<PropsShow propsInfo={[
+  {
+    name: 'modelvalue',
+    description: '绑定值',
+    type: 'Array',
+    initValue: '[美丽,大方]',
+  },
+  {
+    name: 'type',
+    description: '类型(参考Tag 标签)',
+    type: 'String',
+    initValue: 'normal',
+  },
+]} />

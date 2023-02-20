@@ -4,7 +4,7 @@ import { TitleProps } from './type';
 
 const sizeMap = {
   s: '14px',
-  m: '16px',  
+  m: '16px',
   l: '18px',
   xl: '24px',
   xxl: '32px',

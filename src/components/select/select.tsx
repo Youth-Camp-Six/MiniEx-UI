@@ -19,6 +19,7 @@ export const Select: React.FC<selectProps> = (props) => {
     header,
     footer,
     label,
+    handleSelect,
     ...restProps
   } = props;
   const [v, setV] = React.useState('');
@@ -74,19 +75,21 @@ export const Select: React.FC<selectProps> = (props) => {
     if (_modelValue instanceof Array) {
         let updatedValue = [..._modelValue];
         if (isChecked) {
-            updatedValue.push(item.value);
+          updatedValue.push(item.value);
+          (handleSelect as any)(item);
+
         } else {
             updatedValue.splice(updatedValue.indexOf(item.value), 1);
       }
-      set_modelValue(updatedValue as any)
+      set_modelValue(updatedValue as any);
+
     } else {
       if (v != item.value) {
         setLabelStr(item.label);
-
-        setV(item.value)
-
+        setV(item.value);
         }
-      set_modelValue(item.value as any)
+      set_modelValue(item.value as any);
+      (handleSelect as any)(item);
     }
   };
   const getChecked = (_value: string) => {
@@ -103,14 +106,14 @@ export const Select: React.FC<selectProps> = (props) => {
     })
     setMultipleLabelStr([...labelStrArr]);
     set_modelValue([...VArr] as [string, Array<string>])
-    console.log(multipleLabelStr);
+    // console.log(multipleLabelStr);
 };
   const MultipleBody = (arr: string[]) => {
     return (
       <Flex wrap gap={5} x={'start'} className='mi-isSelect-label-box'>
         {arr.map((item, index) => {
           return (
-            <Tag key={index} type='primary' closable close={()=>delTag(index)} size={size}>
+            <Tag key={index} type='primary' closable handleClick={()=>delTag(index)} size={size}>
               {item}
             </Tag>
           );
@@ -193,7 +196,7 @@ export const Select: React.FC<selectProps> = (props) => {
         ) : (
           <div className='mi-select-label-multiple'>
             {multipleLabelStr.length > 0 ? (
-              <Tag type='primary' size={size} closable={true} close={()=>delTag(0)}>
+              <Tag type='primary' size={size} closable={true} handleClick={()=>delTag(0)}>
                 {multipleLabelStr[0]}
               </Tag>
             ) : null}

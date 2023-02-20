@@ -22,3 +22,49 @@ exports[`test button comonent button snapshot test 1`] = `
   </li>
 </ul>
 `;
+
+exports[`test button comonent menu snapshot test 1`] = `
+<ul
+  class="menu test"
+  data-testid="test-menu"
+>
+  <li
+    class="menu-item is-active"
+  >
+    actived item0
+  </li>
+  <li
+    class="menu-item is-disabled"
+  >
+    disabled item1
+  </li>
+  <li
+    class="menu-item"
+  >
+    item2
+  </li>
+</ul>
+`;
+
+exports[`test menu comonent menu snapshot test 1`] = `
+<ul
+  class="menu test"
+  data-testid="test-menu"
+>
+  <li
+    class="menu-item is-active"
+  >
+    actived item0
+  </li>
+  <li
+    class="menu-item is-disabled"
+  >
+    disabled item1
+  </li>
+  <li
+    class="menu-item"
+  >
+    item2
+  </li>
+</ul>
+`;

@@ -19,4 +19,6 @@ export interface selectProps {
   header?: ReactNode;
   footer?: ReactNode;
   label?: ReactNode;
+  placeholder?: string;
+  handleSelect?:(e)=>void
 }

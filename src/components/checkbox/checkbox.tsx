@@ -49,13 +49,13 @@ export const Checkbox: React.FC<CheckboxProps> = (props) => {
 };
 
 Checkbox.defaultProps = {
-    label: '',
-    block: false,
-    iconable: true,
-    size: 'medium',
-    round: false,
-    disabled: false,
-    checked: false,
+  label: '',
+  block: false,
+  iconable: true,
+  size: 'medium',
+  round: false,
+  disabled: false,
+  checked: false,
 };
 
 export default memo(Checkbox);

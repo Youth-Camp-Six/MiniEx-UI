@@ -28,9 +28,6 @@ module.exports = {
           },
           {
             loader: 'css-loader',
-            options: {
-              modules: true,
-            },
           },
           {
             loader: 'less-loader',
@@ -39,6 +36,10 @@ module.exports = {
             loader: 'postcss-loader',
           },
         ],
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
     ],
   },

@@ -24,12 +24,11 @@
     "baseUrl": ".",
   },
   "include": [
-    "src", "./src/jest-setup.ts",
-  ],
+    "./src/jest-setup.ts", "./docs/global.d.ts"],
   "exclude": [
     "**/node_modules/",
     "**/dist/",
     "**/build/",
   ],
-  "typeRoots": ["./node_modules/@types", "./docs/.d.ts"]
+  "typeRoots": ["./node_modules/@types"]
 }

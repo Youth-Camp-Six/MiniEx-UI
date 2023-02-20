@@ -1,4 +1,4 @@
-import Dropdown from './dropdown'
+import Dropdown from './dropdown';
 
-export * from './type'
-export { Dropdown }
+export * from './type';
+export { Dropdown };

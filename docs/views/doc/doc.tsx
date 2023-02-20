@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import Siderbar from '../../layout/siderbar/siderbar';
-import { siderbarConfig } from './doc.config';
+import { siderbarConfig } from '../../layout/siderbar/sidebar.config';
 import cls from './doc.module.less';
 
 const Doc: React.FC = () => {
