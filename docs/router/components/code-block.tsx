@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import Highlight, { defaultProps, PrismTheme } from 'prism-react-renderer';
 import vsDark from 'prism-react-renderer/themes/vsDark';
+import { useTranslation } from 'react-i18next';
 
 import cls from '../../components-docs/components/show-source-code/index.module.less';
 
 const CodeBlock = ({ children, className }) => {
   const language = className.replace(/language-/, '');
   const [copied, setCopied] = useState<boolean>(false);
+  const { t } = useTranslation(['doc']);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(children.trim());
@@ -46,7 +48,7 @@ const CodeBlock = ({ children, className }) => {
         )}
       </Highlight>
       <button className={`${cls.copyButton} ${copied ? 'copied' : ''}`} onClick={handleCopy}>
-        {copied ? 'Copied!' : 'Copy'}
+        {copied ? t('Copied', { ns: ['doc'] }) : t('Copy', { ns: ['doc'] })}
       </button>
     </div>
   );

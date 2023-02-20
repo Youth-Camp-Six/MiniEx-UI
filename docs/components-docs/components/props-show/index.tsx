@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { useTranslation } from 'react-i18next';
 import cls from './index.module.less';
 
 type PropsItem = {
@@ -22,13 +22,15 @@ const heightLightColumnLine = (type: string): string => {
 
 const PropShow: React.FC<IPropShowProps> = (props) => {
   const { propsInfo } = props;
+  const { t } = useTranslation(['doc']);
+
   return (
     <div className={cls.propShowContainer}>
       <div className={cls.tableTitle}>
-        <div className={cls.name}>参数名</div>
-        <div className={cls.description}>描述</div>
-        <div className={cls.type}>类型</div>
-        <div className={cls.initValue}>默认值</div>
+        <div className={cls.name}>{t('Param', { ns: ['doc'] })}</div>
+        <div className={cls.description}>{t('Description', { ns: ['doc'] })}</div>
+        <div className={cls.type}>{t('Type', { ns: ['doc'] })}</div>
+        <div className={cls.initValue}>{t('Default', { ns: ['doc'] })}</div>
       </div>
       {propsInfo?.map((item) => (
         <div className={cls.item} key={item.name}>

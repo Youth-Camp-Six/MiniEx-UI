@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import CodeBlock from '../../../router/components/code-block';
-
+import { useTranslation } from 'react-i18next';
 import cls from './index.module.less';
 
 interface IShowSourceProps {
@@ -22,6 +22,8 @@ interface IShowSourceProps {
 const ShowSourceCode: React.FC<IShowSourceProps> = (props) => {
   const { element, code, language = 'tsx' } = props;
   const [isShowCode, setIsShowCode] = useState(false);
+  const { t } = useTranslation(['doc']);
+
   return (
     <div className={cls.sourceCodeContainer}>
       <div className={cls.elementShow}>{element}</div>
@@ -33,7 +35,7 @@ const ShowSourceCode: React.FC<IShowSourceProps> = (props) => {
             setIsShowCode((pre) => !pre);
           }}
         >
-          展示源码
+          {t('showCode', { ns: ['doc'] })}
         </div>
       )}
       {isShowCode && (
@@ -47,7 +49,7 @@ const ShowSourceCode: React.FC<IShowSourceProps> = (props) => {
               setIsShowCode((pre) => !pre);
             }}
           >
-            隐藏源码
+            {t('hideCode', { ns: ['doc'] })}
           </div>
         </>
       )}
