@@ -1,3 +1,11 @@
+<p align="center">
+  <a href="https://github.com/Youth-Camp-Six/MiniEx-UI">
+    <img width="200" src="https://s2.loli.net/2023/02/20/XcSyCj8bsR2nU6A.png">
+  </a>
+</p>
+
+<h1 align="center">MinEx UI</h1>
+
 ![NPM](https://img.shields.io/npm/l/miniex-ui)
 ![issues](https://img.shields.io/github/issues/Youth-Camp-Six/MiniEx-UI)
 [![GitHub forks](https://img.shields.io/github/forks/Youth-Camp-Six/MiniEx-UI)](https://github.com/Youth-Camp-Six/MiniEx-UI/network)
