@@ -1,0 +1,193 @@
+import { Dialog } from '../../src';
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
+import {DialogCN} from './demos/dialog/dialog.tsx'
+
+# 对话框
+
+<ShowSouceCode
+  element={DialogCN()}
+  code={`const [visible, setvisible] = useState(false);
+  const onClose = () => {
+    setvisible(false);
+  };
+  const [showToast1, setShowToast1] = useState(false);
+  const [type, setType] = useState('normal');
+  const [layout, setLayout] = useState('normal');
+  const open = (type: string, layout?: string) => {
+    setvisible(true);
+    setType(type);
+    layout && setLayout(layout);
+  };
+  return (
+    <>
+      <Dialog
+        onClose={onClose}
+        visible={visible}
+        title='删除确认'
+        content='你是否要删除该账号'
+        type={type}
+        layout={layout}
+        ok={() => {
+          onClose();
+          setTimeout(() => {
+            setShowToast1(true);
+          }, 500);
+        }}
+      ></Dialog>
+      {showToast1 && (
+        <Toast
+          title=''
+          message='删除成功'
+          onClose={() => setShowToast1(false)}
+          timeout={1000}
+          position='top-right'
+          style='success'
+        />
+      )}
+      <Flex direction='y' x='start'>
+        常规
+        <Flex x='start'>
+          <Button
+            onClick={() => {
+              open('normal', 'normal');
+            }}
+          >
+            normal
+          </Button>
+
+          <Button
+            onClick={() => {
+              open('success', 'normal');
+            }}
+            btnType='primary'
+            style={{ background: '#31c48d', borderColor: '#31c48d' }}
+          >
+            success
+          </Button>
+
+          <Button
+            onClick={() => {
+              open('info', 'normal');
+            }}
+            btnType='primary'
+          >
+            info
+          </Button>
+
+          <Button
+            onClick={() => {
+              open('warning', 'normal');
+            }}
+            btnType='primary'
+            style={{ background: '#e3b344', borderColor: '#e3b344' }}
+          >
+            warning
+          </Button>
+
+          <Button
+            onClick={() => {
+              open('error', 'normal');
+            }}
+            btnType='danger'
+          >
+            error
+          </Button>
+        </Flex>
+        简单的
+        <Flex x='start'>
+          <Button
+            onClick={() => {
+              open('normal', 'easy');
+            }}
+          >
+            normal
+          </Button>
+
+          <Button
+            onClick={() => {
+              open('success', 'easy');
+            }}
+            btnType='primary'
+            style={{ background: '#31c48d', borderColor: '#31c48d' }}
+          >
+            success
+          </Button>
+
+          <Button
+            onClick={() => {
+              open('info', 'easy');
+            }}
+            btnType='primary'
+          >
+            info
+          </Button>
+
+          <Button
+            onClick={() => {
+              open('warning', 'easy');
+            }}
+            btnType='primary'
+            style={{ background: '#e3b344', borderColor: '#e3b344' }}
+          >
+            warning
+          </Button>
+
+          <Button
+            onClick={() => {
+              open('error', 'easy');
+            }}
+            btnType='danger'
+          >
+            error
+          </Button>
+        </Flex>
+      </Flex>
+    </>`}
+  />
+
+## Props
+<PropsShow propsInfo={[
+  {
+    name: 'content',
+    description: '内容',
+    type: 'ReactNode',
+    initValue: '/',
+  },
+  {
+    name: 'title',
+    description: '标题',
+    type: 'ReactNode',
+    initValue: '/',
+  },
+  {
+    name: 'type',
+    description: 'success | warning | info | error | normal',
+    type: 'string',
+    initValue: 'normal',
+  },
+  {
+    name: 'layout',
+    description: '展示模式',
+    type: 'normal | easy',
+    initValue: 'normal',
+  },
+  {
+    name: 'visible',
+    description: '是否展示',
+    type: 'boolean',
+    initValue: 'false',
+  },
+  {
+    name: 'onClose',
+    description: '关闭展示函数',
+    type: '(e: any) => void',
+    initValue: '/',
+  },
+    {
+    name: 'ok',
+    description: '确认按钮点击函数',
+    type: '(e: any) => void',
+    initValue: '/',
+  },
+]} />

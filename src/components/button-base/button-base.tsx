@@ -12,8 +12,9 @@ export type BaseButtonProps = {
   children?: React.ReactNode;
   enterButton?: string;
 };
-// const ButtonBase = React.forwardRef<HTMLDivElement, BaseButtonProps>((props, ref) => {
-const ButtonBase = React.forwardRef<HTMLDivElement, BaseButtonProps>((props) => {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const ButtonBase = React.forwardRef<HTMLDivElement, BaseButtonProps>((props, ref) => {
+  // const ButtonBase = React.forwardRef<HTMLDivElement, BaseButtonProps>((props) => {
   // const { loading = false, icon, disabled: customDisabled, className, enterButton, ...rest } = props;
   const {
     loading = false,

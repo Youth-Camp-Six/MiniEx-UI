@@ -1,39 +1,63 @@
 import { Menu, MenuItem } from '../../src/components';
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
 
 # Menu
-<div className='Menu' style={{ width: '200px' }}>
-  <Menu defaultIndex={1}>
-    <MenuItem index={1}>item1</MenuItem>
-    <MenuItem index={2}>item2</MenuItem>
-    <MenuItem index={3}>item3</MenuItem>
-    <MenuItem disabled>item4</MenuItem>
-    <MenuItem index={4}>item5</MenuItem>
-  </Menu>
-</div>
+## Basic
+<ShowSouceCode
+  element={
+    <div className='Menu' style={{ width: '200px' }}>
+      <Menu defaultIndex={1}>
+        <MenuItem index={1}>element 1</MenuItem>
+        <MenuItem index={2}>element 2</MenuItem>
+        <MenuItem index={3}>element 3</MenuItem>
+        <MenuItem disabled>element 4</MenuItem>
+        <MenuItem index={4}>element 5</MenuItem>
+      </Menu>
+    </div>
+  }
 
-## Code
+  code={
+    `
+<Menu defaultIndex={1}>
+  <MenuItem index={1}>Item 1</MenuItem>
+  <MenuItem index={2}>Item 2</MenuItem>
+  <MenuItem index={3}>Item 3</MenuItem>
+  <MenuItem disabled>Item 4 (disabled)</MenuItem>
+  <MenuItem index={4}>Item 5</MenuItem>
+</Menu>
+    `
+  }
+/>
 
-```ts
-import React from 'react';
-import { Button, Space } from 'antd';
+## Menu Props
+<PropsShow propsInfo={[
+  {
+    name: 'defaultIndex',
+    description: 'The index of the item to be displayed by default',
+    type: 'number',
+    initValue: '0',
+  },
+  {
+    name: 'onSelect',
+    description: 'Callback function when an item is selected',
+    type: '(selectedIndex: number) => void',
+    initValue: '/',
+  },
+]} />
 
-const handleSelect = (index: number) => {
-  console.log(index);
-};
-
-const App: React.FC = () => (
-  <div style={{ width: '200px' }}>
-    <Menu onSelect={handleSelect} defaultIndex={1}>
-      <MenuItem index={1}>item1</MenuItem>
-      <MenuItem index={2}>item2</MenuItem>
-      <MenuItem index={3}>item3</MenuItem>
-      <MenuItem disabled>item4 disabled</MenuItem>
-      <MenuItem index={4}>item5</MenuItem>
-    </Menu>
-  </div>
-);
-
-export default memo(App);
-```
-
-## API
+## MenuItem Props
+<PropsShow propsInfo={[
+  {
+    name: 'index',
+    description: 'The index of the item',
+    type: 'number',
+    initValue: '/',
+  },
+  {
+    name: 'disabled',
+    description: 'Whether the item is disabled',
+    type: 'boolean',
+    initValue: 'false',
+  },
+]} />

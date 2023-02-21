@@ -3,6 +3,15 @@ import { ISiderbarConfig } from './sidebar.type';
 export const siderbarConfig: ISiderbarConfig = {
   us: [
     {
+      title: 'Guide',
+      children: [
+        {
+          title: 'quick start',
+          path: '/doc/quick-start',
+        },
+      ],
+    },
+    {
       title: 'General',
       children: [
         {
@@ -17,7 +26,12 @@ export const siderbarConfig: ISiderbarConfig = {
     },
     {
       title: 'Layout',
-      children: [],
+      children: [
+        {
+          title: 'Flex',
+          path: '/doc/flex',
+        },
+      ],
     },
     {
       title: 'Navigation',
@@ -44,6 +58,14 @@ export const siderbarConfig: ISiderbarConfig = {
       title: 'Data Entry',
       children: [
         {
+          title: 'Form',
+          path: '/doc/form',
+        },
+        {
+          title: 'FormPro',
+          path: '/doc/formpro',
+        },
+        {
           title: 'Input',
           path: '/doc/input',
         },
@@ -52,8 +74,20 @@ export const siderbarConfig: ISiderbarConfig = {
           path: '/doc/radio',
         },
         {
+          title: 'Checkbox',
+          path: '/doc/checkbox',
+        },
+        {
+          title: 'Select',
+          path: '/doc/select',
+        },
+        {
           title: 'InputTag',
           path: '/doc/inputTag',
+        },
+        {
+          title: 'Switch',
+          path: '/doc/switch',
         },
       ],
     },
@@ -78,6 +112,14 @@ export const siderbarConfig: ISiderbarConfig = {
       title: 'Feedback',
       children: [
         {
+          title: 'Drawer',
+          path: '/doc/drawer',
+        },
+        {
+          title: 'Dialog',
+          path: '/doc/dialog',
+        },
+        {
           title: 'Toast',
           path: '/doc/toast',
         },
@@ -85,6 +127,15 @@ export const siderbarConfig: ISiderbarConfig = {
     },
   ],
   zh: [
+    {
+      title: '开发指南',
+      children: [
+        {
+          title: '快速上手',
+          path: '/doc/quick-start',
+        },
+      ],
+    },
     {
       title: '通用',
       children: [
@@ -100,7 +151,12 @@ export const siderbarConfig: ISiderbarConfig = {
     },
     {
       title: '布局',
-      children: [],
+      children: [
+        {
+          title: 'Flex 弹性布局',
+          path: '/doc/flex',
+        },
+      ],
     },
     {
       title: '导航',
@@ -127,6 +183,14 @@ export const siderbarConfig: ISiderbarConfig = {
       title: '数据录入',
       children: [
         {
+          title: 'Form 表单',
+          path: '/doc/form',
+        },
+        {
+          title: 'FormPro 高级表单',
+          path: '/doc/formpro',
+        },
+        {
           title: 'Input 输入框',
           path: '/doc/input',
         },
@@ -135,8 +199,20 @@ export const siderbarConfig: ISiderbarConfig = {
           path: '/doc/radio',
         },
         {
+          title: 'Checkbox 多选框',
+          path: '/doc/checkbox',
+        },
+        {
+          title: 'Select 选择器',
+          path: '/doc/select',
+        },
+        {
           title: 'InputTag 标签输入框',
           path: '/doc/inputTag',
+        },
+        {
+          title: 'Switch 开关',
+          path: '/doc/switch',
         },
       ],
     },
@@ -161,7 +237,15 @@ export const siderbarConfig: ISiderbarConfig = {
       title: '反馈',
       children: [
         {
-          title: 'Toast',
+          title: 'Drawer 抽屉',
+          path: '/doc/drawer',
+        },
+        {
+          title: 'Dialog 对话框',
+          path: '/doc/dialog',
+        },
+        {
+          title: 'Toast 吐司',
           path: '/doc/toast',
         },
       ],

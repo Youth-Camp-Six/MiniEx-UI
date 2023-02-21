@@ -7,7 +7,7 @@ export type SelectOptions = {
 type sizeRules = 'small' | 'medium' | 'large';
 export interface selectProps {
   className?: string;
-  modelvalue?: string[];
+  modelValue?: [string, Array<string>];
   options: SelectOptions[];
   placement?: string;
   trigger?: string;
@@ -20,4 +20,5 @@ export interface selectProps {
   footer?: ReactNode;
   label?: ReactNode;
   placeholder?: string;
+  handleSelect?:(e)=>void
 }

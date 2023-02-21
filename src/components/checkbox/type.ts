@@ -10,6 +10,8 @@ export interface CheckboxProps {
   children?: ReactNode;
   className?: string;
   disabled?: boolean;
+  handleChange: (e: any) => void;
+  updateModelValue: (e: any) => void;
 }
 
 type Options = {

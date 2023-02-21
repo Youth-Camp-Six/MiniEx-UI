@@ -33,6 +33,17 @@ const Siderbar: React.FC<IProps> = () => {
 
   useEffect(() => {
     setMenuConfig([]);
+    const menuZN: IRouterConfig[] = [],
+      menuUS: IRouterConfig[] = [];
+    for (let i = 0; i < siderbarConfig.length; i++) {
+      if (i % 2) {
+        menuZN.push({ title: siderbarConfig[i].title, disabled: true });
+        menuZN.push(...siderbarConfig[i].children);
+      } else {
+        menuUS.push({ title: siderbarConfig[i].title, disabled: true });
+        menuUS.push(...siderbarConfig[i].children);
+      }
+    }
     if (location.pathname.indexOf('/zh/') >= 0) {
       setMenuConfig(flatSiderbarConfig(siderbarConfig.zh));
     } else {

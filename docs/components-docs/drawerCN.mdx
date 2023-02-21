@@ -1,0 +1,98 @@
+import { Drawer,Button,Flex } from '../../src';
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
+import {DrawerCN} from './demos/drawer/drawer.tsx'
+
+
+# 抽屉
+
+
+基础用法
+<ShowSouceCode
+  element={DrawerCN()}
+  code={`
+    const [visible, setvisible] = useState(false);
+  const showDrawer = () => {
+    setvisible(true);
+  };
+  const onClose = () => {
+    setvisible(false);
+  };
+
+  const [visible2, setvisible2] = useState(false);
+  const showDrawer2 = () => {
+    setvisible2(true);
+  };
+  const onClose2 = () => {
+    setvisible2(false);
+  };
+
+  const [visible3, setvisible3] = useState(false);
+  const showDrawer3 = () => {
+    setvisible3(true);
+  };
+  const onClose3 = () => {
+    setvisible3(false);
+  };
+
+  const [visible4, setvisible4] = useState(false);
+  const showDrawer4 = () => {
+    setvisible4(true);
+  };
+  const onClose4 = () => {
+    setvisible4(false);
+  };
+
+   <Flex x='start'>
+        <Drawer visible={visible} onClose={onClose}>
+          内容
+        </Drawer>
+        <Button btnType="primary" onClick={showDrawer}>右边</Button>
+
+        <Drawer visible={visible2} onClose={onClose2} position='bottom'>
+          内容
+        </Drawer>
+        <Button btnType="primary" onClick={showDrawer2}>下边</Button>
+
+        <Drawer visible={visible3} onClose={onClose3} position='left'>
+          内容
+        </Drawer>
+        <Button btnType="primary" onClick={showDrawer3}>左边</Button>
+
+        <Drawer visible={visible4} onClose={onClose4} position='top'>
+          内容
+        </Drawer>
+        <Button btnType="primary" onClick={showDrawer4}>上边</Button>
+      </Flex>
+    `
+  }
+  />
+
+
+## Props
+<PropsShow propsInfo={[
+  {
+    name: 'visible',
+    description: '是否打开抽屉',
+    type: 'boolean',
+    initValue: 'false',
+  },
+  {
+    name: 'width',
+    description: '宽度',
+    type: 'number',
+    initValue: '30(百分比)',
+  },
+  {
+    name: 'height',
+    description: '高度',
+    type: 'number',
+    initValue: '30(百分比)',
+  },
+  {
+    name: 'position',
+    description: '位置',
+    type: 'string',
+    initValue: 'right(left,right,top,bottom)',
+  },
+]} />

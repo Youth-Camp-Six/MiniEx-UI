@@ -1,0 +1,51 @@
+import { Switch } from '../../src';
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
+
+# Switch
+
+### 圆的
+
+<ShowSouceCode
+  element={<Switch handleChange={(e) => console.log(e)}></Switch>}
+  code={`<Switch handleChange={(e) => console.log(e)}></Switch>`}
+/>
+
+### 方的
+
+<ShowSouceCode
+  element={<Switch handleChange={(e) => console.log(e)} round={false}></Switch>}
+  code={`<Switch handleChange={(e) => console.log(e)} round={false}></Switch>`}
+/>
+
+### 关闭
+
+<ShowSouceCode
+  element={<Switch modelValue={false} handleChange={(e) => console.log(e)}></Switch>}
+  code={`<Switch handleChange={(e) => console.log(e)}></Switch>`}
+/>
+
+## Props
+
+<PropsShow
+  propsInfo={[
+    {
+      name: 'modelValue',
+      description: '绑定值，控制开关的打开与关闭',
+      type: 'boolean',
+      initValue: 'true',
+    },
+    {
+      name: 'round',
+      description: '是否是圆角',
+      type: 'boolean',
+      initValue: 'true',
+    },
+    {
+      name: 'handleChange',
+      description: '组件值发生变化的回调',
+      type: 'function',
+      initValue: '/',
+    },
+  ]}
+/>

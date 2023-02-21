@@ -6,12 +6,12 @@
     "type": "git",
     "url": "https://github.com/Youth-Camp-Six/MiniEx-UI.git"
   },
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "a react ui libiary.",
   "private": false,
   "files": [
     "packages",
-    "docs/dist"
+    "src/components"
   ],
   "main": "packages/miniex-ui.js",
   "scripts": {
@@ -58,6 +58,7 @@
     "react-feather": "^2.0.10",
     "react-i18next": "^12.1.4",
     "react-router-dom": "6",
+    "react-transition-group": "^4.4.5",
     "remark-mdx-images": "^2.0.0",
     "tippy.js": "^6.3.7",
     "webpack-dev-server": "^4.11.1",

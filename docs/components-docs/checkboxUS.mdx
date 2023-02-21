@@ -1,0 +1,70 @@
+import { Checkbox } from './demos/checkbox/checkbox'
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
+
+# checkbox
+<ShowSouceCode
+
+  element={<Checkbox/>}
+  code={
+    `
+const checkboxOptions = [
+    { label: 'beijing', value: 0 },
+    { label: 'shanghai', value: 1 },
+    { label: 'tianjin', value: 2 },
+  ];
+
+const changeHandler = (e) => {
+  console.log('current value:', e);
+};
+
+<Checkbox
+  options={options}
+  value={defaultValue}
+  onChange={changeHandler}
+></Checkbox>
+
+return (
+  <CheckboxGroup
+    options={checkboxOptions}
+    onChange={changeHandler}
+  />
+);
+`
+  }
+/>
+
+## Props
+
+<PropsShow propsInfo={[
+  {
+    name: 'value',
+    description: 'displayed value',
+    type: 'string | number',
+    initValue: '/',
+  },
+  {
+    name: 'onChange',
+    description: 'changed callback function',
+    type: '{label: string; value: string}[]',
+    initValue: '/',
+  },
+  {
+    name: 'options',
+    description: 'checkbox item data list',
+    type: '(chengedValue: string | number) => void',
+    initValue: '/',
+  },
+  {
+    name: 'iconable',
+    description: 'Whether to display the checkbox icon',
+    type: 'boolean',
+    initValue: 'true',
+  },
+  {
+    name: 'round',
+    description: 'Whether to display the icon with rounded corners',
+    type: 'boolean',
+    initValue: 'false',
+  },
+]} />

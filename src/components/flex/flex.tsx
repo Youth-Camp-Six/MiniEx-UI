@@ -9,8 +9,8 @@ export const Flex: React.FC<FlexProps> = (props) => {
     [`mi-flex-${direction}`]: direction,
     [`mi-flex-x-${x}`]: x,
     [`mi-flex-y-${y}`]: y,
-    [`mi-flex-${wrap}`]: wrap,
-    [`mi-flex-${mode}`]: mode,
+    ['mi-flex-wrap']: wrap,
+    [`mi-flex-mode-${mode}`]: mode,
   });
 
   return (
