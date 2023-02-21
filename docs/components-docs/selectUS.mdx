@@ -1,0 +1,140 @@
+import { RadioSelect, MultipleSelect } from './demos/select/selectAppUS.tsx';
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
+
+# Select
+
+### Raio
+
+<ShowSouceCode
+
+element={<RadioSelect />}
+code={`const header='Select title'
+const defaultValue1 = '';
+const defaultValue2 = [];
+  const options = [
+    {
+      label: 'Guangdong',
+      value: '1'
+    },
+    {
+      label: 'Shenzhen',
+      value: '2',
+    },
+    {
+      label: 'Hangzhou',
+      value: '3',
+    },
+    {
+      label: 'Shanghai',
+      value: '4',
+    },
+    {
+      label: 'Beijing',
+      value: '5',
+    },
+  ];
+  const handleSelect = (e:Event) => {
+    console.log(e);
+  }
+return <Select header={header} modelValue={defaultValue} options={options}></Select>;` } />
+
+### Multiple
+
+<ShowSouceCode
+
+element={<MultipleSelect />}
+code={
+`const header='Select title'
+const defaultValue1 = '';
+const defaultValue2 = [];
+const options = [
+{
+label: 'Guangdong',
+value: '1'
+},
+{
+label: 'Shenzhen',
+value: '2',
+},
+{
+label: 'Hangzhou',
+value: '3',
+},
+{
+label: 'Shanghai',
+value: '4',
+},
+{
+label: 'Beijing',
+value: '5',
+},
+];
+
+const handleSelect = (e:Event) => {
+console.log(e);
+}
+
+return <Select
+modelValue={defaultValue2}
+options={options}
+header={header}
+multiple
+handleChange={(e) => handleSelect(e)} ></Select>;
+` } />
+
+## props
+
+<PropsShow
+  propsInfo={[
+    {
+      name: 'modelValue',
+      description: 'Binding values',
+      type: 'string | array',
+      initValue: "''",
+    },
+    {
+      name: 'handleChange',
+      description: 'The function to call back when you select.',
+      type: 'function',
+      initValue: '/',
+    },
+    {
+      name: 'options',
+      description: 'options',
+      type: 'options',
+      initValue: '[]',
+    },
+    {
+      name: 'trigger',
+      description: 'trigger method',
+      type: 'click | hover',
+      initValue: 'click',
+    },
+    {
+      name: 'multiple',
+      description: 'multiple model',
+      type: 'boolean',
+      initValue: 'false',
+    },
+  ]}
+/>
+
+## options
+
+<PropsShow
+  propsInfo={[
+    {
+      name: 'label',
+      description: '选项组的标签',
+      type: 'string',
+      initValue: "''",
+    },
+    {
+      name: 'value',
+      description: '值',
+      type: 'string',
+      initValue: "''",
+    },
+  ]}
+/>

@@ -1,58 +1,62 @@
-import { RadioCNBasic } from './demos/radio/radio-cn.tsx'
+import { RadioCNBasic } from './demos/radio/radio-cn.tsx';
 import ShowSouceCode from './components/show-source-code';
 import PropsShow from './components/props-show';
 
 # 单选框
+
 <ShowSouceCode
 
-  element={<RadioCNBasic/>}
-  code={
-    `
-  const options = [
-    { label: 'A', value: '0' },
-    { label: 'B', value: '1' },
-    { label: 'C', value: '2' },
-  ];
+element={<RadioCNBasic/>}
+code={
+`
+const options = [
+{ label: 'A', value: '0' },
+{ label: 'B', value: '1' },
+{ label: 'C', value: '2' },
+];
 
-  const defaultValue = '0';
+const defaultValue = '0';
 
-  const changeHandler = (e) => {
-    console.log('当前value:', e);
-  };
+const changeHandler = (e) => {
+console.log('当前 value:', e);
+};
 
     <RadioGroup
       options={options}
       value={defaultValue}
       onChange={changeHandler}
     ></RadioGroup>`
-  }
+
+}
 />
 
 ## Props
 
-<PropsShow propsInfo={[
-  {
-    name: 'value',
-    description: '显示的值',
-    type: 'string | number',
-    initValue: '/',
-  },
-  {
-    name: 'onChange',
-    description: '选择时回掉函数',
-    type: '{label: string; value: string}[]',
-    initValue: '/',
-  },
-  {
-    name: 'options',
-    description: 'radio item数据',
-    type: '(chengedValue: string | number) => void',
-    initValue: '/',
-  },
-  {
-    name: 'iconable',
-    description: '是否显示radio图标',
-    type: 'boolean',
-    initValue: 'true',
-  },
-]} />
+<PropsShow
+  propsInfo={[
+    {
+      name: 'value',
+      description: '显示的值',
+      type: 'string | number',
+      initValue: '/',
+    },
+    {
+      name: 'onChange',
+      description: '选择时回掉函数',
+      type: '{label: string; value: string}[]',
+      initValue: '/',
+    },
+    {
+      name: 'options',
+      description: 'radio item数据',
+      type: '(chengedValue: string | number) => void',
+      initValue: '/',
+    },
+    {
+      name: 'iconable',
+      description: '是否显示radio图标',
+      type: 'boolean',
+      initValue: 'true',
+    },
+  ]}
+/>

@@ -1,12 +1,12 @@
 import { Flex } from '../../src';
 import ShowSouceCode from './components/show-source-code';
 import PropsShow from './components/props-show';
-import {flexrow, flexmode , flexcolumn} from './demos/flex/flex.tsx'
-
+import { flexrow, flexmode, flexcolumn } from './demos/flex/flex.tsx';
 
 # 弹性布局
 
 ## row
+
 <ShowSouceCode
   element={flexrow()}
   code={`
@@ -120,36 +120,37 @@ import {flexrow, flexmode , flexcolumn} from './demos/flex/flex.tsx'
 
     less
     .demo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+display: flex;
+justify-content: center;
+align-items: center;
 }
 .mi-flex {
-  border: 1px var(--mi-bgcolor-2) solid;
-  border-radius: var(--mi-border-radius);
-  background-color: var(--mi-bgcolor-1);
-  margin-bottom: 20px;
-  width: 200px;
-  height: 200px;
-  padding: 5px;
-  box-sizing: border-box;
-  margin: 10px;
-  .box {
-      box-sizing: border-box;
-      > div {
-          display: inline-block;
-          padding: 10px;
-          font-size: 14px;
-          border-radius: var(--mi-border-radius);
-          background-color: var(--mi-primary-color);
-      }
-  }
+border: 1px var(--mi-bgcolor-2) solid;
+border-radius: var(--mi-border-radius);
+background-color: var(--mi-bgcolor-1);
+margin-bottom: 20px;
+width: 200px;
+height: 200px;
+padding: 5px;
+box-sizing: border-box;
+margin: 10px;
+.box {
+box-sizing: border-box; > div {
+display: inline-block;
+padding: 10px;
+font-size: 14px;
+border-radius: var(--mi-border-radius);
+background-color: var(--mi-primary-color);
 }
-    `
-  }
+}
+}
+`
+}
 />
 
 ## column
+
 <ShowSouceCode
   element={flexcolumn()}
   code={`
@@ -260,11 +261,11 @@ import {flexrow, flexmode , flexcolumn} from './demos/flex/flex.tsx'
         </Flex>
       </div>
     </div>
-    `
-  }
+    `}
 />
 
 ## flexmode
+
 <ShowSouceCode
   element={flexmode()}
   code={` <div>
@@ -338,52 +339,54 @@ import {flexrow, flexmode , flexcolumn} from './demos/flex/flex.tsx'
           </div>
         </Flex>
       </div>
-    </div> `
-  }
+    </div> `}
 />
 
 ## Props
-<PropsShow propsInfo={[
-  {
-    name: 'direction',
-    description: '排列方向',
-    type: 'x | y',
-    initValue: 'x',
-  },
-  {
-    name: 'x',
-    description: '横向对齐方向',
-    type: 'start | center | end',
-    initValue: 'center',
-  },
-  {
-    name: 'y',
-    description: '垂直对齐方向',
-    type: 'start | center | end',
-    initValue: 'center',
-  },
-  {
-    name: 'mode',
-    description: '排序模式，这是个可选项，定义之后会干扰x或y的对齐方向，这取决于你的direction。',
-    type: 'between | around',
-    initValue: '/',
-  },
-  {
-    name: 'wrap',
-    description: '让元素在必要的时候换行',
-    type: 'boolean',
-    initValue: 'false',
-  },
-  {
-    name: 'gap',
-    description: '元素之间的空隙',
-    type: 'number',
-    initValue: '10',
-  },
-  {
-    name: 'width',
-    description: '父元素宽度',
-    type: 'string',
-    initValue: '',
-  },
-]} />
+
+<PropsShow
+  propsInfo={[
+    {
+      name: 'direction',
+      description: '排列方向',
+      type: 'x | y',
+      initValue: 'x',
+    },
+    {
+      name: 'x',
+      description: '横向对齐方向',
+      type: 'start | center | end',
+      initValue: 'center',
+    },
+    {
+      name: 'y',
+      description: '垂直对齐方向',
+      type: 'start | center | end',
+      initValue: 'center',
+    },
+    {
+      name: 'mode',
+      description: '排序模式，这是个可选项，定义之后会干扰x或y的对齐方向，这取决于你的direction。',
+      type: 'between | around',
+      initValue: '/',
+    },
+    {
+      name: 'wrap',
+      description: '让元素在必要的时候换行',
+      type: 'boolean',
+      initValue: 'false',
+    },
+    {
+      name: 'gap',
+      description: '元素之间的空隙',
+      type: 'number',
+      initValue: '10',
+    },
+    {
+      name: 'width',
+      description: '父元素宽度',
+      type: 'string',
+      initValue: '',
+    },
+  ]}
+/>

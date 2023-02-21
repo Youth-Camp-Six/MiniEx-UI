@@ -78,8 +78,16 @@ export const siderbarConfig: ISiderbarConfig = {
           path: '/doc/checkbox',
         },
         {
+          title: 'Select',
+          path: '/doc/select',
+        },
+        {
           title: 'InputTag',
           path: '/doc/inputTag',
+        },
+        {
+          title: 'Switch',
+          path: '/doc/switch',
         },
       ],
     },
@@ -195,8 +203,16 @@ export const siderbarConfig: ISiderbarConfig = {
           path: '/doc/checkbox',
         },
         {
+          title: 'Select 选择器',
+          path: '/doc/select',
+        },
+        {
           title: 'InputTag 标签输入框',
           path: '/doc/inputTag',
+        },
+        {
+          title: 'Switch 开关',
+          path: '/doc/switch',
         },
       ],
     },

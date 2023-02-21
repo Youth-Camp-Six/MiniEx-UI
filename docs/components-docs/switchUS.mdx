@@ -1,0 +1,51 @@
+import { Switch } from '../../src';
+import ShowSouceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
+
+# Switch
+
+### Round
+
+<ShowSouceCode
+  element={<Switch handleChange={(e) => console.log(e)}></Switch>}
+  code={`<Switch handleChange={(e) => console.log(e)}></Switch>`}
+/>
+
+### Square
+
+<ShowSouceCode
+  element={<Switch handleChange={(e) => console.log(e)} round={false}></Switch>}
+  code={`<Switch handleChange={(e) => console.log(e)} round={false}></Switch>`}
+/>
+
+### Closed
+
+<ShowSouceCode
+  element={<Switch modelValue={false} handleChange={(e) => console.log(e)}></Switch>}
+  code={`<Switch handleChange={(e) => console.log(e)}></Switch>`}
+/>
+
+## Props
+
+<PropsShow
+  propsInfo={[
+    {
+      name: 'modelValue',
+      description: 'Bind a value that controls the opening and closing of a switch.',
+      type: 'boolean',
+      initValue: 'true',
+    },
+    {
+      name: 'round',
+      description: 'Whether the rounded.',
+      type: 'boolean',
+      initValue: 'true',
+    },
+    {
+      name: 'handleChange',
+      description: 'Component values change callback.',
+      type: 'function',
+      initValue: '/',
+    },
+  ]}
+/>

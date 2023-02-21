@@ -12,6 +12,8 @@ import MenuUS from '../components-docs/menuUS.mdx';
 import MenuCN from '../components-docs/menuCN.mdx';
 import ButtonUS from '../components-docs/buttonUS.mdx';
 import ButtonCN from '../components-docs/buttonCN.mdx';
+import FlexUS from '../components-docs/flexUS.mdx';
+import FlexCN from '../components-docs/flexCN.mdx';
 import TitleUS from '../components-docs/titleUS.mdx';
 import TitleCN from '../components-docs/titleCN.mdx';
 import AvatarUS from '../components-docs/avatarUS.mdx';
@@ -38,12 +40,16 @@ import FormProUS from '../components-docs/formproUS.mdx';
 import FormProCN from '../components-docs/formproCN.mdx';
 import CheckboxUS from '../components-docs/checkboxUS.mdx';
 import CheckboxCN from '../components-docs/checkboxCN.mdx';
+import SelectUS from '../components-docs/selectUS.mdx';
+import SelectCN from '../components-docs/selectCN.mdx';
 import DrawerCN from '../components-docs/drawerCN.mdx';
 import DrawerUS from '../components-docs/drawerUS.mdx';
 import DialogCN from '../components-docs/dialogCN.mdx';
 import DialogUS from '../components-docs/dialogUS.mdx';
 import InputSearchCN from '../components-docs/inputSearchCN.mdx';
 import InputSearchUS from '../components-docs/inputSearchUS.mdx';
+import SwitchUS from '../components-docs/switchUS.mdx';
+import SwitchCN from '../components-docs/switchCN.mdx';
 import Flex from '../components-docs/flexCN.mdx';
 import StartCN from '../components-docs/quickstartCN.mdx';
 import StartUS from '../components-docs/quickstartUS.mdx';
@@ -69,6 +75,19 @@ if (requireCustomFile.keys()?.length) {
   }
 }
 
+// await compile(MenuUS, { remarkPlugins: [remarkMdxImages] });
+// await compile(MenuCN, { remarkPlugins: [remarkMdxImages] });
+// await compile(ButtonUS, { remarkPlugins: [remarkMdxImages] });
+// await compile(ButtonCN, { remarkPlugins: [remarkMdxImages] });
+// await compile(FlexUS, { remarkPlugins: [remarkMdxImages] });
+// await compile(FlexCN, { remarkPlugins: [remarkMdxImages] });
+// await compile(SelectUS, { remarkPlugins: [remarkMdxImages] });
+// await compile(SelectCN, { remarkPlugins: [remarkMdxImages] });
+// await compile(TagUS, { remarkPlugins: [remarkMdxImages] });
+// await compile(TagCN, { remarkPlugins: [remarkMdxImages] });
+// await compile(TitleUS, { remarkPlugins: [remarkMdxImages] });
+// await compile(TitleCN, { remarkPlugins: [remarkMdxImages] });
+// todo 修改router类型
 export const router = createHashRouter([
   {
     path: '/',
@@ -146,6 +165,10 @@ export const router = createHashRouter([
             element: <InputTagUS components={components} />,
           },
           {
+            path: '/en/doc/switch',
+            element: <SwitchUS components={components} />,
+          },
+          {
             path: '/en/doc/input',
             element: <InputSearchUS components={components} />,
           },
@@ -160,6 +183,10 @@ export const router = createHashRouter([
           {
             path: '/en/doc/Checkbox',
             element: <CheckboxUS components={components} />,
+          },
+          {
+            path: '/en/doc/Select',
+            element: <SelectUS components={components} />,
           },
           {
             path: '/en/doc/drawer',
@@ -177,6 +204,14 @@ export const router = createHashRouter([
             path: '/en/doc/quick-start',
             element: <StartUS components={components} />,
           },
+          {
+            path: '/en/doc/flex',
+            element: <FlexUS />,
+          },
+          // {
+          //   path: '/en/doc/tag',
+          //   element: <TagUS />,
+          // },
         ],
       },
     ],
@@ -206,6 +241,10 @@ export const router = createHashRouter([
           {
             path: '/zh/doc/button',
             element: <ButtonCN components={components} />,
+          },
+          {
+            path: '/zh/doc/flex',
+            element: <FlexCN />,
           },
           {
             path: '/zh/doc/menu',
@@ -252,6 +291,10 @@ export const router = createHashRouter([
             element: <InputTagCN components={components} />,
           },
           {
+            path: '/zh/doc/switch',
+            element: <SwitchCN components={components} />,
+          },
+          {
             path: '/zh/doc/drawer',
             element: <DrawerCN components={components} />,
           },
@@ -272,6 +315,10 @@ export const router = createHashRouter([
             element: <CheckboxCN components={components} />,
           },
           {
+            path: '/zh/doc/select',
+            element: <SelectCN components={components} />,
+          },
+          {
             path: '/zh/doc/dialog',
             element: <DialogCN components={components} />,
           },
@@ -283,6 +330,10 @@ export const router = createHashRouter([
             path: '/zh/doc/quick-start',
             element: <StartCN components={components} />,
           },
+          // {
+          //   path: '/zh/doc/tag',
+          //   element: <TagCN />,
+          // },
         ],
       },
     ],

@@ -1,8 +1,9 @@
 export interface SwitchProps {
-  modelvalue?: boolean;
+  modelValue?: boolean;
   loading?: boolean;
   disabled?: boolean;
   request?: (e: any) => void;
+  handleChange?: () => void;
   round?: boolean;
   className?: string;
 }
