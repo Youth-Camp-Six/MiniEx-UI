@@ -31,29 +31,29 @@ import PropsShow from './components/props-show';
     </Flex>
   }
   code={`
-      const options=[
-        {
-          label: '首页',
-          to: '/',
-        },
-        {
-          label: 'React',
-          to: 'https://react.docschina.org/',
-        },
-        {
-          label: '商品列表',
-          to: '',
-        },
-        {
-          label: '商品详情',
-          to: '',
-          active: true,
-        }]
-        <Flex x='start'>
-         <Breadcrumb options={options}></Breadcrumb>
-        </Flex>
-    `
-  }
+const options=[
+  {
+    label: '首页',
+    to: '/',
+  },
+  {
+    label: 'React',
+    to: 'https://react.docschina.org/',
+  },
+  {
+    label: '商品列表',
+    to: '',
+  },
+  {
+    label: '商品详情',
+    to: '',
+    active: true,
+}]
+
+<Flex x='start'>
+  <Breadcrumb options={options}></Breadcrumb>
+</Flex>
+  `}
   />
 
 ## 自定义当前选中
@@ -82,28 +82,29 @@ import PropsShow from './components/props-show';
     </Flex>
   }
   code={`
-      const options=[
-        {
-          label: '首页',
-          to: '/',
-        },
-        {
-          label: 'React',
-          to: 'https://react.docschina.org/',
-        },
-        {
-          label: '商品列表',
-          to: '',
-          active: true,
-        },
-        {
-          label: '商品详情',
-          to: '',
-        }]
+const options=[
+  {
+    label: '首页',
+    to: '/',
+  },
+  {
+    label: 'React',
+    to: 'https://react.docschina.org/',
+  },
+  {
+    label: '商品列表',
+    to: '',
+    active: true,
+  },
+  {
+    label: '商品详情',
+    to: '',
+  }
+]
 
-        <Flex x='start'>
-         <Breadcrumb options={options}></Breadcrumb>
-        </Flex>
+<Flex x='start'>
+  <Breadcrumb options={options}></Breadcrumb>
+</Flex>
     `
   }
   />
@@ -135,28 +136,29 @@ import PropsShow from './components/props-show';
     </Flex>
   }
   code={`
-      const options=[
-        {
-          label: '首页',
-          to: '/',
-        },
-        {
-          label: 'React',
-          to: 'https://react.docschina.org/',
-        },
-        {
-          label: '商品列表',
-          to: '',
-        },
-        {
-          label: '商品详情',
-          to: '',
-          active: true,
-        }]
+const options=[
+  {
+    label: '首页',
+    to: '/',
+  },
+  {
+    label: 'React',
+    to: 'https://react.docschina.org/',
+  },
+  {
+    label: '商品列表',
+    to: '',
+  },
+  {
+    label: '商品详情',
+    to: '',
+    active: true,
+  }
+]
 
-        <Flex x='start'>
-         <Breadcrumb iconType="shoulder" options={options}></Breadcrumb>
-        </Flex>
+<Flex x='start'>
+  <Breadcrumb iconType="shoulder" options={options}></Breadcrumb>
+</Flex>
     `
   }
   />
