@@ -16,7 +16,7 @@
 
  </div>
   
-# MiniEx-UI🌱
+# MiniEx-UI
 
 ## 命名由来
 
