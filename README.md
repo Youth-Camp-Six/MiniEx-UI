@@ -49,7 +49,7 @@ React + TS + Less + Webpack + Lint + Jest
 
 ✅ 全局公共样式统一，@mixin支持
 
-✅ 支持CHANGELOG.log展示
+✅ 支持CHANGELOG.md展示
 
 ✅ 支持jest编写单测用例
 
