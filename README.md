@@ -14,9 +14,10 @@
 [![GitHub stars](https://img.shields.io/github/stars/Youth-Camp-Six/MiniEx-UI)](https://github.com/Youth-Camp-Six/MiniEx-UI/stargazers)
 ![Vsersion](https://img.shields.io/badge/npm-1.1.0-blueviolet)
 
+ </div>
+  
 # MiniEx-UI🌱
 
-</div>
 ## 命名由来
 
 `MiniEx` 取自 `Minimal and Exquisite`，意义为极简精致。
