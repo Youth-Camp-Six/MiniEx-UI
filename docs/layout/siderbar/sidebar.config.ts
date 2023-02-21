@@ -18,10 +18,10 @@ export const siderbarConfig: ISiderbarConfig = {
           title: 'Button',
           path: '/doc/button',
         },
-        {
-          title: 'Upload',
-          path: '/doc/upload',
-        },
+        // {
+        //   title: 'Upload',
+        //   path: '/doc/upload',
+        // },
       ],
     },
     {
@@ -143,10 +143,10 @@ export const siderbarConfig: ISiderbarConfig = {
           title: 'Button 按钮',
           path: '/doc/button',
         },
-        {
-          title: 'Upload 上传',
-          path: '/doc/upload',
-        },
+        // {
+        //   title: 'Upload 上传',
+        //   path: '/doc/upload',
+        // },
       ],
     },
     {
