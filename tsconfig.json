@@ -2,50 +2,33 @@
 
 {
   "compilerOptions": {
-    "outDir": "./lib",
-    "target": "esnext",
-    "module": "esnext",
-    "esModuleInterop": true,
+    "module": "ESNext",
+    "target": "ESNext",
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
+    "strict": true,
     "declaration": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
     "jsx": "react",
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    // "outDir": "build",
-    // "module": "esnext",
-    // "target": "esnext",
-    // "lib": [
-    //   "ESNext",
-    //   "DOM"
-    // ],
-    // "strict": true,
-    // "declaration": true,
-    // "declarationDir":"./build",
-    // "resolveJsonModule": true,
-    // "esModuleInterop": true,
-    // "experimentalDecorators": true,
-    // "jsx": "react",
-    // "moduleResolution": "node",
-    // "allowSyntheticDefaultImports": true,
-    // "skipLibCheck": true,
-    // "noImplicitAny": false,
-    // "noImplicitThis": true,
-    // "sourceMap": true,
-    // "allowJs": true,
-    // "rootDir": ".",
-    // "baseUrl": ".",
+    "skipLibCheck": true,
+    "noImplicitAny": false,
+    "noImplicitThis": true,
+    "sourceMap": true,
+    "allowJs": true,
+    "rootDir": ".",
+    "baseUrl": ".",
   },
   "include": [
-    "src/**/*",
-  ],
+    "./src/jest-setup.ts", "./docs/global.d.ts"],
   "exclude": [
-    "node_modules"
+    "**/node_modules/",
+    "**/dist/",
+    "**/build/",
   ],
-  // "include": [
-  //   "./src/jest-setup.ts", "./docs/global.d.ts"],
-  // "exclude": [
-  //   "**/node_modules/",
-  //   "**/dist/",
-  //   "**/build/",
-  // ],
   "typeRoots": ["./node_modules/@types"]
 }
