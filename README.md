@@ -16,6 +16,7 @@
 
 # MiniEx-UI🌱
 
+</div>
 ## 命名由来
 
 `MiniEx` 取自 `Minimal and Exquisite`，意义为极简精致。
