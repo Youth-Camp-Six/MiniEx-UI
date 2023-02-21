@@ -102,6 +102,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './docs/index.html',
+      favicon: './docs/assets/favicon.ico',
     }),
     new CleanWebpackPlugin(),
     // 创建docs/views/dev文件夹, 用于开发组件时测试

@@ -75,18 +75,6 @@ if (requireCustomFile.keys()?.length) {
   }
 }
 
-// await compile(MenuUS, { remarkPlugins: [remarkMdxImages] });
-// await compile(MenuCN, { remarkPlugins: [remarkMdxImages] });
-// await compile(ButtonUS, { remarkPlugins: [remarkMdxImages] });
-// await compile(ButtonCN, { remarkPlugins: [remarkMdxImages] });
-// await compile(FlexUS, { remarkPlugins: [remarkMdxImages] });
-// await compile(FlexCN, { remarkPlugins: [remarkMdxImages] });
-// await compile(SelectUS, { remarkPlugins: [remarkMdxImages] });
-// await compile(SelectCN, { remarkPlugins: [remarkMdxImages] });
-// await compile(TagUS, { remarkPlugins: [remarkMdxImages] });
-// await compile(TagCN, { remarkPlugins: [remarkMdxImages] });
-// await compile(TitleUS, { remarkPlugins: [remarkMdxImages] });
-// await compile(TitleCN, { remarkPlugins: [remarkMdxImages] });
 // todo 修改router类型
 export const router = createHashRouter([
   {
@@ -344,7 +332,7 @@ export const router = createHashRouter([
   },
   {
     path: '/changelogs',
-    element: <Main />,
+    element: <Main noHide />,
     children: [
       {
         path: 'md',
