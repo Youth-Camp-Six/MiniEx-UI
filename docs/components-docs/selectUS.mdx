@@ -12,31 +12,31 @@ element={<RadioSelect />}
 code={`const header='Select title'
 const defaultValue1 = '';
 const defaultValue2 = [];
-  const options = [
-    {
-      label: 'Guangdong',
-      value: '1'
-    },
-    {
-      label: 'Shenzhen',
-      value: '2',
-    },
-    {
-      label: 'Hangzhou',
-      value: '3',
-    },
-    {
-      label: 'Shanghai',
-      value: '4',
-    },
-    {
-      label: 'Beijing',
-      value: '5',
-    },
-  ];
-  const handleSelect = (e:Event) => {
-    console.log(e);
-  }
+const options = [
+  {
+    label: 'Guangdong',
+    value: '1'
+  },
+  {
+    label: 'Shenzhen',
+    value: '2',
+  },
+  {
+    label: 'Hangzhou',
+    value: '3',
+  },
+  {
+    label: 'Shanghai',
+    value: '4',
+  },
+  {
+    label: 'Beijing',
+    value: '5',
+  },
+];
+const handleSelect = (e:Event) => {
+  console.log(e);
+}
 return <Select header={header} modelValue={defaultValue} options={options}></Select>;` } />
 
 ### Multiple
@@ -49,38 +49,39 @@ code={
 const defaultValue1 = '';
 const defaultValue2 = [];
 const options = [
-{
-label: 'Guangdong',
-value: '1'
-},
-{
-label: 'Shenzhen',
-value: '2',
-},
-{
-label: 'Hangzhou',
-value: '3',
-},
-{
-label: 'Shanghai',
-value: '4',
-},
-{
-label: 'Beijing',
-value: '5',
-},
+  {
+    label: 'Guangdong',
+    value: '1'
+  },
+  {
+    label: 'Shenzhen',
+    value: '2',
+  },
+  {
+    label: 'Hangzhou',
+    value: '3',
+  },
+  {
+    label: 'Shanghai',
+    value: '4',
+  },
+  {
+    label: 'Beijing',
+    value: '5',
+  },
 ];
 
 const handleSelect = (e:Event) => {
-console.log(e);
+  console.log(e);
 }
 
 return <Select
-modelValue={defaultValue2}
-options={options}
-header={header}
-multiple
-handleChange={(e) => handleSelect(e)} ></Select>;
+        modelValue={defaultValue2}
+        options={options}
+        header={header}
+        multiple
+        handleChange={(e) => handleSelect(e)}
+      />;
 ` } />
 
 ## props

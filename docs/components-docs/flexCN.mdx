@@ -10,141 +10,113 @@ import { flexrow, flexmode, flexcolumn } from './demos/flex/flex.tsx';
 <ShowSouceCode
   element={flexrow()}
   code={`
-        <div>
-      <div className='demo'>
-        <Flex direction='x' x='start' y='start'>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-        </Flex>
-        <Flex direction='x' x='center' y='start'>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-        </Flex>
-        <Flex direction='x' x='end' y='start'>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-        </Flex>
+<div>
+  <div className='demo'>
+    <Flex direction='x' x='start' y='start'>
+      <div className='box'>
+        <div></div>
       </div>
-      <div className='demo'>
-        <Flex direction='x' x='start' y='center'>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-        </Flex>
-        <Flex direction='x' x='center' y='center'>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-        </Flex>
-        <Flex direction='x' x='end' y='center'>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-        </Flex>
+      <div className='box'>
+        <div></div>
       </div>
-      <div className='demo'>
-        <Flex direction='x' x='start' y='end'>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-        </Flex>
-        <Flex direction='x' x='center' y='end'>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-        </Flex>
-        <Flex direction='x' x='end' y='end'>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-        </Flex>
+      <div className='box'>
+        <div></div>
       </div>
-    </div>
-
-    less
-    .demo {
-
-display: flex;
-justify-content: center;
-align-items: center;
-}
-.mi-flex {
-border: 1px var(--mi-bgcolor-2) solid;
-border-radius: var(--mi-border-radius);
-background-color: var(--mi-bgcolor-1);
-margin-bottom: 20px;
-width: 200px;
-height: 200px;
-padding: 5px;
-box-sizing: border-box;
-margin: 10px;
-.box {
-box-sizing: border-box; > div {
-display: inline-block;
-padding: 10px;
-font-size: 14px;
-border-radius: var(--mi-border-radius);
-background-color: var(--mi-primary-color);
-}
-}
-}
+    </Flex>
+    <Flex direction='x' x='center' y='start'>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+    </Flex>
+    <Flex direction='x' x='end' y='start'>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+    </Flex>
+  </div>
+  <div className='demo'>
+    <Flex direction='x' x='start' y='center'>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+    </Flex>
+    <Flex direction='x' x='center' y='center'>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+    </Flex>
+    <Flex direction='x' x='end' y='center'>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+    </Flex>
+  </div>
+  <div className='demo'>
+    <Flex direction='x' x='start' y='end'>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+    </Flex>
+    <Flex direction='x' x='center' y='end'>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+    </Flex>
+    <Flex direction='x' x='end' y='end'>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+    </Flex>
+  </div>
+</div>
 `
 }
 />
@@ -154,113 +126,113 @@ background-color: var(--mi-primary-color);
 <ShowSouceCode
   element={flexcolumn()}
   code={`
-           <div>
-      <div className='demo'>
-        <Flex direction='y' x='start' y='start'>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-        </Flex>
-        <Flex direction='y' x='center' y='start'>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-        </Flex>
-        <Flex direction='y' x='end' y='start'>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-        </Flex>
+<div>
+  <div className='demo'>
+    <Flex direction='y' x='start' y='start'>
+      <div className='box'>
+        <div></div>
       </div>
-      <div className='demo'>
-        <Flex direction='y' x='start' y='center'>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-        </Flex>
-        <Flex direction='y' x='center' y='center'>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-        </Flex>
-        <Flex direction='y' x='end' y='center'>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-        </Flex>
+      <div className='box'>
+        <div></div>
       </div>
-      <div className='demo'>
-        <Flex direction='y' x='start' y='end'>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-        </Flex>
-        <Flex direction='y' x='center' y='end'>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-        </Flex>
-        <Flex direction='y' x='end' y='end'>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-        </Flex>
+      <div className='box'>
+        <div></div>
       </div>
-    </div>
+    </Flex>
+    <Flex direction='y' x='center' y='start'>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+    </Flex>
+    <Flex direction='y' x='end' y='start'>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+    </Flex>
+  </div>
+  <div className='demo'>
+    <Flex direction='y' x='start' y='center'>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+    </Flex>
+    <Flex direction='y' x='center' y='center'>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+    </Flex>
+    <Flex direction='y' x='end' y='center'>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+    </Flex>
+  </div>
+  <div className='demo'>
+    <Flex direction='y' x='start' y='end'>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+    </Flex>
+    <Flex direction='y' x='center' y='end'>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+    </Flex>
+    <Flex direction='y' x='end' y='end'>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+    </Flex>
+  </div>
+</div>
     `}
 />
 
@@ -268,78 +240,79 @@ background-color: var(--mi-primary-color);
 
 <ShowSouceCode
   element={flexmode()}
-  code={` <div>
-      <div className='demo'>
-        <Flex direction='x' x='start' y='center' mode='between'>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-        </Flex>
-        <Flex direction='x' x='center' y='center' mode='around'>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-        </Flex>
-        <Flex direction='x' x='center' y='center'>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-        </Flex>
+  code={`
+<div>
+  <div className='demo'>
+    <Flex direction='x' x='start' y='center' mode='between'>
+      <div className='box'>
+        <div></div>
       </div>
-      <div className='demo'>
-        <Flex direction='y' x='start' y='center' mode='between'>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-        </Flex>
-        <Flex direction='y' x='center' y='center' mode='around'>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-        </Flex>
-        <Flex direction='y' x='center' y='center'>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-          <div className='box'>
-            <div></div>
-          </div>
-        </Flex>
+      <div className='box'>
+        <div></div>
       </div>
-    </div> `}
+      <div className='box'>
+        <div></div>
+      </div>
+    </Flex>
+    <Flex direction='x' x='center' y='center' mode='around'>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+    </Flex>
+    <Flex direction='x' x='center' y='center'>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+    </Flex>
+  </div>
+  <div className='demo'>
+    <Flex direction='y' x='start' y='center' mode='between'>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+    </Flex>
+    <Flex direction='y' x='center' y='center' mode='around'>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+    </Flex>
+    <Flex direction='y' x='center' y='center'>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+      <div className='box'>
+        <div></div>
+      </div>
+    </Flex>
+  </div>
+</div> `}
 />
 
 ## Props

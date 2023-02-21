@@ -9,34 +9,35 @@ import PropsShow from './components/props-show';
 <ShowSouceCode
 
 element={<RadioSelect />}
-code={`const header='选择标题'
+code={`
+const header='选择标题'
 const defaultValue1 = '';
 const defaultValue2 = [];
 const options = [
-{
-label: '广东',
-value: '1'
-},
-{
-label: '深圳',
-value: '2',
-},
-{
-label: '杭州',
-value: '3',
-},
-{
-label: '上海',
-value: '4',
-},
-{
-label: '北京',
-value: '5',
-},
+  {
+    label: '广东',
+    value: '1'
+  },
+  {
+    label: '深圳',
+    value: '2',
+  },
+  {
+    label: '杭州',
+    value: '3',
+  },
+  {
+    label: '上海',
+    value: '4',
+  },
+  {
+    label: '北京',
+    value: '5',
+  },
 ];
-  const handleSelect = (e:Event) => {
-    console.log(e);
-  }
+const handleSelect = (e:Event) => {
+  console.log(e);
+}
 return <Select header={header} modelValue={defaultValue} options={options}></Select>;` } />
 
 ### 多选
@@ -49,38 +50,39 @@ code={
 const defaultValue1 = '';
 const defaultValue2 = [];
 const options = [
-{
-label: '广东',
-value: '1'
-},
-{
-label: '深圳',
-value: '2',
-},
-{
-label: '杭州',
-value: '3',
-},
-{
-label: '上海',
-value: '4',
-},
-{
-label: '北京',
-value: '5',
-},
+  {
+    label: '广东',
+    value: '1'
+  },
+  {
+    label: '深圳',
+    value: '2',
+  },
+  {
+    label: '杭州',
+    value: '3',
+  },
+  {
+    label: '上海',
+    value: '4',
+  },
+  {
+    label: '北京',
+    value: '5',
+  },
 ];
 
 const handleSelect = (e:Event) => {
-console.log(e);
+  console.log(e);
 }
 
 return <Select
-modelValue={defaultValue2}
-options={options}
-header={header}
-multiple
-handleChange={(e) => handleSelect(e)} ></Select>;
+        modelValue={defaultValue2}
+        options={options}
+        header={header}
+        multiple={true}
+        handleChange={(e) => handleSelect(e)}
+      />;
 ` } />
 
 ## props

@@ -43,28 +43,30 @@ import PropsShow from './components/props-show';
     </Flex>
   }
   code={`
-      const options=[
-           { label: '北京', value: '1' },
-           { label: '上海', value: '2' },
-           { label: '广州', value: '3' },
-           { label: '深圳', value: '4' },
-           { label: '乌鲁木齐', value: '5' }
-        ]
+const options=[
+  { label: '北京', value: '1' },
+  { label: '上海', value: '2' },
+  { label: '广州', value: '3' },
+  { label: '深圳', value: '4' },
+  { label: '乌鲁木齐', value: '5' }
+]
 
-        <Flex direction="y" x='start' gap={20}>
-          常规
-          <Tabs options={options} ></Tabs>
-          自定义item宽度
-          <Tabs itemWidth='120px' modelvalue='5' options={options}></Tabs>)
-          线
-          <Tabs type="line" options={options={options}></Tabs>
-          弧形
-          <Tabs round="round" options={[
-            { label: 'Light', value: '1' },
-            { label: 'Dark', value: '2' },
-            ]}>
-          </Tabs>
-        </Flex>`
+<Flex direction="y" x='start' gap={20}>
+  常规
+  <Tabs options={options} />
+  自定义item宽度
+  <Tabs itemWidth='120px' modelvalue='5' options={options} />
+  线
+  <Tabs type="line" options={options={options} />
+  弧形
+  <Tabs
+    round="round"
+    options={[
+      { label: 'Light', value: '1' },
+      { label: 'Dark', value: '2' },
+    ]}>
+  </Tabs>
+</Flex>`
   }
   />
 

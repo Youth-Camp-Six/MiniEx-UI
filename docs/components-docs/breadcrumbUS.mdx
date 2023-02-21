@@ -31,35 +31,28 @@ import PropsShow from './components/props-show';
     </Flex>
   }
   code={`
-    import { Breadcrumb , Flex } from 'miniEx';
-    import React from 'react';
-
-    const App: React.FC = () => (
-      const options=[
-        {
-          label: 'Home',
-          to: '/',
-        },
-        {
-          label: 'React',
-          to: 'https://react.docschina.org/',
-        },
-        {
-          label: 'List of goods',
-          to: '',
-        },
-        {
-          label: 'Product details',
-          to: '',
-          active: true,
-        }]
-      return(
-        <Flex x='start'>
-         <Breadcrumb options={options}></Breadcrumb>
-        </Flex>)
-    );
-
-    export default App;
+const options=[
+  {
+    label: 'Home',
+    to: '/',
+  },
+  {
+    label: 'React',
+    to: 'https://react.docschina.org/',
+  },
+  {
+    label: 'List of goods',
+    to: '',
+  },
+  {
+    label: 'Product details',
+    to: '',
+    active: true,
+  }
+]
+<Flex x='start'>
+  <Breadcrumb options={options}></Breadcrumb>
+</Flex>
     `
   }
   />
@@ -90,35 +83,29 @@ import PropsShow from './components/props-show';
     </Flex>
   }
   code={`
-    import { Breadcrumb , Flex } from 'miniEx';
-    import React from 'react';
+const options=[
+  {
+    label: 'Home',
+    to: '/',
+  },
+  {
+    label: 'React',
+    to: 'https://react.docschina.org/',
+  },
+  {
+    label: 'List of goods',
+    to: '',
+    active: true,
+  },
+  {
+    label: 'Product details',
+    to: '',
+  }
+]
 
-    const App: React.FC = () => (
-      const options=[
-        {
-          label: 'Home',
-          to: '/',
-        },
-        {
-          label: 'React',
-          to: 'https://react.docschina.org/',
-        },
-        {
-          label: 'List of goods',
-          to: '',
-          active: true,
-        },
-        {
-          label: 'Product details',
-          to: '',
-        }]
-      return(
-        <Flex x='start'>
-         <Breadcrumb options={options}></Breadcrumb>
-        </Flex>)
-    );
-
-    export default App;
+<Flex x='start'>
+  <Breadcrumb options={options}></Breadcrumb>
+</Flex>
     `
   }
   />
@@ -150,28 +137,29 @@ import PropsShow from './components/props-show';
     </Flex>
   }
   code={`
-      const options=[
-        {
-          label: 'Home',
-          to: '/',
-        },
-        {
-          label: 'React',
-          to: 'https://react.docschina.org/',
-        },
-        {
-          label: 'List of goods',
-          to: '',
-        },
-        {
-          label: 'Product details',
-          to: '',
-          active: true,
-        }]
+const options=[
+  {
+    label: 'Home',
+    to: '/',
+  },
+  {
+    label: 'React',
+    to: 'https://react.docschina.org/',
+  },
+  {
+    label: 'List of goods',
+    to: '',
+  },
+  {
+    label: 'Product details',
+    to: '',
+    active: true,
+  }
+]
 
-        <Flex x='start'>
-         <Breadcrumb iconType="shoulder" options={options}></Breadcrumb>
-        </Flex>
+<Flex x='start'>
+  <Breadcrumb iconType="shoulder" options={options}></Breadcrumb>
+</Flex>
     `
   }
   />
