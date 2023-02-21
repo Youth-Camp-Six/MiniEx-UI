@@ -3,7 +3,7 @@ import Header from '../header/header';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import cls from './main.module.less';
 
-const Main: React.FC = () => {
+const Main: React.FC<{ noHide }> = (noHide) => {
   const location = useLocation();
   const nav = useNavigate();
 
@@ -19,7 +19,7 @@ const Main: React.FC = () => {
   return (
     <div className={cls.main}>
       <Header />
-      <div className={cls.content}>
+      <div className={`${cls.content} ${noHide ? cls.scroll : null}`}>
         <Outlet />
       </div>
     </div>
