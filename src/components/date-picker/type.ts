@@ -6,23 +6,24 @@ import { Dayjs } from 'dayjs';
 //   US: 'Mo' | 'Tu' | 'We' | 'Th' | 'Fr' | 'Sa' | 'Su';
 // }
 
-export interface IDayCellProps {
+export interface IDatePickerProps {
+  defaultValue?: Dayjs;
+  weekFirstDay?: 1 | 2 | 3 | 4 | 5 | 6 | 7;
+  validator?: (date: Dayjs) => boolean;
+}
+
+export type HeaderEventType = 'year' | 'month' | 'date';
+
+export interface IDatePickerHeader {
+  value: Dayjs;
+  onSwitch: (type: HeaderEventType) => void;
+  onChange: (type: HeaderEventType, value: Dayjs) => void;
+}
+export interface IDateCellProps {
   value: Dayjs;
   isThisMonth: boolean;
   disable?: boolean;
   selected?: boolean;
   // today?: boolean;
   onClick: (value: Dayjs) => void;
-}
-
-export interface IDayPickerProps {
-  defaultValue?: Dayjs;
-  weekFirstDay?: 1 | 2 | 3 | 4 | 5 | 6 | 7;
-}
-
-export type HeaderEventType = 'year' | 'month' | 'date';
-export interface IPickerHeader {
-  value: Dayjs;
-  onSwitch: (type: HeaderEventType) => void;
-  onChange: (type: HeaderEventType, value: Dayjs) => void;
 }

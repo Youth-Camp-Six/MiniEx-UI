@@ -1,8 +1,10 @@
-.day-picker {
+.date-picker {
   display: inline-block;
   width: 300px;
   padding: 20px;
-  background: yellowgreen;
+  background: var(--mi-normal-color);
+  border: 1px solid grey;
+  border-radius: 10px;
   box-shadow: var(--mi-box-shadow);
   user-select: none;
 
@@ -15,12 +17,12 @@
   }
 }
 
-.day-cell {
+.date-cell {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   color: grey;
   border-radius: 50%;
   cursor: pointer;
@@ -29,31 +31,24 @@
     cursor: default;
   }
 
+  .selected() {
+    color: var(--mi-normal-color);
+    background-color: var(--mi-primary-color);
+  }
+
   &--this-month {
     color: black;
 
     &:hover {
-      background-color: antiquewhite;
+      color: var(--mi-normal-color);
+      background-color: var(--mi-primary-color);
+      transition: all 0.3s;
     }
   }
 
   &--selected {
-    background-color: antiquewhite;
-  }
-}
-
-.picker-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-
-  .content {
-    display: flex;
-    gap: 10px;
-  }
-
-  .back,
-  .forward {
-    cursor: pointer;
+    color: var(--mi-normal-color);
+    background-color: var(--mi-primary-color);
+    transition: all 0.3s;
   }
 }

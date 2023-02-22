@@ -18,6 +18,8 @@ import TitleUS from '../components-docs/titleUS.mdx';
 import TitleCN from '../components-docs/titleCN.mdx';
 import ImageUS from '../components-docs/imageUS.mdx';
 import ImageCN from '../components-docs/imageCN.mdx';
+import DatePickerUS from '../components-docs/datePickerUS.mdx';
+import DatePickerCN from '../components-docs/datePickerCN.mdx';
 import AvatarUS from '../components-docs/avatarUS.mdx';
 import AvatarCN from '../components-docs/avatarCN.mdx';
 import DropdownUS from '../components-docs/dropdownUS.mdx';
@@ -206,6 +208,10 @@ export const router = createHashRouter([
           //   path: '/en/doc/tag',
           //   element: <TagUS />,
           // },
+          {
+            path: '/en/doc/datePicker',
+            element: <DatePickerUS components={components} />,
+          },
         ],
       },
     ],
@@ -332,6 +338,10 @@ export const router = createHashRouter([
           //   path: '/zh/doc/tag',
           //   element: <TagCN />,
           // },
+          {
+            path: '/zh/doc/datePicker',
+            element: <DatePickerCN components={components} />,
+          },
         ],
       },
     ],

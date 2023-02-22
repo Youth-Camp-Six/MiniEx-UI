@@ -1,13 +1,14 @@
 import React from 'react';
-import { IPickerHeader } from './type';
+import { IDatePickerHeader } from './type';
 import { MiIcon } from '../icon/icon';
+import './style/date-picker-header.less';
 
-export const PickerHeader: React.FC<IPickerHeader> = (props) => {
+export const DatePickerHeader: React.FC<IDatePickerHeader> = (props) => {
   const { value, onChange, onSwitch } = props;
   const currentMonth = value.month();
   const currentYear = value.year();
   return (
-    <div className='picker-header'>
+    <div className='date-picker-header'>
       <div className='back'>
         <MiIcon.ChevronsLeft onClick={() => onChange('year', value.year(currentYear - 1))} />
         <MiIcon.ChevronLeft onClick={() => onChange('month', value.month(currentMonth - 1))} />

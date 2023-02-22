@@ -1,1 +1,1 @@
-export { DayPicker } from './day-picker';
+export { DatePicker } from './date-picker';

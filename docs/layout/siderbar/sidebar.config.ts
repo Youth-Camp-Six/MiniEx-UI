@@ -89,6 +89,10 @@ export const siderbarConfig: ISiderbarConfig = {
           title: 'Switch',
           path: '/doc/switch',
         },
+        {
+          title: 'DatePicker',
+          path: '/doc/datePicker',
+        },
       ],
     },
     {
@@ -238,6 +242,10 @@ export const siderbarConfig: ISiderbarConfig = {
         {
           title: 'Table 表格',
           path: '/doc/table',
+        },
+        {
+          title: 'DatePicker 日期选择器',
+          path: '/doc/datePicker',
         },
       ],
     },

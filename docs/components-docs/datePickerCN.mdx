@@ -1,3 +1,36 @@
-import { DayPicker } from '../../src'
+import { DatePicker } from '../../src'
+import ShowSourceCode from './components/show-source-code';
+import PropsShow from './components/props-show';
 
-<DayPicker></DayPicker>
+# 时间选择器
+
+## 基本
+
+<ShowSourceCode
+  element={<DatePicker />}
+  code={`
+    <DatePicker />
+  `}
+/>
+
+# Props
+
+<PropsShow
+  propsInfo={[
+    {
+      name: 'defaultValue',
+      description: '默认值',
+      type: 'Dayjs',
+    },
+    {
+      name: 'weekFirstDay',
+      description: '星期的第一天',
+      type: '1|2|3|4|5|6|7',
+    },
+    {
+      name: 'validator',
+      description: '日期验证器，返回 false 时日期会变为 disable',
+      type: '(date: Dayjs) => boolean',
+    }
+  ]}
+/>
