@@ -18,23 +18,29 @@
   
 # MiniEx-UI
 
-## 命名由来
+## 命名由来（Origin of naming）
 
 `MiniEx` 取自 `Minimal and Exquisite`，意义为极简精致。
 
-## 项目简介
+## 项目简介（Project Introduction）
 
 - 本项目由`MiniEx`团队共同开发。项目的团队成员来自中国各地，有研究生、即将毕业的本科生、本科入学不久的在校生...
 
-- 项目组件库致力于打造为极简且精致的形式面向用户
+- 项目组件库致力于打造为`极简且精致`的形式面向用户
 
 - 项目组件仍处于开发过程中，因此不建议引用本项目的组件用于实际业务场景中
 
-## 项目技术栈
+- The project was co-developed by the `MiniEx` team. The team members of the project come from all over China, there are graduate students, undergraduate students who are about to graduate, undergraduate students who have just entered the school... 
+ 
+- The project component library is intended to be `Minimal and Exquisite` for the user 
+ 
+- The project components are still under development, so it is not recommended to reference the components of the project for use in real business scenarios
+
+## 项目技术栈（Project technology stack）
 
 `React`、`TypeScript`、`Less`、`MDX`
 
-## 项目实现功能
+## 项目实现功能（Project Implementation Functions）
 
 💎 **极简的UI呈现**、**较好的性能**、**较完备的基础组件**
 
@@ -60,7 +66,7 @@
 
 🔒 **开发规范保证**（各类lint校验）
 
-## 项目代办
+## 项目待办（Project to-do）
 
 📌 组件开发完善
 
@@ -74,17 +80,17 @@
 
 ...
 
-## 页面展示
+## 页面展示（Page Display）
 
-### 白天
+### 白天（light）
 
 ![miniex-ui-light](https://cloud.zhuchj.com/202302160127480.png)
 
-### 黑夜
+### 黑夜（night）
 
 ![miniex-ui-dark](https://cloud.zhuchj.com/202302222341673.png)
 
-## 目录说明
+## 目录注释（Contents notes）
 
 ```bash
 ├── docs/             # 文档相关
@@ -110,7 +116,7 @@
 └── tsconfig.json     # typescript 配置文件
 ```
 
-## 如何使用
+## 如何使用（How to use）
 
 ### 项目安装依赖
 
