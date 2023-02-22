@@ -30,11 +30,9 @@
 
 - 项目组件仍处于开发过程中，因此不建议引用本项目的组件用于实际业务场景中
 
-## 技术栈
+## 项目技术栈
 
-```
-React + TS + Less + Webpack + Lint + Jest
-```
+`React`、`TypeScript`、`Less`、`MDX`
 
 ## 项目实现功能
 
@@ -78,7 +76,13 @@ React + TS + Less + Webpack + Lint + Jest
 
 ## 页面展示
 
-![miniex-ui](https://cloud.zhuchj.com/202302160127480.png)
+### 白天
+
+![miniex-ui-light](https://cloud.zhuchj.com/202302160127480.png)
+
+### 黑夜
+
+![miniex-ui-dark](https://cloud.zhuchj.com/202302222341673.png)
 
 ## 目录说明
 
