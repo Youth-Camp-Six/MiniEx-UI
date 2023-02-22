@@ -4,7 +4,7 @@
   </a>
 </p>
 
-<h1 align="center">MinEx UI</h1>
+<h1 align="center">MiniEx UI</h1>
 
 <div align="center">
 
