@@ -68,6 +68,7 @@ specifiers:
   react-router-dom: '6'
   react-transition-group: ^4.4.5
   remark-mdx-images: ^2.0.0
+  rimraf: ^4.1.2
   style-loader: ^1.2.1
   stylelint: ^14.16.1
   stylelint-config-prettier: ^9.0.3
@@ -86,6 +87,7 @@ specifiers:
   webpack-cli: ^5.0.1
   webpack-dev-server: ^4.11.1
   webpack-merge: ^5.8.0
+  webpack-node-externals: ^3.0.0
 
 dependencies:
   '@mdx-js/mdx': 2.2.1
@@ -110,9 +112,11 @@ dependencies:
   react-router-dom: 6.8.1_biqbaboplfbrettd7655fr4n2y
   react-transition-group: 4.4.5_biqbaboplfbrettd7655fr4n2y
   remark-mdx-images: 2.0.0
+  rimraf: 4.1.2
   tippy.js: 6.3.7
   webpack-dev-server: 4.11.1_rjsyjcrmk25kqsjzwkvj3a2evq
   webpack-merge: registry.npmmirror.com/webpack-merge/5.8.0
+  webpack-node-externals: 3.0.0
 
 devDependencies:
   '@babel/core': 7.16.7
@@ -9341,6 +9345,12 @@ packages:
     dependencies:
       glob: 7.2.3
 
+  /rimraf/4.1.2:
+    resolution: {integrity: sha512-BlIbgFryTbw3Dz6hyoWFhKk+unCcHMSkZGrTFVAx2WmttdBSonsdtRlwiuTbDqTKr+UlXIUqJVS4QT5tUzGENQ==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dev: false
+
   /run-parallel/1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
     dependencies:
@@ -11040,6 +11050,11 @@ packages:
       - debug
       - supports-color
       - utf-8-validate
+
+  /webpack-node-externals/3.0.0:
+    resolution: {integrity: sha512-LnL6Z3GGDPht/AigwRh2dvL9PQPFQ8skEpVrWZXLWBYmqcaojHNN0onvHzie6rq7EWKrrBfPYqNEzTJgiwEQDQ==}
+    engines: {node: '>=6'}
+    dev: false
 
   /webpack-sources/3.2.3:
     resolution: {integrity: sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==}
