@@ -22,6 +22,7 @@
 
 `MiniEx` 取自 `Minimal and Exquisite`，意义为极简精致。
 
+
 ## 项目简介（Project Introduction）
 
 - 本项目由`MiniEx`团队共同开发。项目的团队成员来自中国各地，有研究生、即将毕业的本科生、本科入学不久的在校生...
@@ -30,11 +31,11 @@
 
 - 项目组件仍处于开发过程中，因此不建议引用本项目的组件用于实际业务场景中
 
-- The project was co-developed by the `MiniEx` team. The team members of the project come from all over China, there are graduate students, undergraduate students who are about to graduate, undergraduate students who have just entered the school... 
- 
-- The project component library is intended to be `Minimal and Exquisite` for the user 
- 
-- The project components are still under development, so it is not recommended to reference the components of the project for use in real business scenarios
+> The project was co-developed by the `MiniEx` team. The team members of the project come from all over China, there are graduate students, undergraduate students who are about to graduate, undergraduate students who have just entered the school... 
+
+> The project component library is intended to be `Minimal and Exquisite` for the user
+
+> The project components are still under development, so it is not recommended to reference the components of the project for use in real business scenarios
 
 ## 项目技术栈（Project technology stack）
 
