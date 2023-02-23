@@ -113,7 +113,21 @@
 └── tsconfig.json     # typescript 配置文件
 ```
 
-## 如何使用
+## 如何使用组件库
+
+### 使用npm安装依赖
+
+```
+npm install miniex-ui --save
+```
+
+### 引入组件使用
+
+```
+import { ComponentName } from 'miniex-ui'
+```
+
+## 如何使用项目
 
 ### 项目安装依赖
 
@@ -124,19 +138,13 @@ pnpm i
 ### 项目文档站开发环境启动
 
 ```
-npm run dev
+pnpm run dev
 ```
 
 ### 项目文档站生产环境启动
 
 ```
-npm run start
-```
-
-### 项目组件库打包构建
-
-```
-npm run build:pkg
+pnpm run start
 ```
 
 ### 单测用例
