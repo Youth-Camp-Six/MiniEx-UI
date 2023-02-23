@@ -2,18 +2,26 @@
   display: inline-block;
   width: 300px;
   padding: 20px;
-  background: var(--mi-normal-color);
-  border: 1px solid grey;
-  border-radius: 10px;
+  background: var(--mi-bgcolor-0);
+  border: var(--mi-border-3);
+  border-radius: var(--mi-border-radius);
   box-shadow: var(--mi-box-shadow);
   user-select: none;
 
   &__content {
     display: grid;
-    grid-template-rows: repeat(6, 1fr);
-    grid-template-columns: repeat(7, 1fr);
     row-gap: 5px;
     place-items: center;
+
+    &--date {
+      grid-template-rows: repeat(6, 1fr);
+      grid-template-columns: repeat(7, 1fr);
+    }
+
+    &--default {
+      grid-template-rows: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }
 
@@ -23,32 +31,26 @@
   justify-content: center;
   width: 30px;
   height: 30px;
-  color: grey;
+  color: var(--mi-text-color-9);
   border-radius: 50%;
   cursor: pointer;
+  transition: all 0.2s ease;
 
   &--disabled {
     cursor: default;
   }
 
-  .selected() {
-    color: var(--mi-normal-color);
-    background-color: var(--mi-primary-color);
-  }
-
   &--this-month {
-    color: black;
+    color: var(--mi-text-color-0);
 
     &:hover {
-      color: var(--mi-normal-color);
+      color: #fff;
       background-color: var(--mi-primary-color);
-      transition: all 0.3s;
     }
   }
 
   &--selected {
-    color: var(--mi-normal-color);
+    color: #fff;
     background-color: var(--mi-primary-color);
-    transition: all 0.3s;
   }
 }

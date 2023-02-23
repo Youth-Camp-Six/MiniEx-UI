@@ -8,10 +8,35 @@
   .content {
     display: flex;
     gap: 10px;
+    font-size: 16px;
   }
 
   .back,
   .forward {
+    font-size: 0;
     cursor: pointer;
+  }
+
+  .forward svg,
+  .back svg {
+    color: var(--mi-text-color-6);
+    transition: transform 0.1s;
+    transition-timing-function: ease-in;
+
+    &:hover {
+      color: var(--mi-text-color-3);
+    }
+
+    &:active {
+      transition-timing-function: ease-out;
+    }
+  }
+
+  .forward svg:active {
+    transform: translateX(2px);
+  }
+
+  .back svg:active {
+    transform: translateX(-2px);
   }
 }

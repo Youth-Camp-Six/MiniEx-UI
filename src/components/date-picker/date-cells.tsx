@@ -1,15 +1,14 @@
 import React, { useMemo, useContext } from 'react';
 import dayjs from 'dayjs';
 import { DatePickerContext } from './date-picker-context';
-import { IDateCellProps, IDateCellsProps, IDatePickerProps } from './type';
+import { IDateCellProps, IDateCellsProps } from './type';
 
 const PREFIX = 'date-cell';
 const DAYS_IN_WEEK = 7;
 const DAY_COUNT = 6 * 7;
 
-const DateCellsHeader: React.FC<Pick<IDatePickerProps, 'weekFirstDay'>> = ({
-  weekFirstDay = 7,
-}) => {
+const DateCellsHeader: React.FC<Record<string, never>> = () => {
+  const { weekFirstDay } = useContext(DatePickerContext);
   const arr = new Array(DAYS_IN_WEEK);
   const dayjsInstance = dayjs();
   for (let i = 0; i < arr.length; ++i) {
@@ -62,7 +61,7 @@ export const DateCells: React.FC<IDateCellsProps> = (props) => {
 
   return (
     <>
-      <DateCellsHeader weekFirstDay={undefined} />
+      <DateCellsHeader />
       {datesArr.map((v) => (
         <DateCell {...v} key={v.value.format('YYYY-MM-DD')} onClick={onClick} />
       ))}

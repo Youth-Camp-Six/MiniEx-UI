@@ -5,9 +5,16 @@ import { DatePickerHeader } from './date-picker-header';
 import { DateCells } from './date-cells';
 import { DatePickerContext } from './date-picker-context';
 import './style/date-picker.less';
+import { DefaultCells } from './default-cells';
 
 export const DatePicker: React.FC<IDatePickerProps> = (props) => {
-  const { defaultValue, weekFirstDay = 1, validator, type } = props;
+  const {
+    defaultValue,
+    validator,
+    type,
+    region = 'CN',
+    weekFirstDay = region === 'CN' ? 1 : 7,
+  } = props;
   // input value
   const [value, setValue] = useState(defaultValue || dayjs());
   // the time now shown, setting date to 1 for easier calculation
@@ -20,6 +27,10 @@ export const DatePicker: React.FC<IDatePickerProps> = (props) => {
     setDisplayTime(value.date(1));
   };
 
+  // const onMonthCellClick = (value: number) => {
+  //   setDisplayTime(displayTime.month(value))
+  // }
+
   return (
     <DatePickerContext.Provider
       value={{
@@ -27,12 +38,21 @@ export const DatePicker: React.FC<IDatePickerProps> = (props) => {
         displayTime,
         value,
         dimension,
+        region,
       }}
     >
       <div className='date-picker'>
         <DatePickerHeader onChange={setDisplayTime} onDimensionChange={setDimension} />
-        <div className='date-picker__content'>
-          <DateCells onClick={onDateCellClick} validator={validator} />
+        <div
+          className={`date-picker__content date-picker__content--${
+            dimension === 'date' ? 'date' : 'default'
+          }`}
+        >
+          {dimension === 'date' ? (
+            <DateCells onClick={onDateCellClick} validator={validator} />
+          ) : (
+            <DefaultCells />
+          )}
         </div>
       </div>
     </DatePickerContext.Provider>
