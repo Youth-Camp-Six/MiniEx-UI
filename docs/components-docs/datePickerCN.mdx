@@ -1,4 +1,4 @@
-import { DatePicker } from '../../src'
+import { DatePicker, Input } from '../../src'
 import ShowSourceCode from './components/show-source-code';
 import PropsShow from './components/props-show';
 
@@ -8,6 +8,13 @@ import PropsShow from './components/props-show';
 
 <ShowSourceCode
   element={<DatePicker />}
+  code={`
+    <DatePicker />
+  `}
+/>
+
+<ShowSourceCode
+  element={<Input />}
   code={`
     <DatePicker />
   `}
