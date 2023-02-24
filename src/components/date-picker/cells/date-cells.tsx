@@ -1,7 +1,7 @@
-import React, { useMemo, useContext } from 'react';
-import dayjs from 'dayjs';
-import { DatePickerContext } from './date-picker-context';
-import { IDateCellProps, IDateCellsProps } from './type';
+import React, { useMemo, useContext, useCallback } from 'react';
+import dayjs, { Dayjs } from 'dayjs';
+import { DatePickerContext } from '../date-picker-context';
+import { IDateCellProps, IDateCellsProps } from '../type';
 
 const PREFIX = 'date-cell';
 const DAYS_IN_WEEK = 7;
@@ -42,27 +42,35 @@ const DateCell: React.FC<IDateCellProps> = (props) => {
 };
 
 export const DateCells: React.FC<IDateCellsProps> = (props) => {
-  const { validator, onClick } = props;
-  const { weekFirstDay, value, displayTime } = useContext(DatePickerContext);
-  const datesArr = useMemo((): IDateCellProps[] => {
-    const datesArr = new Array(DAY_COUNT);
+  const { validator } = props;
+  const { weekFirstDay, value, setValue, displayTime, setDisplayTime } =
+    useContext(DatePickerContext);
+  const cellsData = useMemo((): IDateCellProps[] => {
+    const arr = new Array(DAY_COUNT);
     let diff = -((displayTime.day() - weekFirstDay + 7) % 7) + 1;
-    for (let i = 0; i < datesArr.length; ++i, ++diff) {
+    for (let i = 0; i < arr.length; ++i, ++diff) {
       const cellValue = displayTime.date(diff);
-      datesArr[i] = {
+      arr[i] = {
         value: cellValue,
         disable: validator ? !validator(cellValue) : false,
         isThisMonth: displayTime.month() === cellValue.month(),
         selected: value.isSame(cellValue),
       };
     }
-    return datesArr;
+    return arr;
   }, [validator, displayTime, value, weekFirstDay]);
+  const onClick = useCallback(
+    (value: Dayjs) => {
+      setValue(value);
+      setDisplayTime(value.date(1));
+    },
+    [setDisplayTime, setValue]
+  );
 
   return (
     <>
       <DateCellsHeader />
-      {datesArr.map((v) => (
+      {cellsData.map((v) => (
         <DateCell {...v} key={v.value.format('YYYY-MM-DD')} onClick={onClick} />
       ))}
     </>

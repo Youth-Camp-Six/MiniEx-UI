@@ -10,7 +10,9 @@
 
   &__content {
     display: grid;
-    row-gap: 5px;
+    height: 250px;
+    overflow-x: hidden;
+    overflow-y: scroll;
     place-items: center;
 
     &--date {
@@ -33,8 +35,6 @@
   height: 30px;
   color: var(--mi-text-color-9);
   border-radius: 50%;
-  cursor: pointer;
-  transition: all 0.2s ease;
 
   &--disabled {
     cursor: default;
@@ -53,4 +53,28 @@
     color: #fff;
     background-color: var(--mi-primary-color);
   }
+}
+
+.month-cell {
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.year-cell {
+  min-height: 30px;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.date-cell,
+.month-cell,
+.year-cell {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.month-cell:hover,
+.year-cell:hover {
+  color: #fff;
+  background-color: var(--mi-primary-color);
 }

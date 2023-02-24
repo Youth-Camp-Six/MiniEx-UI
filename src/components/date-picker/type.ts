@@ -11,8 +11,11 @@ export interface IDatePickerContext {
   region: Region;
   weekFirstDay: 1 | 2 | 3 | 4 | 5 | 6 | 7;
   displayTime: Dayjs;
+  setDisplayTime: (displayTime: Dayjs) => void;
   value: Dayjs;
+  setValue: (value: Dayjs) => void;
   dimension: TimeDimension;
+  setDimension: (dimension: TimeDimension) => void;
 }
 
 export interface IDatePickerProps {
@@ -25,10 +28,6 @@ export interface IDatePickerProps {
   validator?: (date: Dayjs) => boolean;
 }
 
-export interface IDatePickerHeader {
-  onDimensionChange: (type: TimeDimension) => void;
-  onChange: (value: Dayjs) => void;
-}
 export interface IDateCellProps {
   value: Dayjs;
   onClick: (value: Dayjs) => void;
@@ -38,6 +37,5 @@ export interface IDateCellProps {
 }
 
 export interface IDateCellsProps {
-  onClick: (value: Dayjs) => void;
   validator?: (date: Dayjs) => boolean;
 }

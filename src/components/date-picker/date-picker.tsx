@@ -1,11 +1,12 @@
-import dayjs, { Dayjs } from 'dayjs';
+import dayjs from 'dayjs';
 import React, { useState } from 'react';
 import { IDatePickerProps, TimeDimension } from './type';
 import { DatePickerHeader } from './date-picker-header';
-import { DateCells } from './date-cells';
 import { DatePickerContext } from './date-picker-context';
 import './style/date-picker.less';
-import { DefaultCells } from './default-cells';
+import { DateCells } from './cells/date-cells';
+import { MonthCells } from './cells/month-cells';
+import { YearCells } from './cells/year-cells';
 
 export const DatePicker: React.FC<IDatePickerProps> = (props) => {
   const {
@@ -22,36 +23,32 @@ export const DatePicker: React.FC<IDatePickerProps> = (props) => {
   // cells type
   const [dimension, setDimension] = useState<TimeDimension>(type || 'date');
 
-  const onDateCellClick = (value: Dayjs) => {
-    setValue(value);
-    setDisplayTime(value.date(1));
-  };
-
-  // const onMonthCellClick = (value: number) => {
-  //   setDisplayTime(displayTime.month(value))
-  // }
-
   return (
     <DatePickerContext.Provider
       value={{
         weekFirstDay,
         displayTime,
+        setDisplayTime,
         value,
+        setValue,
         dimension,
+        setDimension,
         region,
       }}
     >
       <div className='date-picker'>
-        <DatePickerHeader onChange={setDisplayTime} onDimensionChange={setDimension} />
+        <DatePickerHeader />
         <div
           className={`date-picker__content date-picker__content--${
             dimension === 'date' ? 'date' : 'default'
           }`}
         >
           {dimension === 'date' ? (
-            <DateCells onClick={onDateCellClick} validator={validator} />
+            <DateCells validator={validator} />
+          ) : dimension === 'month' ? (
+            <MonthCells />
           ) : (
-            <DefaultCells />
+            <YearCells />
           )}
         </div>
       </div>
