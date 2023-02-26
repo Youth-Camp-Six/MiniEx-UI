@@ -160,25 +160,25 @@ const Home: React.FC = () => {
           </Flex>
           <Flex className={cls.item}>
             <Form direction={'column'} width={'100%'}>
-              <FormItem label={'Input'}>
+              <FormItem label={'Input'} labelwidth='auto' direction='y'>
                 <Input></Input>
               </FormItem>
-              <FormItem label={'Textarea'}>
+              <FormItem label={'Textarea'} labelwidth='auto' direction='y'>
                 <Input type='textarea'></Input>
               </FormItem>
-              <FormItem label={'Select'}>
+              <FormItem label={'Select'} labelwidth='auto' direction='y'>
                 <Select options={homeOptions}></Select>
               </FormItem>
-              <FormItem label={'Radio'}>
+              <FormItem label={'Radio'} labelwidth='auto' direction='y'>
                 <RadioGroup options={sexOtions}></RadioGroup>
               </FormItem>
-              <FormItem label={'Checkbox'}>
+              <FormItem label={'Checkbox'} labelwidth='auto' direction='y'>
                 <CheckboxGroup options={hobbyOptions}></CheckboxGroup>
               </FormItem>
-              <FormItem label={'InputTag'}>
+              <FormItem label={'InputTag'} labelwidth='auto' direction='y'>
                 <InputTag></InputTag>
               </FormItem>
-              <FormItem label={'Switch'}>
+              <FormItem label={'Switch'} labelwidth='auto' direction='y'>
                 <Switch></Switch>
               </FormItem>
             </Form>

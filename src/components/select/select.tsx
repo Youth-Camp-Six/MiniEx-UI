@@ -1,4 +1,4 @@
-import React, { memo, useEffect,useRef,Ref } from 'react';
+import React, { memo, useEffect } from 'react';
 import { SelectOptions, selectProps } from './type';
 import classNames from 'classnames';
 import { Popover, MiIcon, Tag, Flex, Checkbox } from '../../index';
@@ -20,10 +20,11 @@ export const Select: React.FC<selectProps> = (props) => {
     footer,
     label,
     handleSelect,
+    placeholder,
     ...restProps
   } = props;
   const [v, setV] = React.useState('');
-  const [_modelValue,set_modelValue]=React.useState<[string, Array<string>]>(['',[]]);
+  const [_modelValue, setModelValue] = React.useState<[string, Array<string>]>(['', []]);
   const [labelStr, setLabelStr] = React.useState('');
   // const multipleLabelStr = useRef<Array<string>>([]);
   const [multipleLabelStr, setMultipleLabelStr] = React.useState<Array<string>>([]);
@@ -31,64 +32,61 @@ export const Select: React.FC<selectProps> = (props) => {
   const classesView = classNames('mi-select-view', className);
   const classes = classNames('mi-select', `mi-select-${size} mi-select-align-${align}`);
 
-
   let SelectRef: any;
   const SelectWidth = SelectRef?.offsetWidth - 12 + 'px';
-  useEffect(
-    () => {     
-      set_modelValue(modelValue) 
-      if (multiple && _modelValue instanceof Array) {
-        setMultipleLabelStr(filterSelect(_modelValue as Array<string>, options))
-      } else if (typeof _modelValue == 'string') {
-        setLabelStr(options?.find((e) => e.value == _modelValue)?.label || '')
+  useEffect(() => {
+    setModelValue(modelValue);
+    if (multiple && _modelValue instanceof Array) {
+      setMultipleLabelStr(filterSelect(_modelValue as Array<string>, options));
+    } else if (typeof _modelValue == 'string') {
+      setLabelStr(options?.find((e) => e.value == _modelValue)?.label || '');
     }
+    // eslint-disable-next-line
     }, []);
-  useEffect(
-      () => {     
-        // 如果是多选
-        if (!_modelValue) {
-              return;
-          }
-      if (multiple && _modelValue instanceof Array) {
-        setMultipleV(_modelValue as Array<string>)
-        setMultipleLabelStr(filterSelect(_modelValue as Array<string>, options))
-      } else if (typeof _modelValue == 'string') {        
-            setV(_modelValue)
-            setLabelStr(options?.find((e) => e.value == _modelValue)?.label || '');     
-          }
-  }, [_modelValue]);
+  useEffect(() => {
+    // 如果是多选
+    if (!_modelValue) {
+      return;
+    }
+    if (multiple && _modelValue instanceof Array) {
+      setMultipleV(_modelValue as Array<string>);
+      setMultipleLabelStr(filterSelect(_modelValue as Array<string>, options));
+    } else if (typeof _modelValue == 'string') {
+      setV(_modelValue);
+      setLabelStr(options?.find((e) => e.value == _modelValue)?.label || '');
+    }
+    // eslint-disable-next-line
+    }, [_modelValue]);
 
   const filterSelect = (v: string[], options: SelectOptions[]) => {
-    let _v: Array<string> = [];
+    const _v: Array<string> = [];
     if (v && options) {
-        v.map((e: string) => {
-            options.map((o) => {
-                if (e == o.value) {
-                    _v.push(o.label);
-                }
-            });
+      v.map((e: string) => {
+        options.map((o) => {
+          if (e == o.value) {
+            _v.push(o.label);
+          }
         });
+      });
     }
     return _v;
   };
   const check = (item: SelectOptions, isChecked: boolean) => {
     if (_modelValue instanceof Array) {
-        let updatedValue = [..._modelValue];
-        if (isChecked) {
-          updatedValue.push(item.value);
-          (handleSelect as any)(item);
-
-        } else {
-            updatedValue.splice(updatedValue.indexOf(item.value), 1);
+      const updatedValue = [..._modelValue];
+      if (isChecked) {
+        updatedValue.push(item.value);
+        (handleSelect as any)(item);
+      } else {
+        updatedValue.splice(updatedValue.indexOf(item.value), 1);
       }
-      set_modelValue(updatedValue as any);
-
+      setModelValue(updatedValue as any);
     } else {
       if (v != item.value) {
         setLabelStr(item.label);
         setV(item.value);
-        }
-      set_modelValue(item.value as any);
+      }
+      setModelValue(item.value as any);
       (handleSelect as any)(item);
     }
   };
@@ -97,23 +95,23 @@ export const Select: React.FC<selectProps> = (props) => {
   };
   const delTag = (i: number) => {
     // console.log(options[i].checked);
-    let VArr=multipleV.filter((item, index) => {
+    const VArr = multipleV.filter((item, index) => {
       return index !== i;
-    })
-    setMultipleV([...VArr])
-     let labelStrArr=multipleLabelStr.filter((item, index) => {
+    });
+    setMultipleV([...VArr]);
+    const labelStrArr = multipleLabelStr.filter((item, index) => {
       return index !== i;
-    })
+    });
     setMultipleLabelStr([...labelStrArr]);
-    set_modelValue([...VArr] as [string, Array<string>])
+    setModelValue([...VArr] as [string, Array<string>]);
     // console.log(multipleLabelStr);
-};
+  };
   const MultipleBody = (arr: string[]) => {
     return (
       <Flex wrap gap={5} x={'start'} className='mi-isSelect-label-box'>
         {arr.map((item, index) => {
           return (
-            <Tag key={index} type='primary' closable handleClick={()=>delTag(index)} size={size}>
+            <Tag key={index} type='primary' closable handleClick={() => delTag(index)} size={size}>
               {item}
             </Tag>
           );
@@ -137,27 +135,30 @@ export const Select: React.FC<selectProps> = (props) => {
           {options.map((item) => {
             // const i = 0;
             return (
-              <div key={item.value} >
-                <label  >
+              <div key={item.value}>
+                <label>
                   {!labelSlot ? (
-                    <div 
-                      className={`mi-select-item  ${item.disabled ? 'mi-select-item-disabled' : ''}`}
+                    <div
+                      className={`mi-select-item  ${
+                        item.disabled ? 'mi-select-item-disabled' : ''
+                      }`}
                     >
                       <Checkbox
                         size={size}
                         label={item.label}
                         disabled={item.disabled}
-                        className={`mi-select-checkbox ${showIcon && multiple ? '' : 'mi-select-checkbox-none'} `}
+                        className={`mi-select-checkbox ${
+                          showIcon && multiple ? '' : 'mi-select-checkbox-none'
+                        } `}
                         checked={getChecked(item.value)}
-                        handleChange={(e: Event) => check(item, e)
-                        }
+                        handleChange={(e: Event) => check(item, e)}
                       ></Checkbox>
                       <div className='mi-select-label'>{item.label}</div>
                     </div>
                   ) : (
-                      <div className='mi-select-slot-item'>
-                        {label}
-                        {/* {slots['label']} */}
+                    <div className='mi-select-slot-item'>
+                      {label}
+                      {/* {slots['label']} */}
                       {/* <Checkbox label='' ></Checkbox> */}
                     </div>
                   )}
@@ -188,7 +189,7 @@ export const Select: React.FC<selectProps> = (props) => {
       >
         <MiIcon.ChevronDown size='16px' className='mi-select-icon'></MiIcon.ChevronDown>
         {(!multiple && labelStr.length == 0) || (multiple && multipleLabelStr.length == 0) ? (
-          <div className='mi-select-placeholder'>请选择</div>
+          <div className='mi-select-placeholder'>{placeholder}</div>
         ) : null}
         {/* 单选 or 多选*/}
         {!multiple ? (
@@ -196,7 +197,7 @@ export const Select: React.FC<selectProps> = (props) => {
         ) : (
           <div className='mi-select-label-multiple'>
             {multipleLabelStr.length > 0 ? (
-              <Tag type='primary' size={size} closable={true} handleClick={()=>delTag(0)}>
+              <Tag type='primary' size={size} closable={true} handleClick={() => delTag(0)}>
                 {multipleLabelStr[0]}
               </Tag>
             ) : null}
@@ -223,7 +224,7 @@ export const Select: React.FC<selectProps> = (props) => {
 };
 
 Select.defaultProps = {
-  modelValue: "",
+  placeholder: '请选择',
   options: [],
   placement: 'bottom-start',
   trigger: 'click',

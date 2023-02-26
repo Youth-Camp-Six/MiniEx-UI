@@ -21,5 +21,8 @@ export * from './components/tag';
 export * from './components/alert';
 export * from './components/popover';
 export * from './components/select';
+export * from './components/upload';
 export * from './components/table';
 export * from './components/drawer';
+export * from './components/input-search';
+export * from './components/dialog';
