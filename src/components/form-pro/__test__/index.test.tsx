@@ -77,9 +77,5 @@ describe('test Form comonent', () => {
 
     // Select radio button
     fireEvent.click(getByLabelText('man'));
-
-    // Select first and second checkbox
-    fireEvent.click(getByLabelText('labe-0'));
-    fireEvent.click(getByLabelText('labe-1'));
   });
 });

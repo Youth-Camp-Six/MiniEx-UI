@@ -1,0 +1,265 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Form comonent Form snapshot test 1`] = `
+<form
+  class="mi-form"
+>
+  <div
+    class="mi-form-item mi-form-item-x mi-form-item-end"
+  >
+    <div
+      class="mi-form-item-label"
+      style="width: 100px;"
+    >
+      性别
+    </div>
+    <div
+      class="mi-form-item-view"
+    >
+      <div
+        class="mi-form-item-view-inner"
+      >
+        <div
+          class="mi-flex mi-radio lew-radio-group-x lew-radio-group-medium mi-flex-x mi-flex-x-start mi-flex-y-center"
+          style="gap: 15px;"
+        >
+          <label
+            class="mi-radio 
+    
+    mi-radio-medium
+    
+    "
+            data-testid="radio-0"
+          >
+            <div
+              class="icon-radio-box"
+            >
+              <div
+                class="icon-radio"
+              />
+            </div>
+            <input
+              style="display: none;"
+              type="radio"
+              value=""
+            />
+            <span
+              class="mi-radio-label"
+            >
+               
+              Unknown
+            </span>
+          </label>
+          <label
+            class="mi-radio 
+    
+    mi-radio-medium
+    
+    "
+            data-testid="radio-1"
+          >
+            <div
+              class="icon-radio-box"
+            >
+              <div
+                class="icon-radio"
+              />
+            </div>
+            <input
+              style="display: none;"
+              type="radio"
+              value=""
+            />
+            <span
+              class="mi-radio-label"
+            >
+               
+              man
+            </span>
+          </label>
+          <label
+            class="mi-radio 
+    
+    mi-radio-medium
+    
+    "
+            data-testid="radio-2"
+          >
+            <div
+              class="icon-radio-box"
+            >
+              <div
+                class="icon-radio"
+              />
+            </div>
+            <input
+              style="display: none;"
+              type="radio"
+              value=""
+            />
+            <span
+              class="mi-radio-label"
+            >
+               
+              woman
+            </span>
+          </label>
+        </div>
+      </div>
+      <div
+        class="mi-form-item-view-message"
+      />
+    </div>
+  </div>
+  <div
+    class="mi-form-item mi-form-item-x mi-form-item-end"
+  >
+    <div
+      class="mi-form-item-label"
+      style="width: 100px;"
+    >
+      lebel
+    </div>
+    <div
+      class="mi-form-item-view"
+    >
+      <div
+        class="mi-form-item-view-inner"
+      >
+        <div
+          class="mi-flex mi-checkbox mi-checkbox-group-x mi-checkbox-group-medium mi-flex-x mi-flex-x-start mi-flex-y-center"
+          style="gap: 15px;"
+        >
+          <label
+            class="mi-checkbox 
+         
+        
+        mi-checkbox-checked
+        mi-checkbox-medium
+        
+        "
+            data-testid="checkbox-0"
+          >
+            <div
+              class="icon-checkbox-box"
+            >
+              <svg
+                class="icon-checkbox"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="4"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <polyline
+                  points="20 6 9 17 4 12"
+                />
+              </svg>
+            </div>
+            <input
+              style="display: none;"
+              type="checkbox"
+            />
+            <span
+              class="mi-checkbox-label"
+            >
+              labe-0
+            </span>
+          </label>
+          <label
+            class="mi-checkbox 
+         
+        
+        mi-checkbox-checked
+        mi-checkbox-medium
+        
+        "
+            data-testid="checkbox-1"
+          >
+            <div
+              class="icon-checkbox-box"
+            >
+              <svg
+                class="icon-checkbox"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="4"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <polyline
+                  points="20 6 9 17 4 12"
+                />
+              </svg>
+            </div>
+            <input
+              style="display: none;"
+              type="checkbox"
+            />
+            <span
+              class="mi-checkbox-label"
+            >
+              labe-1
+            </span>
+          </label>
+          <label
+            class="mi-checkbox 
+         
+        
+        mi-checkbox-checked
+        mi-checkbox-medium
+        
+        "
+            data-testid="checkbox-2"
+          >
+            <div
+              class="icon-checkbox-box"
+            >
+              <svg
+                class="icon-checkbox"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="4"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <polyline
+                  points="20 6 9 17 4 12"
+                />
+              </svg>
+            </div>
+            <input
+              style="display: none;"
+              type="checkbox"
+            />
+            <span
+              class="mi-checkbox-label"
+            >
+              labe-2
+            </span>
+          </label>
+        </div>
+      </div>
+      <div
+        class="mi-form-item-view-message"
+      />
+    </div>
+  </div>
+  <div>
+    <button
+      class="btn btn-default"
+    >
+      提交
+    </button>
+  </div>
+</form>
+`;
