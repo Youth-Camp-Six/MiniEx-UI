@@ -132,9 +132,9 @@ exports[`test Form comonent Form snapshot test 1`] = `
         >
           <label
             class="mi-checkbox 
+         
         
-        
-        
+        mi-checkbox-checked
         mi-checkbox-medium
         
         "
@@ -171,9 +171,9 @@ exports[`test Form comonent Form snapshot test 1`] = `
           </label>
           <label
             class="mi-checkbox 
+         
         
-        
-        
+        mi-checkbox-checked
         mi-checkbox-medium
         
         "
@@ -210,9 +210,9 @@ exports[`test Form comonent Form snapshot test 1`] = `
           </label>
           <label
             class="mi-checkbox 
+         
         
-        
-        
+        mi-checkbox-checked
         mi-checkbox-medium
         
         "
